@@ -8,9 +8,15 @@
  *   notExpr  := NOT notExpr | primary
  *   primary  := '(' orExpr ')' | PHRASE | TERM
  *
- * Implicit AND: `a b` == `a AND b`, so free-text queries pasted from a UI are
- * conjunctions (the common web expectation) while explicit OR stays opt-in.
- * `a NOT b` parses as `a AND (NOT b)` because NOT is an operand prefix.
+ * Implicit operator: by default `a b` == `a AND b`, so free-text queries
+ * pasted from a UI are conjunctions (the common web expectation) while
+ * explicit OR stays opt-in. IR evaluation (BEIR/TREC BM25 baselines) uses
+ * the opposite convention — a query is a bag of words joined by OR — so
+ * callers can pass `{ implicitOperator: 'or' }` (scripts/run-experiment.ts
+ * does). Explicit AND/OR tokens, phrases and parens behave identically in
+ * both modes; the option only changes what bare adjacency means.
+ * `a NOT b` parses as `a AND (NOT b)` (default) or `a OR (NOT b)` ('or')
+ * because NOT is an operand prefix.
  *
  * Errors: every malformed shape maps to a QueryParseError code with the
  * offending character position (see errors.ts for the closed code set).
@@ -19,6 +25,11 @@
 import type { Query } from './ast.js';
 import { QueryParseError } from './errors.js';
 import { lex, type QueryToken } from './lexer.js';
+
+export interface QueryParseOptions {
+  /** operator implied by bare adjacency — 'and' (default) or 'or' (IR eval) */
+  readonly implicitOperator?: 'and' | 'or';
+}
 
 function startsOperand(t: QueryToken): boolean {
   return t.type === 'term' || t.type === 'phrase' || t.type === 'lparen' || t.type === 'not';
@@ -48,7 +59,10 @@ class Parser {
   /** position of the innermost unclosed '(' (only read when input ends mid-group) */
   private openParenPos = 0;
 
-  constructor(private readonly tokens: QueryToken[]) {}
+  constructor(
+    private readonly tokens: QueryToken[],
+    private readonly implicit: 'and' | 'or' = 'and',
+  ) {}
 
   parse(): Query {
     if (this.tokens.length === 0) {
@@ -93,7 +107,9 @@ class Parser {
         this.requireOperand(t, 'AND');
         left = { kind: 'and', left, right: this.parseNot() };
       } else if (startsOperand(t)) {
-        left = { kind: 'and', left, right: this.parseNot() };
+        const right = this.parseNot();
+        left =
+          this.implicit === 'or' ? { kind: 'or', left, right } : { kind: 'and', left, right };
       } else {
         return left;
       }
@@ -158,6 +174,6 @@ class Parser {
 }
 
 /** Parse a raw query string into a typed AST. Throws QueryParseError. */
-export function parseQuery(input: string): Query {
-  return new Parser(lex(input)).parse();
+export function parseQuery(input: string, options: QueryParseOptions = {}): Query {
+  return new Parser(lex(input), options.implicitOperator ?? 'and').parse();
 }

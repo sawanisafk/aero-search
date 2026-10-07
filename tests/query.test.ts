@@ -239,3 +239,61 @@ describe('parseQuery: malformed queries', () => {
     expect(err!.position).toBe(2);
   });
 });
+
+describe('parseQuery: implicitOperator or (IR evaluation mode)', () => {
+  it('joins bare adjacency with OR, left-associative', () => {
+    expect(parseQuery('a b', { implicitOperator: 'or' })).toEqual({
+      kind: 'or',
+      left: t('a'),
+      right: t('b'),
+    });
+    expect(parseQuery('a b c', { implicitOperator: 'or' })).toEqual({
+      kind: 'or',
+      left: { kind: 'or', left: t('a'), right: t('b') },
+      right: t('c'),
+    });
+  });
+
+  it('leaves explicit operators untouched', () => {
+    expect(parseQuery('a AND b', { implicitOperator: 'or' })).toEqual({
+      kind: 'and',
+      left: t('a'),
+      right: t('b'),
+    });
+    expect(parseQuery('a OR b', { implicitOperator: 'or' })).toEqual({
+      kind: 'or',
+      left: t('a'),
+      right: t('b'),
+    });
+  });
+
+  it('applies the implicit operator around NOT and phrases', () => {
+    expect(parseQuery('a NOT b', { implicitOperator: 'or' })).toEqual({
+      kind: 'or',
+      left: t('a'),
+      right: { kind: 'not', operand: t('b') },
+    });
+    expect(parseQuery('x "a b"', { implicitOperator: 'or' })).toEqual({
+      kind: 'or',
+      left: t('x'),
+      right: { kind: 'phrase', terms: ['a', 'b'] },
+    });
+  });
+
+  it('applies inside groups', () => {
+    expect(parseQuery('(a b) c', { implicitOperator: 'or' })).toEqual({
+      kind: 'or',
+      left: { kind: 'or', left: t('a'), right: t('b') },
+      right: t('c'),
+    });
+  });
+
+  it('defaults to implicit AND when no option is given', () => {
+    expect(parseQuery('a b')).toEqual({ kind: 'and', left: t('a'), right: t('b') });
+  });
+
+  it('still throws the same parse errors in or-mode', () => {
+    expectParseError(() => parseQuery('a AND', { implicitOperator: 'or' }), 'MISSING_OPERAND', 2);
+    expectParseError(() => parseQuery('()', { implicitOperator: 'or' }), 'EMPTY_GROUP', 0);
+  });
+});
