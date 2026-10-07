@@ -1,0 +1,80 @@
+{
+  "kind": "query-latency",
+  "timestamp": "2026-10-07T14:53:17.463Z",
+  "git": {
+    "sha": "7d9ef4c7987102a19138c5e46ec432e9cb77a8f6",
+    "clean": true,
+    "has_untracked": true
+  },
+  "config": {
+    "corpus": "scifact",
+    "query_source": "data/eval/scifact-queries.jsonl",
+    "queries": 1109,
+    "topk": 100,
+    "pipeline": "candidates: parse+analyze+retrieve; strategies: + rank + top-k mapping (e2e)"
+  },
+  "corpus": {
+    "name": "scifact",
+    "hash": "dec31c8182f3d744c7d2c09423756fd1d17cbef75808db13ba01cc0aab4d1ac6",
+    "numDocs": 5183,
+    "vocabSize": 26299
+  },
+  "parse_failures": {
+    "candidates": 2,
+    "boolean": 2,
+    "tfidf": 2,
+    "bm25": 2,
+    "bm25-phrase": 2,
+    "bm25-phrase-proximity": 2
+  },
+  "stages": {
+    "candidates": {
+      "count": 1109,
+      "avg": 0.28500207394048677,
+      "median": 0.23539999999997008,
+      "p95": 0.6429999999999723,
+      "min": 0.041200000000003456,
+      "max": 3.4628999999999905
+    },
+    "boolean": {
+      "count": 1109,
+      "avg": 0.41681487826871094,
+      "median": 0.3650000000000091,
+      "p95": 0.8894000000000233,
+      "min": 0.06179999999994834,
+      "max": 1.7748000000000275
+    },
+    "tfidf": {
+      "count": 1109,
+      "avg": 0.9729086564472469,
+      "median": 0.9148999999999887,
+      "p95": 1.8319000000001324,
+      "min": 0.062300000000050204,
+      "max": 3.24129999999991
+    },
+    "bm25": {
+      "count": 1109,
+      "avg": 1.1706565374211062,
+      "median": 1.144800000000032,
+      "p95": 2.0799999999999272,
+      "min": 0.05319999999983338,
+      "max": 4.36869999999999
+    },
+    "bm25-phrase": {
+      "count": 1109,
+      "avg": 1.237975202885495,
+      "median": 1.1932999999999083,
+      "p95": 2.2008999999998196,
+      "min": 0.07229999999981374,
+      "max": 3.6730999999999767
+    },
+    "bm25-phrase-proximity": {
+      "count": 1109,
+      "avg": 3.352730477908,
+      "median": 1.9524000000001251,
+      "p95": 10.031799999999748,
+      "min": 0.09580000000005384,
+      "max": 53.91740000000027
+    }
+  }
+}

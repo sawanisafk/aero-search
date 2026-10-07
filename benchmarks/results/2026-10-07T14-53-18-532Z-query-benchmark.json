@@ -1,0 +1,80 @@
+{
+  "kind": "query-latency",
+  "timestamp": "2026-10-07T14:53:18.532Z",
+  "git": {
+    "sha": "7d9ef4c7987102a19138c5e46ec432e9cb77a8f6",
+    "clean": true,
+    "has_untracked": true
+  },
+  "config": {
+    "corpus": "static-v1",
+    "query_source": "derived-top-df-templates",
+    "queries": 60,
+    "topk": 100,
+    "pipeline": "candidates: parse+analyze+retrieve; strategies: + rank + top-k mapping (e2e)"
+  },
+  "corpus": {
+    "name": "static-v1",
+    "hash": "8ae7f90cbbf976e1a6a7cf310f6ebe0adbe534110fb61b483301358c0a13d1df",
+    "numDocs": 84,
+    "vocabSize": 9145
+  },
+  "parse_failures": {
+    "candidates": 0,
+    "boolean": 0,
+    "tfidf": 0,
+    "bm25": 0,
+    "bm25-phrase": 0,
+    "bm25-phrase-proximity": 0
+  },
+  "stages": {
+    "candidates": {
+      "count": 60,
+      "avg": 0.1610950000000012,
+      "median": 0.06379999999998631,
+      "p95": 0.5945999999999856,
+      "min": 0.01849999999998886,
+      "max": 1.441900000000004
+    },
+    "boolean": {
+      "count": 60,
+      "avg": 0.08052000000000134,
+      "median": 0.06050000000001887,
+      "p95": 0.18780000000000996,
+      "min": 0.03309999999999036,
+      "max": 0.28190000000000737
+    },
+    "tfidf": {
+      "count": 60,
+      "avg": 0.11682666666666582,
+      "median": 0.07049999999999557,
+      "p95": 0.2652000000000214,
+      "min": 0.03899999999998727,
+      "max": 0.8880000000000052
+    },
+    "bm25": {
+      "count": 60,
+      "avg": 0.09621999999999721,
+      "median": 0.06874999999999432,
+      "p95": 0.22040000000001214,
+      "min": 0.028099999999994907,
+      "max": 0.3669999999999902
+    },
+    "bm25-phrase": {
+      "count": 60,
+      "avg": 0.10451499999999925,
+      "median": 0.06530000000000769,
+      "p95": 0.30000000000001137,
+      "min": 0.03829999999999245,
+      "max": 0.38750000000001705
+    },
+    "bm25-phrase-proximity": {
+      "count": 60,
+      "avg": 0.24036000000000116,
+      "median": 0.10385000000000844,
+      "p95": 0.8117000000000019,
+      "min": 0.034000000000020236,
+      "max": 1.341099999999983
+    }
+  }
+}

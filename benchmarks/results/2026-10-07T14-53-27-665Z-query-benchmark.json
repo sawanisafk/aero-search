@@ -1,0 +1,80 @@
+{
+  "kind": "query-latency",
+  "timestamp": "2026-10-07T14:53:27.665Z",
+  "git": {
+    "sha": "7d9ef4c7987102a19138c5e46ec432e9cb77a8f6",
+    "clean": true,
+    "has_untracked": true
+  },
+  "config": {
+    "corpus": "20newsgroups",
+    "query_source": "derived-top-df-templates",
+    "queries": 60,
+    "topk": 100,
+    "pipeline": "candidates: parse+analyze+retrieve; strategies: + rank + top-k mapping (e2e)"
+  },
+  "corpus": {
+    "name": "20newsgroups",
+    "hash": "b7375dca76a0bb0a785cb29feb00ba15f526e8aff80a2ab2e5116882079668e2",
+    "numDocs": 18846,
+    "vocabSize": 140162
+  },
+  "parse_failures": {
+    "candidates": 0,
+    "boolean": 0,
+    "tfidf": 0,
+    "bm25": 0,
+    "bm25-phrase": 0,
+    "bm25-phrase-proximity": 0
+  },
+  "stages": {
+    "candidates": {
+      "count": 60,
+      "avg": 7.7133016666666645,
+      "median": 0.25720000000001164,
+      "p95": 49.86990000000003,
+      "min": 0.022199999999998,
+      "max": 110.07220000000001
+    },
+    "boolean": {
+      "count": 60,
+      "avg": 7.701795000000016,
+      "median": 0.9186999999999443,
+      "p95": 47.89229999999998,
+      "min": 0.10000000000002274,
+      "max": 85.20810000000006
+    },
+    "tfidf": {
+      "count": 60,
+      "avg": 8.469925000000005,
+      "median": 1.793549999999982,
+      "p95": 48.785699999999906,
+      "min": 0.09410000000002583,
+      "max": 75.6894000000002
+    },
+    "bm25": {
+      "count": 60,
+      "avg": 9.487813333333333,
+      "median": 2.8624500000000808,
+      "p95": 52.59050000000025,
+      "min": 0.1711999999999989,
+      "max": 74.87829999999985
+    },
+    "bm25-phrase": {
+      "count": 60,
+      "avg": 16.429436666666643,
+      "median": 3.0664500000000317,
+      "p95": 95.6835000000001,
+      "min": 0.16469999999981155,
+      "max": 177.42040000000043
+    },
+    "bm25-phrase-proximity": {
+      "count": 60,
+      "avg": 82.8728183333333,
+      "median": 5.221850000000131,
+      "p95": 334.59410000000025,
+      "min": 0.2603999999996631,
+      "max": 1333.4813999999997
+    }
+  }
+}
