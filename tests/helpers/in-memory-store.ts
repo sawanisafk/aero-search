@@ -87,6 +87,12 @@ export class InMemoryCrawlStore implements CrawlStore, FrontierRepository, Docum
       .slice(0, limit);
   }
 
+  async loadAll(): Promise<UrlState[]> {
+    return [...this.urls.values()].sort(
+      (a, b) => a.depth - b.depth || a.enqueuedAt.getTime() - b.enqueuedAt.getTime(),
+    );
+  }
+
   async counts(): Promise<Record<UrlStatus, number>> {
     const out: Record<UrlStatus, number> = { pending: 0, fetched: 0, failed: 0, skipped: 0 };
     for (const u of this.urls.values()) out[u.status]++;

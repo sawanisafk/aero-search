@@ -1,0 +1,9 @@
+{
+  "$comment": "Committed crawl configuration (ADR-006): controlled seed list + domain allowlist + hard budgets. Every crawl run reports against exactly this file.",
+  "seeds": ["https://info.cern.ch/"],
+  "allowlist": ["info.cern.ch"],
+  "maxPages": 100,
+  "maxDepth": 3,
+  "delayMs": 1500,
+  "userAgent": "AeroSearchBot/0.1 (university final-year research project)"
+}

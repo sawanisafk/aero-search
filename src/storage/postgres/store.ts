@@ -154,6 +154,13 @@ export class PostgresStore implements FrontierRepository, DocumentRepository, Li
     return res.rows.map(toUrlState);
   }
 
+  async loadAll(): Promise<UrlState[]> {
+    const res = await this.pool.query<UrlRow>(
+      `SELECT * FROM urls ORDER BY depth, enqueued_at`,
+    );
+    return res.rows.map(toUrlState);
+  }
+
   async counts(): Promise<Record<UrlStatus, number>> {
     const res = await this.pool.query<{ status: UrlStatus; n: string }>(
       `SELECT status, count(*)::text AS n FROM urls GROUP BY status`,

@@ -116,6 +116,14 @@ describe('frontier repository', () => {
     expect(pending.map((p) => p.depth)).toEqual([0, 1, 2, 2]);
     expect(pending[0]?.url).toBe('https://example.org/page-11');
   });
+
+  it('loads every row regardless of status (resume seen-set)', async () => {
+    const all = await store.loadAll();
+    expect(all).toHaveLength(7);
+    expect(new Set(all.map((u) => u.status))).toEqual(
+      new Set(['pending', 'fetched', 'failed', 'skipped']),
+    );
+  });
 });
 
 describe('document repository', () => {

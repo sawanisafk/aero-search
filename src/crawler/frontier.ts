@@ -62,6 +62,15 @@ export class Frontier {
     return this.seen.has(url);
   }
 
+  /**
+   * Marks a URL as seen WITHOUT queueing it — used on resume to keep
+   * already-processed rows (fetched/failed/skipped) from being re-added as
+   * children of later pages.
+   */
+  markSeen(url: string): void {
+    this.seen.add(url);
+  }
+
   size(): number {
     return this.pendingCount;
   }

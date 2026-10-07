@@ -117,10 +117,25 @@ export class Crawler {
     this.sleep = deps.sleep ?? ((ms: number) => new Promise<void>((r) => setTimeout(r, ms)));
   }
 
-  async run(): Promise<CrawlReport> {
+  /**
+   * Runs the crawl. `{ resume: true }` reloads persisted crawl state first:
+   * every known URL enters the seen-set (no re-fetch of processed rows) and
+   * pending rows rejoin the queue in BFS order — crash-resume / second run.
+   */
+  async run(opts: { resume?: boolean } = {}): Promise<CrawlReport> {
     const now = this.deps.now ?? Date.now;
     const sleep = this.sleep;
     const t0 = now();
+
+    if (opts.resume === true) {
+      const known = await this.deps.store.loadAll();
+      for (const row of known) {
+        if (row.status === 'pending') {
+          this.frontier.add([{ url: row.url, host: row.host, depth: row.depth }]);
+        }
+        this.frontier.markSeen(row.url);
+      }
+    }
 
     for (const raw of this.config.seeds) {
       const url = normalizeUrl(raw);

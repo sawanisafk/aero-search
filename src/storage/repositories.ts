@@ -46,6 +46,8 @@ export interface FrontierRepository {
   get(url: string): Promise<UrlState | null>;
   /** Pending rows in BFS order (depth, then enqueue time) — crash-resume path. */
   loadPending(limit: number): Promise<UrlState[]>;
+  /** Every row regardless of status — resume seeds the seen-set from this. */
+  loadAll(): Promise<UrlState[]>;
   counts(): Promise<Record<UrlStatus, number>>;
 }
 
