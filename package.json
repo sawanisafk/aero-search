@@ -1,0 +1,21 @@
+{
+  "name": "aero-search",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Custom information-retrieval search engine: controlled crawling, custom inverted/positional index, TF-IDF/BM25 ranking, PageRank, hybrid fusion, experimental evaluation.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.0"
+  }
+}

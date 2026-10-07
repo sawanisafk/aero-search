@@ -1,0 +1,29 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+*.tsbuildinfo
+
+# environment
+.env
+.env.local
+
+# generated corpora and index artifacts (large, reproducible via manifest)
+data/corpora/*
+!data/corpora/.gitkeep
+data/index/*
+!data/index/.gitkeep
+
+# logs and os noise
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# coverage
+coverage/
+
+# editors
+.vscode/
+.idea/
