@@ -46,7 +46,11 @@ export function readJson<T>(filePath: string): T {
 
 export interface GitInfo {
   readonly sha: string;
+  /** no modifications to tracked files (untracked output files are expected
+   * while an artifact batch is being written — see has_untracked) */
   readonly clean: boolean;
+  /** untracked files exist (e.g. artifacts written earlier in this batch) */
+  readonly has_untracked: boolean;
 }
 
 /** Current commit + worktree state — recorded in every evidence artifact. */
@@ -55,11 +59,17 @@ export function getGitInfo(): GitInfo {
     const sha = execFileSync('git', ['rev-parse', 'HEAD'], { stdio: 'pipe' })
       .toString()
       .trim();
-    const clean =
-      execFileSync('git', ['status', '--porcelain'], { stdio: 'pipe' }).toString().trim() === '';
-    return { sha, clean };
+    const porcelain = execFileSync('git', ['status', '--porcelain'], { stdio: 'pipe' })
+      .toString()
+      .trim();
+    const lines = porcelain === '' ? [] : porcelain.split('\n');
+    return {
+      sha,
+      clean: !lines.some((l) => !l.startsWith('??')),
+      has_untracked: lines.some((l) => l.startsWith('??')),
+    };
   } catch {
-    return { sha: 'unknown', clean: false };
+    return { sha: 'unknown', clean: false, has_untracked: false };
   }
 }
 
