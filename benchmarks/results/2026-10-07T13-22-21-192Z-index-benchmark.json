@@ -1,0 +1,81 @@
+{
+  "schema": "aero-search/index-benchmark/v1",
+  "timestamp": "2026-10-07T13:22:21.192Z",
+  "git_sha": "44781e825fdf666c59e18e8195d14ef2cb34cfc4",
+  "git_dirty": false,
+  "environment": {
+    "platform": "win32",
+    "arch": "x64",
+    "cpu": "AMD Ryzen 7 4800H with Radeon Graphics         ",
+    "node": "v24.13.0"
+  },
+  "config": {
+    "sizes": [
+      1000,
+      10000
+    ],
+    "vocabSize": 50000,
+    "meanWordsPerDoc": 200,
+    "sdWordsPerDoc": 50,
+    "seed": 42,
+    "note": "buildMs covers analyze+staging (addDocument loop); finalize is the counting sort + delta encoding; fullScan decodes all docIds and tfs once (best of 3 after warm-up)."
+  },
+  "corpus": [
+    {
+      "numDocs": 1000,
+      "corpusHash": "51ff8e522ddd7dd6e1daaa0163525587f4aa23298b330354268cfe5e1a1fd908"
+    },
+    {
+      "numDocs": 10000,
+      "corpusHash": "d3f2f4ab267b0238274132b76d0795c161bf1b29562781dc95d9d4f0eb481bc6"
+    }
+  ],
+  "results": [
+    {
+      "numDocs": 1000,
+      "corpusHash": "51ff8e522ddd7dd6e1daaa0163525587f4aa23298b330354268cfe5e1a1fd908",
+      "corpusGenerateMs": 81.29,
+      "buildMs": 619.33,
+      "docsPerSec": 1614.65,
+      "finalizeMs": 23.19,
+      "serializeMs": 20.46,
+      "deserializeMs": 14.88,
+      "segmentBytes": 2685516,
+      "rssAfterBuildMb": 83,
+      "heapAfterBuildMb": 18.7,
+      "vocabSize": 27286,
+      "numPostings": 144997,
+      "totalPositions": 198666,
+      "totalTokens": 198666,
+      "avgDocLength": 198.7,
+      "fullScanMs": 2.88,
+      "positionDecodeMs": 3.72,
+      "positionDecodePerOpUs": 0.13,
+      "dictHitLookupMs": 0.44,
+      "dictMissLookupMs": 1.04
+    },
+    {
+      "numDocs": 10000,
+      "corpusHash": "d3f2f4ab267b0238274132b76d0795c161bf1b29562781dc95d9d4f0eb481bc6",
+      "corpusGenerateMs": 340.9,
+      "buildMs": 5631.24,
+      "docsPerSec": 1775.81,
+      "finalizeMs": 138.32,
+      "serializeMs": 41.24,
+      "deserializeMs": 40.58,
+      "segmentBytes": 23759581,
+      "rssAfterBuildMb": 209.6,
+      "heapAfterBuildMb": 28.9,
+      "vocabSize": 46555,
+      "numPostings": 1454928,
+      "totalPositions": 1992748,
+      "totalTokens": 1992748,
+      "avgDocLength": 199.3,
+      "fullScanMs": 8.78,
+      "positionDecodeMs": 3.92,
+      "positionDecodePerOpUs": 0.08,
+      "dictHitLookupMs": 0.53,
+      "dictMissLookupMs": 1.26
+    }
+  ]
+}
