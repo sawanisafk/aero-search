@@ -3,10 +3,13 @@ import path from 'node:path';
 import type { Pool } from 'pg';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { startDatabase, type ManagedDatabase } from '../scripts/lib/embedded-pg.js';
+import { buildCrawlIndex } from '../scripts/lib/build-crawl-index.js';
+import { getGitInfo } from '../scripts/lib/dataset.js';
 import { Crawler, type CrawlerConfig } from '../src/crawler/crawler.js';
 import { HttpFetcher } from '../src/crawler/fetcher.js';
 import { createPool } from '../src/storage/postgres/pool.js';
 import { runMigrations } from '../src/storage/postgres/migrate.js';
+import { readSegment } from '../src/storage/segment.js';
 import { PostgresStore } from '../src/storage/postgres/store.js';
 import { startFixtureServer, USER_AGENT, type FixtureServer } from './helpers/fixture-server.js';
 
@@ -91,5 +94,42 @@ describe('crawl persisted in PostgreSQL (E2E)', () => {
     expect(await store.counts()).toEqual({ pending: 0, fetched: 4, failed: 2, skipped: 2 });
     expect(await store.count()).toBe(4);
     expect(await store.stats()).toEqual({ edgeCount: 13, sourceCount: 4, targetCount: 10 });
+  });
+
+  it('4. builds a persisted index + manifest from PostgreSQL documents', async () => {
+    const outDir = path.join(DB_DIR, 'index');
+    const manifestPath = path.join(DB_DIR, 'crawled.manifest.json');
+    const { manifest, bytes } = await buildCrawlIndex({
+      store,
+      outDir,
+      manifestPath,
+      git: getGitInfo(),
+      configSha256: null,
+    });
+
+    // Deterministic url-ordered ids matching segment docIds
+    const ids = JSON.parse(fs.readFileSync(path.join(outDir, 'crawled.ids.json'), 'utf8')) as string[];
+    expect(ids).toEqual([`${fixture.base}/`, `${fixture.base}/page-a`]);
+
+    // Segment round-trip; corpusHash ties segment to manifest and source rows
+    const data = readSegment(path.join(outDir, 'crawled.aidx'));
+    expect(data.stats.numDocs).toBe(2);
+    expect(data.corpusHash).toBe(manifest.index.corpusHash);
+    expect(bytes).toBeGreaterThan(0);
+
+    // Manifest: provenance fields a committed artifact must carry
+    expect(manifest.name).toBe('crawled');
+    expect(manifest.counts).toEqual({
+      documents: 4,
+      indexable: 2,
+      duplicates: 2,
+      urls: { pending: 0, fetched: 4, failed: 2, skipped: 2 },
+      links: { edgeCount: 13, sourceCount: 4, targetCount: 10 },
+    });
+    expect(manifest.git.sha).toMatch(/^[0-9a-f]{7,40}$/);
+    expect(manifest.index.corpusHash).toMatch(/^[0-9a-f]{64}$/);
+
+    const written = JSON.parse(fs.readFileSync(manifestPath, 'utf8')) as typeof manifest;
+    expect(written.index.corpusHash).toBe(manifest.index.corpusHash);
   });
 });

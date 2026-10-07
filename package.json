@@ -21,7 +21,8 @@
     "index:build": "tsx scripts/build-eval-index.ts",
     "eval:run": "tsx scripts/run-experiment.ts",
     "db:migrate": "tsx scripts/db-migrate.ts",
-    "crawl": "tsx scripts/crawl.ts"
+    "crawl": "tsx scripts/crawl.ts",
+    "index:crawl": "tsx scripts/build-crawl-index.ts"
   },
   "devDependencies": {
     "@types/node": "^26.6.4",
