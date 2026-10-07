@@ -19,7 +19,11 @@ export {
   booleanStrategy,
   tfidfStrategy,
   bm25Strategy,
+  bm25PhraseStrategy,
+  bm25PhraseProximityStrategy,
   RANKING_STRATEGIES,
   getRankingStrategy,
   type TfidfOptions,
+  type PhraseStrategyOptions,
+  type ProximityStrategyOptions,
 } from './strategies.js';
