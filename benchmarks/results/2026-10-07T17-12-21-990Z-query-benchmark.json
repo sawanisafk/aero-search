@@ -1,0 +1,80 @@
+{
+  "kind": "query-latency",
+  "timestamp": "2026-10-07T17:12:21.990Z",
+  "git": {
+    "sha": "2461385e65d341c662d5ca73f0714f684dac8088",
+    "clean": true,
+    "has_untracked": true
+  },
+  "config": {
+    "corpus": "crawled",
+    "query_source": "derived-top-df-templates",
+    "queries": 60,
+    "topk": 100,
+    "pipeline": "candidates: parse+analyze+retrieve; strategies: + rank + top-k mapping (e2e)"
+  },
+  "corpus": {
+    "name": "crawled",
+    "hash": "4e5bf3b00f632c72ed2e09c0321da1eb003bea810765298e4089bc9ac02d563f",
+    "numDocs": 77,
+    "vocabSize": 4151
+  },
+  "parse_failures": {
+    "candidates": 0,
+    "boolean": 0,
+    "tfidf": 0,
+    "bm25": 0,
+    "bm25-phrase": 0,
+    "bm25-phrase-proximity": 0
+  },
+  "stages": {
+    "candidates": {
+      "count": 60,
+      "avg": 0.13404999999999964,
+      "median": 0.06910000000000593,
+      "p95": 0.348700000000008,
+      "min": 0.020000000000010232,
+      "max": 2.3352999999999895
+    },
+    "boolean": {
+      "count": 60,
+      "avg": 0.0915683333333348,
+      "median": 0.057900000000003615,
+      "p95": 0.17609999999999104,
+      "min": 0.027699999999981628,
+      "max": 1.178200000000004
+    },
+    "tfidf": {
+      "count": 60,
+      "avg": 0.10429666666666813,
+      "median": 0.08309999999998752,
+      "p95": 0.140199999999993,
+      "min": 0.0519000000000176,
+      "max": 0.8722999999999956
+    },
+    "bm25": {
+      "count": 60,
+      "avg": 0.088930000000002,
+      "median": 0.06645000000000323,
+      "p95": 0.11659999999994852,
+      "min": 0.037900000000036016,
+      "max": 0.7046000000000276
+    },
+    "bm25-phrase": {
+      "count": 60,
+      "avg": 0.0830999999999951,
+      "median": 0.06739999999999213,
+      "p95": 0.16699999999997317,
+      "min": 0.041400000000010095,
+      "max": 0.3721999999999639
+    },
+    "bm25-phrase-proximity": {
+      "count": 60,
+      "avg": 0.1297516666666657,
+      "median": 0.07939999999999259,
+      "p95": 0.2839999999999918,
+      "min": 0.03519999999997481,
+      "max": 0.6879000000000133
+    }
+  }
+}

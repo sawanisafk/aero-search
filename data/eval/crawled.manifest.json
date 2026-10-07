@@ -1,0 +1,35 @@
+{
+  "name": "crawled",
+  "builtAt": "2026-10-07T17:12:12.137Z",
+  "git": {
+    "sha": "2461385e65d341c662d5ca73f0714f684dac8088",
+    "clean": true,
+    "has_untracked": false
+  },
+  "configSha256": "e057a84a617c214c7f8673b090b0c8fc8f9b65fb6e8f0e153679c62f022f59d1",
+  "counts": {
+    "documents": 78,
+    "indexable": 77,
+    "duplicates": 1,
+    "urls": {
+      "pending": 62,
+      "fetched": 78,
+      "failed": 22,
+      "skipped": 0
+    },
+    "links": {
+      "edgeCount": 796,
+      "sourceCount": 74,
+      "targetCount": 422
+    }
+  },
+  "index": {
+    "numDocs": 77,
+    "vocabSize": 4151,
+    "numPostings": 11093,
+    "totalTokens": 26350,
+    "avgDocLength": 342.2077922077922,
+    "bytes": 281075,
+    "corpusHash": "4e5bf3b00f632c72ed2e09c0321da1eb003bea810765298e4089bc9ac02d563f"
+  }
+}
