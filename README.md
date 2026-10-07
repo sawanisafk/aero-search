@@ -66,8 +66,17 @@ cp .env.example .env
 
 ## Usage
 
-Not yet available — the search service arrives at M5 (API/UI). Until then, see
-[`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md) for the milestone plan.
+The search service (REST/UI) arrives at M5. What runs today:
+
+```bash
+npm test / npm run typecheck        # 149 tests
+npm run corpus:scifact              # fetch + verify BEIR SciFact (md5-checked)
+npm run index:build -- --corpus scifact
+npm run eval:run -- --corpus scifact --strategy bm25     # → runs/*.json
+npm run bench:query                 # → benchmarks/results/*.json
+```
+
+Milestone plan: [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md).
 
 ## Example queries (planned)
 
@@ -81,8 +90,11 @@ seach  ← fuzzy/typo-tolerant     ← (low-df term expansion)
 
 - Benchmarks: `benchmarks/` — configs committed, results committed as evidence
   (1K / 10K / 100K documents; indexing time, query latency, index size, RSS).
-- Evaluation: pooled graded qrels (0–3), metrics implemented in `src/eval`
-  (P@K, R@K, F1, MAP, NDCG@K). Every reported number carries a config hash + git SHA.
+- Evaluation: metrics in `src/eval` (P@K, R@K, F1, MAP, NDCG@K) over committed BEIR
+  SciFact judgments (md5-verified corpus, 300 test queries). Experiment runs land in
+  `runs/`. Every reported number carries a config hash + git SHA.
+- **First results** (mode A vs B vs C + latency): [`docs/EXPERIMENTS.md`](docs/EXPERIMENTS.md) —
+  e.g. BM25 MAP **0.6436** vs TF-IDF 0.4421 on SciFact, sub-4 ms median e2e queries.
 
 ## Screenshots
 
@@ -94,8 +106,8 @@ _pending (M5)_
 |---|---|
 | M0 Foundation | **done** |
 | M1 Indexing core | **done** |
-| M2 Retrieval + ranking + eval harness | next |
-| M3 Crawler + Postgres + PageRank | pending |
+| M2 Retrieval + ranking + eval harness | **done** |
+| M3 Crawler + Postgres + PageRank | next |
 | M4 Hybrid ranking + fuzzy | pending |
 | M5 API + Aero UI | pending |
 | M6 Benchmarks + evaluation | pending |
@@ -118,9 +130,10 @@ src/eval      metrics, experiment runner, report generation
 web/          React + Windows 7 Aero UI
 tests/        Vitest suites
 benchmarks/   benchmark configs and committed results
+runs/         committed experiment-run artifacts (evidence)
 configs/      ranking mode definitions (A–E)
-docs/         ARCHITECTURE · DECISIONS · DEVELOPMENT (+ per-component docs as they land)
-data/         corpora and index artifacts (gitignored; manifests committed)
+docs/         ARCHITECTURE · DECISIONS · DEVELOPMENT (+ SEARCH, RANKING, EVALUATION, EXPERIMENTS)
+data/         corpora and index artifacts (gitignored; manifests + eval inputs committed)
 ```
 
 ## Documentation vs academic report

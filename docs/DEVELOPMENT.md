@@ -106,9 +106,57 @@ df/tf/positions, survives a serialize/load cycle, and `npm test` covers edge cas
 
 ---
 
+## M2 — status: COMPLETE
+
+Component details: [SEARCH.md](SEARCH.md) · [RANKING.md](RANKING.md) ·
+[EVALUATION.md](EVALUATION.md) · results: [EXPERIMENTS.md](EXPERIMENTS.md).
+
+**Query language (`src/core/query/`)**
+- [x] Typed AST (term/phrase/and/or/not) + lexer with absolute positions
+- [x] Recursive-descent parser: precedence NOT > AND > OR, parentheses, implicit
+      operator selectable (`'and'` default for UI, `'or'` for IR evaluation)
+- [x] Typed `QueryParseError` with closed code set + character position
+- [x] Malformed-query test matrix (every code, every position)
+
+**Boolean retrieval (`src/core/retrieval/`)**
+- [x] AND intersect / OR union / NOT difference over sorted `Uint32Array` docIds
+- [x] `analyzeQuery` sharing the index-time analyzer; empty-leaf/NOT semantics
+- [x] `retrieveBoolean` candidates as the substrate for every strategy
+
+**Ranking (`src/core/ranking/`)** — [RANKING.md](RANKING.md)
+- [x] TF-IDF with 3 tf weightings (raw/log/augmented), per-reader cached maxTf
+- [x] BM25 from first principles, configurable validated k1/b (defaults 1.2/0.75)
+- [x] Positional phrase matching (two-stage; stop-word-aware) as an additive signal
+- [x] Proximity window signal `k/(1+(w−|q|))`, scoring-only, k = 0 ablation
+- [x] Pluggable strategies: registry + `createStrategy` + `resolveStrategyParams`
+      (eager validation, params recorded in artifacts); deterministic ordering
+
+**Evaluation (`src/eval/`)** — [EVALUATION.md](EVALUATION.md)
+- [x] Qrels/Run types; strict BEIR parsers (qrels TSV, queries JSONL)
+- [x] P@K, R@K, F1@K, AP/MAP, NDCG@K — hand-calculated golden tests
+- [x] Run evaluation iterates qrels (failed/missing queries = zeros)
+
+**Harness (`scripts/`, `benchmarks/`)** — [EXPERIMENTS.md](EXPERIMENTS.md)
+- [x] `fetch-scifact.ts`: published-MD5 verification, sha256 manifests, committed
+      `data/eval/` inputs (300-query test qrels); `fetch-20newsgroups.ts` (dev only)
+- [x] `build-eval-index.ts`: corpus → AIDX segment + docId↔corpusId map
+- [x] `run-experiment.ts`: strategy × corpus × params → `runs/*.json` with
+      {git sha+clean, corpus/query/qrels hashes, params, metrics, latency}
+- [x] `benchmarks/query-benchmark.ts`: e2e latency avg/median/p95/max per stage
+- [x] Mode A vs B comparison on real judged data + mode C ablation
+
+**Exit criteria** (milestone table: Boolean; TF-IDF ×3; BM25 k1/b; phrase + proximity;
+qrels v1; metric runner; first A vs B comparison) — **met**: 149 tests green,
+A vs B measured on BEIR SciFact (TF-IDF MAP 0.4421 → BM25 MAP 0.6436),
+6 run artifacts + 3 latency artifacts committed at git `7d9ef4c`.
+
+---
+
 ## Evidence log (append-only)
 
 | Date | Milestone | Artifact | Notes |
 |---|---|---|---|
 | 2026-10-07 | M0 | repo scaffold | toolchain green: typecheck + smoke test |
 | 2026-10-07 | M1 | `benchmarks/results/2026-10-07T13-22-21-192Z-index-benchmark.json` | index build/scan numbers at 1K/10K docs, git `44781e8`, corpus hashes in artifact; test evidence: 38 tests green incl. 23,531 Porter vectors and static-v1 E2E |
+| 2026-10-07 | M2 | `runs/2026-10-07T14-52-*-scifact-*.json` (6 files) | strategy comparison + proximity ablation on BEIR SciFact (300 judged queries); git `7d9ef4c` clean; MAP: boolean 0.0049, tfidf 0.4421, bm25 0.6436, mode-C 0.6440 (params recorded per run); 149 tests green |
+| 2026-10-07 | M2 | `benchmarks/results/2026-10-07T14-53-*-query-benchmark.json` (3 files) | e2e query latency (avg/median/p95/max per stage) on scifact 1,109 queries, static-v1, 20newsgroups; git `7d9ef4c` clean; parse-failure counts recorded |

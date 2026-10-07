@@ -203,7 +203,8 @@ Figures are estimates; benchmarks (`/benchmarks`) validate them.
 ### Query pipeline
 
 ```
-parse (terms / quotes / fuzzy marker)
+parse (terms / quotes / fuzzy marker; bare adjacency = AND for the UI,
+       = OR for evaluation — parseQuery(text, {implicitOperator}))
   → normalize (shared tokenize/stop/stem path with indexing)
   → term lookup → candidates (boolean over postings)
   → phrase/proximity (positional) → fuzzy expansion if needed
@@ -251,7 +252,9 @@ signals (from config, not code)
   → fusion:
       (a) weighted linear: Σ wᵢ·ŝᵢ     — weights live in configs/, swept in evaluation
       (b) RRF rank fusion (k=60)        — weight-free, normalization-free baseline
-  → ScoredDoc { docId, final, breakdown: {bm25, phrase, proximity, pagerank, fuzzy} }
+  → ScoredDoc { docId, score, breakdown: {bm25, phrase, proximity, pagerank, fuzzy} }
+     // M2 field name is `score` (single total; per-signal breakdown already present);
+     // a distinct `final` total appears in M4 when normalization/fusion land
 ```
 
 BM25 (~0–40), PageRank (~0–0.02), phrase bonus (~0–2) are incommensurable — normalization is
@@ -355,14 +358,19 @@ Turns "a search website" into a research project. Built at **M2, before the craw
 1. **Corpus manifest** — committed URL list / seed set + crawl date + content hashes → every
    run reproducible. Corpus must have size (scaling claims), real link structure (PageRank),
    documented provenance.
-2. **qrels** — ~30–50 queries, graded relevance 0–3, TREC-style `query_id doc_id grade`.
+2. **qrels** — M2 starts from **existing public judgments** (BEIR SciFact test: 300 queries,
+   339 binary judgments, committed under `data/eval/` with a verified manifest) so the
+   harness is validated against a published reference before we judge anything ourselves;
+   the pooled graded 0–3 qrels over *our* crawled corpus (≈30–50 queries) arrive with M3.
 3. **Pooling** — judge the merged top-10/20 pool from *all* ranking modes plus a random
-   baseline (judging one system's output biases evaluation toward that system).
+   baseline (judging one system's output biases evaluation toward that system) — M3 onward
+   on our own corpus.
 4. **Metrics, implemented in `src/eval`:** P@K, R@K, F1@K, AP → MAP, NDCG@K (graded),
    latency p50/p95 per mode, indexing throughput (docs/s), index size (disk + RSS),
    crawler throughput (pages/min), vocabulary growth.
 5. **Runner:** `for mode × params × query → ranked list + latency → metrics vs qrels →
-   run JSON {config, git_sha, corpus_hash, metrics, latency}` under `benchmarks/results/`.
+   run JSON {config, git_sha, corpus_hash, metrics, latency}` under `runs/`
+   (experiment runs) and `benchmarks/results/` (benchmarks).
 6. **Rules:** configs + qrels committed; corpora gitignored with manifest; every reported
    number carries its config hash; a re-runnable mini-benchmark exists.
    **No number in the report that the system did not produce.**
@@ -419,9 +427,10 @@ src/eval      metrics, runner, report generation
 web/          React + Aero UI
 tests/        vitest unit + integration
 benchmarks/   configs + results (JSON/CSV — committed evidence)
+runs/         experiment run artifacts (JSON — committed evidence)
 configs/      mode-a…mode-e.json, parameter grids
-data/         corpora/, index/ (gitignored; manifests committed)
+data/         corpora/, index/ (gitignored; manifests + eval inputs committed)
 scripts/      db migrate, corpus import, report generation
-docs/         ARCHITECTURE · DECISIONS · DEVELOPMENT · (INDEXING, RANKING,
-              CRAWLER, API, EVALUATION, VIVA — added when each component lands)
+docs/         ARCHITECTURE · DECISIONS · DEVELOPMENT · (INDEXING, SEARCH, RANKING,
+              EVALUATION, EXPERIMENTS — landed with M2; CRAWLER, API, VIVA later)
 ```
