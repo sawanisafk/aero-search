@@ -14,6 +14,8 @@ import {
   tfidfStrategy,
   bm25Strategy,
   getRankingStrategy,
+  createStrategy,
+  resolveStrategyParams,
 } from '../src/core/ranking/index.js';
 
 /**
@@ -248,5 +250,51 @@ describe('ranking strategies', () => {
         .rank(reader, analyzeQuery(parsed, reader.analysis), retrieveBoolean(reader, parsed))
         .map((s) => s.docId);
     expect(run()).toEqual(run());
+  });
+});
+
+describe('createStrategy (configured construction)', () => {
+  it('builds every id with defaults matching the registry', () => {
+    expect(createStrategy('boolean').mode).toBe('BOOL');
+    expect(createStrategy('tfidf').id).toBe(getRankingStrategy('tfidf').id);
+    expect(createStrategy('bm25').id).toBe(getRankingStrategy('bm25').id);
+    expect(createStrategy('bm25-phrase').mode).toBe('C');
+    expect(createStrategy('bm25-phrase-proximity').mode).toBe('C');
+  });
+
+  it('applies explicit parameter overrides to the id', () => {
+    expect(createStrategy('bm25', { k1: 2, b: 0.5 }).id).toBe('bm25-k2-b0.5');
+    expect(createStrategy('tfidf', { tf: 'log' }).id).toBe('tfidf-log');
+  });
+
+  it('treats explicit undefined as "use the default"', () => {
+    expect(createStrategy('bm25', { k1: undefined, b: undefined }).id).toBe('bm25-k1.2-b0.75');
+  });
+
+  it('rejects invalid parameters and unknown ids at construction time', () => {
+    expect(() => createStrategy('bm25', { k1: -1 })).toThrow(RangeError);
+    expect(() => createStrategy('bm25-phrase', { phraseBonus: -1 })).toThrow(RangeError);
+    expect(() => createStrategy('bm25-phrase-proximity', { proximityK: -1 })).toThrow(RangeError);
+    expect(() => createStrategy('pagerank')).toThrow(/unknown ranking strategy/);
+  });
+
+  it('resolveStrategyParams reports fully-resolved values for artifacts', () => {
+    expect(resolveStrategyParams('boolean')).toEqual({});
+    expect(resolveStrategyParams('tfidf')).toEqual({ tf: 'raw' });
+    expect(resolveStrategyParams('tfidf', { tf: 'log' })).toEqual({ tf: 'log' });
+    expect(resolveStrategyParams('bm25')).toEqual({ k1: 1.2, b: 0.75 });
+    expect(resolveStrategyParams('bm25', { k1: 2 })).toEqual({ k1: 2, b: 0.75 });
+    expect(resolveStrategyParams('bm25-phrase')).toEqual({
+      k1: 1.2,
+      b: 0.75,
+      phraseBonus: 1.2,
+    });
+    expect(resolveStrategyParams('bm25-phrase-proximity', { proximityK: 0 })).toEqual({
+      k1: 1.2,
+      b: 0.75,
+      phraseBonus: 1.2,
+      proximityK: 0,
+    });
+    expect(() => resolveStrategyParams('pagerank')).toThrow(/unknown ranking strategy/);
   });
 });

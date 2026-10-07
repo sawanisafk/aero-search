@@ -13,8 +13,13 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "bench:index": "tsx benchmarks/index-benchmark.ts",
+    "bench:query": "tsx benchmarks/query-benchmark.ts",
     "corpus:synthetic": "tsx scripts/generate-synthetic-corpus.ts",
-    "corpus:static": "tsx scripts/build-static-corpus.ts"
+    "corpus:static": "tsx scripts/build-static-corpus.ts",
+    "corpus:scifact": "tsx scripts/fetch-scifact.ts",
+    "corpus:20news": "tsx scripts/fetch-20newsgroups.ts",
+    "index:build": "tsx scripts/build-eval-index.ts",
+    "eval:run": "tsx scripts/run-experiment.ts"
   },
   "devDependencies": {
     "@types/node": "^26.6.4",

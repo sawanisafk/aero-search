@@ -35,6 +35,10 @@ import {
 import { bm25TermScore, resolveBm25, type Bm25Options } from './bm25.js';
 import { sortScored, type RankingStrategy, type ScoredDoc } from './types.js';
 
+/** Defaults for mode-C knobs — exported so run artifacts can record them. */
+export const DEFAULT_PHRASE_BONUS = 1.2;
+export const DEFAULT_PROXIMITY_K = 1.0;
+
 /** Fast "is this doc a candidate?" membership test. */
 function candidateFlags(candidates: Uint32Array, numDocs: number): Uint8Array {
   const flags = new Uint8Array(numDocs);
@@ -212,7 +216,7 @@ export interface ProximityStrategyOptions extends PhraseStrategyOptions {
 
 export function bm25PhraseStrategy(options: PhraseStrategyOptions = {}): RankingStrategy {
   resolveBm25(options); // validate k1/b eagerly (thrown at construction, not first query)
-  const bonus = options.phraseBonus ?? 1.2;
+  const bonus = options.phraseBonus ?? DEFAULT_PHRASE_BONUS;
   if (!Number.isFinite(bonus) || bonus < 0) {
     throw new RangeError(`phraseBonus must be ≥ 0, got ${bonus}`);
   }
@@ -232,8 +236,8 @@ export function bm25PhraseProximityStrategy(
   options: ProximityStrategyOptions = {},
 ): RankingStrategy {
   resolveBm25(options); // validate k1/b eagerly (thrown at construction, not first query)
-  const bonus = options.phraseBonus ?? 1.2;
-  const k = options.proximityK ?? 1.0;
+  const bonus = options.phraseBonus ?? DEFAULT_PHRASE_BONUS;
+  const k = options.proximityK ?? DEFAULT_PROXIMITY_K;
   if (!Number.isFinite(bonus) || bonus < 0) throw new RangeError(`phraseBonus must be ≥ 0, got ${bonus}`);
   if (!Number.isFinite(k) || k < 0) throw new RangeError(`proximityK must be ≥ 0, got ${k}`);
   return {
@@ -266,4 +270,92 @@ export function getRankingStrategy(id: string): RankingStrategy {
     );
   }
   return strategy;
+}
+
+/**
+ * All tunable knobs for configured construction (experiment runner).
+ * Properties may be explicitly undefined — meaning "use the default".
+ */
+export interface CreateStrategyOptions {
+  readonly k1?: number | undefined;
+  readonly b?: number | undefined;
+  readonly tf?: TfWeighting | undefined;
+  readonly phraseBonus?: number | undefined;
+  readonly proximityK?: number | undefined;
+}
+
+/** Explicit-undefined-tolerant option subsets (exactOptionalPropertyTypes). */
+function partialBm25(o: CreateStrategyOptions): Bm25Options {
+  return { ...(o.k1 === undefined ? {} : { k1: o.k1 }), ...(o.b === undefined ? {} : { b: o.b }) };
+}
+
+function partialPhrase(o: CreateStrategyOptions): PhraseStrategyOptions {
+  return { ...partialBm25(o), ...(o.phraseBonus === undefined ? {} : { phraseBonus: o.phraseBonus }) };
+}
+
+/**
+ * Build a strategy by id with explicit parameter overrides — the single
+ * source of truth used by the experiment runner so a run artifact's recorded
+ * params exactly match the strategy instance that produced the numbers.
+ * Unknown ids fail with the same message as getRankingStrategy.
+ */
+export function createStrategy(id: string, options: CreateStrategyOptions = {}): RankingStrategy {
+  const { tf, proximityK } = options;
+  switch (id) {
+    case 'boolean':
+      return booleanStrategy;
+    case 'tfidf':
+      return tfidfStrategy(tf === undefined ? {} : { tf });
+    case 'bm25':
+      return bm25Strategy(partialBm25(options));
+    case 'bm25-phrase':
+      return bm25PhraseStrategy(partialPhrase(options));
+    case 'bm25-phrase-proximity':
+      return bm25PhraseProximityStrategy({
+        ...partialPhrase(options),
+        ...(proximityK === undefined ? {} : { proximityK }),
+      });
+    default:
+      throw new Error(
+        `unknown ranking strategy "${id}" (available: ${Object.keys(RANKING_STRATEGIES).join(', ')})`,
+      );
+  }
+}
+
+/**
+ * Fully-resolved parameter set for a strategy id — what a run artifact must
+ * record so the numbers are reproducible (undefined option = default value).
+ * Parameters are validated by createStrategy; call that first.
+ */
+export function resolveStrategyParams(
+  id: string,
+  options: CreateStrategyOptions = {},
+): Readonly<Record<string, number | string>> {
+  switch (id) {
+    case 'boolean':
+      return {};
+    case 'tfidf':
+      return { tf: options.tf ?? DEFAULT_TF_WEIGHTING };
+    case 'bm25': {
+      const p = resolveBm25(partialBm25(options));
+      return { k1: p.k1, b: p.b };
+    }
+    case 'bm25-phrase': {
+      const p = resolveBm25(partialBm25(options));
+      return { k1: p.k1, b: p.b, phraseBonus: options.phraseBonus ?? DEFAULT_PHRASE_BONUS };
+    }
+    case 'bm25-phrase-proximity': {
+      const p = resolveBm25(partialBm25(options));
+      return {
+        k1: p.k1,
+        b: p.b,
+        phraseBonus: options.phraseBonus ?? DEFAULT_PHRASE_BONUS,
+        proximityK: options.proximityK ?? DEFAULT_PROXIMITY_K,
+      };
+    }
+    default:
+      throw new Error(
+        `unknown ranking strategy "${id}" (available: ${Object.keys(RANKING_STRATEGIES).join(', ')})`,
+      );
+  }
 }
