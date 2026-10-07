@@ -17,6 +17,10 @@ data/corpora/*
 data/index/*
 !data/index/.gitkeep
 
+# embedded PostgreSQL clusters (dev/test, rebuildable)
+data/pg/
+data/pgtest/
+
 # logs and os noise
 *.log
 npm-debug.log*

@@ -238,8 +238,41 @@ acknowledged in report limitations.
 
 ---
 
+## ADR-011: Embedded PostgreSQL as the development/test runtime — compose stays the contract
+
+**Context.** M0 provided `docker-compose.yml` (PostgreSQL 16, user `aero`, db `aero_search`)
+as the metadata store. The development machine has no Docker and no admin rights for a
+system-wide install.
+
+**Problem.** M3 needs a real PostgreSQL (crawl state, documents, link graph) that tests can
+exercise hermetically. Fake/embedded SQL engines (pg-mem) do not run real PostgreSQL, so
+compatibility claims would be hollow.
+
+**Alternatives.**
+- *pg-mem (SQL emulator)* — zero install, but not PostgreSQL; divergent semantics; weak evidence.
+- *PGlite (WASM Postgres)* — real engine, but PG17 (docs claim 16) and single-connection
+  semantics that fight the `pg.Pool` code path we ship.
+- *Require Docker/system PG* — correct contract, but blocks development and tests here.
+- *embedded-postgres (real PostgreSQL 16 binaries via npm)* — real server, real wire protocol,
+  `pg.Pool` exactly as in production; data directory under `data/pg/` (gitignored).
+
+**Decision.** `scripts/lib/embedded-pg.ts: startDatabase()` prefers a reachable `DATABASE_URL`
+(docker-compose or system install, unchanged) and otherwise boots **embedded PostgreSQL 16.14**
+on `localhost:5432` with the compose credentials — drop-in interchangeable. Tests use a fresh
+cluster under `data/pgtest/` (port 5433). Clusters are initialised `--encoding=UTF8
+--locale=C` for byte-deterministic ordering across machines. Docker Compose remains the
+documented deployment path.
+
+**Consequences.** No Docker/admin requirement; tests run a real PostgreSQL in ~12 s; the
+`DATABASE_URL` contract is untouched. Cost: an extra dev dependency with native binaries
+(~50 MB) and a second runtime path to document. The cluster is not a service — long-running
+state (the crawl) keeps a process open or restarts via resume (`loadPending`).
+
+---
+
 ## Change log
 
 | ADR | Status | Date |
 |---|---|---|
 | 001–010 | Accepted | 2026-10-07 |
+| 011 | Accepted | 2026-10-07 |
