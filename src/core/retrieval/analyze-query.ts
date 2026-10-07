@@ -82,3 +82,38 @@ export function analyzedLeafTerms(query: AnalyzedQuery): string[] {
   walk(query);
   return out;
 }
+
+/**
+ * Distinct analyzed terms that SCORING should reward: everything except
+ * subtrees under NOT (scoring a negated term would invert the query's
+ * meaning — NOT terms constrain candidates, they never add score).
+ * Terms inside positive phrase leaves are included: the phrase is made of
+ * them, and BM25/TF-IDF score them like ordinary query terms; the adjacency
+ * requirement is scored separately as the phrase/proximity signal.
+ */
+export function positiveQueryTerms(query: AnalyzedQuery): string[] {
+  const out: string[] = [];
+  const seen = new Set<string>();
+  const walk = (node: AnalyzedQuery): void => {
+    switch (node.kind) {
+      case 'term':
+      case 'phrase':
+        for (const term of node.terms) {
+          if (!seen.has(term)) {
+            seen.add(term);
+            out.push(term);
+          }
+        }
+        return;
+      case 'and':
+      case 'or':
+        walk(node.left);
+        walk(node.right);
+        return;
+      case 'not':
+        return; // negated subtree contributes no score
+    }
+  };
+  walk(query);
+  return out;
+}
