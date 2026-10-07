@@ -1,0 +1,19 @@
+{
+  "name": "scifact",
+  "source": "BEIR benchmark (https://github.com/beir-cellar/beir), dataset by Wadden et al. NAACL 2020",
+  "dataset_url": "https://public.ukp.informatik.tu-darmstadt.de/thakur/BEIR/datasets/scifact.zip",
+  "published_md5": "5f7d1de60b170fc8027bb7898e2efca1",
+  "verified_md5": "5f7d1de60b170fc8027bb7898e2efca1",
+  "zip_sha256": "536e14446a0ba56ed1398ab1055f39fe852686ecad24a6306c80c490fa8e0165",
+  "corpus_jsonl_sha256": "dec31c8182f3d744c7d2c09423756fd1d17cbef75808db13ba01cc0aab4d1ac6",
+  "retrieved": "2026-10-07",
+  "counts": {
+    "documents": 5183,
+    "queries": 1109,
+    "qrels_test_rows": 339,
+    "qrels_test_queries": 300,
+    "qrels_train_rows": 919
+  },
+  "license": "No license file in the dataset archive; GitHub allenai/scifact reports NOASSERTION. BEIR repository code is Apache-2.0. Used for research/evaluation with attribution: Wadden et al., \"Fact or Fiction: Verifying Scientific Claims\", NAACL 2020.",
+  "generator": "scripts/fetch-scifact.ts"
+}

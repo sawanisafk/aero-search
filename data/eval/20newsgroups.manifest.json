@@ -1,0 +1,39 @@
+{
+  "name": "20newsgroups-bydate",
+  "source": "20 Newsgroups by date (Ken Lang, 1995) as published on figshare item 5975967",
+  "dataset_url": "https://ndownloader.figshare.com/files/5975967",
+  "archive_sha256": "8f1b2514ca22a5ade8fbb9cfa5727df95fa587f4c87b786e15c759fa66d95610",
+  "corpus_jsonl_sha256": "b7375dca76a0bb0a785cb29feb00ba15f526e8aff80a2ab2e5116882079668e2",
+  "retrieved": "2026-10-07",
+  "counts": {
+    "documents": 18846,
+    "groups": 20,
+    "skipped_empty": 0
+  },
+  "expected_documents": 18846,
+  "groups": [
+    "alt.atheism",
+    "comp.graphics",
+    "comp.os.ms-windows.misc",
+    "comp.sys.ibm.pc.hardware",
+    "comp.sys.mac.hardware",
+    "comp.windows.x",
+    "misc.forsale",
+    "rec.autos",
+    "rec.motorcycles",
+    "rec.sport.baseball",
+    "rec.sport.hockey",
+    "sci.crypt",
+    "sci.electronics",
+    "sci.med",
+    "sci.space",
+    "soc.religion.christian",
+    "talk.politics.guns",
+    "talk.politics.mideast",
+    "talk.politics.misc",
+    "talk.religion.misc"
+  ],
+  "has_qrels": false,
+  "license": "No explicit license stated on the source page; dataset published for research use. Attribution: K. Lang, \"Newsweeder: Learning to filter netnews\", ICML 1995.",
+  "generator": "scripts/fetch-20newsgroups.ts"
+}
