@@ -80,11 +80,12 @@ function main(): void {
   const texts = [...queries.values()];
 
   const stages: Record<string, LatencyStats> = {};
+  const parseFailures: Record<string, number> = {};
 
   // candidates: parse + analyze + boolean retrieval only
   {
     const samples: number[] = [];
-    let parseFailures = 0;
+    let failures = 0;
     for (const text of texts) {
       const t0 = performance.now();
       try {
@@ -92,21 +93,23 @@ function main(): void {
         analyzeQuery(parsed, bundle.reader.analysis);
         retrieveBoolean(bundle.reader, parsed);
       } catch {
-        parseFailures++;
+        failures++;
       }
       samples.push(performance.now() - t0);
     }
     stages['candidates'] = latencyStats(samples);
-    if (parseFailures > 0) {
-      console.warn(`[bench] WARNING: ${parseFailures} unparseable queries in candidates stage`);
+    parseFailures['candidates'] = failures;
+    if (failures > 0) {
+      console.warn(`[bench] WARNING: ${failures} unparseable queries in candidates stage`);
     }
   }
 
   for (const [id, strategy] of Object.entries(RANKING_STRATEGIES)) {
-    const { latencyMs, parseFailures } = runQuerySet(bundle, strategy, queries, 100);
+    const { latencyMs, parseFailures: failures } = runQuerySet(bundle, strategy, queries, 100);
     stages[id] = latencyStats(latencyMs);
-    if (parseFailures.length > 0) {
-      console.warn(`[bench] WARNING: ${parseFailures.length} parse failures in ${id} stage`);
+    parseFailures[id] = failures.length;
+    if (failures.length > 0) {
+      console.warn(`[bench] WARNING: ${failures.length} parse failures in ${id} stage`);
     }
   }
 
@@ -130,6 +133,7 @@ function main(): void {
       numDocs: bundle.reader.numDocs(),
       vocabSize: bundle.reader.stats().vocabSize,
     },
+    parse_failures: parseFailures,
     stages,
   };
 
