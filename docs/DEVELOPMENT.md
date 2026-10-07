@@ -45,8 +45,8 @@ perf items.
 | **M0** | Foundation | repo, TS toolchain, tests, Compose Postgres, docs skeleton, ADRs — **complete when `npm test` + `npm run typecheck` pass on a clean clone** |
 | **M1** | Indexing core | tokenizer/normalizer/stopwords + Porter stemmer with test vectors; inverted **and positional** index built over bundled static docs; index serialization round-trip |
 | **M2** | Retrieval + ranking + eval harness | Boolean AND/OR; TF-IDF (3 tf weightings); BM25 with k1/b; phrase + proximity; qrels v1; P@K/R@K/F1/MAP/NDCG@K runner; first real mode comparison (A vs B) |
-| **M3** | Crawler + storage + PageRank | controlled crawl of seed set → Postgres; link graph; PageRank job; corpus manifest |
-| **M4** | Hybrid + fuzzy | signal/normalizer/fusion architecture; modes A–E in `configs/`; RRF arm; fuzzy expansion for low-df terms; explanation payloads |
+| **M3** | Crawler + storage + link graph | controlled crawl of seed set → Postgres; link graph; persistent/resumable crawl state; crawled corpus rebuilt into the index + committed manifest |
+| **M4** | PageRank + hybrid + fuzzy | PageRank job over the crawled link graph; signal/normalizer/fusion architecture; modes A–E in `configs/`; RRF arm; fuzzy expansion for low-df terms; explanation payloads |
 | **M5** | API + Aero UI | REST contract + OpenAPI; search UI with window chrome, taskbar, ranking-details panel, settings window |
 | **M6** | Evaluation + benchmarks | 1K/10K/100K runs; latency, index size, RSS, throughput tables; mode comparison charts — **all numbers from committed artifacts** |
 | **M7** | Validation + viva | documentation consistency audit (README ↔ code ↔ results ↔ report), README polish, `docs/VIVA.md` |
@@ -149,6 +149,57 @@ Component details: [SEARCH.md](SEARCH.md) · [RANKING.md](RANKING.md) ·
 qrels v1; metric runner; first A vs B comparison) — **met**: 149 tests green,
 A vs B measured on BEIR SciFact (TF-IDF MAP 0.4421 → BM25 MAP 0.6436),
 6 run artifacts + 3 latency artifacts committed at git `7d9ef4c`.
+Frozen at annotated tag **`m2-complete`** → `b23a551`.
+
+---
+
+## M3 — status: COMPLETE
+
+Component details: [CRAWLER.md](CRAWLER.md) · [DATABASE.md](DATABASE.md) ·
+[ARCHITECTURE §4/§7](ARCHITECTURE.md). PageRank was **moved to M4** (milestone table
+above) — M3 ends at the link graph.
+
+**PostgreSQL schema + repository layer** (Phases A)
+- [x] `migrations/001_init.sql`: `urls` (frontier), `documents` (dedup via partial-unique
+      content_hash), `links` (PageRank input, FK cascade)
+- [x] Pure repository interfaces (`src/storage/repositories.ts`, no pg types) +
+      `PostgresStore` implementation + in-memory test double
+- [x] Idempotent transactional migrations (`npm run db:migrate`)
+- [x] **ADR-011:** embedded PostgreSQL 16.14 (`embedded-postgres`) when no reachable
+      `DATABASE_URL` — compose/system contract unchanged; test clusters isolated
+
+**Crawler primitives** (Phase B)
+- [x] URL normalization (one canonical string per page) + allowlist (empty → refuses)
+- [x] Hand-written RFC 9309 robots parser: longest-match, allow-tie, Crawl-delay,
+      404 → allow-all, fail-open on network errors (logged as data)
+- [x] HTML extraction (cheerio): title, meta, body, outlinks, `<base href>`
+- [x] Frontier (BFS by depth, seen-set) + per-host politeness scheduler
+
+**Crawl orchestrator** (Phase C)
+- [x] `HttpFetcher` (undici): 10 s timeouts, redirect cap 5 with recorded chain,
+      transport retry + backoff, byte cap, `accept-encoding: identity`
+- [x] Full §7 pipeline with hard budgets (maxPages/maxDepth/allowlist), MIME gate,
+      content-hash dedup, failure-as-data; clock/sleep injected → deterministic
+      politeness tests (`7 × 30 ms`, `durationMs = 210`)
+
+**Persistent state, resume, CLI, E2E** (Phase D)
+- [x] `run({resume})`: reload all rows, seal processed URLs, requeue pending (BFS)
+- [x] Completed crawl resumed → **zero** network requests (idempotence proven)
+- [x] `scripts/crawl.ts` + committed `configs/crawl.json` (seed, allowlist, budgets,
+      UA) with per-event logging and DB-state summary
+- [x] E2E on real embedded PG: partial → resume without refetch → idempotent re-run,
+      in-memory and PG semantics identical
+
+**Index integration** (Phase E)
+- [x] `buildCrawlIndex`: PG documents (duplicate_of IS NULL, url order) → existing
+      `IndexWriter` → `data/index/crawled.aidx` + `.ids.json`
+- [x] Committed provenance manifest `data/eval/crawled.manifest.json` (counts, config
+      sha256, git SHA, corpus hash, segment stats); `npm run index:crawl`
+
+**Exit criteria** (milestone table: controlled crawl → Postgres; link graph; corpus
+manifest) — **met**: 219 tests green (unit + fixture + PG E2E); live controlled crawl
+of `info.cern.ch` produced 100 pages / 77 indexable docs / 796 link edges with 62 URLs
+left resumable; manifest + query-latency artifact committed.
 
 ---
 
@@ -160,3 +211,5 @@ A vs B measured on BEIR SciFact (TF-IDF MAP 0.4421 → BM25 MAP 0.6436),
 | 2026-10-07 | M1 | `benchmarks/results/2026-10-07T13-22-21-192Z-index-benchmark.json` | index build/scan numbers at 1K/10K docs, git `44781e8`, corpus hashes in artifact; test evidence: 38 tests green incl. 23,531 Porter vectors and static-v1 E2E |
 | 2026-10-07 | M2 | `runs/2026-10-07T14-52-*-scifact-*.json` (6 files) | strategy comparison + proximity ablation on BEIR SciFact (300 judged queries); git `7d9ef4c` clean; MAP: boolean 0.0049, tfidf 0.4421, bm25 0.6436, mode-C 0.6440 (params recorded per run); 149 tests green |
 | 2026-10-07 | M2 | `benchmarks/results/2026-10-07T14-53-*-query-benchmark.json` (3 files) | e2e query latency (avg/median/p95/max per stage) on scifact 1,109 queries, static-v1, 20newsgroups; git `7d9ef4c` clean; parse-failure counts recorded |
+| 2026-10-07 | M3 | `data/eval/crawled.manifest.json` | controlled crawl of `info.cern.ch` per `configs/crawl.json` (config sha256 in manifest): 100 pages, 78 docs / 77 indexable, 796 link edges, 22 failures recorded as data, 62 pending (resumable); corpus hash `4e5bf3b0…`, git SHA + clean flag recorded; built in 372 ms via `npm run index:crawl` |
+| 2026-10-07 | M3 | `benchmarks/results/2026-10-07T17-12-21-990Z-query-benchmark.json` | e2e query latency on the crawled corpus (77 docs, vocab 4,151, 60 derived queries): BM25 avg 0.089 ms / p95 0.117 ms; git SHA recorded in artifact |

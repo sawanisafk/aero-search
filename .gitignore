@@ -20,6 +20,7 @@ data/index/*
 # embedded PostgreSQL clusters (dev/test, rebuildable)
 data/pg/
 data/pgtest/
+data/pgtest-e2e/
 
 # logs and os noise
 *.log

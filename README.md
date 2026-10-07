@@ -37,7 +37,7 @@ Three planes — details in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md):
 - **Online:** query → parse → candidate retrieval → signals → normalize → fuse → explain → results
 - **Evaluation:** qrels + modes × parameter grids → metrics → committed run artifacts
 
-Why each technology: [`docs/DECISIONS.md`](docs/DECISIONS.md) (ADR-001…010).
+Why each technology: [`docs/DECISIONS.md`](docs/DECISIONS.md) (ADR-001…011).
 What to build when: [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md).
 
 ## Technology stack
@@ -60,7 +60,8 @@ npm install
 npm run typecheck
 npm test
 
-docker compose up -d     # Postgres for metadata (needed from M3 onward)
+docker compose up -d     # Postgres for metadata (M3 also runs on embedded
+                         # PostgreSQL if no reachable DATABASE_URL — ADR-011)
 cp .env.example .env
 ```
 
@@ -69,13 +70,21 @@ cp .env.example .env
 The search service (REST/UI) arrives at M5. What runs today:
 
 ```bash
-npm test / npm run typecheck        # 149 tests
+npm test / npm run typecheck        # 219 tests
+npm run db:migrate                  # apply PostgreSQL migrations
 npm run corpus:scifact              # fetch + verify BEIR SciFact (md5-checked)
 npm run index:build -- --corpus scifact
 npm run eval:run -- --corpus scifact --strategy bm25     # → runs/*.json
 npm run bench:query                 # → benchmarks/results/*.json
+
+npm run crawl                       # controlled crawl (configs/crawl.json)
+npm run crawl -- --resume           # continue a partial crawl
+npm run index:crawl                 # PG docs → data/index/crawled.aidx
+                                    # + committed data/eval/crawled.manifest.json
 ```
 
+Crawler details: [`docs/CRAWLER.md`](docs/CRAWLER.md) · schema & persistence:
+[`docs/DATABASE.md`](docs/DATABASE.md).
 Milestone plan: [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md).
 
 ## Example queries (planned)
@@ -107,8 +116,8 @@ _pending (M5)_
 | M0 Foundation | **done** |
 | M1 Indexing core | **done** |
 | M2 Retrieval + ranking + eval harness | **done** |
-| M3 Crawler + Postgres + PageRank | next |
-| M4 Hybrid ranking + fuzzy | pending |
+| M3 Crawler + Postgres + link graph | **done** |
+| M4 PageRank + hybrid ranking + fuzzy | next |
 | M5 API + Aero UI | pending |
 | M6 Benchmarks + evaluation | pending |
 | M7 Validation + viva prep | pending |
@@ -123,16 +132,18 @@ _pending (M5)_
 
 ```
 src/core      pure IR logic (tokenizer, index, ranking, query) — no I/O
-src/crawler   frontier, fetching, extraction, robots
-src/storage   Postgres adapters, index segment persistence
+src/crawler   frontier, fetching, extraction, robots, politeness
+src/storage   Postgres adapters + repository interfaces, index segment persistence
 src/api       Fastify routes and schemas
 src/eval      metrics, experiment runner, report generation
 web/          React + Windows 7 Aero UI
-tests/        Vitest suites
+migrations/   numbered SQL migrations (PostgreSQL schema)
+tests/        Vitest suites (unit, fixture, PostgreSQL E2E)
 benchmarks/   benchmark configs and committed results
 runs/         committed experiment-run artifacts (evidence)
-configs/      ranking mode definitions (A–E)
-docs/         ARCHITECTURE · DECISIONS · DEVELOPMENT (+ SEARCH, RANKING, EVALUATION, EXPERIMENTS)
+configs/      ranking mode definitions (A–E) + crawl.json
+docs/         ARCHITECTURE · DECISIONS · DEVELOPMENT · CRAWLER · DATABASE
+              (+ SEARCH, RANKING, EVALUATION, EXPERIMENTS)
 data/         corpora and index artifacts (gitignored; manifests + eval inputs committed)
 ```
 

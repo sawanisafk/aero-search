@@ -131,14 +131,21 @@ interface Ranker { mode: string; rank(q, candidates, ctx): ScoredDoc[] }
 
 ### PostgreSQL (never in the query hot path)
 
+**As built in M3** (DDL: `migrations/001_init.sql`, details: [DATABASE.md](DATABASE.md)):
+
+| Table | Contents |
+|---|---|
+| `urls` | crawl frontier: normalized_url (PK), status pending/fetched/failed/skipped, depth, http status, error, fetch_ts, content_hash — partial index drives BFS |
+| `documents` | id, url, title, text, word_count, content_hash (partial-unique), duplicate_of (byte-exact duplicate pointer), crawl_ts |
+| `links` | src_document → dst_document — the directed graph for PageRank (ON DELETE CASCADE) |
+
+Conceptual, deferred (PostgreSQL vs files decided when they land):
+
 | Table (conceptual) | Contents |
 |---|---|
-| `documents` | id, url, title, headings JSONB, text, word_count, unique_terms, content_hash, crawl_ts |
-| `urls` / crawl state | url, normalized_url (UNIQUE), depth, status, http status, bytes, fetch_ts, redirect chain |
-| `links` | src_doc → dst_doc — the directed graph for PageRank |
-| `pagerank` | doc_id, value, run_id |
-| `queries` / `qrels` | query text; query_id × doc_id × grade (0–3 graded relevance) |
-| `runs` / `metrics` | mode, params JSON, git_sha, corpus hash, latency, P@K, NDCG@K … |
+| `pagerank` | doc_id, value, run_id — **M4**, when PageRank runs |
+| `queries` / `qrels` | query text; query_id × doc_id × grade — currently committed files under `data/eval/` |
+| `runs` / `metrics` | mode, params JSON, git_sha, corpus hash, latency, P@K, NDCG@K — currently committed files under `runs/` |
 
 ### Custom index (in memory, persisted as segment files)
 
@@ -308,6 +315,14 @@ Decisions:
 - Fetching sits behind a `Fetcher` interface: `HttpFetcher` (Undici) now;
   `BrowserFetcher` (Playwright) only if the corpus is JS-rendered.
 
+**As built (M3):** all of the above implemented in `src/crawler/` — see
+[CRAWLER.md](CRAWLER.md) for the exact pipeline, normalization rules, robots semantics
+(RFC 9309 subset, fail-open on network errors), three dedup layers, and resume behavior.
+Deliberately *not* built yet: crawl-wide byte budget, retry policy for failed URLs,
+browser fetcher. Controlled-crawl evidence: seed `info.cern.ch`, 100 pages / 77 indexable
+documents / 796 link edges / 22 recorded failures, manifest committed as
+`data/eval/crawled.manifest.json`.
+
 ---
 
 ## 8. API architecture
@@ -420,17 +435,18 @@ unless enabled; retrieval quality is still measured by our eval harness.
 
 ```
 src/core      pure IR: tokenizer, stemmer, index, ranking, query, snippet
-src/crawler   frontier, fetch, extract, robots
-src/storage   postgres adapters, index persistence (segments)
+src/crawler   frontier, fetch, extract, robots, politeness (pure, deps injected)
+src/storage   postgres adapters + repository interfaces, index persistence (segments)
 src/api       fastify routes + schemas
 src/eval      metrics, runner, report generation
 web/          React + Aero UI
-tests/        vitest unit + integration
+migrations/   numbered forward-only SQL (001_init.sql)
+tests/        vitest unit + integration (fixture server, in-memory store, PG E2E)
 benchmarks/   configs + results (JSON/CSV — committed evidence)
 runs/         experiment run artifacts (JSON — committed evidence)
-configs/      mode-a…mode-e.json, parameter grids
-data/         corpora/, index/ (gitignored; manifests + eval inputs committed)
-scripts/      db migrate, corpus import, report generation
+configs/      mode-a…mode-e.json, parameter grids, crawl.json
+data/         corpora/, index/, eval inputs (gitignored except manifests + eval inputs)
+scripts/      crawl, db-migrate, build-crawl-index, corpus import, reports, lib/
 docs/         ARCHITECTURE · DECISIONS · DEVELOPMENT · (INDEXING, SEARCH, RANKING,
-              EVALUATION, EXPERIMENTS — landed with M2; CRAWLER, API, VIVA later)
+              EVALUATION, EXPERIMENTS — M2; CRAWLER, DATABASE — M3; API, VIVA later)
 ```
