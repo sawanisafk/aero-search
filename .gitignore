@@ -12,6 +12,8 @@ dist/
 # generated corpora and index artifacts (large, reproducible via manifest)
 data/corpora/*
 !data/corpora/.gitkeep
+# bundled static fixture corpus is committed source material
+!data/corpora/static-v1/
 data/index/*
 !data/index/.gitkeep
 

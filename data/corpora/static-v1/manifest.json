@@ -1,0 +1,47 @@
+{
+  "name": "static-v1",
+  "version": 1,
+  "description": "Bundled static fixture corpus: chapter documents extracted from public-domain Project Gutenberg books.",
+  "retrieved": "2026-10-07",
+  "license": "Public domain (Project Gutenberg eBook license, https://www.gutenberg.org/policy/license.html)",
+  "generator": "scripts/build-static-corpus.ts",
+  "numDocuments": 84,
+  "documentsSha256": "8ae7f90cbbf976e1a6a7cf310f6ebe0adbe534110fb61b483301358c0a13d1df",
+  "sources": [
+    {
+      "id": 1342,
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "workDate": "1813",
+      "parts": 20
+    },
+    {
+      "id": 84,
+      "title": "Frankenstein; or, The Modern Prometheus",
+      "author": "Mary Shelley",
+      "workDate": "1818",
+      "parts": 20
+    },
+    {
+      "id": 11,
+      "title": "Alice's Adventures in Wonderland",
+      "author": "Lewis Carroll",
+      "workDate": "1865",
+      "parts": 12
+    },
+    {
+      "id": 1661,
+      "title": "The Adventures of Sherlock Holmes",
+      "author": "Arthur Conan Doyle",
+      "workDate": "1892",
+      "parts": 12
+    },
+    {
+      "id": 174,
+      "title": "The Picture of Dorian Gray",
+      "author": "Oscar Wilde",
+      "workDate": "1890",
+      "parts": 20
+    }
+  ]
+}
