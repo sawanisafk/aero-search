@@ -70,35 +70,39 @@ perf items.
 - [x] README with objective, structure, setup, status
 - [x] `npm install` → `npm run typecheck` → `npm test` pass
 
-## M1 — Indexing core (next)
+## M1 — status: COMPLETE
+
+Component details and benchmark tables: [INDEXING.md](INDEXING.md).
 
 **Tokenizer / text processing (`src/core/text/`)**
-- [ ] Unicode normalization (NFKC) + lowercase
-- [ ] Tokenizer: letters/digits, punctuation handling, hyphen/apostrophe policy
-- [ ] Stop-word list (removal optional per experiment — flag preserved)
-- [ ] Porter stemmer implemented from the algorithm + published test vectors
-- [ ] Tests: golden cases for each step; index-time vs query-time path is the *same* function
+- [x] Unicode normalization (NFKC) + lowercase
+- [x] Tokenizer: letters/digits, punctuation handling, hyphen/apostrophe policy
+- [x] Stop-word list (removal optional per experiment — flag preserved)
+- [x] Porter stemmer implemented from the algorithm + published test vectors
+      (all 23,531 official vectors pass)
+- [x] Tests: golden cases for each step; index-time vs query-time path is the *same* function
 
 **Index structures (`src/core/index/`)**
-- [ ] Term dictionary: `term → termId`, `termId → {term, df}`
-- [ ] `IndexWriter`: collects postings per term (inverted) + positions (positional)
-- [ ] Delta-encoded `Uint32Array` docIds + `Uint16Array` tfs; per-doc position runs
-- [ ] `docLen` flat array; corpus stats (`N`, `avgdl`, `vocabSize`)
-- [ ] `IndexReader` implementation of the ARCHITECTURE interface
-- [ ] Doc table: docId → {title, url} (bodies stay in storage layer)
+- [x] Term dictionary: `term ↔ termId`, `termId → {term, df}`
+- [x] `IndexWriter`: collects postings per term (inverted) + positions (positional)
+- [x] Delta-encoded `Uint32Array` docIds + `Uint16Array` tfs; per-doc position runs
+- [x] `docLen` flat array; corpus stats (`N`, `avgdl`, `vocabSize`)
+- [x] `IndexReader` implementation of the ARCHITECTURE interface
+- [x] Doc table: docId → {title, url} (bodies stay in storage layer)
 
 **Persistence (`src/storage/`)**
-- [ ] Segment writer/reader: binary format (format version + corpus hash header)
-- [ ] JSON debug dump for inspectability
-- [ ] Round-trip test: build → serialize → load → identical query results
+- [x] Segment writer/reader: binary format (format version + corpus hash header)
+- [x] JSON debug dump for inspectability
+- [x] Round-trip test: build → serialize → load → identical query results
 
 **Fixture corpus**
-- [ ] `data/corpora/static-v1/`: first ~50–100 bundled HTML docs + manifest
-      (source, date, license) — small now, grown before M6 benchmarks
+- [x] `data/corpora/static-v1/`: 84 bundled HTML docs + manifest (source, date,
+      license) — grown before M6 benchmarks
 
 **Exit criteria:** given bundled docs, `IndexReader` answers term lookups with correct
 df/tf/positions, survives a serialize/load cycle, and `npm test` covers edge cases
-(empty doc, repeated terms, unicode terms).
+(empty doc, repeated terms, unicode terms). — **met** (38 tests green;
+`tests/pipeline.test.ts` runs the bundled corpus end to end).
 
 ---
 
@@ -107,3 +111,4 @@ df/tf/positions, survives a serialize/load cycle, and `npm test` covers edge cas
 | Date | Milestone | Artifact | Notes |
 |---|---|---|---|
 | 2026-10-07 | M0 | repo scaffold | toolchain green: typecheck + smoke test |
+| 2026-10-07 | M1 | `benchmarks/results/2026-10-07T13-22-21-192Z-index-benchmark.json` | index build/scan numbers at 1K/10K docs, git `44781e8`, corpus hashes in artifact; test evidence: 38 tests green incl. 23,531 Porter vectors and static-v1 E2E |

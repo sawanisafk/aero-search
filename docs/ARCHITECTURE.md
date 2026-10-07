@@ -95,19 +95,23 @@ These rules are the architecture's load-bearing walls:
 ```ts
 interface Tokenizer   { tokenize(text: string): string[] }
 
-interface IndexWriter { add(docId: number, terms: number[]): void; finalize(): void }
+// implemented in src/core/index/ — the writer runs the shared analyzer
+// itself, so addDocument takes raw text, not pre-tokenized terms
+interface IndexWriter { addDocument(doc: AddDocumentInput): number; finalize(): IndexData }
 
 interface IndexReader {
   getTermId(term: string): number | undefined;
-  postings(termId: number): PostingList;
+  postings(termId: number): TermPostingsView;  // lazy view, not materialized arrays
   docLength(docId: number): number;
-  stats(): { N: number; avgdl: number; vocabSize: number };
+  stats(): IndexStats;   // { numDocs, vocabSize, numPostings, totalTokens, avgDocLength }
 }
 
-interface PostingList {
-  docIds: Uint32Array;   // delta-encoded, sorted ascending
-  tfs: Uint16Array;
-  positions: PositionView; // per-doc delta-encoded position runs
+// postings are decoded on demand (delta encoding makes decoding sequential)
+interface TermPostingsView {
+  df: number;
+  docIds(): Uint32Array;
+  forEach(visit: (index: number, docId: number, tf: number) => void): void;
+  positions(globalIndex: number): number[];   // O(tf) decode of one run
 }
 
 interface RankingSignal {

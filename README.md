@@ -93,8 +93,8 @@ _pending (M5)_
 | Milestone | State |
 |---|---|
 | M0 Foundation | **done** |
-| M1 Indexing core | next |
-| M2 Retrieval + ranking + eval harness | pending |
+| M1 Indexing core | **done** |
+| M2 Retrieval + ranking + eval harness | next |
 | M3 Crawler + Postgres + PageRank | pending |
 | M4 Hybrid ranking + fuzzy | pending |
 | M5 API + Aero UI | pending |
