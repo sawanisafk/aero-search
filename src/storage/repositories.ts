@@ -105,3 +105,6 @@ export interface LinkRepository {
   edges(): Promise<StoredLink[]>;
   stats(): Promise<{ edgeCount: number; sourceCount: number; targetCount: number }>;
 }
+
+/** Everything the crawler persists: frontier state + documents + link graph. */
+export interface CrawlStore extends FrontierRepository, DocumentRepository, LinkRepository {}
