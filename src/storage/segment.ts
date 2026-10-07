@@ -11,6 +11,7 @@
  *     totalPostings  u32
  *     totalPositions u32
  *     totalTokens    u32
+ *     corpusHash     section  sha256 hex of the source corpus ('' if unknown)
  *
  *   sections (each: u32 byteLength + payload)
  *     1. analysis     UTF-8 JSON of AnalysisConfig (frozen at build time)
@@ -155,7 +156,8 @@ class Cursor {
 }
 
 export function serializeSegment(data: IndexData): Buffer {
-  const { stats, analysis, docs, docLengths, docOffsets, docDeltas, tfs, posDeltas, posRunStarts } = data;
+  const { stats, analysis, docs, docLengths, docOffsets, docDeltas, tfs, posDeltas, posRunStarts, corpusHash } =
+    data;
 
   const w = new ChunkWriter();
   w.bytes(MAGIC);
@@ -165,6 +167,7 @@ export function serializeSegment(data: IndexData): Buffer {
   w.u32(stats.numPostings);
   w.u32(posDeltas.length);
   w.u32(stats.totalTokens);
+  w.section(Buffer.from(corpusHash, 'utf8'));
 
   w.section(Buffer.from(JSON.stringify(analysis), 'utf8'));
 
@@ -212,6 +215,7 @@ export function deserializeSegment(buf: Buffer): IndexData {
   const numPostings = c.u32();
   const numPositions = c.u32();
   const totalTokens = c.u32();
+  const corpusHash = c.section().toString('utf8');
 
   const analysis = JSON.parse(c.section().toString('utf8')) as AnalysisConfig;
 
@@ -249,6 +253,7 @@ export function deserializeSegment(buf: Buffer): IndexData {
   };
 
   return {
+    corpusHash,
     terms,
     termIndex,
     docOffsets,
@@ -290,6 +295,7 @@ export function exportSegmentJson(data: IndexData, filePath: string): void {
     return { term, df: view.df, postings: list };
   });
   const payload = {
+    corpusHash: data.corpusHash,
     stats: data.stats,
     analysis: data.analysis,
     docs: data.docs,

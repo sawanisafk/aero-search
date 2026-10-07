@@ -34,6 +34,7 @@ const MAX_TF = 65535; // tfs is Uint16Array
 
 export class IndexWriter {
   private readonly config: AnalysisConfig;
+  private readonly corpusHash: string;
 
   private readonly termIds = new Map<string, number>();
   private readonly terms: string[] = [];
@@ -49,6 +50,7 @@ export class IndexWriter {
 
   constructor(options: IndexBuilderOptions = {}) {
     this.config = options.analysis ?? DEFAULT_ANALYSIS;
+    this.corpusHash = options.corpusHash ?? '';
   }
 
   get analysis(): AnalysisConfig {
@@ -184,6 +186,7 @@ export class IndexWriter {
     };
 
     return {
+      corpusHash: this.corpusHash,
       terms: this.terms,
       termIndex: this.termIds,
       docOffsets: offsets,

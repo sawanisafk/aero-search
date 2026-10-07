@@ -28,8 +28,11 @@ const DOCS: AddDocumentInput[] = [
   },
 ];
 
+/** sha256 of the literal string "static-v1" — exercises the header field. */
+const CORPUS_HASH = 'b1b1e8e0d6a2d79d9e9c1b0f4a1b0e6b8ff2f9f5e01d6b05d6e0f1f0a4e6d2c8';
+
 function buildIndex(docs: AddDocumentInput[] = DOCS): IndexData {
-  const writer = new IndexWriter();
+  const writer = new IndexWriter({ corpusHash: CORPUS_HASH });
   for (const d of docs) writer.addDocument(d);
   return writer.finalize();
 }
@@ -50,6 +53,7 @@ describe('AIDX segment persistence', () => {
     const original = buildIndex();
     const restored = deserializeSegment(serializeSegment(original));
 
+    expect(restored.corpusHash).toBe(CORPUS_HASH);
     expect(restored.terms).toEqual(original.terms);
     expect([...restored.termIndex]).toEqual([...original.termIndex]);
     expect(restored.docOffsets).toEqual(original.docOffsets);
@@ -86,6 +90,7 @@ describe('AIDX segment persistence', () => {
   it('round-trips an empty corpus', () => {
     const empty = buildIndex([]);
     const restored = deserializeSegment(serializeSegment(empty));
+    expect(restored.corpusHash).toBe(CORPUS_HASH);
     expect(restored.stats.numDocs).toBe(0);
     expect(restored.stats.vocabSize).toBe(0);
     expect(restored.terms).toEqual([]);

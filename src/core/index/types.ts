@@ -42,6 +42,12 @@ export interface IndexStats {
 }
 
 export interface IndexData {
+  /**
+   * sha256 hex of the source corpus (computed outside core; '' if unknown).
+   * Persisted in the segment header so a segment can be tied back to the
+   * exact corpus build that produced it (DEVELOPMENT.md evidence rule).
+   */
+  readonly corpusHash: string;
   /** termId -> term (dictionary order) */
   readonly terms: string[];
   /** term -> termId */
@@ -68,6 +74,8 @@ export interface IndexData {
 
 export interface IndexBuilderOptions {
   analysis?: AnalysisConfig;
+  /** sha256 hex of the source corpus; stored in the segment header */
+  corpusHash?: string;
 }
 
 export interface AddDocumentInput {
