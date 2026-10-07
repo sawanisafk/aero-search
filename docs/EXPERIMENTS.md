@@ -54,11 +54,13 @@ Artifacts (all `git.sha = 7d9ef4c…`, `git.clean = true`):
 6. **External corroboration (cited, not tuned to):** BEIR's reference Lucene BM25
    (Anserini) reports **nDCG@10 = 0.665, Recall@100 = 0.908** on SciFact
    (Thakur et al., NeurIPS 2021 Datasets & Benchmarks; same numbers reproduced in
-   *Resources for Brewing BEIR*, SIGIR 2024). Ours: **0.688 / 0.928** — same
-   ballpark, slightly above, with fully documented differences: our tokenizer +
-   Porter stemmer + stop list, disjunctive parsing, BM25 `k1 = 1.2, b = 0.75`
-   (Anserini defaults are `k1 = 0.9, b = 0.4`), top-K 1000, TypeScript vs Lucene.
-   This is an independent sanity anchor, **not** a parity claim — we do not tune
+   *Resources for Brewing BEIR*, SIGIR 2024). Ours: **0.688 / 0.928**. The correct
+   claim is: **our implementation achieved comparable performance to the BEIR
+   reference BM25 configuration on SciFact, with differences attributable to
+   implementation and configuration details** — our tokenizer + Porter stemmer +
+   stop list, disjunctive parsing, BM25 `k1 = 1.2, b = 0.75` (Anserini defaults
+   are `k1 = 0.9, b = 0.4`), top-K 1000, TypeScript vs Lucene. This is an
+   independent sanity anchor, **not** a claim that we beat Lucene — we do not tune
    parameters against published numbers.
 
 ---
