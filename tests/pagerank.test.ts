@@ -136,6 +136,21 @@ describe('pageRank — invariants', () => {
     expect(res.residual).toBeLessThan(1e-9);
   });
 
+  it('onIteration emits a per-iteration trace ending at the final residual', () => {
+    const trace: { iteration: number; residual: number }[] = [];
+    const res = pageRank(6, edges, {
+      tolerance: 1e-9,
+      maxIterations: 1000,
+      onIteration: (info) => trace.push(info),
+    });
+    expect(trace).toHaveLength(res.iterations);
+    expect(trace.at(-1)?.residual).toBe(res.residual);
+    expect(trace[0]!.residual).toBeGreaterThan(trace.at(-1)!.residual);
+    for (let i = 1; i < trace.length; i++) {
+      expect(trace[i]!.iteration).toBe(i + 1);
+    }
+  });
+
   it('maxIterations cap reports not-converged instead of silently stopping', () => {
     const res = pageRank(6, edges, { tolerance: 1e-15, maxIterations: 5 });
     expect(res.converged).toBe(false);

@@ -24,6 +24,8 @@ export interface PageRankOptions {
   tolerance?: number;
   /** Hard iteration cap; result is flagged not-converged if reached. Default 100. */
   maxIterations?: number;
+  /** Observability hook: called once per executed iteration (convergence traces). */
+  onIteration?: (info: { iteration: number; residual: number }) => void;
 }
 
 export interface PageRankResult {
@@ -101,6 +103,7 @@ export function pageRank(
   const { offsets, targets, outDegree } = buildGraph(numNodes, edges);
   const n = numNodes;
   const teleport = (1 - d) / n;
+  const onIteration = options.onIteration;
 
   let current = new Float64Array(n).fill(1 / n);
   let next = new Float64Array(n);
@@ -130,6 +133,7 @@ export function pageRank(
 
     residual = 0;
     for (let i = 0; i < n; i++) residual += Math.abs(next[i]! - current[i]!);
+    onIteration?.({ iteration: iter, residual });
 
     const swap = current;
     current = next;
