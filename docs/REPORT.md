@@ -901,7 +901,7 @@ Read this once before the demo; you should not need to open source files
 | `README.md` (root) | status, usage, headlines |
 | `ARCHITECTURE.md` | planes, module rules, query pipeline, ranking design |
 | `DECISIONS.md` | ADR-001…011 (why each technology/choice) |
-| `DEVELOPMENT.md` | milestone plan M0–M7 + append-only evidence log |
+| `DEVELOPMENT.md` | milestone plan M0–M6 + append-only evidence log |
 | `SEARCH.md` | syntax, analysis, set semantics, phrase/proximity, **fuzzy (§6)** |
 | `RANKING.md` | modes A–D, formulas, what is deliberately *not* scored |
 | `INDEXING.md` | segment format, postings, positions |
@@ -910,11 +910,11 @@ Read this once before the demo; you should not need to open source files
 | `CRAWLER.md`, `DATABASE.md` | crawler behavior; schema & persistence |
 | `REPORT.md` | **this document** |
 
-### 12.17 Not built yet (so you can answer it)
+### 12.17 Not built yet (M5 — active phase)
 
 `src/api/` (Fastify REST + explain payloads) and `web/` (React Aero UI) do
-**not exist yet** — that is M5, deliberately postponed: the engine is the
-project, the UI will be a front-end over an already-proven system.
+**not exist yet** — M5 is now the active milestone (plan in DEVELOPMENT.md):
+the UI is a front-end over an already-proven engine, never its replacement.
 
 ---
 
@@ -942,9 +942,11 @@ project, the UI will be a front-end over an already-proven system.
 [ ] practice the 4 SAY-lines            → Stage 0, 3, 4, 5 narrations from §11
 ```
 
-**Do not start M5 (React/Fastify/Aero UI) yet.** Freeze the checkpoint, be able
-to *run, see, understand, and explain* the engine — then M5 turns a proven
-system into an application, instead of an interface carrying the project.
+**Directive update:** M5 (Fastify API + React Aero UI) is now the **active
+phase** (M7 removed from the production timeline) — but freeze the checkpoint
+first: run the §1 verification, tag `m4-complete`, and keep the §11
+rehearsal. M5 then turns a proven system into a product, instead of an
+interface carrying the project.
 
 ---
 

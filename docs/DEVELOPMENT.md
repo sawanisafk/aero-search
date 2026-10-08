@@ -47,9 +47,11 @@ perf items.
 | **M2** | Retrieval + ranking + eval harness | Boolean AND/OR; TF-IDF (3 tf weightings); BM25 with k1/b; phrase + proximity; qrels v1; P@K/R@K/F1/MAP/NDCG@K runner; first real mode comparison (A vs B) |
 | **M3** | Crawler + storage + link graph | controlled crawl of seed set → Postgres; link graph; persistent/resumable crawl state; crawled corpus rebuilt into the index + committed manifest |
 | **M4** | PageRank + hybrid + fuzzy | sub-scoped: **A** PageRank job over link graphs (persisted, converged) · **B** hybrid BM25+PageRank fusion (normalize + weight ablation + latency) · **C** fuzzy edit-distance retrieval — original-scope leftovers deferred: `configs/` modes A–E, RRF arm, explanation payloads |
-| **M5** | API + Aero UI | REST contract + OpenAPI; search UI with window chrome, taskbar, ranking-details panel, settings window |
+| **M5** | API + Aero UI | sub-scoped: **A** Fastify REST + OpenAPI (validated, tested, explain payloads, measured overhead) · **B** React "Aero" UI — window chrome, taskbar, search window with ranking-details panel, settings window, status dashboard |
 | **M6** | Evaluation + benchmarks | 1K/10K/100K runs; latency, index size, RSS, throughput tables; mode comparison charts — **all numbers from committed artifacts** |
-| **M7** | Validation + viva | documentation consistency audit (README ↔ code ↔ results ↔ report), README polish, `docs/VIVA.md` |
+
+_(M7 removed from the production timeline by decision — documentation
+consistency audits fold into each milestone's exit criteria.)_
 
 **Sequencing rules (non-negotiable):**
 
@@ -344,6 +346,57 @@ green; `benchmarks/results/2026-10-08T03-59-{11-510,23-203}-*-fuzzy-benchmark.js
 + `…03-59-43-121Z-query-benchmark.json` +
 `runs/2026-10-08T03-59-45-029Z-scifact-bm25-k1.2-b0.75-fuzzy.json`;
 walkthrough in EXPERIMENTS.md §4.
+
+---
+
+## M5 — status: IN PROGRESS
+
+Goal: turn the engine into a product — an industry-grade REST API and a
+distinctive "Aero" desktop-style web UI, where **every displayed number comes
+from the same measured engine** the committed artifacts describe (ADR-003:
+PostgreSQL never in the query hot path).
+
+### M5-A — API (Fastify)
+
+- [ ] `src/api/` Fastify app (strict tsconfig), `npm run dev:api`
+- [ ] `GET /api/v1/search` — `q, corpus, mode, topk, fuzzy, explain` → hits with
+      rank/score/breakdown (bm25 · phrase · proximity · pagerank), analysis trace
+      (tokens after stemming, fuzzy expansions), timings, provenance
+- [ ] `GET /api/v1/status` — index stats, corpus hash, git SHA, PageRank availability
+- [ ] `GET /api/v1/document/:id` — document detail view
+- [ ] Zod validation at the edge, uniform error envelope, CORS, pino logging
+- [ ] OpenAPI 3 spec served at `/api/v1/docs`, generated from the Zod schemas
+- [ ] contract tests (vitest + injected Fastify), typecheck green, full suite green
+- [ ] evidence: `bench:api` artifact — HTTP-layer overhead p50/p95 vs core latency
+
+### M5-B — Aero UI (React + Vite)
+
+- [ ] `web/` Vite + React + TS (own tsconfig); `npm run dev:web`, `npm run build:web`
+- [ ] Aero aesthetic: glass/translucent windows, window chrome, taskbar, wallpaper
+- [ ] Search window: command bar, result rows with score bars, keyboard-first
+      (Ctrl+K, ↑/↓, Enter), badges for fuzzy recovery / phrase / PR boost
+- [ ] Ranking-details panel: per-hit score breakdown + analysis trace ("why did
+      this rank here?")
+- [ ] Settings window: corpus, mode A–D, topk, fuzzy radius, implicit AND/OR —
+      persisted client-side
+- [ ] Status dashboard: index stats, PageRank top authorities, crawl manifest,
+      live latency
+- [ ] states (loading/empty/error), accessibility basics, responsive layout
+- [ ] component tests (Vitest + Testing Library)
+- [ ] production path: `npm run build` (web + api) → `npm start` serves the built
+      UI from Fastify
+
+**Exit criteria:** the full demo runs in a browser — type a query containing a
+typo, watch it recover with explained scores, switch ranking modes, inspect
+index/PageRank status — with API contract tests + UI tests green and typecheck
+clean.
+
+**Non-goals:** auth/multi-user, DB in the hot path, deployment infrastructure —
+those are M6+ concerns.
+
+**Sequencing note:** M7 (validation/viva prep) removed from the production
+timeline by decision (2026-10-08); documentation consistency is each
+milestone's own exit duty.
 
 ---
 

@@ -129,9 +129,11 @@ _pending (M5)_
 | M2 Retrieval + ranking + eval harness | **done** |
 | M3 Crawler + Postgres + link graph | **done** |
 | M4 PageRank + hybrid ranking + fuzzy | **done** |
-| M5 API + Aero UI | pending |
+| M5 API + Aero UI | **in progress** |
 | M6 Benchmarks + evaluation | pending |
-| M7 Validation + viva prep | pending |
+
+_(M7 validation/viva prep removed from the production timeline by decision —
+doc consistency happens per-milestone.)_
 
 ## Future work
 
