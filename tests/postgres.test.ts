@@ -6,7 +6,7 @@ import { startDatabase, type ManagedDatabase } from '../scripts/lib/embedded-pg.
 import { createPool } from '../src/storage/postgres/pool.js';
 import { runMigrations } from '../src/storage/postgres/migrate.js';
 import { PostgresStore } from '../src/storage/postgres/store.js';
-import type { EnqueuedUrl, StoredDocument, StoredLink } from '../src/storage/repositories.js';
+import type { EnqueuedUrl, PageRankRun, StoredDocument, StoredLink } from '../src/storage/repositories.js';
 
 const DB_DIR = path.join(process.cwd(), 'data', 'pgtest');
 
@@ -61,17 +61,17 @@ afterAll(async () => {
 }, 30_000);
 
 describe('migrations', () => {
-  it('applies 001_init.sql exactly once', () => {
-    expect(firstMigration).toEqual(['001_init.sql']);
+  it('applies each migration exactly once', () => {
+    expect(firstMigration).toEqual(['001_init.sql', '002_pagerank.sql']);
     expect(secondMigration).toEqual([]);
   });
 
-  it('creates the M3 tables', async () => {
+  it('creates the crawl and pagerank tables', async () => {
     const res = await pool.query<{ tablename: string }>(
       `SELECT tablename FROM pg_tables WHERE schemaname = 'public' ORDER BY tablename`,
     );
     expect(res.rows.map((r) => r.tablename)).toEqual([
-      'documents', 'links', 'schema_migrations', 'urls',
+      'documents', 'links', 'pagerank_runs', 'pagerank_scores', 'schema_migrations', 'urls',
     ]);
   });
 });
@@ -189,5 +189,69 @@ describe('link repository', () => {
   it('cascades link deletion when a source document is deleted', async () => {
     await pool.query(`DELETE FROM documents WHERE url = 'https://example.org/page-20'`);
     expect((await store.stats()).edgeCount).toBe(0);
+  });
+});
+
+describe('pagerank repository', () => {
+  const run = (over: Partial<PageRankRun> = {}): PageRankRun => ({
+    damping: 0.85,
+    tolerance: 1e-6,
+    maxIterations: 100,
+    iterations: 37,
+    converged: true,
+    residual: 4.2e-7,
+    nodeCount: 3,
+    edgeCount: 2,
+    graphHash: 'a'.repeat(64),
+    gitSha: '1fd7f42',
+    ...over,
+  });
+
+  it('returns null when nothing has been computed', async () => {
+    // run order matters: this suite owns the only saves in the test database
+    expect(await store.loadLatestPageRank()).toBeNull();
+  });
+
+  it('persists run metadata and scores atomically, reloads in url order', async () => {
+    const scores = new Map([
+      ['https://example.org/c', 0.5],
+      ['https://example.org/a', 0.25],
+      ['https://example.org/b', 0.25],
+    ]);
+    const runId = await store.savePageRank(run(), scores);
+    expect(runId).toBeGreaterThan(0);
+
+    const loaded = await store.loadLatestPageRank();
+    expect(loaded).not.toBeNull();
+    expect(loaded?.runId).toBe(runId);
+    expect(loaded?.run).toEqual(run());
+    expect([...loaded!.scores.keys()]).toEqual([
+      'https://example.org/a',
+      'https://example.org/b',
+      'https://example.org/c',
+    ]);
+    expect(loaded?.scores.get('https://example.org/c')).toBe(0.5);
+  });
+
+  it('a newer run supersedes the previous one', async () => {
+    const second = await store.savePageRank(
+      run({ iterations: 12, graphHash: 'b'.repeat(64), gitSha: null }),
+      new Map([['https://example.org/a', 1]]),
+    );
+    const loaded = await store.loadLatestPageRank();
+    expect(loaded?.runId).toBe(second);
+    expect(loaded?.run.iterations).toBe(12);
+    expect(loaded?.run.gitSha).toBeNull();
+    expect(loaded?.scores.size).toBe(1);
+  });
+
+  it('handles score sets larger than one insert chunk', async () => {
+    const big = new Map<string, number>();
+    for (let i = 0; i < 1200; i++) big.set(`https://example.org/doc-${i}`, 1 / 1200);
+    const id = await store.savePageRank(run({ nodeCount: 1200, edgeCount: 0 }), big);
+    const loaded = await store.loadLatestPageRank();
+    expect(loaded?.runId).toBe(id);
+    expect(loaded?.scores.size).toBe(1200);
+    expect([...loaded!.scores.keys()][0]).toBe('https://example.org/doc-0');
   });
 });

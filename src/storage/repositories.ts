@@ -110,3 +110,28 @@ export interface LinkRepository {
 
 /** Everything the crawler persists: frontier state + documents + link graph. */
 export interface CrawlStore extends FrontierRepository, DocumentRepository, LinkRepository {}
+
+/** PageRank run metadata — everything the evidence rule needs to replay it. */
+export interface PageRankRun {
+  damping: number;
+  tolerance: number;
+  maxIterations: number;
+  iterations: number;
+  converged: boolean;
+  residual: number;
+  nodeCount: number;
+  edgeCount: number;
+  /** sha256 over the canonical (nodes, edges) graph serialization. */
+  graphHash: string;
+  gitSha: string | null;
+}
+
+/** Offline authority scores: url (normalized = corpus id) → stationary value. */
+export interface PageRankRepository {
+  /** Persist run + scores atomically; returns the new run id. */
+  savePageRank(run: PageRankRun, scores: ReadonlyMap<string, number>): Promise<number>;
+  /** Latest run with its scores in deterministic url order, or null. */
+  loadLatestPageRank(): Promise<
+    { runId: number; run: PageRankRun; scores: Map<string, number> } | null
+  >;
+}

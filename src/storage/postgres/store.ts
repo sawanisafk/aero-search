@@ -5,6 +5,8 @@ import type {
   FetchedMeta,
   FrontierRepository,
   LinkRepository,
+  PageRankRepository,
+  PageRankRun,
   StoredDocument,
   StoredLink,
   UpsertResult,
@@ -88,7 +90,23 @@ function toDocument(row: DocumentRow): StoredDocument {
  * values (node-postgres would otherwise serialize JS arrays as PG array
  * literals, which are not valid JSONB).
  */
-export class PostgresStore implements FrontierRepository, DocumentRepository, LinkRepository {
+interface PageRankRunRow {
+  run_id: string;
+  damping: number;
+  tolerance: number;
+  max_iterations: number;
+  iterations: number;
+  converged: boolean;
+  residual: number;
+  node_count: number;
+  edge_count: number;
+  graph_hash: string;
+  git_sha: string | null;
+}
+
+export class PostgresStore
+  implements FrontierRepository, DocumentRepository, LinkRepository, PageRankRepository
+{
   constructor(private readonly pool: Pool) {}
 
   // ── frontier ────────────────────────────────────────────────────────────
@@ -279,6 +297,83 @@ export class PostgresStore implements FrontierRepository, DocumentRepository, Li
       edgeCount: Number(row?.edges ?? '0'),
       sourceCount: Number(row?.sources ?? '0'),
       targetCount: Number(row?.targets ?? '0'),
+    };
+  }
+
+  // ── pagerank ─────────────────────────────────────────────────────────────
+
+  async savePageRank(run: PageRankRun, scores: ReadonlyMap<string, number>): Promise<number> {
+    const client = await this.pool.connect();
+    try {
+      await client.query('BEGIN');
+      const inserted = await client.query<{ run_id: string }>(
+        `INSERT INTO pagerank_runs
+           (damping, tolerance, max_iterations, iterations, converged, residual,
+            node_count, edge_count, graph_hash, git_sha)
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
+         RETURNING run_id`,
+        [
+          run.damping, run.tolerance, run.maxIterations, run.iterations, run.converged,
+          run.residual, run.nodeCount, run.edgeCount, run.graphHash, run.gitSha,
+        ],
+      );
+      const runId = Number(inserted.rows[0]?.run_id);
+
+      // Sorted url order + fixed chunk size → deterministic, bounded statements.
+      const entries = [...scores].sort((a, b) => (a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0));
+      const CHUNK = 500;
+      for (let start = 0; start < entries.length; start += CHUNK) {
+        const chunk = entries.slice(start, start + CHUNK);
+        const values: string[] = [];
+        const params: (string | number)[] = [runId];
+        chunk.forEach(([url, value], i) => {
+          values.push(`($1, $${i * 2 + 2}, $${i * 2 + 3})`);
+          params.push(url, value);
+        });
+        await client.query(
+          `INSERT INTO pagerank_scores (run_id, url, value) VALUES ${values.join(', ')}`,
+          params,
+        );
+      }
+
+      await client.query('COMMIT');
+      return runId;
+    } catch (err) {
+      await client.query('ROLLBACK').catch(() => undefined);
+      throw err;
+    } finally {
+      client.release();
+    }
+  }
+
+  async loadLatestPageRank(): Promise<
+    { runId: number; run: PageRankRun; scores: Map<string, number> } | null
+  > {
+    const runRes = await this.pool.query<PageRankRunRow>(
+      `SELECT * FROM pagerank_runs ORDER BY run_id DESC LIMIT 1`,
+    );
+    const row = runRes.rows[0];
+    if (row === undefined) return null;
+
+    const scoreRes = await this.pool.query<{ url: string; value: number }>(
+      `SELECT url, value FROM pagerank_scores WHERE run_id = $1 ORDER BY url`,
+      [row.run_id],
+    );
+    return {
+      runId: Number(row.run_id),
+      run: {
+        damping: row.damping,
+        tolerance: row.tolerance,
+        maxIterations: row.max_iterations,
+        iterations: row.iterations,
+        converged: row.converged,
+        residual: row.residual,
+        nodeCount: row.node_count,
+        edgeCount: row.edge_count,
+        graphHash: row.graph_hash,
+        gitSha: row.git_sha,
+      },
+      scores: new Map(scoreRes.rows.map((r) => [r.url, r.value])),
     };
   }
 }
