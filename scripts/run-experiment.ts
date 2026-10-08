@@ -17,6 +17,12 @@
  *   --linkgraph <file>        citation graph for bm25-pr
  *                             (default data/eval/<corpus>-citations.json)
  *   --pr-damping/--pr-tolerance/--pr-max-iterations  PageRank parameters
+ *   --fuzzy                   enable fuzzy (typo) expansion of absent terms
+ *   --fuzzy-edits <1|2>       max edit distance (default 1)
+ *   --fuzzy-min-len <n>       terms shorter than n are never expanded (default 3)
+ *   --fuzzy-max-per-term <n>  variants kept per fuzzy term (default 10)
+ *   --fuzzy-max-terms <n>     absent terms attempted per query (default 10)
+ *   --fuzzy-max-per-query <n> total variants added per query (default 20)
  *
  * Every artifact records: experiment id, timestamp, git sha + worktree state,
  * corpus id + sha256, query/qrels file hashes + counts, strategy id/mode/params,
@@ -34,6 +40,7 @@ import {
 } from '../src/core/ranking/index.js';
 import { evaluateRun, parseQrelsTsv, parseQueriesJsonl } from '../src/eval/index.js';
 import type { Run } from '../src/eval/index.js';
+import { resolveFuzzy, type FuzzyOptions } from '../src/core/retrieval/index.js';
 import { getGitInfo, hashFile, latencyStats } from './lib/dataset.js';
 import { loadIndexBundle, runQuerySet } from './lib/retrieval-run.js';
 import { loadCitationGraph, pageRankForBundle } from './lib/pagerank-scores.js';
@@ -120,6 +127,10 @@ function main(): void {
   const strategy = createStrategy(strategyId, strategyOptions);
   const resolvedParams = resolveStrategyParams(strategyId, strategyOptions);
 
+  // fuzzy (M4-C): expanded before retrieval, inside the timed query loop.
+  const fuzzyEnabled = process.argv.includes('--fuzzy');
+  const fuzzy = fuzzyEnabled ? resolveFuzzy(readFuzzyOptions()) : undefined;
+
   const allQueries = parseQueriesJsonl(fs.readFileSync(queriesFile, 'utf8'));
   const qrels = parseQrelsTsv(fs.readFileSync(qrelsFile, 'utf8'));
 
@@ -133,7 +144,14 @@ function main(): void {
   }
 
   const t0 = performance.now();
-  const { run, latencyMs, parseFailures } = runQuerySet(bundle, strategy, evalQueries, topk);
+  const { run, latencyMs, parseFailures, fuzzy: fuzzyStats } = runQuerySet(
+    bundle,
+    strategy,
+    evalQueries,
+    topk,
+    undefined,
+    fuzzy,
+  );
   const wallMs = performance.now() - t0;
   const summary = evaluateRun(run as Run, qrels, kValues);
 
@@ -162,6 +180,9 @@ function main(): void {
     },
     strategy: { id: strategy.id, mode: strategy.mode, params: resolvedParams },
     ...(linkGraph === undefined ? {} : { link_graph: linkGraph }),
+    ...(fuzzy === undefined || fuzzyStats === undefined
+      ? {}
+      : { fuzzy: { enabled: true, params: fuzzy, stats: fuzzyStats } }),
     topk,
     k_values: kValues,
     metrics: {
@@ -177,7 +198,8 @@ function main(): void {
 
   fs.mkdirSync(outDir, { recursive: true });
   const stamp = timestamp.replace(/[:.]/g, '-');
-  const artifactPath = path.join(outDir, `${stamp}-${corpus}-${strategy.id}.json`);
+  const suffix = fuzzyEnabled ? '-fuzzy' : '';
+  const artifactPath = path.join(outDir, `${stamp}-${corpus}-${strategy.id}${suffix}.json`);
   fs.writeFileSync(artifactPath, `${JSON.stringify(artifact, null, 2)}\n`, 'utf8');
 
   const fmt = (n: number): string => n.toFixed(4);
@@ -196,8 +218,30 @@ function main(): void {
   console.log(
     `  latency    avg ${lat.avg.toFixed(3)} ms · median ${lat.median.toFixed(3)} ms · p95 ${lat.p95.toFixed(3)} ms`,
   );
+  if (fuzzyStats !== undefined) {
+    console.log(
+      `  fuzzy      ${fuzzyStats.termsExpanded}/${fuzzyStats.termsAttempted} terms expanded` +
+        ` · ${fuzzyStats.variantsAdded} variants · ${fuzzyStats.queriesExpanded}/${evalQueries.size} queries`,
+    );
+  }
   console.log(`  git        ${git.sha.slice(0, 12)}${git.clean ? '' : ' (dirty worktree)'}`);
   console.log(`  artifact   ${artifactPath}`);
+}
+
+/** --fuzzy-* flags -> FuzzyOptions (only defined entries; resolveFuzzy validates). */
+function readFuzzyOptions(): FuzzyOptions {
+  const edits = argNumber('--fuzzy-edits');
+  const minLen = argNumber('--fuzzy-min-len');
+  const perTerm = argNumber('--fuzzy-max-per-term');
+  const maxTerms = argNumber('--fuzzy-max-terms');
+  const perQuery = argNumber('--fuzzy-max-per-query');
+  return {
+    ...(edits === undefined ? {} : { maxEdits: edits }),
+    ...(minLen === undefined ? {} : { minTermLength: minLen }),
+    ...(perTerm === undefined ? {} : { maxExpansionsPerTerm: perTerm }),
+    ...(maxTerms === undefined ? {} : { maxFuzzyTermsPerQuery: maxTerms }),
+    ...(perQuery === undefined ? {} : { maxExpansionsPerQuery: perQuery }),
+  };
 }
 
 try {

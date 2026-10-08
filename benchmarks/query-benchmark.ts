@@ -11,9 +11,13 @@
  *                graph exists for the corpus (default
  *                data/eval/<corpus>-citations.json or --linkgraph <file>;
  *                PageRank is computed once, OUTSIDE the timed loop)
+ *   bm25-fuzzy   e2e, bm25 + fuzzy expansion of absent terms (maxEdits 1)
+ *   bm25-fuzzy2  e2e, bm25 + fuzzy expansion (maxEdits 2) — the k=2 probe
+ *                cost is the point of this stage
  *
- * e2e = parseQuery -> analyzeQuery -> retrieveBoolean -> strategy.rank ->
- * top-k id mapping, exactly what the experiment runner executes per query.
+ * e2e = parseQuery -> analyzeQuery -> [expandFuzzyQuery] -> retrieveBoolean ->
+ * strategy.rank -> top-k id mapping, exactly what the experiment runner
+ * executes per query.
  *
  * Queries: --queries <BEIR queries.jsonl> uses that file (e.g. scifact);
  * otherwise a deterministic template set derived from the index's top-df
@@ -118,6 +122,32 @@ function main(): void {
     }
   }
 
+  // fuzzy (M4-C): bm25 plus bounded edit-distance expansion of absent terms.
+  // On a clean query set every term already exists, so bm25-fuzzy also
+  // measures the no-op expansion tax; bm25-fuzzy2 measures k=2 probe cost.
+  const fuzzyStages = [
+    { id: 'bm25-fuzzy', fuzzy: { maxEdits: 1 } },
+    { id: 'bm25-fuzzy2', fuzzy: { maxEdits: 2 } },
+  ] as const;
+  const fuzzyExpansion: Record<string, unknown> = {};
+  for (const { id, fuzzy } of fuzzyStages) {
+    const strategy = createStrategy('bm25');
+    const { latencyMs, parseFailures: failures, fuzzy: fuzzyStats } = runQuerySet(
+      bundle,
+      strategy,
+      queries,
+      100,
+      undefined,
+      fuzzy,
+    );
+    stages[id] = latencyStats(latencyMs);
+    parseFailures[id] = failures.length;
+    fuzzyExpansion[id] = fuzzyStats;
+    if (failures.length > 0) {
+      console.warn(`[bench] WARNING: ${failures.length} parse failures in ${id} stage`);
+    }
+  }
+
   // mode D: bm25-pr, only when a citation graph is available for this corpus
   let linkGraph: Record<string, unknown> | undefined;
   const graphFileFlag = argValue('--linkgraph');
@@ -155,7 +185,7 @@ function main(): void {
       queries: texts.length,
       topk: 100,
       pipeline:
-        'candidates: parse+analyze+retrieve; strategies: + rank + top-k mapping (e2e)',
+        'candidates: parse+analyze+retrieve; strategies: + rank + top-k mapping (e2e); fuzzy stages: + expandFuzzyQuery',
     },
     corpus: {
       name: corpus,
@@ -164,6 +194,7 @@ function main(): void {
       vocabSize: bundle.reader.stats().vocabSize,
     },
     parse_failures: parseFailures,
+    fuzzy_expansion: fuzzyExpansion,
     ...(linkGraph === undefined ? {} : { link_graph: linkGraph }),
     stages,
   };

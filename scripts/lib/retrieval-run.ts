@@ -13,7 +13,12 @@ import {
   QueryParseError,
   type QueryParseOptions,
 } from '../../src/core/query/index.js';
-import { analyzeQuery, retrieveBoolean } from '../../src/core/retrieval/index.js';
+import {
+  analyzeQuery,
+  retrieveAnalyzed,
+  expandFuzzyQuery,
+  type FuzzyOptions,
+} from '../../src/core/retrieval/index.js';
 import type { RankingStrategy } from '../../src/core/ranking/index.js';
 import type { Run } from '../../src/eval/index.js';
 
@@ -36,6 +41,24 @@ export interface QueryRunResult {
   /** per-query wall time of parse+analyze+retrieve+rank, milliseconds */
   readonly latencyMs: number[];
   readonly parseFailures: ParseFailure[];
+  /** aggregated fuzzy expansion counters (present only when fuzzy was enabled) */
+  readonly fuzzy?: FuzzyRunStats;
+}
+
+export interface FuzzyRunStats {
+  readonly termsAttempted: number;
+  readonly termsExpanded: number;
+  readonly variantsAdded: number;
+  /** queries where at least one term was expanded */
+  readonly queriesExpanded: number;
+  /** every strict limit that fired, summed across queries */
+  readonly caps: {
+    readonly tooShort: number;
+    readonly fuzzyTermsPerQuery: number;
+    readonly expansionsPerTerm: number;
+    readonly expansionsPerQuery: number;
+    readonly edits2SkippedLength: number;
+  };
 }
 
 /** Load data/index/<corpus>.aidx + its id map (built by build-eval-index.ts). */
@@ -74,6 +97,10 @@ export function loadIndexBundle(corpus: string, root = process.cwd()): IndexBund
  * and latency runs treat each query as a bag of words joined by OR — the
  * standard IR convention behind BEIR/TREC BM25 baselines. Explicit
  * operators/quotes in a query are honored as written either way.
+ *
+ * With `fuzzy` supplied, absent query terms are expanded against the
+ * dictionary (bounded edit distance) before retrieval — inside the timed
+ * loop, because expansion is part of query cost.
  */
 export function runQuerySet(
   bundle: IndexBundle,
@@ -81,17 +108,48 @@ export function runQuerySet(
   queries: ReadonlyMap<string, string>,
   topK: number,
   parseOptions: QueryParseOptions = { implicitOperator: 'or' },
+  fuzzy?: FuzzyOptions,
 ): QueryRunResult {
   const run = new Map<string, string[]>();
   const latencyMs: number[] = [];
   const parseFailures: ParseFailure[] = [];
+  const fuzzyAgg =
+    fuzzy === undefined
+      ? undefined
+      : {
+          termsAttempted: 0,
+          termsExpanded: 0,
+          variantsAdded: 0,
+          queriesExpanded: 0,
+          caps: {
+            tooShort: 0,
+            fuzzyTermsPerQuery: 0,
+            expansionsPerTerm: 0,
+            expansionsPerQuery: 0,
+            edits2SkippedLength: 0,
+          },
+        };
 
   for (const [queryId, text] of queries) {
     const t0 = performance.now();
     try {
       const parsed = parseQuery(text, parseOptions);
-      const analyzed = analyzeQuery(parsed, bundle.reader.analysis);
-      const candidates = retrieveBoolean(bundle.reader, parsed);
+      let analyzed = analyzeQuery(parsed, bundle.reader.analysis);
+      if (fuzzyAgg !== undefined && fuzzy !== undefined) {
+        const expanded = expandFuzzyQuery(bundle.reader, analyzed, fuzzy);
+        analyzed = expanded.query;
+        const s = expanded.stats;
+        fuzzyAgg.termsAttempted += s.termsAttempted;
+        fuzzyAgg.termsExpanded += s.termsExpanded;
+        fuzzyAgg.variantsAdded += s.variantsAdded;
+        if (s.termsExpanded > 0) fuzzyAgg.queriesExpanded++;
+        fuzzyAgg.caps.tooShort += s.caps.tooShort;
+        fuzzyAgg.caps.fuzzyTermsPerQuery += s.caps.fuzzyTermsPerQuery;
+        fuzzyAgg.caps.expansionsPerTerm += s.caps.expansionsPerTerm;
+        fuzzyAgg.caps.expansionsPerQuery += s.caps.expansionsPerQuery;
+        fuzzyAgg.caps.edits2SkippedLength += s.caps.edits2SkippedLength;
+      }
+      const candidates = retrieveAnalyzed(bundle.reader, analyzed);
       const scored = strategy.rank(bundle.reader, analyzed, candidates);
       run.set(
         queryId,
@@ -104,5 +162,10 @@ export function runQuerySet(
     }
     latencyMs.push(performance.now() - t0);
   }
-  return { run, latencyMs, parseFailures };
+  return {
+    run,
+    latencyMs,
+    parseFailures,
+    ...(fuzzyAgg === undefined ? {} : { fuzzy: fuzzyAgg }),
+  };
 }

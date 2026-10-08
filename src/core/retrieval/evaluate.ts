@@ -24,9 +24,19 @@ function evalAnalyzed(node: AnalyzedQuery, reader: IndexReader): Uint32Array {
   switch (node.kind) {
     case 'term': {
       if (node.terms.length === 0) return new Uint32Array(0);
-      // A surface term is a single word, so analyze yields at most one token.
-      const view = reader.postingsForTerm(node.terms[0]!);
-      return view === null ? new Uint32Array(0) : view.docIds();
+      // A plain surface term yields one analyzed token (fast path).
+      // Fuzzy expansion (M4-C) annotates the leaf with dictionary variants —
+      // the leaf then behaves as their union (OR), while NOT stays exact.
+      if (node.terms.length === 1) {
+        const view = reader.postingsForTerm(node.terms[0]!);
+        return view === null ? new Uint32Array(0) : view.docIds();
+      }
+      let out: Uint32Array = new Uint32Array(0);
+      for (const term of node.terms) {
+        const view = reader.postingsForTerm(term);
+        if (view !== null) out = union(out, view.docIds());
+      }
+      return out;
     }
     case 'phrase':
       return matchPhrase(reader, node.terms);

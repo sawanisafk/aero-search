@@ -14,6 +14,7 @@
     "test:watch": "vitest",
     "bench:index": "tsx benchmarks/index-benchmark.ts",
     "bench:query": "tsx benchmarks/query-benchmark.ts",
+    "bench:fuzzy": "tsx scripts/fuzzy-benchmark.ts",
     "corpus:synthetic": "tsx scripts/generate-synthetic-corpus.ts",
     "corpus:static": "tsx scripts/build-static-corpus.ts",
     "corpus:scifact": "tsx scripts/fetch-scifact.ts",
