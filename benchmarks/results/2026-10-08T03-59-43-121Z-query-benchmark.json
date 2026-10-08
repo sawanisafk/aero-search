@@ -1,0 +1,151 @@
+{
+  "kind": "query-latency",
+  "timestamp": "2026-10-08T03:59:43.121Z",
+  "git": {
+    "sha": "b7131506aeeff3e094aeec55d5749ba9e10398c3",
+    "clean": true,
+    "has_untracked": true
+  },
+  "config": {
+    "corpus": "scifact",
+    "query_source": "data/eval/scifact-queries.jsonl",
+    "queries": 1109,
+    "topk": 100,
+    "pipeline": "candidates: parse+analyze+retrieve; strategies: + rank + top-k mapping (e2e); fuzzy stages: + expandFuzzyQuery"
+  },
+  "corpus": {
+    "name": "scifact",
+    "hash": "dec31c8182f3d744c7d2c09423756fd1d17cbef75808db13ba01cc0aab4d1ac6",
+    "numDocs": 5183,
+    "vocabSize": 26299
+  },
+  "parse_failures": {
+    "candidates": 2,
+    "boolean": 2,
+    "tfidf": 2,
+    "bm25": 2,
+    "bm25-phrase": 2,
+    "bm25-phrase-proximity": 2,
+    "bm25-fuzzy": 2,
+    "bm25-fuzzy2": 2,
+    "bm25-pr": 2
+  },
+  "fuzzy_expansion": {
+    "bm25-fuzzy": {
+      "termsAttempted": 252,
+      "termsExpanded": 150,
+      "variantsAdded": 626,
+      "queriesExpanded": 131,
+      "caps": {
+        "tooShort": 4,
+        "fuzzyTermsPerQuery": 0,
+        "expansionsPerTerm": 25,
+        "expansionsPerQuery": 4,
+        "edits2SkippedLength": 0
+      }
+    },
+    "bm25-fuzzy2": {
+      "termsAttempted": 252,
+      "termsExpanded": 189,
+      "variantsAdded": 1125,
+      "queriesExpanded": 157,
+      "caps": {
+        "tooShort": 4,
+        "fuzzyTermsPerQuery": 0,
+        "expansionsPerTerm": 53,
+        "expansionsPerQuery": 4,
+        "edits2SkippedLength": 55
+      }
+    }
+  },
+  "link_graph": {
+    "file": "data\\eval\\scifact-citations.json",
+    "sha256": "c780f9e6d2dcf79459025a4e68894a4cf1f82bd193eec7adafd865c5f0dd60f2",
+    "pr_weight": 0.2,
+    "pagerank": {
+      "damping": 0.85,
+      "tolerance": 0.000001,
+      "maxIterations": 100,
+      "iterations": 41,
+      "converged": true,
+      "residual": 8.642679683825609e-7,
+      "nodeCount": 5183,
+      "edgeCount": 2015,
+      "graphHash": "3d7b80d2ae4a482ed9a9f0f6e90d5cd1fa3e85481ea4da52b4b17e818e8b7823"
+    }
+  },
+  "stages": {
+    "candidates": {
+      "count": 1109,
+      "avg": 0.21097294860234425,
+      "median": 0.17570000000000618,
+      "p95": 0.45699999999999363,
+      "min": 0.030799999999999272,
+      "max": 2.6777999999999906
+    },
+    "boolean": {
+      "count": 1109,
+      "avg": 0.30721758340847555,
+      "median": 0.26089999999999236,
+      "p95": 0.6918000000000575,
+      "min": 0.03840000000002419,
+      "max": 1.4939999999999145
+    },
+    "tfidf": {
+      "count": 1109,
+      "avg": 0.7175071235347157,
+      "median": 0.6767999999999574,
+      "p95": 1.3345999999999094,
+      "min": 0.056899999999927786,
+      "max": 2.6300999999999704
+    },
+    "bm25": {
+      "count": 1109,
+      "avg": 0.8870485121731289,
+      "median": 0.85550000000012,
+      "p95": 1.6139000000002852,
+      "min": 0.037900000000036016,
+      "max": 2.616399999999885
+    },
+    "bm25-phrase": {
+      "count": 1109,
+      "avg": 0.929002164111809,
+      "median": 0.9030999999999949,
+      "p95": 1.6499000000003434,
+      "min": 0.04570000000012442,
+      "max": 2.4771999999998116
+    },
+    "bm25-phrase-proximity": {
+      "count": 1109,
+      "avg": 2.514437691614066,
+      "median": 1.4477000000006228,
+      "p95": 7.6983000000000175,
+      "min": 0.0466999999998734,
+      "max": 42.07690000000002
+    },
+    "bm25-fuzzy": {
+      "count": 1109,
+      "avg": 0.8678675383228235,
+      "median": 0.8449999999993452,
+      "p95": 1.5249000000003434,
+      "min": 0.06930000000011205,
+      "max": 2.9660000000003492
+    },
+    "bm25-fuzzy2": {
+      "count": 1109,
+      "avg": 1.2322622182145802,
+      "median": 0.9061999999994441,
+      "p95": 3.8937000000005355,
+      "min": 0.07419999999910942,
+      "max": 7.773000000000138
+    },
+    "bm25-pr": {
+      "count": 1109,
+      "avg": 1.1113839495040734,
+      "median": 1.08849999999984,
+      "p95": 1.9549999999999272,
+      "min": 0.0816000000013446,
+      "max": 4.074799999998504
+    }
+  }
+}

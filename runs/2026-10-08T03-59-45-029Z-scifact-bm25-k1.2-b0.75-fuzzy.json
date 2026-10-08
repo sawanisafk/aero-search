@@ -1,0 +1,105 @@
+{
+  "experiment_id": "scifact-bm25-k1.2-b0.75",
+  "timestamp": "2026-10-08T03:59:45.029Z",
+  "git": {
+    "sha": "b7131506aeeff3e094aeec55d5749ba9e10398c3",
+    "clean": true,
+    "has_untracked": true
+  },
+  "corpus": {
+    "name": "scifact",
+    "hash": "dec31c8182f3d744c7d2c09423756fd1d17cbef75808db13ba01cc0aab4d1ac6",
+    "numDocs": 5183
+  },
+  "query_set": {
+    "file": "data\\eval\\scifact-queries.jsonl",
+    "sha256": "8ff84a7c903f722981cd8d595c022660140c51867b27608a6d4910db86080313",
+    "evaluated_queries": 300,
+    "parse_failures": [
+      {
+        "queryId": "42",
+        "code": "EMPTY_GROUP"
+      }
+    ]
+  },
+  "qrels": {
+    "file": "data\\eval\\scifact-qrels.tsv",
+    "sha256": "0864bb985e0ca2367ba217977e72004d549054b2b06666ed9d4825ac7c21284c",
+    "judged_queries": 300,
+    "rows": 339
+  },
+  "strategy": {
+    "id": "bm25-k1.2-b0.75",
+    "mode": "B",
+    "params": {
+      "k1": 1.2,
+      "b": 0.75
+    }
+  },
+  "fuzzy": {
+    "enabled": true,
+    "params": {
+      "maxEdits": 1,
+      "minTermLength": 3,
+      "maxExpansionsPerTerm": 10,
+      "maxFuzzyTermsPerQuery": 10,
+      "maxExpansionsPerQuery": 20
+    },
+    "stats": {
+      "termsAttempted": 72,
+      "termsExpanded": 38,
+      "variantsAdded": 157,
+      "queriesExpanded": 30,
+      "caps": {
+        "tooShort": 0,
+        "fuzzyTermsPerQuery": 0,
+        "expansionsPerTerm": 8,
+        "expansionsPerQuery": 3,
+        "edits2SkippedLength": 0
+      }
+    }
+  },
+  "topk": 1000,
+  "k_values": [
+    1,
+    5,
+    10,
+    100
+  ],
+  "metrics": {
+    "map": 0.6353394614212671,
+    "precision": {
+      "1": 0.5433333333333333,
+      "5": 0.16066666666666707,
+      "10": 0.09033333333333365,
+      "100": 0.010499999999999938
+    },
+    "recall": {
+      "1": 0.5273333333333333,
+      "5": 0.7442777777777777,
+      "10": 0.8195,
+      "100": 0.9308888888888889
+    },
+    "f1": {
+      "1": 0.5316666666666666,
+      "5": 0.26057407407407396,
+      "10": 0.16073948273948263,
+      "100": 0.02071819076272544
+    },
+    "ndcg": {
+      "1": 0.5433333333333333,
+      "5": 0.6535313333324305,
+      "10": 0.6792501252987374,
+      "100": 0.7044624910843632
+    }
+  },
+  "latency_ms": {
+    "count": 300,
+    "avg": 1.0894110000000001,
+    "median": 1.0281999999999982,
+    "p95": 2.0423999999999864,
+    "min": 0.11489999999997735,
+    "max": 8.659099999999995
+  },
+  "wall_ms": 327.48480000000006
+}

@@ -1,0 +1,2912 @@
+{
+  "kind": "fuzzy-typo-benchmark",
+  "timestamp": "2026-10-08T03:59:23.203Z",
+  "git": {
+    "sha": "b7131506aeeff3e094aeec55d5749ba9e10398c3",
+    "clean": true,
+    "has_untracked": true
+  },
+  "config": {
+    "corpus": "scifact",
+    "strategy": "bm25",
+    "topk": 1000,
+    "k_values": [
+      1,
+      5,
+      10,
+      100
+    ],
+    "fuzzy": {
+      "maxEdits": 2,
+      "minTermLength": 3,
+      "maxExpansionsPerTerm": 10,
+      "maxFuzzyTermsPerQuery": 10,
+      "maxExpansionsPerQuery": 20
+    },
+    "corruption": "single deterministic substitution per query: first eligible word (len>=4, indexed, non-stopword), position last->first, letter a->z; accepted when the analyzed form is a dictionary miss at edit distance exactly 1; non-corruptible queries excluded from all arms"
+  },
+  "corpus": {
+    "name": "scifact",
+    "hash": "dec31c8182f3d744c7d2c09423756fd1d17cbef75808db13ba01cc0aab4d1ac6",
+    "numDocs": 5183,
+    "vocabSize": 26299
+  },
+  "query_set": {
+    "file": "data\\eval\\scifact-queries.jsonl",
+    "sha256": "8ff84a7c903f722981cd8d595c022660140c51867b27608a6d4910db86080313",
+    "judged_queries": 300,
+    "corruptible": 300,
+    "skipped": []
+  },
+  "qrels": {
+    "file": "data\\eval\\scifact-qrels.tsv",
+    "sha256": "0864bb985e0ca2367ba217977e72004d549054b2b06666ed9d4825ac7c21284c"
+  },
+  "corrections": [
+    {
+      "queryId": "1",
+      "token": "dimensional",
+      "tokenIndex": 0,
+      "corrupted": "dimensionae",
+      "originalTerm": "dimension",
+      "corruptedTerm": "dimensiona",
+      "distance": 1
+    },
+    {
+      "queryId": "3",
+      "token": "genomes",
+      "tokenIndex": 0,
+      "corrupted": "genomee",
+      "originalTerm": "genom",
+      "corruptedTerm": "genome",
+      "distance": 1
+    },
+    {
+      "queryId": "5",
+      "token": "abnormal",
+      "tokenIndex": 1,
+      "corrupted": "abnormae",
+      "originalTerm": "abnorm",
+      "corruptedTerm": "abnorma",
+      "distance": 1
+    },
+    {
+      "queryId": "13",
+      "token": "perinatal",
+      "tokenIndex": 0,
+      "corrupted": "perinatae",
+      "originalTerm": "perinat",
+      "corruptedTerm": "perinata",
+      "distance": 1
+    },
+    {
+      "queryId": "36",
+      "token": "deficiency",
+      "tokenIndex": 0,
+      "corrupted": "deficaency",
+      "originalTerm": "defici",
+      "corruptedTerm": "defica",
+      "distance": 1
+    },
+    {
+      "queryId": "42",
+      "token": "high",
+      "tokenIndex": 0,
+      "corrupted": "higa",
+      "originalTerm": "high",
+      "corruptedTerm": "higa",
+      "distance": 1
+    },
+    {
+      "queryId": "48",
+      "token": "total",
+      "tokenIndex": 0,
+      "corrupted": "totaa",
+      "originalTerm": "total",
+      "corruptedTerm": "totaa",
+      "distance": 1
+    },
+    {
+      "queryId": "49",
+      "token": "ADAR",
+      "tokenIndex": 0,
+      "corrupted": "adaa",
+      "originalTerm": "adar",
+      "corruptedTerm": "adaa",
+      "distance": 1
+    },
+    {
+      "queryId": "50",
+      "token": "expressed",
+      "tokenIndex": 1,
+      "corrupted": "expressee",
+      "originalTerm": "express",
+      "corruptedTerm": "expresse",
+      "distance": 1
+    },
+    {
+      "queryId": "51",
+      "token": "ALDH",
+      "tokenIndex": 0,
+      "corrupted": "alda",
+      "originalTerm": "aldh",
+      "corruptedTerm": "alda",
+      "distance": 1
+    },
+    {
+      "queryId": "53",
+      "token": "ALDH",
+      "tokenIndex": 0,
+      "corrupted": "alda",
+      "originalTerm": "aldh",
+      "corruptedTerm": "alda",
+      "distance": 1
+    },
+    {
+      "queryId": "54",
+      "token": "activated",
+      "tokenIndex": 0,
+      "corrupted": "activtted",
+      "originalTerm": "activ",
+      "corruptedTerm": "activt",
+      "distance": 1
+    },
+    {
+      "queryId": "56",
+      "token": "expression",
+      "tokenIndex": 1,
+      "corrupted": "expressiou",
+      "originalTerm": "express",
+      "corruptedTerm": "expressi",
+      "distance": 1
+    },
+    {
+      "queryId": "57",
+      "token": "expression",
+      "tokenIndex": 1,
+      "corrupted": "expressiou",
+      "originalTerm": "express",
+      "corruptedTerm": "expressi",
+      "distance": 1
+    },
+    {
+      "queryId": "70",
+      "token": "Activation",
+      "tokenIndex": 0,
+      "corrupted": "actibation",
+      "originalTerm": "activ",
+      "corruptedTerm": "actib",
+      "distance": 1
+    },
+    {
+      "queryId": "72",
+      "token": "Activator",
+      "tokenIndex": 0,
+      "corrupted": "actibator",
+      "originalTerm": "activ",
+      "corruptedTerm": "actib",
+      "distance": 1
+    },
+    {
+      "queryId": "75",
+      "token": "Active",
+      "tokenIndex": 0,
+      "corrupted": "activa",
+      "originalTerm": "activ",
+      "corruptedTerm": "activa",
+      "distance": 1
+    },
+    {
+      "queryId": "94",
+      "token": "treat",
+      "tokenIndex": 2,
+      "corrupted": "treaa",
+      "originalTerm": "treat",
+      "corruptedTerm": "treaa",
+      "distance": 1
+    },
+    {
+      "queryId": "99",
+      "token": "Alizarin",
+      "tokenIndex": 0,
+      "corrupted": "alizaria",
+      "originalTerm": "alizarin",
+      "corruptedTerm": "alizaria",
+      "distance": 1
+    },
+    {
+      "queryId": "100",
+      "token": "hematopoietic",
+      "tokenIndex": 0,
+      "corrupted": "hematopoietie",
+      "originalTerm": "hematopoiet",
+      "corruptedTerm": "hematopoieti",
+      "distance": 1
+    },
+    {
+      "queryId": "113",
+      "token": "Angiotensin",
+      "tokenIndex": 0,
+      "corrupted": "angiotensia",
+      "originalTerm": "angiotensin",
+      "corruptedTerm": "angiotensia",
+      "distance": 1
+    },
+    {
+      "queryId": "115",
+      "token": "Anthrax",
+      "tokenIndex": 0,
+      "corrupted": "anthraa",
+      "originalTerm": "anthrax",
+      "corruptedTerm": "anthraa",
+      "distance": 1
+    },
+    {
+      "queryId": "118",
+      "token": "Antibiotic",
+      "tokenIndex": 0,
+      "corrupted": "antibiotie",
+      "originalTerm": "antibiot",
+      "corruptedTerm": "antibioti",
+      "distance": 1
+    },
+    {
+      "queryId": "124",
+      "token": "Antiretroviral",
+      "tokenIndex": 0,
+      "corrupted": "antiretrovirae",
+      "originalTerm": "antiretrovir",
+      "corruptedTerm": "antiretrovira",
+      "distance": 1
+    },
+    {
+      "queryId": "127",
+      "token": "Arginine",
+      "tokenIndex": 0,
+      "corrupted": "arginina",
+      "originalTerm": "arginin",
+      "corruptedTerm": "arginina",
+      "distance": 1
+    },
+    {
+      "queryId": "128",
+      "token": "Arterioles",
+      "tokenIndex": 0,
+      "corrupted": "arteriolee",
+      "originalTerm": "arteriol",
+      "corruptedTerm": "arteriole",
+      "distance": 1
+    },
+    {
+      "queryId": "129",
+      "token": "Articles",
+      "tokenIndex": 0,
+      "corrupted": "articlee",
+      "originalTerm": "articl",
+      "corruptedTerm": "article",
+      "distance": 1
+    },
+    {
+      "queryId": "130",
+      "token": "Articles",
+      "tokenIndex": 0,
+      "corrupted": "articlee",
+      "originalTerm": "articl",
+      "corruptedTerm": "article",
+      "distance": 1
+    },
+    {
+      "queryId": "132",
+      "token": "Aspirin",
+      "tokenIndex": 0,
+      "corrupted": "aspiria",
+      "originalTerm": "aspirin",
+      "corruptedTerm": "aspiria",
+      "distance": 1
+    },
+    {
+      "queryId": "133",
+      "token": "Assembly",
+      "tokenIndex": 0,
+      "corrupted": "assembla",
+      "originalTerm": "assembl",
+      "corruptedTerm": "assembla",
+      "distance": 1
+    },
+    {
+      "queryId": "137",
+      "token": "Asymptomatic",
+      "tokenIndex": 0,
+      "corrupted": "asymptomatie",
+      "originalTerm": "asymptomat",
+      "corruptedTerm": "asymptomati",
+      "distance": 1
+    },
+    {
+      "queryId": "141",
+      "token": "Auditory",
+      "tokenIndex": 0,
+      "corrupted": "auditora",
+      "originalTerm": "auditori",
+      "corruptedTerm": "auditora",
+      "distance": 1
+    },
+    {
+      "queryId": "142",
+      "token": "Autologous",
+      "tokenIndex": 0,
+      "corrupted": "autologoes",
+      "originalTerm": "autolog",
+      "corruptedTerm": "autologo",
+      "distance": 1
+    },
+    {
+      "queryId": "143",
+      "token": "Autologous",
+      "tokenIndex": 0,
+      "corrupted": "autologoes",
+      "originalTerm": "autolog",
+      "corruptedTerm": "autologo",
+      "distance": 1
+    },
+    {
+      "queryId": "146",
+      "token": "Autologous",
+      "tokenIndex": 0,
+      "corrupted": "autologoes",
+      "originalTerm": "autolog",
+      "corruptedTerm": "autologo",
+      "distance": 1
+    },
+    {
+      "queryId": "148",
+      "token": "Autophagy",
+      "tokenIndex": 0,
+      "corrupted": "autophaga",
+      "originalTerm": "autophagi",
+      "corruptedTerm": "autophaga",
+      "distance": 1
+    },
+    {
+      "queryId": "163",
+      "token": "Bariatric",
+      "tokenIndex": 0,
+      "corrupted": "bariatrie",
+      "originalTerm": "bariatr",
+      "corruptedTerm": "bariatri",
+      "distance": 1
+    },
+    {
+      "queryId": "171",
+      "token": "Basophils",
+      "tokenIndex": 0,
+      "corrupted": "basophila",
+      "originalTerm": "basophil",
+      "corruptedTerm": "basophila",
+      "distance": 1
+    },
+    {
+      "queryId": "179",
+      "token": "Birth",
+      "tokenIndex": 0,
+      "corrupted": "birta",
+      "originalTerm": "birth",
+      "corruptedTerm": "birta",
+      "distance": 1
+    },
+    {
+      "queryId": "180",
+      "token": "Blocking",
+      "tokenIndex": 0,
+      "corrupted": "blocaing",
+      "originalTerm": "block",
+      "corruptedTerm": "bloca",
+      "distance": 1
+    },
+    {
+      "queryId": "183",
+      "token": "Bone",
+      "tokenIndex": 0,
+      "corrupted": "bonb",
+      "originalTerm": "bone",
+      "corruptedTerm": "bonb",
+      "distance": 1
+    },
+    {
+      "queryId": "185",
+      "token": "Breast",
+      "tokenIndex": 0,
+      "corrupted": "breasa",
+      "originalTerm": "breast",
+      "corruptedTerm": "breasa",
+      "distance": 1
+    },
+    {
+      "queryId": "198",
+      "token": "absent",
+      "tokenIndex": 0,
+      "corrupted": "absena",
+      "originalTerm": "absent",
+      "corruptedTerm": "absena",
+      "distance": 1
+    },
+    {
+      "queryId": "208",
+      "token": "associated",
+      "tokenIndex": 1,
+      "corrupted": "associtted",
+      "originalTerm": "associ",
+      "corruptedTerm": "associt",
+      "distance": 1
+    },
+    {
+      "queryId": "212",
+      "token": "associated",
+      "tokenIndex": 0,
+      "corrupted": "associtted",
+      "originalTerm": "associ",
+      "corruptedTerm": "associt",
+      "distance": 1
+    },
+    {
+      "queryId": "213",
+      "token": "predictive",
+      "tokenIndex": 0,
+      "corrupted": "predicbive",
+      "originalTerm": "predict",
+      "corruptedTerm": "predicb",
+      "distance": 1
+    },
+    {
+      "queryId": "216",
+      "token": "cells",
+      "tokenIndex": 0,
+      "corrupted": "cella",
+      "originalTerm": "cell",
+      "corruptedTerm": "cella",
+      "distance": 1
+    },
+    {
+      "queryId": "217",
+      "token": "cells",
+      "tokenIndex": 0,
+      "corrupted": "cella",
+      "originalTerm": "cell",
+      "corruptedTerm": "cella",
+      "distance": 1
+    },
+    {
+      "queryId": "218",
+      "token": "cells",
+      "tokenIndex": 0,
+      "corrupted": "cella",
+      "originalTerm": "cell",
+      "corruptedTerm": "cella",
+      "distance": 1
+    },
+    {
+      "queryId": "219",
+      "token": "cells",
+      "tokenIndex": 0,
+      "corrupted": "cella",
+      "originalTerm": "cell",
+      "corruptedTerm": "cella",
+      "distance": 1
+    },
+    {
+      "queryId": "230",
+      "token": "Carriers",
+      "tokenIndex": 0,
+      "corrupted": "carriera",
+      "originalTerm": "carrier",
+      "corruptedTerm": "carriera",
+      "distance": 1
+    },
+    {
+      "queryId": "232",
+      "token": "Cataract",
+      "tokenIndex": 0,
+      "corrupted": "cataraca",
+      "originalTerm": "cataract",
+      "corruptedTerm": "cataraca",
+      "distance": 1
+    },
+    {
+      "queryId": "233",
+      "token": "Cell",
+      "tokenIndex": 0,
+      "corrupted": "cela",
+      "originalTerm": "cell",
+      "corruptedTerm": "cela",
+      "distance": 1
+    },
+    {
+      "queryId": "236",
+      "token": "Cell",
+      "tokenIndex": 0,
+      "corrupted": "cela",
+      "originalTerm": "cell",
+      "corruptedTerm": "cela",
+      "distance": 1
+    },
+    {
+      "queryId": "237",
+      "token": "Cells",
+      "tokenIndex": 0,
+      "corrupted": "cella",
+      "originalTerm": "cell",
+      "corruptedTerm": "cella",
+      "distance": 1
+    },
+    {
+      "queryId": "238",
+      "token": "Cells",
+      "tokenIndex": 0,
+      "corrupted": "cella",
+      "originalTerm": "cell",
+      "corruptedTerm": "cella",
+      "distance": 1
+    },
+    {
+      "queryId": "239",
+      "token": "Cellular",
+      "tokenIndex": 0,
+      "corrupted": "cellulaa",
+      "originalTerm": "cellular",
+      "corruptedTerm": "cellulaa",
+      "distance": 1
+    },
+    {
+      "queryId": "248",
+      "token": "acid",
+      "tokenIndex": 1,
+      "corrupted": "acia",
+      "originalTerm": "acid",
+      "corruptedTerm": "acia",
+      "distance": 1
+    },
+    {
+      "queryId": "249",
+      "token": "acid",
+      "tokenIndex": 1,
+      "corrupted": "acia",
+      "originalTerm": "acid",
+      "corruptedTerm": "acia",
+      "distance": 1
+    },
+    {
+      "queryId": "261",
+      "token": "Chronic",
+      "tokenIndex": 0,
+      "corrupted": "chronia",
+      "originalTerm": "chronic",
+      "corruptedTerm": "chronia",
+      "distance": 1
+    },
+    {
+      "queryId": "268",
+      "token": "Cold",
+      "tokenIndex": 0,
+      "corrupted": "colb",
+      "originalTerm": "cold",
+      "corruptedTerm": "colb",
+      "distance": 1
+    },
+    {
+      "queryId": "269",
+      "token": "Cold",
+      "tokenIndex": 0,
+      "corrupted": "colb",
+      "originalTerm": "cold",
+      "corruptedTerm": "colb",
+      "distance": 1
+    },
+    {
+      "queryId": "274",
+      "token": "Combination",
+      "tokenIndex": 0,
+      "corrupted": "combibation",
+      "originalTerm": "combin",
+      "corruptedTerm": "combib",
+      "distance": 1
+    },
+    {
+      "queryId": "275",
+      "token": "Combining",
+      "tokenIndex": 0,
+      "corrupted": "combiaing",
+      "originalTerm": "combin",
+      "corruptedTerm": "combia",
+      "distance": 1
+    },
+    {
+      "queryId": "279",
+      "token": "Commelina",
+      "tokenIndex": 0,
+      "corrupted": "commelinb",
+      "originalTerm": "commelina",
+      "corruptedTerm": "commelinb",
+      "distance": 1
+    },
+    {
+      "queryId": "294",
+      "token": "Crossover",
+      "tokenIndex": 0,
+      "corrupted": "crossovee",
+      "originalTerm": "crossov",
+      "corruptedTerm": "crossove",
+      "distance": 1
+    },
+    {
+      "queryId": "295",
+      "token": "Crosstalk",
+      "tokenIndex": 0,
+      "corrupted": "crosstala",
+      "originalTerm": "crosstalk",
+      "corruptedTerm": "crosstala",
+      "distance": 1
+    },
+    {
+      "queryId": "298",
+      "token": "Cytochrome",
+      "tokenIndex": 0,
+      "corrupted": "cytochroma",
+      "originalTerm": "cytochrom",
+      "corruptedTerm": "cytochroma",
+      "distance": 1
+    },
+    {
+      "queryId": "300",
+      "token": "Cytosolic",
+      "tokenIndex": 0,
+      "corrupted": "cytosolie",
+      "originalTerm": "cytosol",
+      "corruptedTerm": "cytosoli",
+      "distance": 1
+    },
+    {
+      "queryId": "303",
+      "token": "determining",
+      "tokenIndex": 1,
+      "corrupted": "determiaing",
+      "originalTerm": "determin",
+      "corruptedTerm": "determia",
+      "distance": 1
+    },
+    {
+      "queryId": "312",
+      "token": "novo",
+      "tokenIndex": 0,
+      "corrupted": "novb",
+      "originalTerm": "novo",
+      "corruptedTerm": "novb",
+      "distance": 1
+    },
+    {
+      "queryId": "314",
+      "token": "Deamination",
+      "tokenIndex": 0,
+      "corrupted": "deamibation",
+      "originalTerm": "deamin",
+      "corruptedTerm": "deamib",
+      "distance": 1
+    },
+    {
+      "queryId": "324",
+      "token": "Deleting",
+      "tokenIndex": 0,
+      "corrupted": "deleaing",
+      "originalTerm": "delet",
+      "corruptedTerm": "delea",
+      "distance": 1
+    },
+    {
+      "queryId": "327",
+      "token": "Deletion",
+      "tokenIndex": 0,
+      "corrupted": "deletiou",
+      "originalTerm": "delet",
+      "corruptedTerm": "deleti",
+      "distance": 1
+    },
+    {
+      "queryId": "338",
+      "token": "Dexamethasone",
+      "tokenIndex": 0,
+      "corrupted": "dexamethasona",
+      "originalTerm": "dexamethason",
+      "corruptedTerm": "dexamethasona",
+      "distance": 1
+    },
+    {
+      "queryId": "343",
+      "token": "Diabetic",
+      "tokenIndex": 0,
+      "corrupted": "diabetie",
+      "originalTerm": "diabet",
+      "corruptedTerm": "diabeti",
+      "distance": 1
+    },
+    {
+      "queryId": "350",
+      "token": "Discrimination",
+      "tokenIndex": 0,
+      "corrupted": "discrimiaation",
+      "originalTerm": "discrimin",
+      "corruptedTerm": "discrimia",
+      "distance": 1
+    },
+    {
+      "queryId": "354",
+      "token": "Downregulation",
+      "tokenIndex": 0,
+      "corrupted": "downreguaation",
+      "originalTerm": "downregul",
+      "corruptedTerm": "downregua",
+      "distance": 1
+    },
+    {
+      "queryId": "362",
+      "token": "primary",
+      "tokenIndex": 1,
+      "corrupted": "primara",
+      "originalTerm": "primari",
+      "corruptedTerm": "primara",
+      "distance": 1
+    },
+    {
+      "queryId": "380",
+      "token": "Enhanced",
+      "tokenIndex": 0,
+      "corrupted": "enhancee",
+      "originalTerm": "enhanc",
+      "corruptedTerm": "enhance",
+      "distance": 1
+    },
+    {
+      "queryId": "384",
+      "token": "Epidemiological",
+      "tokenIndex": 0,
+      "corrupted": "epidemiologieal",
+      "originalTerm": "epidemiolog",
+      "corruptedTerm": "epidemiologi",
+      "distance": 1
+    },
+    {
+      "queryId": "385",
+      "token": "Epigenetic",
+      "tokenIndex": 0,
+      "corrupted": "epigenetie",
+      "originalTerm": "epigenet",
+      "corruptedTerm": "epigeneti",
+      "distance": 1
+    },
+    {
+      "queryId": "386",
+      "token": "Errors",
+      "tokenIndex": 0,
+      "corrupted": "errora",
+      "originalTerm": "error",
+      "corruptedTerm": "errora",
+      "distance": 1
+    },
+    {
+      "queryId": "388",
+      "token": "Ethanol",
+      "tokenIndex": 0,
+      "corrupted": "ethanoa",
+      "originalTerm": "ethanol",
+      "corruptedTerm": "ethanoa",
+      "distance": 1
+    },
+    {
+      "queryId": "399",
+      "token": "Exposure",
+      "tokenIndex": 0,
+      "corrupted": "exposura",
+      "originalTerm": "exposur",
+      "corruptedTerm": "exposura",
+      "distance": 1
+    },
+    {
+      "queryId": "410",
+      "token": "Febrile",
+      "tokenIndex": 0,
+      "corrupted": "febrila",
+      "originalTerm": "febril",
+      "corruptedTerm": "febrila",
+      "distance": 1
+    },
+    {
+      "queryId": "411",
+      "token": "Febrile",
+      "tokenIndex": 0,
+      "corrupted": "febrila",
+      "originalTerm": "febril",
+      "corruptedTerm": "febrila",
+      "distance": 1
+    },
+    {
+      "queryId": "415",
+      "token": "Female",
+      "tokenIndex": 0,
+      "corrupted": "femala",
+      "originalTerm": "femal",
+      "corruptedTerm": "femala",
+      "distance": 1
+    },
+    {
+      "queryId": "421",
+      "token": "Flexible",
+      "tokenIndex": 0,
+      "corrupted": "flexibla",
+      "originalTerm": "flexibl",
+      "corruptedTerm": "flexibla",
+      "distance": 1
+    },
+    {
+      "queryId": "431",
+      "token": "FoxO",
+      "tokenIndex": 0,
+      "corrupted": "foxb",
+      "originalTerm": "foxo",
+      "corruptedTerm": "foxb",
+      "distance": 1
+    },
+    {
+      "queryId": "436",
+      "token": "Free",
+      "tokenIndex": 0,
+      "corrupted": "frea",
+      "originalTerm": "free",
+      "corruptedTerm": "frea",
+      "distance": 1
+    },
+    {
+      "queryId": "437",
+      "token": "Functional",
+      "tokenIndex": 0,
+      "corrupted": "functionae",
+      "originalTerm": "function",
+      "corruptedTerm": "functiona",
+      "distance": 1
+    },
+    {
+      "queryId": "439",
+      "token": "dependent",
+      "tokenIndex": 0,
+      "corrupted": "depenaent",
+      "originalTerm": "depend",
+      "corruptedTerm": "depena",
+      "distance": 1
+    },
+    {
+      "queryId": "440",
+      "token": "dependent",
+      "tokenIndex": 0,
+      "corrupted": "depenaent",
+      "originalTerm": "depend",
+      "corruptedTerm": "depena",
+      "distance": 1
+    },
+    {
+      "queryId": "443",
+      "token": "GATA",
+      "tokenIndex": 0,
+      "corrupted": "gatb",
+      "originalTerm": "gata",
+      "corruptedTerm": "gatb",
+      "distance": 1
+    },
+    {
+      "queryId": "452",
+      "token": "Gene",
+      "tokenIndex": 0,
+      "corrupted": "gena",
+      "originalTerm": "gene",
+      "corruptedTerm": "gena",
+      "distance": 1
+    },
+    {
+      "queryId": "475",
+      "token": "Glycolysis",
+      "tokenIndex": 0,
+      "corrupted": "glycolysia",
+      "originalTerm": "glycolysi",
+      "corruptedTerm": "glycolysia",
+      "distance": 1
+    },
+    {
+      "queryId": "478",
+      "token": "Golli",
+      "tokenIndex": 0,
+      "corrupted": "golla",
+      "originalTerm": "golli",
+      "corruptedTerm": "golla",
+      "distance": 1
+    },
+    {
+      "queryId": "491",
+      "token": "mutations",
+      "tokenIndex": 0,
+      "corrupted": "mutatious",
+      "originalTerm": "mutat",
+      "corruptedTerm": "mutati",
+      "distance": 1
+    },
+    {
+      "queryId": "501",
+      "token": "Headaches",
+      "tokenIndex": 0,
+      "corrupted": "headachee",
+      "originalTerm": "headach",
+      "corruptedTerm": "headache",
+      "distance": 1
+    },
+    {
+      "queryId": "502",
+      "token": "Healthcare",
+      "tokenIndex": 0,
+      "corrupted": "healthcara",
+      "originalTerm": "healthcar",
+      "corruptedTerm": "healthcara",
+      "distance": 1
+    },
+    {
+      "queryId": "507",
+      "token": "Helminths",
+      "tokenIndex": 0,
+      "corrupted": "helmintha",
+      "originalTerm": "helminth",
+      "corruptedTerm": "helmintha",
+      "distance": 1
+    },
+    {
+      "queryId": "508",
+      "token": "Hematopoietic",
+      "tokenIndex": 0,
+      "corrupted": "hematopoietie",
+      "originalTerm": "hematopoiet",
+      "corruptedTerm": "hematopoieti",
+      "distance": 1
+    },
+    {
+      "queryId": "513",
+      "token": "High",
+      "tokenIndex": 0,
+      "corrupted": "higa",
+      "originalTerm": "high",
+      "corruptedTerm": "higa",
+      "distance": 1
+    },
+    {
+      "queryId": "514",
+      "token": "High",
+      "tokenIndex": 0,
+      "corrupted": "higa",
+      "originalTerm": "high",
+      "corruptedTerm": "higa",
+      "distance": 1
+    },
+    {
+      "queryId": "516",
+      "token": "High",
+      "tokenIndex": 0,
+      "corrupted": "higa",
+      "originalTerm": "high",
+      "corruptedTerm": "higa",
+      "distance": 1
+    },
+    {
+      "queryId": "517",
+      "token": "High",
+      "tokenIndex": 0,
+      "corrupted": "higa",
+      "originalTerm": "high",
+      "corruptedTerm": "higa",
+      "distance": 1
+    },
+    {
+      "queryId": "521",
+      "token": "High",
+      "tokenIndex": 0,
+      "corrupted": "higa",
+      "originalTerm": "high",
+      "corruptedTerm": "higa",
+      "distance": 1
+    },
+    {
+      "queryId": "525",
+      "token": "Histone",
+      "tokenIndex": 0,
+      "corrupted": "histona",
+      "originalTerm": "histon",
+      "corruptedTerm": "histona",
+      "distance": 1
+    },
+    {
+      "queryId": "527",
+      "token": "Homozygous",
+      "tokenIndex": 0,
+      "corrupted": "homozygoes",
+      "originalTerm": "homozyg",
+      "corruptedTerm": "homozygo",
+      "distance": 1
+    },
+    {
+      "queryId": "528",
+      "token": "Human",
+      "tokenIndex": 0,
+      "corrupted": "humaa",
+      "originalTerm": "human",
+      "corruptedTerm": "humaa",
+      "distance": 1
+    },
+    {
+      "queryId": "532",
+      "token": "decreases",
+      "tokenIndex": 1,
+      "corrupted": "decreasee",
+      "originalTerm": "decreas",
+      "corruptedTerm": "decrease",
+      "distance": 1
+    },
+    {
+      "queryId": "533",
+      "token": "increases",
+      "tokenIndex": 1,
+      "corrupted": "increasee",
+      "originalTerm": "increas",
+      "corruptedTerm": "increase",
+      "distance": 1
+    },
+    {
+      "queryId": "535",
+      "token": "Hypertension",
+      "tokenIndex": 0,
+      "corrupted": "hypertensiou",
+      "originalTerm": "hypertens",
+      "corruptedTerm": "hypertensi",
+      "distance": 1
+    },
+    {
+      "queryId": "536",
+      "token": "Hypocretin",
+      "tokenIndex": 0,
+      "corrupted": "hypocretia",
+      "originalTerm": "hypocretin",
+      "corruptedTerm": "hypocretia",
+      "distance": 1
+    },
+    {
+      "queryId": "539",
+      "token": "Hypoglycemia",
+      "tokenIndex": 0,
+      "corrupted": "hypoglycemib",
+      "originalTerm": "hypoglycemia",
+      "corruptedTerm": "hypoglycemib",
+      "distance": 1
+    },
+    {
+      "queryId": "540",
+      "token": "Hypothalamic",
+      "tokenIndex": 0,
+      "corrupted": "hypothalamie",
+      "originalTerm": "hypothalam",
+      "corruptedTerm": "hypothalami",
+      "distance": 1
+    },
+    {
+      "queryId": "544",
+      "token": "IFIT",
+      "tokenIndex": 0,
+      "corrupted": "ifia",
+      "originalTerm": "ifit",
+      "corruptedTerm": "ifia",
+      "distance": 1
+    },
+    {
+      "queryId": "549",
+      "token": "antiviral",
+      "tokenIndex": 0,
+      "corrupted": "antivirae",
+      "originalTerm": "antivir",
+      "corruptedTerm": "antivira",
+      "distance": 1
+    },
+    {
+      "queryId": "551",
+      "token": "ITAM",
+      "tokenIndex": 0,
+      "corrupted": "itaa",
+      "originalTerm": "itam",
+      "corruptedTerm": "itaa",
+      "distance": 1
+    },
+    {
+      "queryId": "552",
+      "token": "plasma",
+      "tokenIndex": 0,
+      "corrupted": "plasmb",
+      "originalTerm": "plasma",
+      "corruptedTerm": "plasmb",
+      "distance": 1
+    },
+    {
+      "queryId": "554",
+      "token": "Immune",
+      "tokenIndex": 0,
+      "corrupted": "immuna",
+      "originalTerm": "immun",
+      "corruptedTerm": "immuna",
+      "distance": 1
+    },
+    {
+      "queryId": "560",
+      "token": "Immune",
+      "tokenIndex": 0,
+      "corrupted": "immuna",
+      "originalTerm": "immun",
+      "corruptedTerm": "immuna",
+      "distance": 1
+    },
+    {
+      "queryId": "569",
+      "token": "adult",
+      "tokenIndex": 0,
+      "corrupted": "adula",
+      "originalTerm": "adult",
+      "corruptedTerm": "adula",
+      "distance": 1
+    },
+    {
+      "queryId": "575",
+      "token": "domesticated",
+      "tokenIndex": 0,
+      "corrupted": "domestieated",
+      "originalTerm": "domest",
+      "corruptedTerm": "domesti",
+      "distance": 1
+    },
+    {
+      "queryId": "577",
+      "token": "mice",
+      "tokenIndex": 0,
+      "corrupted": "micc",
+      "originalTerm": "mice",
+      "corruptedTerm": "micc",
+      "distance": 1
+    },
+    {
+      "queryId": "578",
+      "token": "mouse",
+      "tokenIndex": 0,
+      "corrupted": "mousa",
+      "originalTerm": "mous",
+      "corruptedTerm": "mousa",
+      "distance": 1
+    },
+    {
+      "queryId": "587",
+      "token": "transgenic",
+      "tokenIndex": 0,
+      "corrupted": "transgenie",
+      "originalTerm": "transgen",
+      "corruptedTerm": "transgeni",
+      "distance": 1
+    },
+    {
+      "queryId": "589",
+      "token": "young",
+      "tokenIndex": 0,
+      "corrupted": "youna",
+      "originalTerm": "young",
+      "corruptedTerm": "youna",
+      "distance": 1
+    },
+    {
+      "queryId": "593",
+      "token": "Incidence",
+      "tokenIndex": 0,
+      "corrupted": "incibence",
+      "originalTerm": "incid",
+      "corruptedTerm": "incib",
+      "distance": 1
+    },
+    {
+      "queryId": "597",
+      "token": "Incidence",
+      "tokenIndex": 0,
+      "corrupted": "incibence",
+      "originalTerm": "incid",
+      "corruptedTerm": "incib",
+      "distance": 1
+    },
+    {
+      "queryId": "598",
+      "token": "Incidence",
+      "tokenIndex": 0,
+      "corrupted": "incibence",
+      "originalTerm": "incid",
+      "corruptedTerm": "incib",
+      "distance": 1
+    },
+    {
+      "queryId": "613",
+      "token": "Increased",
+      "tokenIndex": 0,
+      "corrupted": "increasee",
+      "originalTerm": "increas",
+      "corruptedTerm": "increase",
+      "distance": 1
+    },
+    {
+      "queryId": "619",
+      "token": "Increased",
+      "tokenIndex": 0,
+      "corrupted": "increasee",
+      "originalTerm": "increas",
+      "corruptedTerm": "increase",
+      "distance": 1
+    },
+    {
+      "queryId": "623",
+      "token": "Individuals",
+      "tokenIndex": 0,
+      "corrupted": "individuaes",
+      "originalTerm": "individu",
+      "corruptedTerm": "individua",
+      "distance": 1
+    },
+    {
+      "queryId": "628",
+      "token": "Infection",
+      "tokenIndex": 0,
+      "corrupted": "infecsion",
+      "originalTerm": "infect",
+      "corruptedTerm": "infecs",
+      "distance": 1
+    },
+    {
+      "queryId": "636",
+      "token": "Inositol",
+      "tokenIndex": 0,
+      "corrupted": "inositoa",
+      "originalTerm": "inositol",
+      "corruptedTerm": "inositoa",
+      "distance": 1
+    },
+    {
+      "queryId": "637",
+      "token": "Input",
+      "tokenIndex": 0,
+      "corrupted": "inpua",
+      "originalTerm": "input",
+      "corruptedTerm": "inpua",
+      "distance": 1
+    },
+    {
+      "queryId": "641",
+      "token": "Insomnia",
+      "tokenIndex": 0,
+      "corrupted": "insomnib",
+      "originalTerm": "insomnia",
+      "corruptedTerm": "insomnib",
+      "distance": 1
+    },
+    {
+      "queryId": "644",
+      "token": "Insulin",
+      "tokenIndex": 0,
+      "corrupted": "insulia",
+      "originalTerm": "insulin",
+      "corruptedTerm": "insulia",
+      "distance": 1
+    },
+    {
+      "queryId": "649",
+      "token": "Integrating",
+      "tokenIndex": 0,
+      "corrupted": "integraeing",
+      "originalTerm": "integr",
+      "corruptedTerm": "integra",
+      "distance": 1
+    },
+    {
+      "queryId": "659",
+      "token": "treat",
+      "tokenIndex": 2,
+      "corrupted": "treaa",
+      "originalTerm": "treat",
+      "corruptedTerm": "treaa",
+      "distance": 1
+    },
+    {
+      "queryId": "660",
+      "token": "treat",
+      "tokenIndex": 2,
+      "corrupted": "treaa",
+      "originalTerm": "treat",
+      "corruptedTerm": "treaa",
+      "distance": 1
+    },
+    {
+      "queryId": "674",
+      "token": "cholesterol",
+      "tokenIndex": 0,
+      "corrupted": "cholesteroa",
+      "originalTerm": "cholesterol",
+      "corruptedTerm": "cholesteroa",
+      "distance": 1
+    },
+    {
+      "queryId": "684",
+      "token": "Lack",
+      "tokenIndex": 0,
+      "corrupted": "laca",
+      "originalTerm": "lack",
+      "corruptedTerm": "laca",
+      "distance": 1
+    },
+    {
+      "queryId": "690",
+      "token": "Less",
+      "tokenIndex": 0,
+      "corrupted": "lesa",
+      "originalTerm": "less",
+      "corruptedTerm": "lesa",
+      "distance": 1
+    },
+    {
+      "queryId": "691",
+      "token": "Leukemia",
+      "tokenIndex": 0,
+      "corrupted": "leukemib",
+      "originalTerm": "leukemia",
+      "corruptedTerm": "leukemib",
+      "distance": 1
+    },
+    {
+      "queryId": "692",
+      "token": "increased",
+      "tokenIndex": 1,
+      "corrupted": "increasee",
+      "originalTerm": "increas",
+      "corruptedTerm": "increase",
+      "distance": 1
+    },
+    {
+      "queryId": "693",
+      "token": "reduced",
+      "tokenIndex": 1,
+      "corrupted": "reducee",
+      "originalTerm": "reduc",
+      "corruptedTerm": "reduce",
+      "distance": 1
+    },
+    {
+      "queryId": "700",
+      "token": "Localization",
+      "tokenIndex": 0,
+      "corrupted": "localieation",
+      "originalTerm": "local",
+      "corruptedTerm": "locali",
+      "distance": 1
+    },
+    {
+      "queryId": "702",
+      "token": "Localization",
+      "tokenIndex": 0,
+      "corrupted": "localieation",
+      "originalTerm": "local",
+      "corruptedTerm": "locali",
+      "distance": 1
+    },
+    {
+      "queryId": "715",
+      "token": "expression",
+      "tokenIndex": 0,
+      "corrupted": "expressiou",
+      "originalTerm": "express",
+      "corruptedTerm": "expressi",
+      "distance": 1
+    },
+    {
+      "queryId": "716",
+      "token": "expression",
+      "tokenIndex": 0,
+      "corrupted": "expressiou",
+      "originalTerm": "express",
+      "corruptedTerm": "expressi",
+      "distance": 1
+    },
+    {
+      "queryId": "718",
+      "token": "nucleosome",
+      "tokenIndex": 0,
+      "corrupted": "nucleosoma",
+      "originalTerm": "nucleosom",
+      "corruptedTerm": "nucleosoma",
+      "distance": 1
+    },
+    {
+      "queryId": "721",
+      "token": "Lupus",
+      "tokenIndex": 0,
+      "corrupted": "lupua",
+      "originalTerm": "lupu",
+      "corruptedTerm": "lupua",
+      "distance": 1
+    },
+    {
+      "queryId": "723",
+      "token": "directs",
+      "tokenIndex": 0,
+      "corrupted": "directa",
+      "originalTerm": "direct",
+      "corruptedTerm": "directa",
+      "distance": 1
+    },
+    {
+      "queryId": "727",
+      "token": "monocytes",
+      "tokenIndex": 0,
+      "corrupted": "monocytee",
+      "originalTerm": "monocyt",
+      "corruptedTerm": "monocyte",
+      "distance": 1
+    },
+    {
+      "queryId": "728",
+      "token": "monocytes",
+      "tokenIndex": 0,
+      "corrupted": "monocytee",
+      "originalTerm": "monocyt",
+      "corruptedTerm": "monocyte",
+      "distance": 1
+    },
+    {
+      "queryId": "729",
+      "token": "Lymphadenopathy",
+      "tokenIndex": 0,
+      "corrupted": "lymphadenopatha",
+      "originalTerm": "lymphadenopathi",
+      "corruptedTerm": "lymphadenopatha",
+      "distance": 1
+    },
+    {
+      "queryId": "742",
+      "token": "Macrolides",
+      "tokenIndex": 0,
+      "corrupted": "macrolidee",
+      "originalTerm": "macrolid",
+      "corruptedTerm": "macrolide",
+      "distance": 1
+    },
+    {
+      "queryId": "743",
+      "token": "Macrolides",
+      "tokenIndex": 0,
+      "corrupted": "macrolidee",
+      "originalTerm": "macrolid",
+      "corruptedTerm": "macrolide",
+      "distance": 1
+    },
+    {
+      "queryId": "744",
+      "token": "Macropinocytosis",
+      "tokenIndex": 0,
+      "corrupted": "macropinocytosia",
+      "originalTerm": "macropinocytosi",
+      "corruptedTerm": "macropinocytosia",
+      "distance": 1
+    },
+    {
+      "queryId": "756",
+      "token": "Many",
+      "tokenIndex": 0,
+      "corrupted": "mana",
+      "originalTerm": "mani",
+      "corruptedTerm": "mana",
+      "distance": 1
+    },
+    {
+      "queryId": "759",
+      "token": "Mathematical",
+      "tokenIndex": 0,
+      "corrupted": "mathematieal",
+      "originalTerm": "mathemat",
+      "corruptedTerm": "mathemati",
+      "distance": 1
+    },
+    {
+      "queryId": "768",
+      "token": "Mercaptopurine",
+      "tokenIndex": 0,
+      "corrupted": "mercaptopurina",
+      "originalTerm": "mercaptopurin",
+      "corruptedTerm": "mercaptopurina",
+      "distance": 1
+    },
+    {
+      "queryId": "770",
+      "token": "Metastatic",
+      "tokenIndex": 0,
+      "corrupted": "metastatie",
+      "originalTerm": "metastat",
+      "corruptedTerm": "metastati",
+      "distance": 1
+    },
+    {
+      "queryId": "775",
+      "token": "Mice",
+      "tokenIndex": 0,
+      "corrupted": "micc",
+      "originalTerm": "mice",
+      "corruptedTerm": "micc",
+      "distance": 1
+    },
+    {
+      "queryId": "781",
+      "token": "Mice",
+      "tokenIndex": 0,
+      "corrupted": "micc",
+      "originalTerm": "mice",
+      "corruptedTerm": "micc",
+      "distance": 1
+    },
+    {
+      "queryId": "783",
+      "token": "Mice",
+      "tokenIndex": 0,
+      "corrupted": "micc",
+      "originalTerm": "mice",
+      "corruptedTerm": "micc",
+      "distance": 1
+    },
+    {
+      "queryId": "784",
+      "token": "MicroRNA",
+      "tokenIndex": 0,
+      "corrupted": "micrornb",
+      "originalTerm": "microrna",
+      "corruptedTerm": "micrornb",
+      "distance": 1
+    },
+    {
+      "queryId": "785",
+      "token": "Microarray",
+      "tokenIndex": 0,
+      "corrupted": "microarraa",
+      "originalTerm": "microarrai",
+      "corruptedTerm": "microarraa",
+      "distance": 1
+    },
+    {
+      "queryId": "793",
+      "token": "Mitochondria",
+      "tokenIndex": 0,
+      "corrupted": "mitochondrib",
+      "originalTerm": "mitochondria",
+      "corruptedTerm": "mitochondrib",
+      "distance": 1
+    },
+    {
+      "queryId": "800",
+      "token": "Modifying",
+      "tokenIndex": 0,
+      "corrupted": "modifaing",
+      "originalTerm": "modifi",
+      "corruptedTerm": "modifa",
+      "distance": 1
+    },
+    {
+      "queryId": "805",
+      "token": "Monoclonal",
+      "tokenIndex": 0,
+      "corrupted": "monoclonae",
+      "originalTerm": "monoclon",
+      "corruptedTerm": "monoclona",
+      "distance": 1
+    },
+    {
+      "queryId": "808",
+      "token": "termination",
+      "tokenIndex": 1,
+      "corrupted": "termibation",
+      "originalTerm": "termin",
+      "corruptedTerm": "termib",
+      "distance": 1
+    },
+    {
+      "queryId": "811",
+      "token": "Mutant",
+      "tokenIndex": 0,
+      "corrupted": "mutana",
+      "originalTerm": "mutant",
+      "corruptedTerm": "mutana",
+      "distance": 1
+    },
+    {
+      "queryId": "814",
+      "token": "Mutations",
+      "tokenIndex": 0,
+      "corrupted": "mutatious",
+      "originalTerm": "mutat",
+      "corruptedTerm": "mutati",
+      "distance": 1
+    },
+    {
+      "queryId": "820",
+      "token": "terminal",
+      "tokenIndex": 0,
+      "corrupted": "terminae",
+      "originalTerm": "termin",
+      "corruptedTerm": "termina",
+      "distance": 1
+    },
+    {
+      "queryId": "821",
+      "token": "terminal",
+      "tokenIndex": 0,
+      "corrupted": "terminae",
+      "originalTerm": "termin",
+      "corruptedTerm": "termina",
+      "distance": 1
+    },
+    {
+      "queryId": "823",
+      "token": "mutations",
+      "tokenIndex": 0,
+      "corrupted": "mutatious",
+      "originalTerm": "mutat",
+      "corruptedTerm": "mutati",
+      "distance": 1
+    },
+    {
+      "queryId": "830",
+      "token": "causes",
+      "tokenIndex": 1,
+      "corrupted": "causee",
+      "originalTerm": "caus",
+      "corruptedTerm": "cause",
+      "distance": 1
+    },
+    {
+      "queryId": "831",
+      "token": "prevents",
+      "tokenIndex": 1,
+      "corrupted": "preventa",
+      "originalTerm": "prevent",
+      "corruptedTerm": "preventa",
+      "distance": 1
+    },
+    {
+      "queryId": "832",
+      "token": "NFAT",
+      "tokenIndex": 0,
+      "corrupted": "nfaa",
+      "originalTerm": "nfat",
+      "corruptedTerm": "nfaa",
+      "distance": 1
+    },
+    {
+      "queryId": "834",
+      "token": "independent",
+      "tokenIndex": 0,
+      "corrupted": "indepenaent",
+      "originalTerm": "independ",
+      "corruptedTerm": "indepena",
+      "distance": 1
+    },
+    {
+      "queryId": "837",
+      "token": "important",
+      "tokenIndex": 0,
+      "corrupted": "imporaant",
+      "originalTerm": "import",
+      "corruptedTerm": "impora",
+      "distance": 1
+    },
+    {
+      "queryId": "839",
+      "token": "Nanoparticles",
+      "tokenIndex": 0,
+      "corrupted": "nanoparticlee",
+      "originalTerm": "nanoparticl",
+      "corruptedTerm": "nanoparticle",
+      "distance": 1
+    },
+    {
+      "queryId": "845",
+      "token": "Neutrophil",
+      "tokenIndex": 0,
+      "corrupted": "neutrophia",
+      "originalTerm": "neutrophil",
+      "corruptedTerm": "neutrophia",
+      "distance": 1
+    },
+    {
+      "queryId": "847",
+      "token": "drugs",
+      "tokenIndex": 0,
+      "corrupted": "druga",
+      "originalTerm": "drug",
+      "corruptedTerm": "druga",
+      "distance": 1
+    },
+    {
+      "queryId": "852",
+      "token": "invasive",
+      "tokenIndex": 0,
+      "corrupted": "invabive",
+      "originalTerm": "invas",
+      "corruptedTerm": "invab",
+      "distance": 1
+    },
+    {
+      "queryId": "859",
+      "token": "Normal",
+      "tokenIndex": 0,
+      "corrupted": "normaa",
+      "originalTerm": "normal",
+      "corruptedTerm": "normaa",
+      "distance": 1
+    },
+    {
+      "queryId": "870",
+      "token": "Obesity",
+      "tokenIndex": 0,
+      "corrupted": "obebity",
+      "originalTerm": "obes",
+      "corruptedTerm": "obeb",
+      "distance": 1
+    },
+    {
+      "queryId": "873",
+      "token": "Obesity",
+      "tokenIndex": 0,
+      "corrupted": "obebity",
+      "originalTerm": "obes",
+      "corruptedTerm": "obeb",
+      "distance": 1
+    },
+    {
+      "queryId": "879",
+      "token": "Occupancy",
+      "tokenIndex": 0,
+      "corrupted": "occubancy",
+      "originalTerm": "occup",
+      "corruptedTerm": "occub",
+      "distance": 1
+    },
+    {
+      "queryId": "880",
+      "token": "Occupancy",
+      "tokenIndex": 0,
+      "corrupted": "occubancy",
+      "originalTerm": "occup",
+      "corruptedTerm": "occub",
+      "distance": 1
+    },
+    {
+      "queryId": "882",
+      "token": "Omnivores",
+      "tokenIndex": 0,
+      "corrupted": "omnivoree",
+      "originalTerm": "omnivor",
+      "corruptedTerm": "omnivore",
+      "distance": 1
+    },
+    {
+      "queryId": "887",
+      "token": "minority",
+      "tokenIndex": 1,
+      "corrupted": "minobity",
+      "originalTerm": "minor",
+      "corruptedTerm": "minob",
+      "distance": 1
+    },
+    {
+      "queryId": "903",
+      "token": "triggering",
+      "tokenIndex": 0,
+      "corrupted": "triggeaing",
+      "originalTerm": "trigger",
+      "corruptedTerm": "triggea",
+      "distance": 1
+    },
+    {
+      "queryId": "904",
+      "token": "PDPN",
+      "tokenIndex": 0,
+      "corrupted": "pdpa",
+      "originalTerm": "pdpn",
+      "corruptedTerm": "pdpa",
+      "distance": 1
+    },
+    {
+      "queryId": "907",
+      "token": "promotes",
+      "tokenIndex": 0,
+      "corrupted": "promotee",
+      "originalTerm": "promot",
+      "corruptedTerm": "promote",
+      "distance": 1
+    },
+    {
+      "queryId": "911",
+      "token": "plays",
+      "tokenIndex": 0,
+      "corrupted": "playe",
+      "originalTerm": "plai",
+      "corruptedTerm": "play",
+      "distance": 1
+    },
+    {
+      "queryId": "913",
+      "token": "PPAR",
+      "tokenIndex": 0,
+      "corrupted": "ppaa",
+      "originalTerm": "ppar",
+      "corruptedTerm": "ppaa",
+      "distance": 1
+    },
+    {
+      "queryId": "914",
+      "token": "PPAR",
+      "tokenIndex": 0,
+      "corrupted": "ppaa",
+      "originalTerm": "ppar",
+      "corruptedTerm": "ppaa",
+      "distance": 1
+    },
+    {
+      "queryId": "921",
+      "token": "Participating",
+      "tokenIndex": 0,
+      "corrupted": "participaeing",
+      "originalTerm": "particip",
+      "corruptedTerm": "participa",
+      "distance": 1
+    },
+    {
+      "queryId": "922",
+      "token": "Patients",
+      "tokenIndex": 0,
+      "corrupted": "patienta",
+      "originalTerm": "patient",
+      "corruptedTerm": "patienta",
+      "distance": 1
+    },
+    {
+      "queryId": "936",
+      "token": "Peroxynitrite",
+      "tokenIndex": 0,
+      "corrupted": "peroxynitrita",
+      "originalTerm": "peroxynitrit",
+      "corruptedTerm": "peroxynitrita",
+      "distance": 1
+    },
+    {
+      "queryId": "956",
+      "token": "Pleiotropic",
+      "tokenIndex": 0,
+      "corrupted": "pleiotrobic",
+      "originalTerm": "pleiotrop",
+      "corruptedTerm": "pleiotrob",
+      "distance": 1
+    },
+    {
+      "queryId": "957",
+      "token": "Podocytes",
+      "tokenIndex": 0,
+      "corrupted": "podocytee",
+      "originalTerm": "podocyt",
+      "corruptedTerm": "podocyte",
+      "distance": 1
+    },
+    {
+      "queryId": "960",
+      "token": "Polymeal",
+      "tokenIndex": 0,
+      "corrupted": "polymaal",
+      "originalTerm": "polym",
+      "corruptedTerm": "polyma",
+      "distance": 1
+    },
+    {
+      "queryId": "967",
+      "token": "Pretreatment",
+      "tokenIndex": 0,
+      "corrupted": "pretreatmant",
+      "originalTerm": "pretreat",
+      "corruptedTerm": "pretreatm",
+      "distance": 1
+    },
+    {
+      "queryId": "971",
+      "token": "Primary",
+      "tokenIndex": 0,
+      "corrupted": "primara",
+      "originalTerm": "primari",
+      "corruptedTerm": "primara",
+      "distance": 1
+    },
+    {
+      "queryId": "975",
+      "token": "Primary",
+      "tokenIndex": 0,
+      "corrupted": "primara",
+      "originalTerm": "primari",
+      "corruptedTerm": "primara",
+      "distance": 1
+    },
+    {
+      "queryId": "982",
+      "token": "Proteins",
+      "tokenIndex": 0,
+      "corrupted": "proteina",
+      "originalTerm": "protein",
+      "corruptedTerm": "proteina",
+      "distance": 1
+    },
+    {
+      "queryId": "985",
+      "token": "Pseudogene",
+      "tokenIndex": 0,
+      "corrupted": "pseudogena",
+      "originalTerm": "pseudogen",
+      "corruptedTerm": "pseudogena",
+      "distance": 1
+    },
+    {
+      "queryId": "993",
+      "token": "Pyridostatin",
+      "tokenIndex": 0,
+      "corrupted": "pyridostatia",
+      "originalTerm": "pyridostatin",
+      "corruptedTerm": "pyridostatia",
+      "distance": 1
+    },
+    {
+      "queryId": "1012",
+      "token": "Radioiodine",
+      "tokenIndex": 0,
+      "corrupted": "radioiodina",
+      "originalTerm": "radioiodin",
+      "corruptedTerm": "radioiodina",
+      "distance": 1
+    },
+    {
+      "queryId": "1014",
+      "token": "Rapamycin",
+      "tokenIndex": 0,
+      "corrupted": "rapamycia",
+      "originalTerm": "rapamycin",
+      "corruptedTerm": "rapamycia",
+      "distance": 1
+    },
+    {
+      "queryId": "1019",
+      "token": "Rapid",
+      "tokenIndex": 0,
+      "corrupted": "rapia",
+      "originalTerm": "rapid",
+      "corruptedTerm": "rapia",
+      "distance": 1
+    },
+    {
+      "queryId": "1020",
+      "token": "Rapid",
+      "tokenIndex": 0,
+      "corrupted": "rapia",
+      "originalTerm": "rapid",
+      "corruptedTerm": "rapia",
+      "distance": 1
+    },
+    {
+      "queryId": "1021",
+      "token": "Rapid",
+      "tokenIndex": 0,
+      "corrupted": "rapia",
+      "originalTerm": "rapid",
+      "corruptedTerm": "rapia",
+      "distance": 1
+    },
+    {
+      "queryId": "1024",
+      "token": "Recurrent",
+      "tokenIndex": 0,
+      "corrupted": "recuraent",
+      "originalTerm": "recurr",
+      "corruptedTerm": "recura",
+      "distance": 1
+    },
+    {
+      "queryId": "1029",
+      "token": "Reduced",
+      "tokenIndex": 0,
+      "corrupted": "reducee",
+      "originalTerm": "reduc",
+      "corruptedTerm": "reduce",
+      "distance": 1
+    },
+    {
+      "queryId": "1041",
+      "token": "Replacement",
+      "tokenIndex": 0,
+      "corrupted": "replaceeent",
+      "originalTerm": "replac",
+      "corruptedTerm": "replace",
+      "distance": 1
+    },
+    {
+      "queryId": "1049",
+      "token": "Ribosomopathies",
+      "tokenIndex": 0,
+      "corrupted": "ribosomopathiee",
+      "originalTerm": "ribosomopathi",
+      "corruptedTerm": "ribosomopathie",
+      "distance": 1
+    },
+    {
+      "queryId": "1062",
+      "token": "nitrosylated",
+      "tokenIndex": 0,
+      "corrupted": "nitrosyltted",
+      "originalTerm": "nitrosyl",
+      "corruptedTerm": "nitrosylt",
+      "distance": 1
+    },
+    {
+      "queryId": "1086",
+      "token": "Sildenafil",
+      "tokenIndex": 0,
+      "corrupted": "sildenafia",
+      "originalTerm": "sildenafil",
+      "corruptedTerm": "sildenafia",
+      "distance": 1
+    },
+    {
+      "queryId": "1088",
+      "token": "Silencing",
+      "tokenIndex": 0,
+      "corrupted": "silenaing",
+      "originalTerm": "silenc",
+      "corruptedTerm": "silena",
+      "distance": 1
+    },
+    {
+      "queryId": "1089",
+      "token": "engagment",
+      "tokenIndex": 0,
+      "corrupted": "engagmant",
+      "originalTerm": "engag",
+      "corruptedTerm": "engagm",
+      "distance": 1
+    },
+    {
+      "queryId": "1099",
+      "token": "Statins",
+      "tokenIndex": 0,
+      "corrupted": "statina",
+      "originalTerm": "statin",
+      "corruptedTerm": "statina",
+      "distance": 1
+    },
+    {
+      "queryId": "1100",
+      "token": "Statins",
+      "tokenIndex": 0,
+      "corrupted": "statina",
+      "originalTerm": "statin",
+      "corruptedTerm": "statina",
+      "distance": 1
+    },
+    {
+      "queryId": "1104",
+      "token": "Stroke",
+      "tokenIndex": 0,
+      "corrupted": "stroka",
+      "originalTerm": "stroke",
+      "corruptedTerm": "stroka",
+      "distance": 1
+    },
+    {
+      "queryId": "1107",
+      "token": "Subcutaneous",
+      "tokenIndex": 0,
+      "corrupted": "subcutanaous",
+      "originalTerm": "subcutan",
+      "corruptedTerm": "subcutana",
+      "distance": 1
+    },
+    {
+      "queryId": "1110",
+      "token": "Suboptimal",
+      "tokenIndex": 0,
+      "corrupted": "suboptimae",
+      "originalTerm": "suboptim",
+      "corruptedTerm": "suboptima",
+      "distance": 1
+    },
+    {
+      "queryId": "1121",
+      "token": "Synaptic",
+      "tokenIndex": 0,
+      "corrupted": "synaptie",
+      "originalTerm": "synapt",
+      "corruptedTerm": "synapti",
+      "distance": 1
+    },
+    {
+      "queryId": "1130",
+      "token": "regulatory",
+      "tokenIndex": 0,
+      "corrupted": "regulatora",
+      "originalTerm": "regulatori",
+      "corruptedTerm": "regulatora",
+      "distance": 1
+    },
+    {
+      "queryId": "1132",
+      "token": "microdomains",
+      "tokenIndex": 0,
+      "corrupted": "microdomaina",
+      "originalTerm": "microdomain",
+      "corruptedTerm": "microdomaina",
+      "distance": 1
+    },
+    {
+      "queryId": "1137",
+      "token": "tumor",
+      "tokenIndex": 1,
+      "corrupted": "tumoa",
+      "originalTerm": "tumor",
+      "corruptedTerm": "tumoa",
+      "distance": 1
+    },
+    {
+      "queryId": "1140",
+      "token": "Taking",
+      "tokenIndex": 0,
+      "corrupted": "tabing",
+      "originalTerm": "take",
+      "corruptedTerm": "tabe",
+      "distance": 1
+    },
+    {
+      "queryId": "1144",
+      "token": "Taxation",
+      "tokenIndex": 0,
+      "corrupted": "taxatiou",
+      "originalTerm": "taxat",
+      "corruptedTerm": "taxati",
+      "distance": 1
+    },
+    {
+      "queryId": "1146",
+      "token": "Teaching",
+      "tokenIndex": 0,
+      "corrupted": "teacaing",
+      "originalTerm": "teach",
+      "corruptedTerm": "teaca",
+      "distance": 1
+    },
+    {
+      "queryId": "1150",
+      "token": "Tetraspanin",
+      "tokenIndex": 0,
+      "corrupted": "tetraspania",
+      "originalTerm": "tetraspanin",
+      "corruptedTerm": "tetraspania",
+      "distance": 1
+    },
+    {
+      "queryId": "1163",
+      "token": "DdrB",
+      "tokenIndex": 0,
+      "corrupted": "ddra",
+      "originalTerm": "ddrb",
+      "corruptedTerm": "ddra",
+      "distance": 1
+    },
+    {
+      "queryId": "1175",
+      "token": "terminal",
+      "tokenIndex": 0,
+      "corrupted": "terminae",
+      "originalTerm": "termin",
+      "corruptedTerm": "termina",
+      "distance": 1
+    },
+    {
+      "queryId": "1179",
+      "token": "central",
+      "tokenIndex": 0,
+      "corrupted": "centraa",
+      "originalTerm": "central",
+      "corruptedTerm": "centraa",
+      "distance": 1
+    },
+    {
+      "queryId": "1180",
+      "token": "sensor",
+      "tokenIndex": 0,
+      "corrupted": "sensoa",
+      "originalTerm": "sensor",
+      "corruptedTerm": "sensoa",
+      "distance": 1
+    },
+    {
+      "queryId": "1185",
+      "token": "health",
+      "tokenIndex": 0,
+      "corrupted": "healta",
+      "originalTerm": "health",
+      "corruptedTerm": "healta",
+      "distance": 1
+    },
+    {
+      "queryId": "1187",
+      "token": "TEAD",
+      "tokenIndex": 0,
+      "corrupted": "teaa",
+      "originalTerm": "tead",
+      "corruptedTerm": "teaa",
+      "distance": 1
+    },
+    {
+      "queryId": "1191",
+      "token": "amount",
+      "tokenIndex": 0,
+      "corrupted": "amouna",
+      "originalTerm": "amount",
+      "corruptedTerm": "amouna",
+      "distance": 1
+    },
+    {
+      "queryId": "1194",
+      "token": "density",
+      "tokenIndex": 0,
+      "corrupted": "densita",
+      "originalTerm": "densiti",
+      "corruptedTerm": "densita",
+      "distance": 1
+    },
+    {
+      "queryId": "1196",
+      "token": "availability",
+      "tokenIndex": 0,
+      "corrupted": "avaibability",
+      "originalTerm": "avail",
+      "corruptedTerm": "avaib",
+      "distance": 1
+    },
+    {
+      "queryId": "1197",
+      "token": "availability",
+      "tokenIndex": 0,
+      "corrupted": "avaibability",
+      "originalTerm": "avail",
+      "corruptedTerm": "avaib",
+      "distance": 1
+    },
+    {
+      "queryId": "1199",
+      "token": "benefits",
+      "tokenIndex": 0,
+      "corrupted": "benefita",
+      "originalTerm": "benefit",
+      "corruptedTerm": "benefita",
+      "distance": 1
+    },
+    {
+      "queryId": "1200",
+      "token": "binding",
+      "tokenIndex": 0,
+      "corrupted": "binaing",
+      "originalTerm": "bind",
+      "corruptedTerm": "bina",
+      "distance": 1
+    },
+    {
+      "queryId": "1202",
+      "token": "center",
+      "tokenIndex": 0,
+      "corrupted": "centea",
+      "originalTerm": "center",
+      "corruptedTerm": "centea",
+      "distance": 1
+    },
+    {
+      "queryId": "1204",
+      "token": "combination",
+      "tokenIndex": 0,
+      "corrupted": "combibation",
+      "originalTerm": "combin",
+      "corruptedTerm": "combib",
+      "distance": 1
+    },
+    {
+      "queryId": "1207",
+      "token": "composition",
+      "tokenIndex": 0,
+      "corrupted": "compositiou",
+      "originalTerm": "composit",
+      "corruptedTerm": "compositi",
+      "distance": 1
+    },
+    {
+      "queryId": "1213",
+      "token": "deregulated",
+      "tokenIndex": 0,
+      "corrupted": "deregultted",
+      "originalTerm": "deregul",
+      "corruptedTerm": "deregult",
+      "distance": 1
+    },
+    {
+      "queryId": "1216",
+      "token": "extracellular",
+      "tokenIndex": 0,
+      "corrupted": "extracellulaa",
+      "originalTerm": "extracellular",
+      "corruptedTerm": "extracellulaa",
+      "distance": 1
+    },
+    {
+      "queryId": "1221",
+      "token": "genomic",
+      "tokenIndex": 0,
+      "corrupted": "genomie",
+      "originalTerm": "genom",
+      "corruptedTerm": "genomi",
+      "distance": 1
+    },
+    {
+      "queryId": "1225",
+      "token": "locus",
+      "tokenIndex": 0,
+      "corrupted": "locua",
+      "originalTerm": "locu",
+      "corruptedTerm": "locua",
+      "distance": 1
+    },
+    {
+      "queryId": "1226",
+      "token": "loss",
+      "tokenIndex": 0,
+      "corrupted": "losa",
+      "originalTerm": "loss",
+      "corruptedTerm": "losa",
+      "distance": 1
+    },
+    {
+      "queryId": "1232",
+      "token": "minor",
+      "tokenIndex": 0,
+      "corrupted": "minoa",
+      "originalTerm": "minor",
+      "corruptedTerm": "minoa",
+      "distance": 1
+    },
+    {
+      "queryId": "1241",
+      "token": "myocardial",
+      "tokenIndex": 0,
+      "corrupted": "myocardiae",
+      "originalTerm": "myocardi",
+      "corruptedTerm": "myocardia",
+      "distance": 1
+    },
+    {
+      "queryId": "1245",
+      "token": "child",
+      "tokenIndex": 0,
+      "corrupted": "chila",
+      "originalTerm": "child",
+      "corruptedTerm": "chila",
+      "distance": 1
+    },
+    {
+      "queryId": "1259",
+      "token": "relationship",
+      "tokenIndex": 0,
+      "corrupted": "relationshia",
+      "originalTerm": "relationship",
+      "corruptedTerm": "relationshia",
+      "distance": 1
+    },
+    {
+      "queryId": "1262",
+      "token": "repair",
+      "tokenIndex": 0,
+      "corrupted": "repaia",
+      "originalTerm": "repair",
+      "corruptedTerm": "repaia",
+      "distance": 1
+    },
+    {
+      "queryId": "1266",
+      "token": "risk",
+      "tokenIndex": 0,
+      "corrupted": "risa",
+      "originalTerm": "risk",
+      "corruptedTerm": "risa",
+      "distance": 1
+    },
+    {
+      "queryId": "1270",
+      "token": "risk",
+      "tokenIndex": 0,
+      "corrupted": "risa",
+      "originalTerm": "risk",
+      "corruptedTerm": "risa",
+      "distance": 1
+    },
+    {
+      "queryId": "1271",
+      "token": "severity",
+      "tokenIndex": 0,
+      "corrupted": "sevebity",
+      "originalTerm": "sever",
+      "corruptedTerm": "seveb",
+      "distance": 1
+    },
+    {
+      "queryId": "1272",
+      "token": "single",
+      "tokenIndex": 0,
+      "corrupted": "singla",
+      "originalTerm": "singl",
+      "corruptedTerm": "singla",
+      "distance": 1
+    },
+    {
+      "queryId": "1273",
+      "token": "sliding",
+      "tokenIndex": 0,
+      "corrupted": "slibing",
+      "originalTerm": "slide",
+      "corruptedTerm": "slibe",
+      "distance": 1
+    },
+    {
+      "queryId": "1274",
+      "token": "inner",
+      "tokenIndex": 0,
+      "corrupted": "innea",
+      "originalTerm": "inner",
+      "corruptedTerm": "innea",
+      "distance": 1
+    },
+    {
+      "queryId": "1278",
+      "token": "treatment",
+      "tokenIndex": 0,
+      "corrupted": "treatmena",
+      "originalTerm": "treatment",
+      "corruptedTerm": "treatmena",
+      "distance": 1
+    },
+    {
+      "queryId": "1279",
+      "token": "treatment",
+      "tokenIndex": 0,
+      "corrupted": "treatmena",
+      "originalTerm": "treatment",
+      "corruptedTerm": "treatmena",
+      "distance": 1
+    },
+    {
+      "queryId": "1280",
+      "token": "gene",
+      "tokenIndex": 1,
+      "corrupted": "gena",
+      "originalTerm": "gene",
+      "corruptedTerm": "gena",
+      "distance": 1
+    },
+    {
+      "queryId": "1281",
+      "token": "gene",
+      "tokenIndex": 1,
+      "corrupted": "gena",
+      "originalTerm": "gene",
+      "corruptedTerm": "gena",
+      "distance": 1
+    },
+    {
+      "queryId": "1282",
+      "token": "Therapeutic",
+      "tokenIndex": 0,
+      "corrupted": "therapeutie",
+      "originalTerm": "therapeut",
+      "corruptedTerm": "therapeuti",
+      "distance": 1
+    },
+    {
+      "queryId": "1290",
+      "token": "inverse",
+      "tokenIndex": 1,
+      "corrupted": "inversa",
+      "originalTerm": "invers",
+      "corruptedTerm": "inversa",
+      "distance": 1
+    },
+    {
+      "queryId": "1292",
+      "token": "association",
+      "tokenIndex": 1,
+      "corrupted": "assocaation",
+      "originalTerm": "associ",
+      "corruptedTerm": "assoca",
+      "distance": 1
+    },
+    {
+      "queryId": "1298",
+      "token": "Thigh",
+      "tokenIndex": 0,
+      "corrupted": "thiga",
+      "originalTerm": "thigh",
+      "corruptedTerm": "thiga",
+      "distance": 1
+    },
+    {
+      "queryId": "1303",
+      "token": "effect",
+      "tokenIndex": 1,
+      "corrupted": "effeca",
+      "originalTerm": "effect",
+      "corruptedTerm": "effeca",
+      "distance": 1
+    },
+    {
+      "queryId": "1316",
+      "token": "Transferred",
+      "tokenIndex": 0,
+      "corrupted": "transferrer",
+      "originalTerm": "transfer",
+      "corruptedTerm": "transferr",
+      "distance": 1
+    },
+    {
+      "queryId": "1319",
+      "token": "Transplanted",
+      "tokenIndex": 0,
+      "corrupted": "transplantee",
+      "originalTerm": "transplant",
+      "corruptedTerm": "transplante",
+      "distance": 1
+    },
+    {
+      "queryId": "1320",
+      "token": "Transplanted",
+      "tokenIndex": 0,
+      "corrupted": "transplantee",
+      "originalTerm": "transplant",
+      "corruptedTerm": "transplante",
+      "distance": 1
+    },
+    {
+      "queryId": "1332",
+      "token": "Tumor",
+      "tokenIndex": 0,
+      "corrupted": "tumoa",
+      "originalTerm": "tumor",
+      "corruptedTerm": "tumoa",
+      "distance": 1
+    },
+    {
+      "queryId": "1335",
+      "token": "cells",
+      "tokenIndex": 0,
+      "corrupted": "cella",
+      "originalTerm": "cell",
+      "corruptedTerm": "cella",
+      "distance": 1
+    },
+    {
+      "queryId": "1336",
+      "token": "cells",
+      "tokenIndex": 0,
+      "corrupted": "cella",
+      "originalTerm": "cell",
+      "corruptedTerm": "cella",
+      "distance": 1
+    },
+    {
+      "queryId": "1337",
+      "token": "Ubiquitin",
+      "tokenIndex": 0,
+      "corrupted": "ubiquitia",
+      "originalTerm": "ubiquitin",
+      "corruptedTerm": "ubiquitia",
+      "distance": 1
+    },
+    {
+      "queryId": "1339",
+      "token": "Ultrasound",
+      "tokenIndex": 0,
+      "corrupted": "ultrasouna",
+      "originalTerm": "ultrasound",
+      "corruptedTerm": "ultrasouna",
+      "distance": 1
+    },
+    {
+      "queryId": "1344",
+      "token": "regulation",
+      "tokenIndex": 0,
+      "corrupted": "regubation",
+      "originalTerm": "regul",
+      "corruptedTerm": "regub",
+      "distance": 1
+    },
+    {
+      "queryId": "1352",
+      "token": "Upregulation",
+      "tokenIndex": 0,
+      "corrupted": "upreguaation",
+      "originalTerm": "upregul",
+      "corruptedTerm": "upregua",
+      "distance": 1
+    },
+    {
+      "queryId": "1359",
+      "token": "Varenicline",
+      "tokenIndex": 0,
+      "corrupted": "vareniclina",
+      "originalTerm": "vareniclin",
+      "corruptedTerm": "vareniclina",
+      "distance": 1
+    },
+    {
+      "queryId": "1362",
+      "token": "Venules",
+      "tokenIndex": 0,
+      "corrupted": "venulee",
+      "originalTerm": "venul",
+      "corruptedTerm": "venule",
+      "distance": 1
+    },
+    {
+      "queryId": "1363",
+      "token": "Venules",
+      "tokenIndex": 0,
+      "corrupted": "venulee",
+      "originalTerm": "venul",
+      "corruptedTerm": "venule",
+      "distance": 1
+    },
+    {
+      "queryId": "1368",
+      "token": "Vitamin",
+      "tokenIndex": 0,
+      "corrupted": "vitamia",
+      "originalTerm": "vitamin",
+      "corruptedTerm": "vitamia",
+      "distance": 1
+    },
+    {
+      "queryId": "1370",
+      "token": "Vitamin",
+      "tokenIndex": 0,
+      "corrupted": "vitamia",
+      "originalTerm": "vitamin",
+      "corruptedTerm": "vitamia",
+      "distance": 1
+    },
+    {
+      "queryId": "1379",
+      "token": "Women",
+      "tokenIndex": 0,
+      "corrupted": "womea",
+      "originalTerm": "women",
+      "corruptedTerm": "womea",
+      "distance": 1
+    },
+    {
+      "queryId": "1382",
+      "token": "causes",
+      "tokenIndex": 1,
+      "corrupted": "causee",
+      "originalTerm": "caus",
+      "corruptedTerm": "cause",
+      "distance": 1
+    },
+    {
+      "queryId": "1385",
+      "token": "cSMAC",
+      "tokenIndex": 0,
+      "corrupted": "csmaa",
+      "originalTerm": "csmac",
+      "corruptedTerm": "csmaa",
+      "distance": 1
+    },
+    {
+      "queryId": "1389",
+      "token": "regulates",
+      "tokenIndex": 1,
+      "corrupted": "regubates",
+      "originalTerm": "regul",
+      "corruptedTerm": "regub",
+      "distance": 1
+    },
+    {
+      "queryId": "1395",
+      "token": "accumulation",
+      "tokenIndex": 0,
+      "corrupted": "accumuaation",
+      "originalTerm": "accumul",
+      "corruptedTerm": "accumua",
+      "distance": 1
+    }
+  ],
+  "arms": {
+    "clean": {
+      "metrics": {
+        "kValues": [
+          1,
+          5,
+          10,
+          100
+        ],
+        "queries": 300,
+        "precision": {
+          "1": 0.5533333333333333,
+          "5": 0.16133333333333374,
+          "10": 0.09133333333333366,
+          "100": 0.010466666666666605
+        },
+        "recall": {
+          "1": 0.5373333333333333,
+          "5": 0.747611111111111,
+          "10": 0.8268333333333334,
+          "100": 0.9275555555555555
+        },
+        "f1": {
+          "1": 0.5416666666666666,
+          "5": 0.2616851851851851,
+          "10": 0.16239604839604826,
+          "100": 0.020652184162065372
+        },
+        "ndcg": {
+          "1": 0.5533333333333333,
+          "5": 0.6603654086794034,
+          "10": 0.687551955531379,
+          "100": 0.7104453127121155
+        },
+        "map": 0.6436291892110098
+      },
+      "latency_ms": {
+        "count": 300,
+        "avg": 0.9988686666666683,
+        "median": 0.9388500000000306,
+        "p95": 1.916499999999985,
+        "min": 0.08920000000000528,
+        "max": 5.210200000000015
+      },
+      "parse_failures": [
+        {
+          "queryId": "42",
+          "code": "EMPTY_GROUP"
+        }
+      ]
+    },
+    "typo_exact": {
+      "metrics": {
+        "kValues": [
+          1,
+          5,
+          10,
+          100
+        ],
+        "queries": 300,
+        "precision": {
+          "1": 0.4766666666666667,
+          "5": 0.14533333333333356,
+          "10": 0.08333333333333355,
+          "100": 0.01016666666666661
+        },
+        "recall": {
+          "1": 0.4601111111111111,
+          "5": 0.672611111111111,
+          "10": 0.7581666666666667,
+          "100": 0.9039999999999999
+        },
+        "f1": {
+          "1": 0.4644444444444444,
+          "5": 0.23549470899470923,
+          "10": 0.14843645243645243,
+          "100": 0.020063166395966333
+        },
+        "ndcg": {
+          "1": 0.4766666666666667,
+          "5": 0.5803567811286604,
+          "10": 0.6101132724811994,
+          "100": 0.6437783239652773
+        },
+        "map": 0.5664671571078197
+      },
+      "latency_ms": {
+        "count": 300,
+        "avg": 0.8809396666666715,
+        "median": 0.8357499999999618,
+        "p95": 1.7054999999999154,
+        "min": 0.08609999999998763,
+        "max": 2.823099999999954
+      },
+      "parse_failures": [
+        {
+          "queryId": "42",
+          "code": "EMPTY_GROUP"
+        }
+      ]
+    },
+    "typo_fuzzy": {
+      "metrics": {
+        "kValues": [
+          1,
+          5,
+          10,
+          100
+        ],
+        "queries": 300,
+        "precision": {
+          "1": 0.5133333333333333,
+          "5": 0.1600000000000004,
+          "10": 0.08933333333333363,
+          "100": 0.010533333333333271
+        },
+        "recall": {
+          "1": 0.4995555555555556,
+          "5": 0.7414999999999999,
+          "10": 0.8117222222222221,
+          "100": 0.9342222222222222
+        },
+        "f1": {
+          "1": 0.5033333333333333,
+          "5": 0.2595820105820105,
+          "10": 0.15901454101454096,
+          "100": 0.020784197363385503
+        },
+        "ndcg": {
+          "1": 0.5133333333333333,
+          "5": 0.6379610374699958,
+          "10": 0.6624239990818623,
+          "100": 0.689854834232385
+        },
+        "map": 0.6157195571033941
+      },
+      "latency_ms": {
+        "count": 300,
+        "avg": 4.339633666666664,
+        "median": 4.272350000000017,
+        "p95": 7.6534999999998945,
+        "min": 0.1268000000000029,
+        "max": 11.212800000000016
+      },
+      "parse_failures": [
+        {
+          "queryId": "42",
+          "code": "EMPTY_GROUP"
+        }
+      ],
+      "fuzzy_stats": {
+        "termsAttempted": 368,
+        "termsExpanded": 345,
+        "variantsAdded": 1814,
+        "queriesExpanded": 299,
+        "caps": {
+          "tooShort": 0,
+          "fuzzyTermsPerQuery": 0,
+          "expansionsPerTerm": 76,
+          "expansionsPerQuery": 6,
+          "edits2SkippedLength": 46
+        }
+      }
+    }
+  }
+}
