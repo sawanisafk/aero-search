@@ -1,0 +1,179 @@
+{
+  "kind": "api-latency",
+  "timestamp": "2026-10-08T12:33:35.546Z",
+  "git": {
+    "sha": "0817bafee5bc9adcd219db9bd29e4543454d3055",
+    "clean": true,
+    "has_untracked": true
+  },
+  "config": {
+    "transport": "http/1.1 loopback + JSON",
+    "host": "127.0.0.1",
+    "port": 61240,
+    "iterations": 30,
+    "warmup": 5,
+    "corpus_default": "scifact",
+    "node": "v24.13.0",
+    "note": "full round trip (status + body read); engine-internal stages are in *-query-benchmark.json"
+  },
+  "routes": [
+    {
+      "name": "health",
+      "method": "GET",
+      "path": "/health",
+      "status": 200,
+      "errors": 0,
+      "latency_ms": {
+        "count": 30,
+        "avg": 1.1648333333333312,
+        "median": 1.0200499999999693,
+        "p95": 2.1334999999999127,
+        "min": 0.5904000000000451,
+        "max": 2.170099999999934
+      }
+    },
+    {
+      "name": "config",
+      "method": "GET",
+      "path": "/api/config",
+      "status": 200,
+      "errors": 0,
+      "latency_ms": {
+        "count": 30,
+        "avg": 0.7544299999999718,
+        "median": 0.5874499999998761,
+        "p95": 1.2495000000001255,
+        "min": 0.48440000000005057,
+        "max": 3.941100000000006
+      }
+    },
+    {
+      "name": "stats",
+      "method": "GET",
+      "path": "/api/stats",
+      "status": 200,
+      "errors": 0,
+      "latency_ms": {
+        "count": 30,
+        "avg": 2.2430466666666615,
+        "median": 2.197999999999979,
+        "p95": 2.8940000000000055,
+        "min": 1.7721000000001368,
+        "max": 2.90300000000002
+      }
+    },
+    {
+      "name": "search-bm25",
+      "method": "GET",
+      "path": "/api/search?q=stem%20cells",
+      "status": 200,
+      "errors": 0,
+      "latency_ms": {
+        "count": 30,
+        "avg": 2.1864899999999805,
+        "median": 2.0733999999999924,
+        "p95": 3.1390000000001237,
+        "min": 1.58400000000006,
+        "max": 3.7326000000000477
+      }
+    },
+    {
+      "name": "search-tfidf",
+      "method": "GET",
+      "path": "/api/search?q=stem%20cells&strategy=tfidf",
+      "status": 200,
+      "errors": 0,
+      "latency_ms": {
+        "count": 30,
+        "avg": 1.8970166666666577,
+        "median": 1.8912000000000262,
+        "p95": 2.5568000000000666,
+        "min": 1.3760999999999513,
+        "max": 2.5832000000000335
+      }
+    },
+    {
+      "name": "search-phrase",
+      "method": "GET",
+      "path": "/api/search?q=%22stem%20cell%22&strategy=bm25-phrase",
+      "status": 200,
+      "errors": 0,
+      "latency_ms": {
+        "count": 30,
+        "avg": 14.703870000000029,
+        "median": 16.114050000000134,
+        "p95": 16.981199999999944,
+        "min": 6.920700000000124,
+        "max": 22.312099999999873
+      }
+    },
+    {
+      "name": "search-fuzzy-k1",
+      "method": "GET",
+      "path": "/api/search?q=wonderlan&corpus=static-v1&fuzzy=true&fuzzyEdits=1",
+      "status": 200,
+      "errors": 0,
+      "latency_ms": {
+        "count": 30,
+        "avg": 1.6005566666666708,
+        "median": 1.4200499999999465,
+        "p95": 2.6521999999999935,
+        "min": 1.0236999999999625,
+        "max": 2.655999999999949
+      }
+    },
+    {
+      "name": "search-page2",
+      "method": "GET",
+      "path": "/api/search?q=stem%20cells&page=2",
+      "status": 200,
+      "errors": 0,
+      "latency_ms": {
+        "count": 30,
+        "avg": 1.884809999999978,
+        "median": 1.6917499999998427,
+        "p95": 3.1374000000000706,
+        "min": 1.4844999999995707,
+        "max": 3.4157000000000153
+      }
+    },
+    {
+      "name": "document",
+      "method": "GET",
+      "path": "/api/documents/scifact/8891333",
+      "status": 200,
+      "errors": 0,
+      "latency_ms": {
+        "count": 30,
+        "avg": 0.5647133333333083,
+        "median": 0.459400000000187,
+        "p95": 1.0007000000000517,
+        "min": 0.417699999999968,
+        "max": 1.4380000000001019
+      }
+    },
+    {
+      "name": "benchmarks",
+      "method": "GET",
+      "path": "/api/benchmarks",
+      "status": 200,
+      "errors": 0,
+      "latency_ms": {
+        "count": 30,
+        "avg": 20.797583333333357,
+        "median": 20.47395000000006,
+        "p95": 22.50520000000006,
+        "min": 19.527000000000044,
+        "max": 22.641700000000128
+      }
+    }
+  ],
+  "overall": {
+    "count": 300,
+    "avg": 4.779734999999994,
+    "median": 1.834799999999973,
+    "p95": 20.48640000000023,
+    "min": 0.417699999999968,
+    "max": 22.641700000000128
+  }
+}
