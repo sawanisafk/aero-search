@@ -8,9 +8,9 @@ PostgreSQL is read only for snippet bodies of the top-K results (M5) and offline
 
 | Table | Role | Key columns |
 |---|---|---|
-| `urls` | crawl frontier (system of record) | `normalized_url` PK, `status` (`pending/fetched/failed/skipped`), `depth`, `http_status`, `error`, `fetched_at`, `content_hash` — partial index on `(depth)` for `status='pending'` drives BFS |
-| `documents` | extracted corpus | `id` PK, `url`, `title`, `text`, `word_count`, `content_hash`, `duplicate_of` → documents.id (byte-exact duplicates link to their owner), `fetched_at` — **partial unique index on `content_hash WHERE duplicate_of IS NULL`** |
-| `links` | directed graph for PageRank (M4) | `src_document_id`, `dst_document_id` FK → documents (ON DELETE CASCADE), unique pair + index on `src` |
+| `urls` | crawl frontier (system of record) | `normalized_url` PK, `original_url`, `host`, `status` (`pending/fetched/failed/skipped`), `depth`, `http_status`, `content_type`, `bytes`, `error`, `discovered_from`, `redirect_chain` JSONB, timestamps — partial index on `(depth, enqueued_at) WHERE status='pending'` drives BFS |
+| `documents` | extracted corpus | `url` PK (FK → urls, cascade), `title`, `headings`/`meta` JSONB, `text`, `word_count`, `unique_terms`, `content_hash`, `canonical_url`, `bytes`, `http_status`, `content_type`, `fetched_at`, `duplicate_of` → documents.url (byte-exact duplicates link to their owner) — **partial unique index on `content_hash WHERE duplicate_of IS NULL`** |
+| `links` | directed graph for PageRank (M4) | `from_url` (FK → documents, cascade), `to_url` (plain text — target may be pending/off-allowlist/uncrawled), `anchor`, `position`; PK `(from_url, to_url, position)`, index on `to_url` |
 
 Content identity: `content_hash` (sha1 of raw bytes) computed by the crawler; `documents`
 is deduplicated at write time; the index builder reads `duplicate_of IS NULL` rows only.

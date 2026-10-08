@@ -123,3 +123,15 @@ Manifest (committed): `data/eval/crawled.manifest.json` — corpus hash `4e5bf3b
 config sha256, git SHA, counts. Index: `data/index/crawled.aidx` (77 docs, 4151 terms,
 0.27 MB, built in 372 ms). Latency: `benchmarks/results/2026-10-07T17-12-21-990Z-query-benchmark.json`
 (BM25 avg 0.089 ms over 60 derived queries).
+
+**Committed M3 evidence bundle:**
+
+| Artifact | Contents |
+|---|---|
+| `configs/crawl.json` | seeds, allowlist, budgets, UA (sha256 in manifest) |
+| `data/eval/crawled.manifest.json` | counts, corpus hash `4e5bf3b0…`, config sha256, git SHA, segment stats |
+| `data/eval/crawled.graph.json` | all 796 edges (from, to, anchor, position) — PageRank input for M4-A |
+| `data/index/crawled.aidx` + `crawled.ids.json` | index segment (77 docs, 0.27 MB) + docId→URL map |
+| `benchmarks/results/2026-10-07T17-12-21-990Z-query-benchmark.json` | latency on the crawled corpus |
+| `migrations/001_init.sql` | PostgreSQL schema |
+| git tag `m3-complete` | exact SHA freeze of all of the above |

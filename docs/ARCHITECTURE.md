@@ -135,9 +135,9 @@ interface Ranker { mode: string; rank(q, candidates, ctx): ScoredDoc[] }
 
 | Table | Contents |
 |---|---|
-| `urls` | crawl frontier: normalized_url (PK), status pending/fetched/failed/skipped, depth, http status, error, fetch_ts, content_hash — partial index drives BFS |
-| `documents` | id, url, title, text, word_count, content_hash (partial-unique), duplicate_of (byte-exact duplicate pointer), crawl_ts |
-| `links` | src_document → dst_document — the directed graph for PageRank (ON DELETE CASCADE) |
+| `urls` | crawl frontier: normalized_url (PK), status pending/fetched/failed/skipped, depth, http status, content_type, bytes, error, discovered_from, redirect_chain JSONB, fetch_ts — partial index drives BFS |
+| `documents` | url (PK, FK → urls), title, headings JSONB, meta JSONB, text, word_count, unique_terms, content_hash (partial-unique while owning content), duplicate_of (FK → documents), fetch_ts |
+| `links` | from_url (FK → documents, cascade) → to_url (free text — target may be pending/off-allowlist/uncrawled), anchor, position — the directed graph for PageRank |
 
 Conceptual, deferred (PostgreSQL vs files decided when they land):
 
