@@ -241,8 +241,8 @@ acknowledged in report limitations.
 ## ADR-011: Embedded PostgreSQL as the development/test runtime — compose stays the contract
 
 **Context.** M0 provided `docker-compose.yml` (PostgreSQL 16, user `aero`, db `aero_search`)
-as the metadata store. The development machine has no Docker and no admin rights for a
-system-wide install.
+as the metadata store. At ADR time the development machine had no Docker and no admin
+rights for a system-wide install — and regardless, tests must never *require* Docker.
 
 **Problem.** M3 needs a real PostgreSQL (crawl state, documents, link graph) that tests can
 exercise hermetically. Fake/embedded SQL engines (pg-mem) do not run real PostgreSQL, so

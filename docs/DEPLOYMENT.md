@@ -1,9 +1,10 @@
 # Deployment
 
-Two supported ways to run the product: **local production build** (fully
-verified on this machine) and **Docker Compose** (files provided; this dev
-machine has no Docker, so the stack is verified by inspection — the build
-stages replay the exact commands that pass locally).
+Two supported ways to run the product: **local production build** and
+**Docker Compose** — both verified on this machine (2026-10-08: compose
+stack `config → build → up` green; postgres + api healthchecks healthy;
+`http://localhost:8080` serves the SPA and proxies `/api` to the api
+container). Docker Desktop 4.94 with the WSL 2 backend.
 
 ## 1. Local production (verified)
 

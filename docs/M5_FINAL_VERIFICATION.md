@@ -18,7 +18,7 @@ session; nothing is quoted from an older state.
 | 8 | Aero UI: windows/taskbar/search/details/status | `web/src/App.test.tsx` 5/5 behaviors; manual smoke below | ✅ |
 | 9 | Tests green: API contract + UI | 312 root + 15 web | ✅ |
 | 10 | Typecheck clean | root + `--workspace web`, no output | ✅ |
-| 11 | Docker present | `Dockerfile`, `web/Dockerfile`, `web/nginx.conf`, `docker-compose.yml`, `.dockerignore` committed | ⚠️ inspection-only — **no Docker on this machine** (stated honestly in `docs/DEPLOYMENT.md`) |
+| 11 | Docker present and runnable | `Dockerfile`, `web/Dockerfile`, `web/nginx.conf`, `docker-compose.yml`, `.dockerignore` committed; **runtime-verified 2026-10-08** on Docker Desktop 4.94 (WSL 2): `compose config` clean → images built → postgres/api healthy → `:8080/` + proxied `/api/search` 200 | ✅ |
 | 12 | Docs: API/frontend/demo/deploy/walkthrough | `docs/API.md`, `FRONTEND.md`, `DEMO.md`, `DEPLOYMENT.md`, `CODE_WALKTHROUGH.md`, `M5.md`; README restructured to 12 sections | ✅ |
 | 13 | No "complete" claim without verification | this document | ✅ |
 
@@ -96,6 +96,30 @@ per-route: health 1.16, config 0.75, stats 2.24, search-bm25 2.19,
 search-tfidf 1.90, search-phrase 14.70, search-fuzzy 1.60, page2 1.88,
 document 0.56, benchmarks 20.80 (artifact re-read by design).
 
+### docker compose stack (runtime verification, 2026-10-08)
+
+Environment: Docker Desktop 4.94.0 + WSL 3.0.1.0 on Windows 11 23H2,
+Docker 29.8.2 / Compose v5.5.1, engine `server=29.8.2 os=linux`.
+
+```text
+docker compose config --quiet  → exit 0 (services: postgres, api, web)
+docker compose build           → exit 0 (images searchengine-api, searchengine-web)
+docker compose up -d           → exit 0
+  aero-search-postgres  Up (healthy)  0.0.0.0:5432->5432/tcp
+  aero-search-api       Up (healthy)  0.0.0.0:3000->3000/tcp
+  aero-search-web       Up            0.0.0.0:8080->80/tcp
+HTTP:
+200 http://localhost:8080/                     text/html   (nginx SPA)
+200 http://localhost:8080/status               text/html   (SPA fallback)
+200 http://localhost:8080/api/search?q=stem+cells&k=3  application/json (10 hits…rank1 docId 8891333)
+200 http://localhost:8080/api/config           application/json
+200 http://localhost:3000/health               application/json (corpora … scifact)
+```
+
+Also verified: `docker run --rm hello-world` → "Hello from Docker!".
+This closes the earlier "inspection-only" limitation — the container
+stack has now executed end-to-end on this machine.
+
 ## 3. Commit list (M5 series)
 
 | Commit | Contents |
@@ -112,18 +136,16 @@ Tags: `m2-complete` (`b23a551`), `m3-complete` (`d6d598c`) pushed earlier;
 
 ## 4. Known limitations (not hidden)
 
-1. **Docker is untested at runtime** — no Docker on this machine; the
-   files are config-inspection-verified only. First run on a Docker host:
-   `docker compose up --build` (`docs/DEPLOYMENT.md`).
-2. **Screenshots pending** — all UI proof so far is automated tests + live
-   HTTP smoke; capture sequence in `docs/DEMO.md` §3.
-3. **Descoped by documented decision** (see `docs/M5.md` scope table):
+1. **Screenshots pending** — all UI proof so far is automated tests + live
+   HTTP smoke (local and containerized); capture sequence in
+   `docs/DEMO.md` §3.
+2. **Descoped by documented decision** (see `docs/M5.md` scope table):
    generated OpenAPI endpoint (readable `API.md` instead), Zod (Fastify
    JSON Schema instead), Ctrl+K/arrow keybinding layer, client-side
    settings persistence.
-4. **M6 (1K/10K/100K scale tables, throughput charts) still pending** —
+3. **M6 (1K/10K/100K scale tables, throughput charts) still pending** —
    out of M5 scope; evidence so far is query/fuzzy/pagerank/api latency.
-5. Dev server note: use `npm run api` (tsx) or `npm start` (dist);
+4. Dev server note: use `npm run api` (tsx) or `npm start` (dist);
    raw `node src/api/server.ts` fails on `.js` specifiers — documented in
    `DEPLOYMENT.md` troubleshooting.
 
@@ -137,4 +159,9 @@ npm run build         # dist + web/dist
 npm run demo          # 14/14
 npm start             # http://127.0.0.1:3000 (UI + API)
 npm run bench:api     # writes a fresh latency artifact
+
+# container stack (Docker Desktop + WSL 2)
+docker compose config # validation only
+docker compose build  # api + web images
+docker compose up -d  # postgres/api healthy; web on :8080
 ```

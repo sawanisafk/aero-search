@@ -140,9 +140,10 @@ docker compose up --build
 docker compose exec api node dist/scripts/db-migrate.js   # first run: migrations
 ```
 
-> Honest note: the dev machine for this project has no Docker, so the
-> compose stack is **verified by inspection** (build stages mirror the exact
-> local commands that were run), not by an executed `docker build`.
+> Verified note: executed on 2026-10-08 with Docker Desktop 4.94 (WSL 2) —
+> `docker compose config` clean, both images built, postgres + api healthy,
+> `http://localhost:8080` returned the SPA and proxied `/api/search` (200,
+> 10 hits), direct `/health` on `:3000` returned 200.
 
 ## 6. Where the evidence lives
 

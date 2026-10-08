@@ -398,7 +398,7 @@ plus strategy params — the evidence rule the whole project follows.
 | **Own index, no Elasticsearch/Solr** (ADR-001, format frozen at M1) | the project's premise: first-principles IR; frozen format keeps every milestone comparable |
 | **Postgres never in the query hot path** (ADR-003) | system of record offline; queries hit the in-memory typed-array index (~1 ms) |
 | **Index-time = query-time analysis** (ADR-009) | one analyzer (`normalize → tokenize → stopwords → Porter`) prevents silent mismatches |
-| **Embedded PG fallback** (ADR-011) | Windows machine, no Docker/admin — tests spin ephemeral clusters on 5433/5434 |
+| **Embedded PG fallback** (ADR-011) | tests must never require Docker — ephemeral clusters on 5433/5434; compose stays the delivery contract (runtime-verified 2026-10-08) |
 | **Normalization scopes in fusion** | BM25 per query, PageRank per corpus — the two measured failure modes are documented, not hidden |
 | **Null/negative results published** | k=2 fuzzy, w=0.5 fusion, proximity ≈ neutral — honesty is the methodology |
 | **Evidence rule** | no number is quoted unless it comes from a committed artifact with git SHA |
