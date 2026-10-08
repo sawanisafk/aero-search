@@ -1,3 +1,13 @@
+# Aero Search — full stack: PostgreSQL + API + nginx frontend.
+#
+#   docker compose up --build
+#   web  -> http://localhost:8080  (Aero desktop, proxies /api + /health)
+#   api  -> http://localhost:3000  (REST JSON directly)
+#   pg   -> localhost:5432         (aero / aero / aero_search)
+#
+# Migrations (crawled corpus metadata / PageRank runs): docker compose exec
+# api node dist/scripts/db-migrate.js
+
 services:
   postgres:
     image: postgres:16-alpine
@@ -15,6 +25,42 @@ services:
       interval: 5s
       timeout: 3s
       retries: 10
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aero-search-api
+    environment:
+      HOST: 0.0.0.0
+      PORT: "3000"
+      AERO_CORPUS: scifact
+      AERO_STRATEGY: bm25
+      # same-origin only: the browser talks to nginx, which proxies /api here
+      AERO_CORS_ORIGINS: ""
+      DATABASE_URL: postgres://aero:aero@postgres:5432/aero_search
+    ports:
+      - "3000:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 3s
+      retries: 5
+      start_period: 10s
+
+  web:
+    build:
+      context: .
+      dockerfile: web/Dockerfile
+    container_name: aero-search-web
+    ports:
+      - "8080:80"
+    depends_on:
+      api:
+        condition: service_healthy
 
 volumes:
   pgdata:

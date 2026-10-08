@@ -1,0 +1,10 @@
+# Build contexts stay small: dependencies, VCS and dev-only artifacts.
+node_modules
+**/node_modules
+dist
+web/dist
+.git
+data/pg
+*.log
+.env
+.DS_Store
