@@ -12,10 +12,13 @@
  *   bm25               (mode B)  — Okapi BM25, configurable k1/b
  *   bm25-phrase        (mode C)  — BM25 + exact-phrase bonus (ablation arm)
  *   bm25-phrase-proximity (mode C) — + proximity window signal (full mode C)
+ *   bm25-pr            (mode D)  — normalized fusion of BM25 + PageRank
  *
- * Mode-C composition is RAW-additive (bm25 + phrase + proximity). That is
- * deliberate: normalization and cross-signal fusion are M4 (ARCHITECTURE §6),
- * out of M2 scope — M2 measures the raw signals as they are.
+ * Mode-C composition is RAW-additive (bm25 + phrase + proximity) — M2
+ * measures raw signals as they are. Mode D is the first FUSED strategy
+ * (M4-B): both signals are per-query min-max normalized (fusion.ts, outlier
+ * guard) before the weighted sum, because BM25 (~0–40) and PageRank
+ * (~1/N scale) are incommensurable (ARCHITECTURE §6).
  */
 
 import type { IndexReader } from '../index/reader.js';
@@ -33,11 +36,18 @@ import {
   type TfWeighting,
 } from './tfidf.js';
 import { bm25TermScore, resolveBm25, type Bm25Options } from './bm25.js';
+import { normalizeScores } from './fusion.js';
 import { sortScored, type RankingStrategy, type ScoredDoc } from './types.js';
 
 /** Defaults for mode-C knobs — exported so run artifacts can record them. */
 export const DEFAULT_PHRASE_BONUS = 1.2;
 export const DEFAULT_PROXIMITY_K = 1.0;
+
+/** Defaults for mode-D fusion knobs (recorded in experiment artifacts). */
+export const DEFAULT_PR_WEIGHT = 0.2;
+// Plain min-max by default — the p95 outlier guard measurably HURTS fusion
+// on SciFact (top-candidate band condensation; see docs/EXPERIMENTS.md M4-B).
+export const DEFAULT_NORM_GUARD = 1;
 
 /** Fast "is this doc a candidate?" membership test. */
 function candidateFlags(candidates: Uint32Array, numDocs: number): Uint8Array {
@@ -253,6 +263,67 @@ export function bm25PhraseProximityStrategy(
   };
 }
 
+export interface PageRankStrategyOptions extends Bm25Options {
+  /** docId -> PageRank value (length must equal the index doc count). */
+  readonly pagerank: Float64Array;
+  /** weight of the PageRank signal in the fused score; BM25 keeps 1−w. [0, 1] */
+  readonly prWeight?: number;
+  /** guard percentile for BOTH normalizations (1 = plain min-max). Default 1. */
+  readonly normGuard?: number;
+}
+
+/**
+ * Mode D: `score = (1−w)·ŝ_bm25 + w·ŝ_pagerank`.
+ *
+ * Normalization scopes differ by signal semantics (ARCHITECTURE §6):
+ * - BM25 is query-dependent → min-max per query over the query's candidates.
+ * - PageRank is query-independent → min-max ONCE over the whole corpus.
+ *   Per-candidate min-max on PageRank would stretch its near-flat tail
+ *   (most papers sit on the teleport floor) to the full [0, 1] per query —
+ *   amplifying rounding-level differences into full-scale noise that
+ *   overrides BM25's top hits (observed: MAP 0.64 → 0.12 at w=0.2).
+ *
+ * Both use the outlier-guarded quantile mapping (fusion.ts): strictly
+ * monotone, bounded [0, 1], no ties. Breakdown entries are the weighted
+ * components, so they sum to `score`.
+ */
+export function bm25PageRankStrategy(options: PageRankStrategyOptions): RankingStrategy {
+  const params = resolveBm25(options);
+  const w = options.prWeight ?? DEFAULT_PR_WEIGHT;
+  const guard = options.normGuard ?? DEFAULT_NORM_GUARD;
+  if (!Number.isFinite(w) || w < 0 || w > 1) throw new RangeError(`prWeight must be in [0, 1], got ${w}`);
+  if (!(guard > 0 && guard <= 1)) throw new RangeError(`normGuard must be in (0, 1], got ${guard}`);
+  if (!(options.pagerank instanceof Float64Array)) throw new TypeError('pagerank must be a Float64Array');
+  // Corpus-global PageRank normalization, computed once (query-independent).
+  const allDocs = new Uint32Array(options.pagerank.length);
+  for (let i = 0; i < allDocs.length; i++) allDocs[i] = i;
+  const prGlobal = normalizeScores(options.pagerank, allDocs, { guardPercentile: guard });
+  return {
+    id: `bm25-pr-w${w}`,
+    mode: 'D',
+    rank(reader, analyzed, candidates) {
+      if (options.pagerank.length !== reader.numDocs()) {
+        throw new Error(
+          `pagerank has ${options.pagerank.length} entries but index has ${reader.numDocs()} docs`,
+        );
+      }
+      const bm25Raw = accumulateBm25(reader, analyzed, candidates, options);
+      const bm25Norm = normalizeScores(bm25Raw, candidates, { guardPercentile: guard });
+      // Weighted components: assemble derives score = Σ breakdown by construction.
+      const bm25Part: Float64Array = new Float64Array(reader.numDocs());
+      const prPart: Float64Array = new Float64Array(reader.numDocs());
+      for (const docId of candidates) {
+        bm25Part[docId] = (1 - w) * bm25Norm[docId]!;
+        prPart[docId] = w * prGlobal[docId]!;
+      }
+      return assemble(candidates, [
+        { name: 'bm25', values: bm25Part },
+        { name: 'pagerank', values: prPart },
+      ]);
+    },
+  };
+}
+
 /** Strategies registered by id — the experiment runner looks strategies up here. */
 export const RANKING_STRATEGIES: Readonly<Record<string, RankingStrategy>> = Object.freeze({
   boolean: booleanStrategy,
@@ -261,6 +332,16 @@ export const RANKING_STRATEGIES: Readonly<Record<string, RankingStrategy>> = Obj
   'bm25-phrase': bm25PhraseStrategy(),
   'bm25-phrase-proximity': bm25PhraseProximityStrategy(),
 });
+
+/**
+ * Every strategy id createStrategy accepts — the static registry plus
+ * data-dependent strategies (mode D needs a PageRank vector, so it cannot be
+ * pre-registered). Experiment tooling validates against this list.
+ */
+export const STRATEGY_IDS: readonly string[] = Object.freeze([
+  ...Object.keys(RANKING_STRATEGIES),
+  'bm25-pr',
+]);
 
 export function getRankingStrategy(id: string): RankingStrategy {
   const strategy = RANKING_STRATEGIES[id];
@@ -282,6 +363,12 @@ export interface CreateStrategyOptions {
   readonly tf?: TfWeighting | undefined;
   readonly phraseBonus?: number | undefined;
   readonly proximityK?: number | undefined;
+  /** mode D only: docId -> PageRank value (required for `bm25-pr`). */
+  readonly pagerank?: Float64Array | undefined;
+  /** mode D only: PageRank weight in [0, 1] (default 0.2). */
+  readonly prWeight?: number | undefined;
+  /** mode D only: normalization guard percentile in (0, 1] (default 0.95). */
+  readonly normGuard?: number | undefined;
 }
 
 /** Explicit-undefined-tolerant option subsets (exactOptionalPropertyTypes). */
@@ -300,7 +387,7 @@ function partialPhrase(o: CreateStrategyOptions): PhraseStrategyOptions {
  * Unknown ids fail with the same message as getRankingStrategy.
  */
 export function createStrategy(id: string, options: CreateStrategyOptions = {}): RankingStrategy {
-  const { tf, proximityK } = options;
+  const { tf, proximityK, pagerank, prWeight, normGuard } = options;
   switch (id) {
     case 'boolean':
       return booleanStrategy;
@@ -315,9 +402,20 @@ export function createStrategy(id: string, options: CreateStrategyOptions = {}):
         ...partialPhrase(options),
         ...(proximityK === undefined ? {} : { proximityK }),
       });
+    case 'bm25-pr': {
+      if (pagerank === undefined) {
+        throw new Error('bm25-pr requires options.pagerank (docId -> PageRank Float64Array)');
+      }
+      return bm25PageRankStrategy({
+        ...partialBm25(options),
+        pagerank,
+        ...(prWeight === undefined ? {} : { prWeight }),
+        ...(normGuard === undefined ? {} : { normGuard }),
+      });
+    }
     default:
       throw new Error(
-        `unknown ranking strategy "${id}" (available: ${Object.keys(RANKING_STRATEGIES).join(', ')})`,
+        `unknown ranking strategy "${id}" (available: ${STRATEGY_IDS.join(', ')})`,
       );
   }
 }
@@ -353,9 +451,20 @@ export function resolveStrategyParams(
         proximityK: options.proximityK ?? DEFAULT_PROXIMITY_K,
       };
     }
+    case 'bm25-pr': {
+      const p = resolveBm25(partialBm25(options));
+      return {
+        k1: p.k1,
+        b: p.b,
+        prWeight: options.prWeight ?? DEFAULT_PR_WEIGHT,
+        normBm25: 'minmax-query',
+        normPr: 'minmax-corpus',
+        normGuard: options.normGuard ?? DEFAULT_NORM_GUARD,
+      };
+    }
     default:
       throw new Error(
-        `unknown ranking strategy "${id}" (available: ${Object.keys(RANKING_STRATEGIES).join(', ')})`,
+        `unknown ranking strategy "${id}" (available: ${STRATEGY_IDS.join(', ')})`,
       );
   }
 }

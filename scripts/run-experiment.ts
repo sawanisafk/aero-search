@@ -7,12 +7,16 @@
  *
  * Options:
  *   --corpus <name>           data/index/<name>.aidx (default scifact)
- *   --strategy <id>           boolean|tfidf|bm25|bm25-phrase|bm25-phrase-proximity
+ *   --strategy <id>           boolean|tfidf|bm25|bm25-phrase|bm25-phrase-proximity|bm25-pr
  *   --queries <file>          BEIR queries JSONL (default data/eval/scifact-queries.jsonl)
  *   --qrels <file>            BEIR qrels TSV (default data/eval/scifact-qrels.tsv)
  *   --topk <n>                retrieved docs kept per query (default 1000)
  *   --k <1,5,10,100>          cutoff values for P/R/F1/NDCG (default 1,5,10,100)
  *   --k1/--b/--tf/--phrase-bonus/--proximity-k   strategy parameters
+ *   --pr-weight/--norm-guard  mode-D fusion parameters (bm25-pr only)
+ *   --linkgraph <file>        citation graph for bm25-pr
+ *                             (default data/eval/<corpus>-citations.json)
+ *   --pr-damping/--pr-tolerance/--pr-max-iterations  PageRank parameters
  *
  * Every artifact records: experiment id, timestamp, git sha + worktree state,
  * corpus id + sha256, query/qrels file hashes + counts, strategy id/mode/params,
@@ -26,12 +30,13 @@ import path from 'node:path';
 import {
   createStrategy,
   resolveStrategyParams,
-  RANKING_STRATEGIES,
+  STRATEGY_IDS,
 } from '../src/core/ranking/index.js';
 import { evaluateRun, parseQrelsTsv, parseQueriesJsonl } from '../src/eval/index.js';
 import type { Run } from '../src/eval/index.js';
 import { getGitInfo, hashFile, latencyStats } from './lib/dataset.js';
 import { loadIndexBundle, runQuerySet } from './lib/retrieval-run.js';
+import { loadCitationGraph, pageRankForBundle } from './lib/pagerank-scores.js';
 
 function argValue(flag: string): string | undefined {
   const i = process.argv.indexOf(flag);
@@ -53,9 +58,9 @@ function main(): void {
   const corpus = argValue('--corpus') ?? 'scifact';
   const strategyId = argValue('--strategy');
   if (strategyId === undefined) throw new Error('missing --strategy');
-  if (RANKING_STRATEGIES[strategyId] === undefined) {
+  if (!STRATEGY_IDS.includes(strategyId)) {
     throw new Error(
-      `unknown strategy "${strategyId}" (available: ${Object.keys(RANKING_STRATEGIES).join(', ')})`,
+      `unknown strategy "${strategyId}" (available: ${STRATEGY_IDS.join(', ')})`,
     );
   }
 
@@ -70,17 +75,51 @@ function main(): void {
   });
   const outDir = argValue('--out') ?? 'runs';
 
+  const bundle = loadIndexBundle(corpus);
+
+  // mode D: PageRank scores come from an offline citation graph, computed
+  // once here — the query loop never touches graph data (ADR-003 spirit).
+  let linkGraph: Record<string, unknown> | undefined;
+  let pagerank: Float64Array | undefined;
+  if (strategyId === 'bm25-pr') {
+    const graphFile =
+      argValue('--linkgraph') ?? path.join('data', 'eval', `${corpus}-citations.json`);
+    const graph = loadCitationGraph(graphFile);
+    const damping = argNumber('--pr-damping');
+    const tolerance = argNumber('--pr-tolerance');
+    const maxIterations = argNumber('--pr-max-iterations');
+    const pr = pageRankForBundle(bundle, graph, {
+      ...(damping === undefined ? {} : { dampingFactor: damping }),
+      ...(tolerance === undefined ? {} : { tolerance }),
+      ...(maxIterations === undefined ? {} : { maxIterations }),
+    });
+    if (!pr.meta.converged) {
+      throw new Error(
+        `PageRank did not converge in ${pr.meta.iterations} iterations (residual ${pr.meta.residual}) — refusing to run with partial scores`,
+      );
+    }
+    pagerank = pr.scores;
+    linkGraph = {
+      file: graphFile,
+      sha256: hashFile('sha256', graphFile),
+      graph_hash: graph.graphHash,
+      edges_in_file: graph.edges.length,
+      pagerank: pr.meta,
+    };
+  }
   const strategyOptions = {
     k1: argNumber('--k1'),
     b: argNumber('--b'),
     tf: argValue('--tf') as 'raw' | 'log' | 'augmented' | undefined,
     phraseBonus: argNumber('--phrase-bonus'),
     proximityK: argNumber('--proximity-k'),
+    pagerank,
+    prWeight: argNumber('--pr-weight'),
+    normGuard: argNumber('--norm-guard'),
   };
   const strategy = createStrategy(strategyId, strategyOptions);
   const resolvedParams = resolveStrategyParams(strategyId, strategyOptions);
 
-  const bundle = loadIndexBundle(corpus);
   const allQueries = parseQueriesJsonl(fs.readFileSync(queriesFile, 'utf8'));
   const qrels = parseQrelsTsv(fs.readFileSync(qrelsFile, 'utf8'));
 
@@ -122,6 +161,7 @@ function main(): void {
       rows: [...qrels.values()].reduce((n, j) => n + j.size, 0),
     },
     strategy: { id: strategy.id, mode: strategy.mode, params: resolvedParams },
+    ...(linkGraph === undefined ? {} : { link_graph: linkGraph }),
     topk,
     k_values: kValues,
     metrics: {

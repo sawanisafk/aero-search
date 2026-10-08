@@ -19,7 +19,7 @@ export interface ScoredDoc {
   readonly breakdown: Readonly<Record<string, number>>;
 }
 
-export type StrategyMode = 'A' | 'B' | 'C' | 'BOOL';
+export type StrategyMode = 'A' | 'B' | 'C' | 'D' | 'BOOL';
 
 export interface RankingStrategy {
   /** stable identifier recorded in experiment artifacts */

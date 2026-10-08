@@ -7,6 +7,10 @@
  *   bm25         e2e, mode B
  *   bm25-phrase  e2e, mode C (bm25 + phrase bonus)
  *   bm25-phrase-proximity e2e, mode C (+ proximity term)
+ *   bm25-pr      e2e, mode D (BM25 + PageRank fusion) — when a citation
+ *                graph exists for the corpus (default
+ *                data/eval/<corpus>-citations.json or --linkgraph <file>;
+ *                PageRank is computed once, OUTSIDE the timed loop)
  *
  * e2e = parseQuery -> analyzeQuery -> retrieveBoolean -> strategy.rank ->
  * top-k id mapping, exactly what the experiment runner executes per query.
@@ -27,10 +31,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { parseQuery } from '../src/core/query/index.js';
 import { analyzeQuery, retrieveBoolean } from '../src/core/retrieval/index.js';
-import { RANKING_STRATEGIES } from '../src/core/ranking/index.js';
+import { createStrategy, RANKING_STRATEGIES } from '../src/core/ranking/index.js';
 import { parseQueriesJsonl } from '../src/eval/index.js';
-import { getGitInfo, latencyStats, writeJson, type LatencyStats } from '../scripts/lib/dataset.js';
+import { getGitInfo, hashFile, latencyStats, writeJson, type LatencyStats } from '../scripts/lib/dataset.js';
 import { loadIndexBundle, runQuerySet } from '../scripts/lib/retrieval-run.js';
+import { loadCitationGraph, pageRankForBundle } from '../scripts/lib/pagerank-scores.js';
 
 function argValue(flag: string): string | undefined {
   const i = process.argv.indexOf(flag);
@@ -113,6 +118,31 @@ function main(): void {
     }
   }
 
+  // mode D: bm25-pr, only when a citation graph is available for this corpus
+  let linkGraph: Record<string, unknown> | undefined;
+  const graphFileFlag = argValue('--linkgraph');
+  const graphFile = graphFileFlag ?? path.join('data', 'eval', `${corpus}-citations.json`);
+  if (fs.existsSync(graphFile)) {
+    const graph = loadCitationGraph(graphFile);
+    const prWeight = Number(argValue('--pr-weight') ?? '0.2');
+    const pr = pageRankForBundle(bundle, graph); // timed OUTSIDE the loop
+    if (!pr.meta.converged) {
+      throw new Error(`PageRank did not converge for ${graphFile} (residual ${pr.meta.residual})`);
+    }
+    const strategy = createStrategy('bm25-pr', { pagerank: pr.scores, prWeight });
+    const { latencyMs, parseFailures: failures } = runQuerySet(bundle, strategy, queries, 100);
+    stages['bm25-pr'] = latencyStats(latencyMs);
+    parseFailures['bm25-pr'] = failures.length;
+    linkGraph = {
+      file: graphFile,
+      sha256: hashFile('sha256', graphFile),
+      pr_weight: prWeight,
+      pagerank: pr.meta,
+    };
+  } else if (graphFileFlag !== undefined) {
+    throw new Error(`citation graph not found: ${graphFile}`);
+  }
+
   const git = getGitInfo();
   const timestamp = new Date().toISOString();
   const artifact = {
@@ -134,6 +164,7 @@ function main(): void {
       vocabSize: bundle.reader.stats().vocabSize,
     },
     parse_failures: parseFailures,
+    ...(linkGraph === undefined ? {} : { link_graph: linkGraph }),
     stages,
   };
 
