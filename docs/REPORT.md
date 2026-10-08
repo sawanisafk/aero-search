@@ -1,7 +1,7 @@
 # Project Report — Aero Search (custom IR engine)
 
-**State:** M0–M4 complete (A/B/C), 286 tests green, worktree clean at `0e73bf8`
-(this report is the only untracked file until it gets committed).
+**State:** M0–M5 complete (M4 A/B/C + M5 API/UI), 312 root tests + 15 web tests green,
+worktree clean (commit list for M5: see `docs/M5_FINAL_VERIFICATION.md`).
 **Purpose:** the single reference document for demonstration & preparation — status,
 architecture, live demos, experimental results, math, and evidence index.
 **Rule this report follows:** every number below is read from a committed artifact
@@ -13,21 +13,22 @@ recomputed by hand.
 ## 1. Checkpoint verification (run this first)
 
 ```powershell
-git status                    # expect: clean, except ?? docs/REPORT.md until committed
+git status                    # expect: clean
 git log --oneline --decorate -16
-git tag -l                    # m2-complete, m3-complete (+ m4-complete after tagging)
-npm run typecheck             # expect: no output = green
-npm test                      # expect: 286 passed (286) · 21 files · ~10 s
+git tag -l                    # m2-complete, m3-complete, m4-complete
+npm run typecheck             # expect: no output = green (root + web)
+npm test                      # expect: 312 passed (312) · 22 files
+npm run web:test              # expect: 15 passed (15)
 ```
 
-**Verified baseline for the presentation: 286 tests, 0 failures, typecheck green.**
+**Verified baseline: 312 + 15 tests, 0 failures, typecheck green.**
 (Screenshot this — it is evidence in itself.)
 
-Freeze the checkpoint:
+Freeze the checkpoint (already tagged this session):
 
 ```bash
 git tag -a m4-complete -m "M4 complete: PageRank, hybrid ranking, and fuzzy retrieval"
-# push later if a remote appears: git push origin m4-complete
+git push origin m2-complete m3-complete m4-complete
 ```
 
 Milestone history (each tag = reproducible green state):
@@ -36,7 +37,8 @@ Milestone history (each tag = reproducible green state):
 |---|---|---|
 | `m2-complete` | `b23a551` | index + BM25 + eval harness, 149 tests |
 | `m3-complete` | `d6d598c` | crawler + Postgres + link graph, 219 tests |
-| *(pending)* `m4-complete` | `0e73bf8` | PageRank + fusion + fuzzy, **286 tests** |
+| `m4-complete` | `0e73bf8` | PageRank + fusion + fuzzy, **286 tests** |
+| *(untagged)* | `9e95a45`…`61f2b75` + docs | M5 API/UI/demo/Docker, **312 + 15 tests** — commits in `M5_FINAL_VERIFICATION.md` |
 
 ---
 
@@ -50,8 +52,9 @@ Milestone history (each tag = reproducible green state):
 | **M4-A** | pure power-iteration PageRank (dangling-safe, converged), `pagerank_runs` persistence, `npm run pagerank:build` | `1fd7f42`, `465b56a`, `9e1d660`, evidence `8621d06`, docs `a9040f2` |
 | **M4-B** | mode-D fusion `score=(1−w)·ŝ_BM25+w·ŝ_PR`, corpus-global normalization, real citation graph (2,015 edges), weight ablation | `68d68f4`, `daae9c0`, `05601f9`, evidence `fdae01d`, docs `209048f` |
 | **M4-C** | bounded edit-distance fuzzy expansion (k=1 generation / k=2 dictionary scan), strict caps, separate typo benchmark | `b713150`, evidence `f6a32b0`, docs `0e73bf8` |
+| **M5** | Fastify REST layer (6 endpoints, JSON-Schema validation, error envelope, 26 contract tests), React 19 Aero desktop UI (windows/taskbar, signal bars, diagnostics, 15 tests), `scripts/demo.ts` (14/14), `bench:api` evidence, Docker stack, M5 doc set | `9e95a45`, `0817baf`, `9933ed2`, evidence `fe71c91`, `61f2b75` |
 
-Test growth: 38 → 149 → 219 → 239 → 257 → **286**.
+Test growth: 38 → 149 → 219 → 239 → 257 → 286 (M4) → **312 root + 15 web** (M5).
 
 ---
 
@@ -97,9 +100,9 @@ Test growth: 38 → 149 → 219 → 239 → 257 → **286**.
                 │ → fusion (+PageRank)│
                 └──────────┬──────────┘
                            ↓
-                      REST API        ← M5 (planned)
-                           ↓
-                  React / Aero UI      ← M5 (planned)
+                       REST API        ← M5 (src/api/)
+                            ↓
+                  React / Aero UI      ← M5 (web/)
 ```
 
 Three planes (details `docs/ARCHITECTURE.md`): **Offline** (crawl → index → PageRank →
@@ -427,7 +430,7 @@ plus strategy params — the evidence rule the whole project follows.
 > intentional negative result. Median e2e query latency is sub-millisecond.
 >
 > **Methodology.** Every claim traces to a committed artifact; every milestone
-> ends with a green test suite (now 286) and a reproducible checkpoint.
+> ends with a green test suite (now 312 root + 15 web) and a reproducible checkpoint.
 
 ---
 
@@ -455,21 +458,19 @@ git log --oneline --decorate -15
 git tag -l
 npm run typecheck
 npm test
+npm run web:test
 ```
 
 ► SEE: `nothing to commit, working tree clean` · history decorated with
-`m2-complete`, `m3-complete` (and `m4-complete` once tagged) · typecheck runs
-with **no errors** · **`Tests 286 passed (286)`** in ~10 s.
+`m2-complete`, `m3-complete`, `m4-complete` · typecheck runs with **no
+errors** · **`Tests 312 passed (312)`** in ~10 s · **`Tests 15 passed (15)`**
+for the web suite.
 
-> Note: while this report itself is still uncommitted, `git status` will show
-> one line — `?? docs/REPORT.md`. That is the only expected dirt until it is
-> committed; no other output should appear.
+► SAY: *"This is a frozen, reproducible checkpoint — 312 plus 15 tests, zero
+failures, clean worktree. Every milestone in the log ends in a green state, and
+tags mark the ones we demonstrate from."*
 
-► SAY: *"This is a frozen, reproducible checkpoint — 286 tests, zero failures,
-clean worktree. Every milestone in the log ends in a green state, and tags mark
-the ones we demonstrate from."*
-
-Screenshot the `286 passed` block.
+Screenshot the `312 passed` block.
 
 ### Stage 1 — Show the command surface (~1 min)
 
@@ -852,7 +853,7 @@ Read this once before the demo; you should not need to open source files
 | `query-benchmark.ts` | latency stages: candidates → each strategy → `bm25-pr` → `bm25-fuzzy`/`bm25-fuzzy2` |
 | `results/*.json` | **committed evidence** — every table in §6 comes from here |
 
-### 12.13 `tests/` — 21 suites (286 tests)
+### 12.13 `tests/` — 22 suites (312 tests) + `web/` (15 tests)
 
 | Suite | Proves |
 |---|---|
@@ -871,7 +872,10 @@ Read this once before the demo; you should not need to open source files
 | `crawl-e2e.test.ts` | controlled crawl against a fixture server |
 | `postgres.test.ts` | schema + repositories + PageRank persistence on an ephemeral cluster |
 | `pagerank.test.ts` | hand-computable graphs, dangling handling, determinism, convergence |
+| `api.test.ts` | **M5** REST contract: six endpoints, validation, error envelope, locked artifact values |
 | `helpers/`, `fixtures/` | fixture HTTP server, in-memory store, static test corpus |
+| `web/src/api/client.test.ts` | **M5** client: URL building, envelope → `ApiError`, NETWORK/BAD_RESPONSE |
+| `web/src/App.test.tsx` | **M5** desktop: boot/results, Evaluation 0.6436, doc window, status cards, minimize/restore |
 
 ### 12.14 `migrations/`, `configs/`
 
@@ -910,11 +914,18 @@ Read this once before the demo; you should not need to open source files
 | `CRAWLER.md`, `DATABASE.md` | crawler behavior; schema & persistence |
 | `REPORT.md` | **this document** |
 
-### 12.17 Not built yet (M5 — active phase)
+### 12.17 M5 — API + Aero UI (`src/api/`, `web/`, `scripts/demo.ts`)
 
-`src/api/` (Fastify REST + explain payloads) and `web/` (React Aero UI) do
-**not exist yet** — M5 is now the active milestone (plan in DEVELOPMENT.md):
-the UI is a front-end over an already-proven engine, never its replacement.
+| File | What it is |
+|---|---|
+| `src/api/app.ts` | Fastify factory: six routes, JSON-Schema validation, CORS, error envelope, static `web/dist` + SPA fallback |
+| `src/api/search-service.ts` | the M5 seam — wraps parse → analyze → fuzzy → retrieve → rank with runtime cache, snippets, stats, latency ring |
+| `src/api/{config,snippets,doc-store,server,index}.ts` | env config; snippet windowing; per-corpus doc text (PG only for crawled); process entry; barrel |
+| `web/src/App.tsx` + `web/src/windows/*` | window manager + Search/Doc/Evaluation/Status/Settings windows (signal bars, diagnostics drawer) |
+| `web/src/api/client.ts` | single client error path: envelope → `ApiError`; `types.ts` mirrors the contract |
+| `web/src/styles/aero.css` | hand-written Aero design system (no UI kit) |
+| `scripts/demo.ts` / `scripts/bench-api.ts` | 14-check in-process demo / HTTP latency artifact generator |
+| M5 docs | `API.md` (endpoint reference) · `FRONTEND.md` · `CODE_WALKTHROUGH.md` (one query traced) · `DEMO.md` · `DEPLOYMENT.md` · `M5.md` · `M5_FINAL_VERIFICATION.md` (acceptance matrix) |
 
 ---
 
@@ -922,13 +933,16 @@ the UI is a front-end over an already-proven engine, never its replacement.
 
 ```text
 [x] git status                          → clean
-[x] npm run typecheck                   → green
-[x] npm test                            → 286/286
+[x] npm run typecheck                   → green (root + web)
+[x] npm test                            → 312/312
+[x] npm run web:test                    → 15/15
 [x] npm run                             → command list inspected
-[ ] git tag -a m4-complete              → run when ready (command in §1)
-[ ] screenshot: 286/286 tests
+[x] git tag -a m4-complete              → tagged at 0e73bf8 (command in §1)
+[x] npm run demo                        → 14/14 in-process checks (M5)
+[ ] screenshot: 312 + 15 tests
 [ ] read §11 walkthrough once           → then rehearse Stages 0–7 end-to-end (~15 min)
 [ ] read §12 file guide once            → so "where is this implemented?" has an answer
+[ ] browser walkthrough (M5)            → docs/DEMO.md §3 — search, strategy switch, fuzzy, doc, Evaluation, Status
 [ ] inspect runs/                       → §11 Stage 2 commands (open artifacts *selectively*)
 [ ] inspect benchmark artifacts         → §6 tables match the JSON
 [ ] inspect crawled.manifest.json       → §11 Stage 5 (Demo C evidence)
@@ -942,17 +956,18 @@ the UI is a front-end over an already-proven engine, never its replacement.
 [ ] practice the 4 SAY-lines            → Stage 0, 3, 4, 5 narrations from §11
 ```
 
-**Directive update:** M5 (Fastify API + React Aero UI) is now the **active
-phase** (M7 removed from the production timeline) — but freeze the checkpoint
-first: run the §1 verification, tag `m4-complete`, and keep the §11
-rehearsal. M5 then turns a proven system into a product, instead of an
-interface carrying the project.
+**Directive update:** M5 (Fastify API + React Aero UI) is **done** — API,
+Aero UI, demo script, Docker stack and M5 docs are committed; the
+checkpoint was tagged `m4-complete` first, as directed (M7 remains removed
+from the production timeline). Acceptance matrix and commit list:
+`docs/M5_FINAL_VERIFICATION.md`.
 
 ---
 
-*Generated at commit `0e73bf8` (docs: M4-C recorded), typecheck green,
-286/286 tests, worktree clean. §11 = prompt-by-prompt demo walkthrough,
-§12 = file-by-file reference. All numbers sourced from committed artifacts
-listed in §8; every §11 stage command was executed live and matched (the only
-exceptions are the two commands explicitly labeled "optionally live" in
-Stage 6, which need a database).*
+*Regenerated at the M5 completion session (commit list in
+`docs/M5_FINAL_VERIFICATION.md`), typecheck green, 312/312 + 15/15 tests,
+worktree clean. §11 = prompt-by-prompt demo walkthrough, §12 = file-by-file
+reference. All numbers sourced from committed artifacts listed in §8; every
+§11 stage command was executed live and matched (the only exceptions are the
+two commands explicitly labeled "optionally live" in Stage 6, which need a
+database).*

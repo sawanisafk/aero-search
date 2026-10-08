@@ -349,7 +349,7 @@ GET  /api/stats                GET /api/health        GET /api/modes
 GET  /api/experiments          GET /api/experiments/:id
 ```
 
-Response shape (Fastify JSON Schema → generated OpenAPI):
+Response shape (Fastify JSON Schema — human-readable contract: `docs/API.md`):
 
 ```jsonc
 {

@@ -47,7 +47,7 @@ perf items.
 | **M2** | Retrieval + ranking + eval harness | Boolean AND/OR; TF-IDF (3 tf weightings); BM25 with k1/b; phrase + proximity; qrels v1; P@K/R@K/F1/MAP/NDCG@K runner; first real mode comparison (A vs B) |
 | **M3** | Crawler + storage + link graph | controlled crawl of seed set → Postgres; link graph; persistent/resumable crawl state; crawled corpus rebuilt into the index + committed manifest |
 | **M4** | PageRank + hybrid + fuzzy | sub-scoped: **A** PageRank job over link graphs (persisted, converged) · **B** hybrid BM25+PageRank fusion (normalize + weight ablation + latency) · **C** fuzzy edit-distance retrieval — original-scope leftovers deferred: `configs/` modes A–E, RRF arm, explanation payloads |
-| **M5** | API + Aero UI | sub-scoped: **A** Fastify REST + OpenAPI (validated, tested, explain payloads, measured overhead) · **B** React "Aero" UI — window chrome, taskbar, search window with ranking-details panel, settings window, status dashboard |
+| **M5** | API + Aero UI | sub-scoped: **A** Fastify REST (6 JSON endpoints, JSON-Schema validation, error envelope, contract tests, measured HTTP overhead, `docs/API.md`) · **B** React "Aero" UI — window chrome, taskbar/start menu, search window with signal bars + diagnostics drawer, document/evaluation/status/settings windows — **both complete** (`docs/M5.md` records the scope deltas from this early sketch) |
 | **M6** | Evaluation + benchmarks | 1K/10K/100K runs; latency, index size, RSS, throughput tables; mode comparison charts — **all numbers from committed artifacts** |
 
 _(M7 removed from the production timeline by decision — documentation
@@ -349,47 +349,60 @@ walkthrough in EXPERIMENTS.md §4.
 
 ---
 
-## M5 — status: IN PROGRESS
+## M5 — status: COMPLETE (built; see `docs/M5.md`)
 
 Goal: turn the engine into a product — an industry-grade REST API and a
 distinctive "Aero" desktop-style web UI, where **every displayed number comes
 from the same measured engine** the committed artifacts describe (ADR-003:
 PostgreSQL never in the query hot path).
 
-### M5-A — API (Fastify)
+### M5-A — API (Fastify) — done
 
-- [ ] `src/api/` Fastify app (strict tsconfig), `npm run dev:api`
-- [ ] `GET /api/v1/search` — `q, corpus, mode, topk, fuzzy, explain` → hits with
-      rank/score/breakdown (bm25 · phrase · proximity · pagerank), analysis trace
-      (tokens after stemming, fuzzy expansions), timings, provenance
-- [ ] `GET /api/v1/status` — index stats, corpus hash, git SHA, PageRank availability
-- [ ] `GET /api/v1/document/:id` — document detail view
-- [ ] Zod validation at the edge, uniform error envelope, CORS, pino logging
-- [ ] OpenAPI 3 spec served at `/api/v1/docs`, generated from the Zod schemas
-- [ ] contract tests (vitest + injected Fastify), typecheck green, full suite green
-- [ ] evidence: `bench:api` artifact — HTTP-layer overhead p50/p95 vs core latency
+- [x] `src/api/` Fastify app (strict tsconfig), `npm run api` / `npm run api:dev`
+- [x] `GET /api/search` — `q, corpus, strategy, k, page, fuzzy, fuzzyEdits, implicit`
+      → hits with rank/score/breakdown (bm25 · tfidf · phrase · proximity ·
+      pagerank), analysis trace (AST, stemmed terms, fuzzy expansions),
+      timings, strategy provenance (`id + engineId + mode + params`)
+- [x] `GET /api/stats` — index stats, corpus hash, strategy availability,
+      PageRank availability/convergence, crawl manifest, live latency
+- [x] `GET /api/documents/:corpus/:id` — document detail (+ matched terms,
+      phrase matches, live PageRank)
+- [x] `GET /health`, `GET /api/config`, `GET /api/benchmarks` (read-only artifacts)
+- [x] JSON-Schema validation at the edge (Fastify/AJV — supersedes the Zod
+      sketch), uniform error envelope, CORS, opt-in pino logging
+- [x] contract reference in `docs/API.md`; OpenAPI endpoint descoped (see
+      `docs/M5.md` scope-delta table)
+- [x] contract tests (`tests/api.test.ts`, 26), typecheck green, full suite green
+- [x] evidence: `npm run bench:api` artifact —
+      `benchmarks/results/2026-10-08T12-33-35-546Z-api-benchmark.json`
+      (overall avg 4.78 ms / median 1.83 / p95 20.49, 300 requests)
 
-### M5-B — Aero UI (React + Vite)
+### M5-B — Aero UI (React + Vite) — done
 
-- [ ] `web/` Vite + React + TS (own tsconfig); `npm run dev:web`, `npm run build:web`
-- [ ] Aero aesthetic: glass/translucent windows, window chrome, taskbar, wallpaper
-- [ ] Search window: command bar, result rows with score bars, keyboard-first
-      (Ctrl+K, ↑/↓, Enter), badges for fuzzy recovery / phrase / PR boost
-- [ ] Ranking-details panel: per-hit score breakdown + analysis trace ("why did
+- [x] `web/` Vite + React + TS (own tsconfig); `npm run web:dev`, `npm run web:build`
+- [x] Aero aesthetic: glass/translucent windows, window chrome, taskbar +
+      start menu, gradient wallpaper
+- [x] Search window: command bar, result rows with **per-signal score bars**,
+      status pills (engine id/mode/corpus/fuzzy), fuzzy recovery note box,
+      paging; Enter-to-search, keyboard-operable controls
+- [x] Ranking-details: every hit's breakdown + diagnostics drawer (parsed
+      AST, analyzed terms, per-stage timing, strategy params — "why did
       this rank here?")
-- [ ] Settings window: corpus, mode A–D, topk, fuzzy radius, implicit AND/OR —
-      persisted client-side
-- [ ] Status dashboard: index stats, PageRank top authorities, crawl manifest,
-      live latency
-- [ ] states (loading/empty/error), accessibility basics, responsive layout
-- [ ] component tests (Vitest + Testing Library)
-- [ ] production path: `npm run build` (web + api) → `npm start` serves the built
-      UI from Fastify
+- [x] Settings window: corpus/strategy/k/implicit/fuzzy live in the Search
+      window; Settings shows `/api/config` + endpoint reference + about
+      (client-side persistence descoped — `docs/M5.md`)
+- [x] Status dashboard: index stats, PageRank block, crawl manifest, live
+      latency; Evaluation window serves committed artifacts read-only
+- [x] states (loading/empty/error with server codes), aria labels, responsive ≤ 760 px
+- [x] component tests (Vitest + Testing Library — 15 web tests)
+- [x] production path: `npm run build` (web + api) → `npm start` serves the
+      built UI from Fastify; compose stack adds nginx + postgres
 
-**Exit criteria:** the full demo runs in a browser — type a query containing a
-typo, watch it recover with explained scores, switch ranking modes, inspect
-index/PageRank status — with API contract tests + UI tests green and typecheck
-clean.
+**Exit criteria — met:** the full demo runs in a browser (typo query
+recovers with explained scores, strategies switch, status inspected) with
+API contract tests (26) + UI tests (15) green, typecheck clean, and
+`npm run demo` passing 14/14 in-process checks. Acceptance matrix:
+`docs/M5_FINAL_VERIFICATION.md`.
 
 **Non-goals:** auth/multi-user, DB in the hot path, deployment infrastructure —
 those are M6+ concerns.
@@ -418,3 +431,7 @@ milestone's own exit duty.
 | 2026-10-08 | M4-C | `benchmarks/results/2026-10-08T03-59-11-510Z-fuzzy-benchmark.json` + `…03-59-23-203Z-…` | typo-recovery benchmark on SciFact: deterministic single-substitution corruption, 300/300 corruptible (0 skipped), identical judged subset in all arms, git `b713150` clean: clean 0.6436 MAP → typo-exact 0.5665 → fuzzy k=1 **0.6386 (93.5% of the 0.0772 gap recovered)**; k=2 MAP 0.6157 (distance-2 noise — measured negative), R@100 0.9342; latency 1.005 / 0.890 / 1.136 (k=1) / 4.340 (k=2) ms avg; all 300 corrections + fuzzy params/stats embedded |
 | 2026-10-08 | M4-C | `benchmarks/results/2026-10-08T03-59-43-121Z-query-benchmark.json` | fuzzy latency stages over 1,109 queries: bm25 0.887 ms avg → bm25-fuzzy 0.868 / max 2.966 → bm25-fuzzy2 1.232 / max 7.773; per-stage expansion stats recorded; documents the k=2 fix (first edit1×edit1 implementation measured max 1,554 ms in a pre-commit bench run, replaced by a bounded dictionary scan before this artifact); git `b713150` clean |
 | 2026-10-08 | M4-C | `runs/2026-10-08T03-59-45-029Z-scifact-bm25-k1.2-b0.75-fuzzy.json` | clean-query fuzzy arm (no corruption): 72 absent terms attempted in 30/300 queries → 157 variants (caps fired: expansionsPerTerm 8, expansionsPerQuery 3), MAP 0.6436 → 0.6353 (expansion trades precision when the miss is genuine OOV, not a typo), R@100 0.9276 → 0.9309, latency 1.089 ms avg; `fuzzy {params, stats}` block; git `b713150` clean |
+| 2026-10-08 | M5-A | `src/api/` + `tests/api.test.ts` (commit `9e95a45`) | Fastify REST layer: 6 JSON endpoints (`/health`, `/api/search`, `/api/documents/:corpus/:id`, `/api/stats`, `/api/config`, `/api/benchmarks`), JSON-Schema validation with service caps, uniform error envelope, CORS, static `web/dist` + SPA fallback; 26 contract tests incl. locked artifact values (MAP 0.6436, nDCG@10 0.687552, PageRank 52 iterations / 77 nodes); suite total 312 green |
+| 2026-10-08 | M5-A | `benchmarks/results/2026-10-08T12-33-35-546Z-api-benchmark.json` (commit `fe71c91`) | API latency over real loopback HTTP (10 routes × 30 requests after 5 warmups, full round trip incl. body read): overall avg 4.78 ms / median 1.83 / p95 20.49; per-route: search-bm25 2.19, document 0.56, benchmarks 20.80 (artifact re-read by design); `npm run bench:api` |
+| 2026-10-08 | M5-B | `web/` (commit `0817baf`) + `scripts/demo.ts` (commit `9933ed2`) | React 19 + Vite 8 Aero desktop (windows/taskbar/start menu, signal bars, diagnostics drawer, document/evaluation/status/settings windows); 15 web tests (10 client-contract + 5 desktop behaviors); `npm run demo` = 14/14 in-process end-to-end checks incl. fuzzy contrast `wonderlan → wonderland` and locked MAP 0.6436; production path `npm run build && npm start` verified live (root HTML, SPA fallback, search 200/10 hits) |
+| 2026-10-08 | M5 | `Dockerfile`, `web/Dockerfile`, `docker-compose.yml` (commit `61f2b75`) | container stack: api (multi-stage, healthcheck `/health`) + nginx web (8080, proxies `/api`) + existing postgres, health-gated order, `.dockerignore` excludes `data/pg`; **inspection-verified only** — no Docker on the dev machine (recorded honestly in `docs/DEPLOYMENT.md`) |
