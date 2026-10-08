@@ -199,7 +199,56 @@ above) — M3 ends at the link graph.
 **Exit criteria** (milestone table: controlled crawl → Postgres; link graph; corpus
 manifest) — **met**: 219 tests green (unit + fixture + PG E2E); live controlled crawl
 of `info.cern.ch` produced 100 pages / 77 indexable docs / 796 link edges with 62 URLs
-left resumable; manifest + query-latency artifact committed.
+left resumable; manifest + query-latency artifact committed. Frozen at tag
+**`m3-complete`** → `d6d598c`.
+
+---
+
+## M4 — status: IN PROGRESS
+
+Sub-scoped per plan: **M4-A PageRank → M4-B hybrid fusion → M4-C fuzzy** — each with its
+own experiment; PageRank is *hypothesized* to help, a null/negative result is equally
+publishable ("does link-based authority improve lexical relevance?").
+
+### M4-A — PageRank — COMPLETE
+
+**Core (`src/core/link/pagerank.ts`)**
+- [x] Power iteration; column-stochastic contributions (`d·π_u / outdeg(u)`)
+- [x] Dangling-mass redistribution + teleport → disconnected components safe
+- [x] Configurable d / tolerance / maxIterations (defaults 0.85 / 1e-6 / 100 per §6)
+- [x] Deterministic: deduped+sorted edges, uniform start → bitwise-reproducible scores
+- [x] Honest convergence reporting (`converged`, `residual`, `onIteration` trace hook)
+
+**Persistence (`migrations/002_pagerank.sql`)**
+- [x] `pagerank_runs` (params + convergence + graphHash + gitSha) / `pagerank_scores`
+      (url-keyed, FK cascade); atomic save + deterministic latest-run load
+- [x] Tests: roundtrip, latest-run supersession, >1-chunk score sets (16 PG tests)
+
+**Job (`npm run pagerank:build`)**
+- [x] Graph from PostgreSQL: nodes = indexable documents (url order); edges with both
+      endpoints in the node set; dropped rows and dangling nodes counted, not hidden
+- [x] `graphHash` = sha256 over canonical (N, sorted edges) serialization; artifact
+      carries config + git SHA + corpus hash + residual trace (evidence rule)
+- [x] Evidence run on the M3 graph: 77 nodes / 209 unique in-set edges (796 raw rows,
+      482 dropped, 16 dangling) → **converged 52 iterations, residual 8.591e-7,
+      1.9 ms**, Σπ = 1.0000000000000002; top authority `TheProject.html` (0.1088)
+
+**Exit criteria A** (hand-computable tests; deterministic; persisted; convergence
+benchmark artifact committed) — **met**: 239 tests green; artifact
+`benchmarks/results/2026-10-08T02-29-21-953Z-pagerank.json`.
+
+### M4-B — Hybrid ranking (BM25 + PageRank fusion) — pending
+
+BM25 baseline · PageRank as independent signal · normalization + weighted/RRF fusion ·
+BM25 vs BM25+PR comparison · ablation · latency impact — all via the existing
+`eval:run` harness on judged data (SciFact for lexical metrics; the crawl corpus has no
+qrels, so fusion quality is measured on SciFact with PageRank simulated/injected as a
+controlled signal, or on any judged set with a link graph — decide at kickoff).
+
+### M4-C — Fuzzy retrieval — pending
+
+Bounded edit-distance candidate generation, typo cases, strict candidate-count limits,
+benchmark separate from exact retrieval (exact vs fuzzy as its own experiment).
 
 ---
 
@@ -214,3 +263,4 @@ left resumable; manifest + query-latency artifact committed.
 | 2026-10-07 | M3 | `data/eval/crawled.manifest.json` | controlled crawl of `info.cern.ch` per `configs/crawl.json` (config sha256 in manifest): 100 pages, 78 docs / 77 indexable, 796 link edges, 22 failures recorded as data, 62 pending (resumable); corpus hash `4e5bf3b0…`, git SHA + clean flag recorded; built in 372 ms via `npm run index:crawl` |
 | 2026-10-07 | M3 | `benchmarks/results/2026-10-07T17-12-21-990Z-query-benchmark.json` | e2e query latency on the crawled corpus (77 docs, vocab 4,151, 60 derived queries): BM25 avg 0.089 ms / p95 0.117 ms; git SHA recorded in artifact |
 | 2026-10-07 | M3 | `data/eval/crawled.graph.json`, `data/index/crawled.aidx` | preservation: full 796-edge link-graph export (74 sources, 422 targets) + crawled index segment (77 docs, 0.27 MB, ids map) committed as frozen evidence; deterministic rebuild reproduced corpus hash `4e5bf3b0…`; frozen at git tag `m3-complete` |
+| 2026-10-08 | M4-A | `benchmarks/results/2026-10-08T02-29-21-953Z-pagerank.json` | PageRank over the M3 crawl graph: 77 nodes / 209 unique in-set edges / 16 dangling, d=0.85, tol=1e-6 → converged 52 iterations, residual 8.591e-7, 1.9 ms, Σπ=1.0000000000000002, graphHash `1a3f3ec4…`, corpus hash from crawled manifest, git SHA in artifact; scores persisted as `pagerank_runs` run_id 1 |

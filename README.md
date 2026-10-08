@@ -81,6 +81,7 @@ npm run crawl                       # controlled crawl (configs/crawl.json)
 npm run crawl -- --resume           # continue a partial crawl
 npm run index:crawl                 # PG docs → data/index/crawled.aidx
                                     # + committed data/eval/crawled.manifest.json
+npm run pagerank:build              # PageRank over the crawl graph (M4-A)
 ```
 
 Crawler details: [`docs/CRAWLER.md`](docs/CRAWLER.md) · schema & persistence:
@@ -117,7 +118,7 @@ _pending (M5)_
 | M1 Indexing core | **done** |
 | M2 Retrieval + ranking + eval harness | **done** |
 | M3 Crawler + Postgres + link graph | **done** |
-| M4 PageRank + hybrid ranking + fuzzy | next |
+| M4 PageRank + hybrid ranking + fuzzy | in progress |
 | M5 API + Aero UI | pending |
 | M6 Benchmarks + evaluation | pending |
 | M7 Validation + viva prep | pending |

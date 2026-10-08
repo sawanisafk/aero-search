@@ -138,12 +138,12 @@ interface Ranker { mode: string; rank(q, candidates, ctx): ScoredDoc[] }
 | `urls` | crawl frontier: normalized_url (PK), status pending/fetched/failed/skipped, depth, http status, content_type, bytes, error, discovered_from, redirect_chain JSONB, fetch_ts — partial index drives BFS |
 | `documents` | url (PK, FK → urls), title, headings JSONB, meta JSONB, text, word_count, unique_terms, content_hash (partial-unique while owning content), duplicate_of (FK → documents), fetch_ts |
 | `links` | from_url (FK → documents, cascade) → to_url (free text — target may be pending/off-allowlist/uncrawled), anchor, position — the directed graph for PageRank |
+| `pagerank_runs` / `pagerank_scores` | **M4-A:** run parameters + convergence outcome + graph hash + git SHA; url-keyed stationary scores (read once offline, never in the query path) |
 
 Conceptual, deferred (PostgreSQL vs files decided when they land):
 
 | Table (conceptual) | Contents |
 |---|---|
-| `pagerank` | doc_id, value, run_id — **M4**, when PageRank runs |
 | `queries` / `qrels` | query text; query_id × doc_id × grade — currently committed files under `data/eval/` |
 | `runs` / `metrics` | mode, params JSON, git_sha, corpus hash, latency, P@K, NDCG@K — currently committed files under `runs/` |
 
@@ -249,6 +249,8 @@ IDF(t) = ln( 1 + (N − df + 0.5)/(df + 0.5) )      defaults: k1 = 1.2, b = 0.75
 **PageRank:** `π ← (1−d)/N + d·(Aᵀπ + dangling/N)`, d = 0.85, iterate to `‖Δ‖₁ < 10⁻⁶`,
 dangling mass redistributed. Complexity `O(iterations × E)`. Offline batch, after crawl.
 Role: **bounded secondary authority signal** — never a replacement for lexical relevance.
+As built (M4-A): `src/core/link/pagerank.ts` + `scripts/build-pagerank.ts`; evidence run
+converged in 52 iterations (8.59e-7, 1.9 ms) over the crawl graph.
 
 ### Plug-in & fusion design
 
@@ -434,7 +436,7 @@ unless enabled; retrieval quality is still measured by our eval harness.
 ## 12. Repository layout
 
 ```
-src/core      pure IR: tokenizer, stemmer, index, ranking, query, snippet
+src/core      pure IR: tokenizer, stemmer, index, ranking, query, snippet, link (pagerank)
 src/crawler   frontier, fetch, extract, robots, politeness (pure, deps injected)
 src/storage   postgres adapters + repository interfaces, index persistence (segments)
 src/api       fastify routes + schemas
