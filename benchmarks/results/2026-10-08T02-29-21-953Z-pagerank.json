@@ -1,0 +1,297 @@
+{
+  "kind": "pagerank",
+  "timestamp": "2026-10-08T02:29:21.953Z",
+  "git": {
+    "sha": "465b56ab267a80320d22faf032f5c0d87c48751a",
+    "clean": false,
+    "has_untracked": true
+  },
+  "config": {
+    "algorithm": "power-iteration",
+    "dampingFactor": 0.85,
+    "tolerance": 0.000001,
+    "maxIterations": 100,
+    "node_set": "indexable documents (duplicate_of IS NULL, url order)",
+    "edge_policy": "both endpoints in node set; duplicates collapsed; self-loops kept",
+    "source": {
+      "crawl_config": "configs/crawl.json",
+      "migrations": [
+        "001_init.sql",
+        "002_pagerank.sql"
+      ]
+    }
+  },
+  "corpus": {
+    "hash": "4e5bf3b00f632c72ed2e09c0321da1eb003bea810765298e4089bc9ac02d563f"
+  },
+  "graph": {
+    "nodes": 77,
+    "uniqueEdges": 209,
+    "rawLinkRows": 796,
+    "droppedEdges": 482,
+    "danglingNodes": 16,
+    "graphHash": "1a3f3ec4784df3ad9d81eec8724d6f114c6c19338e2da23d0155f496078ab20c"
+  },
+  "convergence": {
+    "iterations": 52,
+    "converged": true,
+    "residual": 8.590631484970378e-7,
+    "wallMs": 1.884,
+    "trace": [
+      {
+        "iteration": 1,
+        "residual": 0.6962396694214877
+      },
+      {
+        "iteration": 2,
+        "residual": 0.32366889353882056
+      },
+      {
+        "iteration": 3,
+        "residual": 0.13190358688711235
+      },
+      {
+        "iteration": 4,
+        "residual": 0.0506448355855485
+      },
+      {
+        "iteration": 5,
+        "residual": 0.024399118046489712
+      },
+      {
+        "iteration": 6,
+        "residual": 0.011534850565407817
+      },
+      {
+        "iteration": 7,
+        "residual": 0.006256719040599764
+      },
+      {
+        "iteration": 8,
+        "residual": 0.0037253432080111663
+      },
+      {
+        "iteration": 9,
+        "residual": 0.00226962062291013
+      },
+      {
+        "iteration": 10,
+        "residual": 0.0015471721554864521
+      },
+      {
+        "iteration": 11,
+        "residual": 0.0010826885936888252
+      },
+      {
+        "iteration": 12,
+        "residual": 0.0007777073603428626
+      },
+      {
+        "iteration": 13,
+        "residual": 0.0005873505777745846
+      },
+      {
+        "iteration": 14,
+        "residual": 0.0004652099837324803
+      },
+      {
+        "iteration": 15,
+        "residual": 0.0003850502000688487
+      },
+      {
+        "iteration": 16,
+        "residual": 0.0003239069199007065
+      },
+      {
+        "iteration": 17,
+        "residual": 0.00027476446582605247
+      },
+      {
+        "iteration": 18,
+        "residual": 0.00023305699556650222
+      },
+      {
+        "iteration": 19,
+        "residual": 0.00019767064583486524
+      },
+      {
+        "iteration": 20,
+        "residual": 0.0001676513834197712
+      },
+      {
+        "iteration": 21,
+        "residual": 0.0001421867929162872
+      },
+      {
+        "iteration": 22,
+        "residual": 0.00012058782678424146
+      },
+      {
+        "iteration": 23,
+        "residual": 0.00010226837187137872
+      },
+      {
+        "iteration": 24,
+        "residual": 0.00008673109076690663
+      },
+      {
+        "iteration": 25,
+        "residual": 0.0000735538010258191
+      },
+      {
+        "iteration": 26,
+        "residual": 0.00006237823809985762
+      },
+      {
+        "iteration": 27,
+        "residual": 0.000052900461134476346
+      },
+      {
+        "iteration": 28,
+        "residual": 0.00004486261874353482
+      },
+      {
+        "iteration": 29,
+        "residual": 0.000038045994365196525
+      },
+      {
+        "iteration": 30,
+        "residual": 0.00003226507301215282
+      },
+      {
+        "iteration": 31,
+        "residual": 0.000027362509957156323
+      },
+      {
+        "iteration": 32,
+        "residual": 0.000023204857475662716
+      },
+      {
+        "iteration": 33,
+        "residual": 0.00001967893805740993
+      },
+      {
+        "iteration": 34,
+        "residual": 0.00001668876718998076
+      },
+      {
+        "iteration": 35,
+        "residual": 0.000014152942528819663
+      },
+      {
+        "iteration": 36,
+        "residual": 0.00001200242916075565
+      },
+      {
+        "iteration": 37,
+        "residual": 0.000010178681005353681
+      },
+      {
+        "iteration": 38,
+        "residual": 0.00000863204741302203
+      },
+      {
+        "iteration": 39,
+        "residual": 0.000007320421742538358
+      },
+      {
+        "iteration": 40,
+        "residual": 0.0000062080951922496505
+      },
+      {
+        "iteration": 41,
+        "residual": 0.000005264784738713297
+      },
+      {
+        "iteration": 42,
+        "residual": 0.0000044648087460679754
+      },
+      {
+        "iteration": 43,
+        "residual": 0.0000037863878212746407
+      },
+      {
+        "iteration": 44,
+        "residual": 0.0000032110518913526856
+      },
+      {
+        "iteration": 45,
+        "residual": 0.0000027231373678333025
+      },
+      {
+        "iteration": 46,
+        "residual": 0.0000023093607118235097
+      },
+      {
+        "iteration": 47,
+        "residual": 0.0000019584567925775426
+      },
+      {
+        "iteration": 48,
+        "residual": 0.000001660872196323094
+      },
+      {
+        "iteration": 49,
+        "residual": 0.000001408505133867078
+      },
+      {
+        "iteration": 50,
+        "residual": 0.0000011944848698347554
+      },
+      {
+        "iteration": 51,
+        "residual": 0.0000010129846661883178
+      },
+      {
+        "iteration": 52,
+        "residual": 8.590631484970378e-7
+      }
+    ]
+  },
+  "scores": {
+    "sum": 1,
+    "top": [
+      {
+        "url": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+        "value": 0.10877493176745619
+      },
+      {
+        "url": "http://info.cern.ch/hypertext/WWW/People.html",
+        "value": 0.05656313679246265
+      },
+      {
+        "url": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/QuickGuide.html",
+        "value": 0.043099592485196805
+      },
+      {
+        "url": "http://info.cern.ch/hypertext/WWW/LineMode/More.html",
+        "value": 0.04241998290153321
+      },
+      {
+        "url": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+        "value": 0.033872667534395544
+      },
+      {
+        "url": "http://info.cern.ch/hypertext/WWW/Terms.html",
+        "value": 0.03231930549403422
+      },
+      {
+        "url": "http://info.cern.ch/hypertext/WWW/Daemon/Overview.html",
+        "value": 0.030463568700650444
+      },
+      {
+        "url": "http://info.cern.ch/hypertext/WWW/NeXT/WorldWideWeb.html",
+        "value": 0.027998350821505154
+      },
+      {
+        "url": "http://info.cern.ch/hypertext/WWW/LineMode/Browser.html",
+        "value": 0.02753189894324059
+      },
+      {
+        "url": "http://info.cern.ch/hypertext/WWW/Library/Status.html",
+        "value": 0.026693665724125556
+      }
+    ]
+  },
+  "runId": 1
+}
