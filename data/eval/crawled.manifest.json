@@ -1,10 +1,10 @@
 {
   "name": "crawled",
-  "builtAt": "2026-10-07T17:12:12.137Z",
+  "builtAt": "2026-10-08T02:11:08.295Z",
   "git": {
-    "sha": "2461385e65d341c662d5ca73f0714f684dac8088",
-    "clean": true,
-    "has_untracked": false
+    "sha": "548a0ffdb4a3ddb37291d447f4a9301dacbcd546",
+    "clean": false,
+    "has_untracked": true
   },
   "configSha256": "e057a84a617c214c7f8673b090b0c8fc8f9b65fb6e8f0e153679c62f022f59d1",
   "counts": {

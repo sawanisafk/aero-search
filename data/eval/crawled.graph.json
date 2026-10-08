@@ -1,0 +1,4788 @@
+{
+  "name": "crawled",
+  "generatedAt": "2026-10-08T02:11:08.295Z",
+  "corpusHash": "4e5bf3b00f632c72ed2e09c0321da1eb003bea810765298e4089bc9ac02d563f",
+  "counts": {
+    "edgeCount": 796,
+    "sourceCount": 74,
+    "targetCount": 422
+  },
+  "edges": [
+    {
+      "from": "http://info.cern.ch/",
+      "to": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "anchor": "Browse the first website",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/",
+      "to": "http://line-mode.cern.ch/www/hypertext/WWW/TheProject.html",
+      "anchor": "Browse the first website using the line-mode browser simulator",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/",
+      "to": "http://home.web.cern.ch/topics/birth-web",
+      "anchor": "Learn about the birth of the web",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/",
+      "to": "http://home.web.cern.ch/about",
+      "anchor": "Learn about CERN, the physics laboratory where the web was born",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Conferences/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Conferences/INET93/CFP.html",
+      "anchor": "INET93",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Conferences/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Conferences/NSC92/CallForParticpation.html",
+      "anchor": "NSC92",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Conferences/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Conferences/NSC92/CallForParticpation.html",
+      "anchor": "Call for participation",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Conferences/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Conferences/JANET_UG_92/Annoucement.html",
+      "anchor": "Anouncement",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Conferences/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Conferences/ECHT92/CallForParticipation.html",
+      "anchor": "Call for participation",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Conferences/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Conferences/JENC92/Programme.html",
+      "anchor": "JENC3",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Conferences/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Conferences/JENC92/Programme.html",
+      "anchor": "Programme and details",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Conferences/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Conferences/IETF92/IETF-9203.html",
+      "anchor": "23rd IETF",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Conferences/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Conferences/IETF92/IETF-9203.html",
+      "anchor": "",
+      "position": 8
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Conferences/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Conferences/CSCW92/CallForPapers.html",
+      "anchor": "Call for papers",
+      "position": 9
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Conferences/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Conferences/IFIP_Prot_Arch_App/CallForPapers.txt",
+      "anchor": "Call for papers",
+      "position": 10
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Conferences/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Conferences/IFIP_Prot_Arch_App/Announcement.txt",
+      "anchor": "announcement",
+      "position": 11
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Conferences/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Conferences/HT91/Overview.html",
+      "anchor": "HT91",
+      "position": 12
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Conferences/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Conferences/ECHT90/Introduction.html",
+      "anchor": "A trip report.",
+      "position": 13
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/ByAccess.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "anchor": "subject",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/ByAccess.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/byOrganisation/Overview.html",
+      "anchor": "organization",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/ByAccess.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "anchor": "World-Wide Web",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/ByAccess.html",
+      "to": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "anchor": "WWW initiative",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/ByAccess.html",
+      "to": "http://info.cern.ch/hypertext/Products/WAIS/Overview.html",
+      "anchor": "WAIS",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/ByAccess.html",
+      "to": "http://info.cern.ch:8001/quake.think.com/directory-of-servers",
+      "anchor": "directory of servers",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/ByAccess.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/WAIS/BySource.html",
+      "anchor": "name",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/ByAccess.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/WAIS/ByHost.html",
+      "anchor": "domain",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/ByAccess.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/News/Groups/Overview.html",
+      "anchor": "Network News",
+      "position": 8
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/ByAccess.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/Yanoff.html",
+      "anchor": "Scott Yanoff",
+      "position": 11
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/ByAccess.html",
+      "to": "http://info.cern.ch:8001/pegun.law.columbia.edu:210/internet-library-guide",
+      "anchor": "Art St George's index",
+      "position": 12
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/ByAccess.html",
+      "to": "http://vxcrna.cern.ch/help",
+      "anchor": "VAX/VMS HELP",
+      "position": 13
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/ByAccess.html",
+      "to": "http://info.cern.ch/hypertext/WWW/VMSHelp/Overview.html",
+      "anchor": "gateway",
+      "position": 14
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/ByAccess.html",
+      "to": "http://info.cern.ch:8001/archive.orst.edu:9000/archie-orst.edu",
+      "anchor": "ARCHIE",
+      "position": 15
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/ByAccess.html",
+      "to": "http://ftp.uu.net/",
+      "anchor": "uu.net",
+      "position": 16
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/ByAccess.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/Overview.html",
+      "anchor": "Other forms of online data",
+      "position": 20
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/ByAccess.html",
+      "to": "http://info.cern.ch/hypertext/TBL_Disclaimer.html",
+      "anchor": "Tim BL",
+      "position": 21
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/News/comp.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "anchor": "other subjects,",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/News/comp.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/News/Overview.html",
+      "anchor": "newsgroups",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/News/comp.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/News/fullcomp.html",
+      "anchor": "full list of comp newsgroups",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/News/comp.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/News/comp.html",
+      "anchor": "text",
+      "position": 38
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/News/comp.html",
+      "to": "http://info.cern.ch/hypertext/WWW/WhatIs.html",
+      "anchor": "hypertext",
+      "position": 49
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/News/comp.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/News/comp.html",
+      "anchor": "terminals",
+      "position": 135
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/News/comp.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/News/comp.html",
+      "anchor": "laser printers",
+      "position": 136
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/News/comp.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/News/comp.html",
+      "anchor": "viruses",
+      "position": 158
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/News/comp.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/News/comp.html",
+      "anchor": "risks",
+      "position": 163
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/News/comp.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/News/comp.html",
+      "anchor": "unix",
+      "position": 165
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/News/comp.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/News/comp.html",
+      "anchor": "window",
+      "position": 166
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/News/comp.html",
+      "to": "http://crnvmc.cern.ch/NEWS/STING",
+      "anchor": "STING",
+      "position": 168
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/News/comp.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/News/comp.html",
+      "anchor": "peripherals",
+      "position": 278
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/News/comp.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/News/comp.html",
+      "anchor": "comp.text",
+      "position": 279
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/News/comp.html",
+      "to": "http://info.cern.ch/hypertext/WWW/WhatIs.html",
+      "anchor": "hypertext",
+      "position": 283
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/NewsFromVM/Overview.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/News/Overview.html",
+      "anchor": "Internet news",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/NewsFromVM/Overview.html",
+      "to": "http://crnvmc.cern.ch/NEWS/",
+      "anchor": "list",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/NewsFromVM/Overview.html",
+      "to": "http://info.cern.ch/hypertext/TBL_Disclaimer.html",
+      "anchor": "Tim BL",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/Top.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "anchor": "by Subject",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/Top.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/ByAccess.html",
+      "anchor": "by Type",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/Top.html",
+      "to": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "anchor": "About the W3 project",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://www.dmoz.org/",
+      "anchor": "dmoz.org",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://www.dmoz.org/Computers/Software/Internet/Servers/WWW/",
+      "anchor": "Computers: Software: Internet: Servers: WWW",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://www.netcraft.com/",
+      "anchor": "Netcraft",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://www.netcraft.com/Survey/servers.html",
+      "anchor": "Directory of Web Server Home Sites",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://wdvl.internet.com/",
+      "anchor": "WDVL",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://wdvl.internet.com/Software/Servers/",
+      "anchor": "Servers",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://info.cern.ch/Help/Webmaster",
+      "anchor": "Webmaster",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "anchor": "WWW",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/ByAccess.html",
+      "anchor": "other protocols",
+      "position": 8
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "anchor": "subject",
+      "position": 9
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Provider/Overview.html",
+      "anchor": "how to make a new server",
+      "position": 10
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/WWW/UnstableServers.html",
+      "anchor": "test servers",
+      "position": 11
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://hoohoo.ncsa.uiuc.edu/",
+      "anchor": "NCSA",
+      "position": 12
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://info.in2p3.fr./",
+      "anchor": "IN2P3",
+      "position": 13
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://kviexp.kvi.nl/",
+      "anchor": "KVI",
+      "position": 14
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://ftp.cwi.nl/pub/www/default.html",
+      "anchor": "CWI",
+      "position": 15
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://fatty.law.cornell.edu./usr2/wwwtext/lii.table.html",
+      "anchor": "Cornell",
+      "position": 16
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://zws009.desy.de:2784/",
+      "anchor": "ZEUS",
+      "position": 17
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://kekux.kek.jp/kek/html/kek.html",
+      "anchor": "KEK",
+      "position": 18
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://apollo3.desy.de/",
+      "anchor": "DESY unix server",
+      "position": 19
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://granit.dtb.dk:2784/",
+      "anchor": "Denmark's Technical Library",
+      "position": 20
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://isis.cshl.org./main.html",
+      "anchor": "VOICE magazine",
+      "position": 21
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://slacvm.slac.stanford.edu./FIND/SLAC.HTML",
+      "anchor": "SLAC",
+      "position": 22
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://slacvx.slac.stanford.edu/sldwww/000000/browsers.html",
+      "anchor": "unix server",
+      "position": 23
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://iicm.tu-graz.ac.at/ROOT",
+      "anchor": "Technical University of Graz",
+      "position": 24
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://lanka.ccit.arizona.edu/usr/local/lib/WWW/default.html",
+      "anchor": "CCIT Arizona",
+      "position": 25
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://fnala.fnal.gov:8000/",
+      "anchor": "Fermilab",
+      "position": 26
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://fnth02.fnal.gov/",
+      "anchor": "Theory",
+      "position": 27
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://d0sgi5.fnal.gov/",
+      "anchor": "D0",
+      "position": 28
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://nhmxw0.fnal.gov/",
+      "anchor": "HEPnet management",
+      "position": 29
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://cdsun3.fnal.gov/",
+      "anchor": "ACCESS user consultancy",
+      "position": 30
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://asis01.cern.ch/",
+      "anchor": "ASIS Software Repository",
+      "position": 31
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/NewsFromVM/Overview.html",
+      "anchor": "CERN news",
+      "position": 32
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://crnvmc.cern.ch/NEWS/",
+      "anchor": "list",
+      "position": 33
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://crnvmc.cern.ch./FIND",
+      "anchor": "CERN computing documents",
+      "position": 34
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://vms.huji.ac.il/WWW_DIR/default.html",
+      "anchor": "Hebrew University of Jerusalem",
+      "position": 35
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://noa.huji.ac.il/tex/www/top.html",
+      "anchor": "TeX database",
+      "position": 36
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://otax.tky.hut.fi/tky/info-html/.html",
+      "anchor": "Helsinki Technical University",
+      "position": 37
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://nhmxw0.fnal.gov/",
+      "anchor": "HEPNET",
+      "position": 38
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://dec3100b.ictp.trieste.it/",
+      "anchor": "ICTP",
+      "position": 39
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://info.funet.fi./default.html",
+      "anchor": "FUNET",
+      "position": 40
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://nic.nikhef.nl./user/a03/www/default/NikhefGuide.html",
+      "anchor": "NIKHEF",
+      "position": 41
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://dxsting.cern.ch/sting/sting.html",
+      "anchor": "Software Technology",
+      "position": 42
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://vxcrna.cern.ch/help",
+      "anchor": "VXCRNA help",
+      "position": 43
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://info.cern.ch/",
+      "anchor": "WorldWideWeb support",
+      "position": 44
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://sunsite.unc.edu/",
+      "anchor": "SunSite",
+      "position": 45
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://airplane.parc.xerox.com/",
+      "anchor": "Xerox PARC",
+      "position": 46
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://next2.cis.uni-muenchen.de/",
+      "anchor": "CIS Informationsdienst",
+      "position": 47
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "to": "http://info.cern.ch/TBL_Disclaimer.html",
+      "anchor": "Tim BL",
+      "position": 48
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/UnstableServers.html",
+      "to": "http://eies2.njit.edu:1234/man",
+      "anchor": "EIES2 Man pages",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/UnstableServers.html",
+      "to": "http://al0vol.cern.ch/vaxnews",
+      "anchor": "ALNEWS",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/WWW/UnstableServers.html",
+      "to": "http://nextcnco.cern.ch/operator/Documentation/NetAlarm.html",
+      "anchor": "Netalarms",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/byOrganisation/Overview.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "anchor": "by subject",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/byOrganisation/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/default.html",
+      "anchor": "European Particle Physics Lab",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/byOrganisation/Overview.html",
+      "to": "http://info.cern.ch:8001/wais.eff.org/eff-documents",
+      "anchor": "Documents",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/byOrganisation/Overview.html",
+      "to": "http://info.cern.ch:8001/wais.eff.org/eff-talk",
+      "anchor": "discussion",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/byOrganisation/Overview.html",
+      "to": "http://otax.tky.hut.fi/tky/default.html",
+      "anchor": "Information service",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/byOrganisation/Overview.html",
+      "to": "http://vms.huji.ac.il/WWW_DIR/default.html",
+      "anchor": "Information service",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/byOrganisation/Overview.html",
+      "to": "http://info.cern.ch:8001/zenon.inria.fr:210/bibs-zenon-inria-fr",
+      "anchor": "BIBS-ZENON",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/byOrganisation/Overview.html",
+      "to": "http://nic.nikhef.nl./user/a03/www/default/NikhefGuide.html",
+      "anchor": "Information service",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/byOrganisation/Overview.html",
+      "to": "http://info.cern.ch:8001/lambada.oit.unc.edu/nsf",
+      "anchor": "bulletins",
+      "position": 8
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/byOrganisation/Overview.html",
+      "to": "http://info.cern.ch:8001/theory.lcs.mit.edu/%2Fi%2Fwais-index%2Falgorithms-bug",
+      "anchor": "Bugs",
+      "position": 9
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/byOrganisation/Overview.html",
+      "to": "http://info.cern.ch:8001/theory.lcs.mit.edu/%2Fi%2Fwais-index%2Falgorithms-exercise",
+      "anchor": "excercises",
+      "position": 10
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/byOrganisation/Overview.html",
+      "to": "http://info.cern.ch:8001/theory.lcs.mit.edu/%2Fi%2Fwais-index%2Falgorithms-suggest",
+      "anchor": "suggestions",
+      "position": 11
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/byOrganisation/Overview.html",
+      "to": "http://info.cern.ch:8001/quake.think.com/weather",
+      "anchor": "Weather",
+      "position": 12
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/byOrganisation/Overview.html",
+      "to": "http://slacvm.slac.stanford.edu./FIND/default.html",
+      "anchor": "Stanford Linear ACcelerator",
+      "position": 13
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/byOrganisation/Overview.html",
+      "to": "http://slacvm.slac.stanford.edu./FIND/spires",
+      "anchor": "SPIRES",
+      "position": 14
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/byOrganisation/Overview.html",
+      "to": "http://slacvm.slac.stanford.edu/FIND/binlist",
+      "anchor": "phone book",
+      "position": 15
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/byOrganisation/Overview.html",
+      "to": "http://slacvm.slac.stanford.edu./FIND/defaultx.html",
+      "anchor": "internal info",
+      "position": 16
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/byOrganisation/Overview.html",
+      "to": "http://iicm.tu-graz.ac.at/ROOT",
+      "anchor": "Technical University of Graz",
+      "position": 17
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/byOrganisation/Overview.html",
+      "to": "http://iicm.tu-graz.ac.at/Cjargon",
+      "anchor": "jargon",
+      "position": 18
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/byOrganisation/Overview.html",
+      "to": "http://info.cern.ch:8001/uncvx1.oit.unc.edu/bluepages",
+      "anchor": "Phone book",
+      "position": 19
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/byOrganisation/Overview.html",
+      "to": "http://info.cern.ch:8001/sol.acs.unt.edu/UNTCompDoc",
+      "anchor": "Documents",
+      "position": 20
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/byOrganisation/Overview.html",
+      "to": "http://info.cern.ch:8001/xantos.uio.no/UiO_Publications",
+      "anchor": "Publications bibliography",
+      "position": 21
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Bio/Overview.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "anchor": "other subjects",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Bio/Overview.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/byOrganisation/Overview.html",
+      "anchor": "organisation",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Bio/Overview.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/ByAccess.html",
+      "anchor": "protocol",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Bio/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Products/WAIS/Sources/Commercial.html",
+      "anchor": "commercial",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Bio/Overview.html",
+      "to": "http://info.cern.ch:8001/wais.funet.fi:210/embnet%2Faimb",
+      "anchor": "database",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Bio/Overview.html",
+      "to": "http://info.cern.ch:8001/wais.funet.fi:210/embnet%2Fcompalgo",
+      "anchor": "literature references",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Bio/Overview.html",
+      "to": "http://info.cern.ch:8001/wais.funet.fi:210/embnet%2Fenzyme",
+      "anchor": "database",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Bio/Overview.html",
+      "to": "http://info.cern.ch:8001/bio.vu.nl:9000/rebase",
+      "anchor": "REBASE restriction enzymes",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Bio/Overview.html",
+      "to": "http://info.cern.ch:8001/cmns-moon.think.com:210/GBCT%20GBCT%20GINV%20GMAM%20GORG%20GPHG%20GPLN%20GPRI%20GRNA%20GROD%20GSYN%20GUNA%20GVRL%20GVRT%20PIR%20PIRN",
+      "anchor": "database",
+      "position": 8
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Bio/Overview.html",
+      "to": "http://info.cern.ch:8001/welchlab.welch.jhu.edu:210/omim",
+      "anchor": "Mandelian Inheritance in Man",
+      "position": 9
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Bio/Overview.html",
+      "to": "http://info.cern.ch:8001/bio.vu.nl:9000/compounds",
+      "anchor": "Peter Karps CompoundKB database of 981 metabolic intermediate compounds",
+      "position": 10
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Bio/Overview.html",
+      "to": "http://info.cern.ch:8001/genbank.bio.net/biology-journal-contents",
+      "anchor": "Periodical references to journals in the area of molecular biology",
+      "position": 11
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Bio/Overview.html",
+      "to": "http://info.cern.ch:8001/genbank.bio.net/biosci",
+      "anchor": "BIOSCI mailing lists and newsgroup archives",
+      "position": 12
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Computing/Algorithms.html",
+      "to": "http://info.cern.ch:8001/theory.lcs.mit.edu:210/%2Fi%2Fwais-index%2Falgorithms-bug",
+      "anchor": "Algorithms-bug",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Computing/Algorithms.html",
+      "to": "http://info.cern.ch:8001/theory.lcs.mit.edu:210/%2Fi%2Fwais-index%2Falgorithms-exercise",
+      "anchor": "Algorithms-exercise",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Computing/Algorithms.html",
+      "to": "http://info.cern.ch:8001/theory.lcs.mit.edu:210/%2Fi%2Fwais-index%2Falgorithms-suggest",
+      "anchor": "Algorithms-suggest",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Computing/Languages.html",
+      "to": "http://dxsting.cern.ch/sting/sting.html",
+      "anchor": "STING",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Computing/Languages.html",
+      "to": "http://vxcrna.cern.ch/HELP/CC/LANGUAGE_TOPICS",
+      "anchor": "language",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Computing/Languages.html",
+      "to": "http://vxcrna.cern.ch/HELP/CC/RUN_TIME_FUNCTIONS",
+      "anchor": "run-time functions",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Computing/Languages.html",
+      "to": "http://vxcrna.cern.ch/HELP/FORTRAN",
+      "anchor": "VMS/FORTRAN",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Computing/Languages.html",
+      "to": "http://info.cern.ch:8001/cmns-moon.think.com/FORT",
+      "anchor": "CM/FORTRAN",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Computing/Languages.html",
+      "to": "http://vxcrna.cern.ch/HELP/PASCAL",
+      "anchor": "VMS/Pascal help",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Computing/Languages.html",
+      "to": "http://info.cern.ch./hypertext/TBL_Disclaimer.html",
+      "anchor": "Tim BL",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Networking.html",
+      "to": "http://info.cern.ch/hypertext/Products/WAIS/Sources/NewsGroupRelated.html",
+      "anchor": "list by newsgroup",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Networking.html",
+      "to": "http://info.cern.ch:8001/wais.cic.net:210/lists",
+      "anchor": "Mailing lists",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Networking.html",
+      "to": "http://info.cern.ch:8001/next2.oit.unc.edu:210/anonymous.ftp",
+      "anchor": "anonymous FTP sites",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Networking.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "anchor": "other subjects",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Networking.html",
+      "to": "http://info.cern.ch:8001/nnsc.nsf.net:210/internet-rfcs",
+      "anchor": "RFCs",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Networking.html",
+      "to": "http://info.cern.ch:8001/nnsc.nsf.net:210/internet-drafts",
+      "anchor": "RFC drafts",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Networking.html",
+      "to": "http://info.cern.ch:8001/nnsc.nsf.net:210/ietf-documents",
+      "anchor": "IETF documents",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Networking.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/Archives/RFC_sites.html",
+      "anchor": "nearest server",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Networking.html",
+      "to": "http://ftp.rpi.edu/pub/communications/internet-cmc",
+      "anchor": "Computer-Mediated Communications",
+      "position": 8
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Networking.html",
+      "to": "http://info.cern.ch:8001/nnsc.nsf.net:210/internet-resource-guide",
+      "anchor": "The NSF's Internet Resource guide",
+      "position": 9
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Networking.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/bySubject/Networking/IncompleteGuide.html",
+      "anchor": "Incomplete Guide",
+      "position": 10
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Networking.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/bySubject/Internet/IETF_IS.html",
+      "anchor": "Mailing lists",
+      "position": 11
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Networking.html",
+      "to": "http://info.cern.ch:8001/cedar.cic.net:210/usenet-addresses",
+      "anchor": "Index",
+      "position": 13
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Networking.html",
+      "to": "http://info.cern.ch:8001/nnsc.nsf.net:210/internet-phonebook",
+      "anchor": "Network Managers Phonebook",
+      "position": 14
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Networking.html",
+      "to": "http://info.cern.ch:8001/franklin.cc.utas.edu.au/aarnet-resource-guide",
+      "anchor": "Resources Guide",
+      "position": 15
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Networking.html",
+      "to": "http://info.cern.ch:8001/wais.concert.net:8000/netinfo",
+      "anchor": "Netinfo",
+      "position": 16
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Networking.html",
+      "to": "http://info.cern.ch.:8001/wais.cic.net:210/bitnet%2fbitearn.nodes",
+      "anchor": "Hosts",
+      "position": 17
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Networking.html",
+      "to": "http://info.cern.ch:8001/kumr.lns.com/nodelist",
+      "anchor": "List of nodes",
+      "position": 18
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Networking.html",
+      "to": "http://info.cern.ch:8001/wais.doc.ic.ac.uk:8000/%2Fpublic%2Fic.doc%2Fwais-indexes%2FNRS-TEXT",
+      "anchor": "host index",
+      "position": 19
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Networking.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/CONCISE/UserGuide/Overview.html",
+      "anchor": "mail server",
+      "position": 23
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Networking.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/bySubject/Internet/RIPE.html",
+      "anchor": "RIPE NCC",
+      "position": 25
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Networking.html",
+      "to": "http://info.cern.ch/hypertext/Conferences/JENC92/Programme.html",
+      "anchor": "JENC3",
+      "position": 26
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Networking.html",
+      "to": "http://info.funet.fi./default.html",
+      "anchor": "information",
+      "position": 27
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Networking.html",
+      "to": "http://info.cern.ch:8001/pit-manager.mit.edu:210/usenet",
+      "anchor": "FAQ",
+      "position": 28
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Networking.html",
+      "to": "http://info.cern.ch:8001/wais.cic.net:210/uumap",
+      "anchor": "maps",
+      "position": 29
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Networking.html",
+      "to": "http://info.cern.ch:8001/cedar.cic.net:210/usenet-addresses",
+      "anchor": "hosts",
+      "position": 30
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/byOrganisation/Overview.html",
+      "anchor": "organization",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/ByAccess.html",
+      "anchor": "service type",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://info.cern.ch:8001/archive.orst.edu:9000/aeronautics",
+      "anchor": "archive index",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://sunsite.unc.edu/home/fullton/hypertext/nasa.html",
+      "anchor": "Abstract Indexes",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/bySubject/Bio/Overview.html",
+      "anchor": "separate list",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/bySubject/Networking.html",
+      "anchor": "Networking",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://iicm.tu-graz.ac.at/Cjargon",
+      "anchor": "Jargon",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/News/comp.html",
+      "anchor": "newsgroups",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://dxsting.cern.ch/sting/sting.html",
+      "anchor": "Software Technology",
+      "position": 8
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/bySubject/Computing/Languages.html",
+      "anchor": "Languages",
+      "position": 9
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/bySubject/Computing/Algorithms.html",
+      "anchor": "Algorithms",
+      "position": 10
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://info.cern.ch:8001/cmns-moon.think.com:210/CIA",
+      "anchor": "World Fact Book",
+      "position": 11
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://info.cern.ch:8001/enuxhb.eas.asu.edu:8000/INFO",
+      "anchor": "Miscellaneous information",
+      "position": 12
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://info.cern.ch:8001/cs.widener.edu:8000/bmcr",
+      "anchor": "Davis collection",
+      "position": 13
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://fatty.law.cornell.edu./usr2/wwwtext/lii.table.html",
+      "anchor": "Copyright law",
+      "position": 14
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://info.cern.ch:8001/pegun.law.columbia.edu:210/internet-library-guide",
+      "anchor": "Art St.George's list of library systems",
+      "position": 15
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://info.cern.ch:8001/nnsc.nsf.net:210/internet-resource-guide?library=",
+      "anchor": "\"Library\" in the internet resource guide",
+      "position": 16
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://info.cern.ch:8001/sol.acs.unt.edu/%2Fusr%2Flocal%2Fdata%2Fwais%2Fhytelnet",
+      "anchor": "hytelnet index",
+      "position": 17
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://mrcnext.cso.uiuc.edu/gutenberg",
+      "anchor": "Project Gutenberg",
+      "position": 18
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://mrcnext.cso.uiuc.edu/gutenberg/NEW.GUT",
+      "anchor": "explanations",
+      "position": 19
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://mrcnext.cso.uiuc.edu/gutenberg/AAINDEX.NEW",
+      "anchor": "index and newsletter",
+      "position": 20
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://mrcnext.cso.uiuc.edu/gutenberg/etext91",
+      "anchor": "1991",
+      "position": 21
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://mrcnext.cso.uiuc.edu/gutenberg/ETEXT92",
+      "anchor": "1992",
+      "position": 22
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://mrcnext.cso.uiuc.edu/gutenberg/usonly",
+      "anchor": "reserved for the USA",
+      "position": 23
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://info.cern.ch:8001/cs.widener.edu:8000/bmcr",
+      "anchor": "BMCR classical reviews",
+      "position": 24
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://info.cern.ch:8001/microworld.media.mit.edu:8000/POETRY",
+      "anchor": "Poetry",
+      "position": 25
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://info.cern.ch:8001/turbo.bio.net:210/sf-reviews",
+      "anchor": "Scifi reviews",
+      "position": 26
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/Journals.html",
+      "anchor": "electronic journals",
+      "position": 27
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://info.cern.ch:8001/cirm2.univ-mrs.fr:210/%2Fuser%2Fbase%2Fbib-cirm",
+      "anchor": "CIRM library",
+      "position": 28
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://info.cern.ch:8001/quake.think.com/weather",
+      "anchor": "WAIS weather",
+      "position": 30
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://info.cern.ch:8001/sol.acs.unt.edu/midi",
+      "anchor": "MIDI interfacing",
+      "position": 31
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://info.cern.ch:8001/tsav.media.mit.edu:8000/LYRICS",
+      "anchor": "Song lyrics",
+      "position": 32
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/bySubject/Physics/HEP.html",
+      "anchor": "High Energy Physics",
+      "position": 33
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://sunsite.unc.edu/home/fullton/hypertext/nasa.html",
+      "anchor": "Astrophysics abstracts",
+      "position": 34
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Products/WAIS/Sources/Political.html",
+      "anchor": "US politics",
+      "position": 35
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://info.cern.ch:8001/wais.cic.net:210/roget-thesaurus",
+      "anchor": "Thesaurus",
+      "position": 36
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://info.cern.ch:8001/cmns-moon.think.com/KJV",
+      "anchor": "The Bible",
+      "position": 38
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://info.cern.ch:8001/wais.oit.unc.edu:210/Book_of_Mormon",
+      "anchor": "Mormon",
+      "position": 39
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://info.cern.ch:8001/lambada.oit.unc.edu/quran",
+      "anchor": "Holy Qur'an",
+      "position": 40
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/Archives/CoombsPapers.html",
+      "anchor": "Coombs papers archive",
+      "position": 41
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Physics/HEP.html",
+      "to": "http://info.cern.ch/",
+      "anchor": "CERN",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Physics/HEP.html",
+      "to": "http://crnvmc.cern.ch/FIND/DESY",
+      "anchor": "DESY",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Physics/HEP.html",
+      "to": "http://zws009.desy.de:2784/",
+      "anchor": "ZEUS experiment",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Physics/HEP.html",
+      "to": "http://cdsun3.fnal.gov/",
+      "anchor": "Fermilab",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Physics/HEP.html",
+      "to": "http://fnala.fnal.gov:8000/",
+      "anchor": "Documentation",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Physics/HEP.html",
+      "to": "http://fnth02.fnal.gov/",
+      "anchor": "Theory (seminars)",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Physics/HEP.html",
+      "to": "http://d0sgi5.fnal.gov/",
+      "anchor": "D0",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Physics/HEP.html",
+      "to": "http://nhmxw0.fnal.gov/",
+      "anchor": "HEPnet management",
+      "position": 8
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Physics/HEP.html",
+      "to": "http://cdsun3.fnal.gov/",
+      "anchor": "ACCESS user consultancy",
+      "position": 9
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Physics/HEP.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/News/OtherGroups/fnal.html",
+      "anchor": "News",
+      "position": 10
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Physics/HEP.html",
+      "to": "http://info.in2p3.fr./",
+      "anchor": "IN2P3",
+      "position": 11
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Physics/HEP.html",
+      "to": "http://kviexp.kvi.nl:2784/",
+      "anchor": "KVI",
+      "position": 12
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Physics/HEP.html",
+      "to": "http://nic.nikhef.nl./user/a03/www/default/NikhefGuide.html",
+      "anchor": "NIKHEF",
+      "position": 13
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Physics/HEP.html",
+      "to": "http://heplibw3.slac.stanford.edu./FIND/SLAC.html",
+      "anchor": "SLAC",
+      "position": 14
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Physics/HEP.html",
+      "to": "http://slacvm.slac.stanford.edu./FIND/spires",
+      "anchor": "HEP preprint index",
+      "position": 15
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Physics/HEP.html",
+      "to": "http://slacvm.slac.stanford.edu/FIND/binlist",
+      "anchor": "Phone book",
+      "position": 16
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Physics/HEP.html",
+      "to": "http://heplibw3.slac.stanford.edu/FIND/FHMAIN.HTML",
+      "anchor": "FreeHEP software guide",
+      "position": 17
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Physics/HEP.html",
+      "to": "http://heplibw3.slac.stanford.edu/FIND/HLMAIN.HTML",
+      "anchor": "HEPLIB info",
+      "position": 18
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Physics/HEP.html",
+      "to": "http://sunsite.unc.edu/home/fullton/hypertext/nasa.html",
+      "anchor": "astrophysics abstracts",
+      "position": 19
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Physics/HEP.html",
+      "to": "http://info.cern.ch./hepix/Overview.html",
+      "anchor": "HEPIX",
+      "position": 20
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/DataSources/bySubject/Physics/HEP.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/bySubject/Physics/Conferences/Overview.html",
+      "anchor": "conferences",
+      "position": 21
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/History.html",
+      "to": "http://info.cern.ch/hypertext/WWW/People.html",
+      "anchor": "RC",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Products/Intermedia/IRIS.html",
+      "anchor": "IRIS",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/Overview.html",
+      "anchor": "Sources of data",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Products/IRProducts/Overview.html",
+      "anchor": "IR systems",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "to": "http://info.cern.ch/hypertext/MIME/Overview.html",
+      "anchor": "MIME",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Products/Interes/Mail.html",
+      "anchor": "Interes",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Products/MediaView/Mail.html",
+      "anchor": "Note",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "to": "http://sonata.cc.purdue.edu/pub/next/2.0-release/source/MediaView/README",
+      "anchor": "README",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Products/AMIX/Introduction.html",
+      "anchor": "AMIX",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Products/Gopher/Overview.html",
+      "anchor": "Internet Gopher",
+      "position": 8
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "to": "http://iicm.tu-graz.ac.at/jargon",
+      "anchor": "gateway",
+      "position": 9
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Conferences/JENC92/Programme.html",
+      "anchor": "JENC'92",
+      "position": 10
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Products/Hyperbole/Overview.html",
+      "anchor": "Hyperbole",
+      "position": 11
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Products/EHTS.html",
+      "anchor": "HyperBase, EHTS",
+      "position": 12
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "anchor": "WWW",
+      "position": 13
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "to": "http://info.cern.ch/usr/local/lib/WWW/remote.html",
+      "anchor": "CERN",
+      "position": 14
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Products/WAIS/Overview.html",
+      "anchor": "W.A.I.S",
+      "position": 15
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Products/WAIS/DiscussionGroup.html",
+      "anchor": "discussion group,",
+      "position": 16
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Products/WAIS/Releases.html",
+      "anchor": "release notes",
+      "position": 17
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "anchor": "WWW",
+      "position": 18
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Products/Engelbart/Seminar.html",
+      "anchor": "Doug's seminar",
+      "position": 19
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "anchor": "Augment",
+      "position": 20
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Products/Xanadu/Xanadu.html",
+      "anchor": "Xanadu",
+      "position": 21
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Products/Intermedia/Intermedia.html",
+      "anchor": "Intermedia",
+      "position": 22
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Products/Guide/Guide.html",
+      "anchor": "Guide",
+      "position": 23
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Products/Guide/OWL.html",
+      "anchor": "Owl",
+      "position": 24
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Conferences/ECHT90/People.html",
+      "anchor": "Peter Brown's",
+      "position": 25
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Products/DynaText/Overview.html",
+      "anchor": "DynaText",
+      "position": 26
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Products/DynaText/EBT.html",
+      "anchor": "EBT",
+      "position": 27
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Products/Microcosm/Microcosm.html",
+      "anchor": "Microcosm",
+      "position": 29
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Products/Doorway/Overview.html",
+      "anchor": "Doorway",
+      "position": 30
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/WAIS/Sources/Political.html",
+      "to": "http://info.cern.ch:8001/sunsite.unc.edu:210/clinton-speechess",
+      "anchor": "Clinton",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/WAIS/Sources/Political.html",
+      "to": "http://info.cern.ch:8001/SunSite.unc.edu:210/bush-speeches",
+      "anchor": "Bush",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/WAIS/Sources/Political.html",
+      "to": "http://zws009.desy.de.:2784/disk$online/web/docs/hypertext/politics.html",
+      "anchor": "Eletronic Town Hall",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/WAIS/Sources/Political.html",
+      "to": "http://info.cern.ch:8001/cmns-sun.think.com/NIHG",
+      "anchor": "Guide to Grants and Programs",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/WAIS/Sources/Political.html",
+      "to": "http://info.cern.ch:8001/quake.think.com/US-Gov-Programs",
+      "anchor": "US Government Programs",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/WAIS/Sources/Political.html",
+      "to": "http://info.cern.ch:8001/stis.nsf.gov:210/nsf-awards",
+      "anchor": "List of awards",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/WAIS/Sources/Political.html",
+      "to": "http://info.cern.ch:8001/nostromo.oes.orst.edu/agricultural-market-news",
+      "anchor": "agricultural commodity market reports",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/WAIS/Sources/Political.html",
+      "to": "http://info.cern.ch:8001/talon.ucs.orst.edu:9000/alt.drugs",
+      "anchor": "Archive of alt.drugs discussion",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/WAIS/Sources/Political.html",
+      "to": "http://info.cern.ch:8001/pit-manager.mit.edu/rkba",
+      "anchor": "related files",
+      "position": 8
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Products/WAIS/Sources/Political.html",
+      "to": "http://info.cern.ch:8001/pegun.law.columbia.edu:210/nalp.employer",
+      "anchor": "Index of employers",
+      "position": 9
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/README.html",
+      "to": "http://info.cern.ch/hypertext/Copyright.html",
+      "anchor": "copyright",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/README.html",
+      "to": "http://info.cern.ch/hypertext/README.html",
+      "anchor": "Library",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/README.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Installation.html",
+      "anchor": "Installation instructions",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/README.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Installation.html",
+      "anchor": "Installation notes",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/README.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Bibliography.html",
+      "anchor": "WWW bibliography",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Standards/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Standards/HyTime.html",
+      "anchor": "The HyTime work",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Standards/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Standards/SIGHyper.html",
+      "anchor": "SIGHyper",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Standards/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Standards/ISO/Overview.html",
+      "anchor": "ISO work on Multimedia",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Standards/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Standards/Groupware/Overview.html",
+      "anchor": "ISO Groupware work",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Standards/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Standards/XHelp/Overview.html",
+      "anchor": "XHelp protocol",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Standards/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MarkUp/Davenport/Overview.html",
+      "anchor": "Davenport group",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Standards/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Products/WAIS/Overview.html",
+      "anchor": "WAIS",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Standards/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/DesignIssues/Naming.html",
+      "anchor": "naming",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Standards/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/DesignIssues/Formats.html",
+      "anchor": "data formats",
+      "position": 8
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Standards/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Standards/PostScript/IPF.html",
+      "anchor": "EPS",
+      "position": 9
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/Standards/Overview.html",
+      "to": "http://info.cern.ch./hypertext/TBL_Disclaimer.html",
+      "anchor": "Tim BL",
+      "position": 10
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Bibliography.html",
+      "to": "http://info.cern.ch/hypertext/Conferences/AIHEP92/www-for-hep.wn",
+      "anchor": "Writenow",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Bibliography.html",
+      "to": "http://info.cern.ch/hypertext/Conferences/AIHEP92/www-for-hep.ps",
+      "anchor": "postscript",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Bibliography.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/QuickGuide.html",
+      "anchor": "user guide",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Bibliography.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/line-mode-guide.txt",
+      "anchor": "plain text",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Bibliography.html",
+      "to": "http://info.cern.ch/hypertext/WWW/TheW3Book.html",
+      "anchor": "introductory page",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Bibliography.html",
+      "to": "http://info.cern.ch/hypertext/Conferences/IETF92/udi2.txt",
+      "anchor": "plain text",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Bibliography.html",
+      "to": "http://info.cern.ch/hypertext/Conferences/IETF92/udi2.wn",
+      "anchor": "writenow",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Bibliography.html",
+      "to": "http://info.cern.ch./hypertext/TBL_Disclaimer.html",
+      "anchor": "Tim BL",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Curses/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Curses/Release_00.html",
+      "anchor": "Release announcement",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Curses/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Status.html",
+      "anchor": "WWW products",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "anchor": "W3",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "daemon",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/User/Guide.html",
+      "anchor": "User guide",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/Basic.html",
+      "anchor": "Internals",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Tools/Overview.html",
+      "anchor": "Tools for information providers",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/JanetAndJohn.html",
+      "anchor": "Writing a server in C",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Provider/ShellScript.html",
+      "anchor": "Writing a server as a script",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/FIND/Overview.html",
+      "anchor": "FIND gateway",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/VMSHelp/Overview.html",
+      "anchor": "VMS Help gateway",
+      "position": 8
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/WAISGate.html",
+      "anchor": "WAISGate",
+      "position": 9
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/DCLServer.html",
+      "anchor": "DCLServer",
+      "position": 10
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/System33/Gateway.html",
+      "anchor": "System33",
+      "position": 11
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/Oracle/Overview.html",
+      "anchor": "Oracle",
+      "position": 12
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/Geography/Overview.html",
+      "anchor": "Geography",
+      "position": 13
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/Overview.html",
+      "to": "http://info.cern.ch/hypertext/TBL_Disclaimer.html",
+      "anchor": "Tim BL",
+      "position": 14
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/People.html",
+      "anchor": "TBL",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/Overview.html",
+      "anchor": "Overview",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/Bugs.html",
+      "anchor": "Bug list",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/Features.html",
+      "anchor": "features",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/User/Guide.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/User/Installation.html",
+      "anchor": "httpd",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/User/Guide.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Protocols/HTTP/AsImplemented.html",
+      "anchor": "HTTP",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/User/Guide.html",
+      "to": "http://info.cern.ch/hypertext/README.html",
+      "anchor": "Distribution",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/User/Guide.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/User/Compilation.html",
+      "anchor": "Compilation",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/User/Guide.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/User/Installation.html",
+      "anchor": "Installation",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/User/Guide.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/User/CommandLine.html",
+      "anchor": "Options",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/User/Guide.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/User/RuleFile.html",
+      "anchor": "Rule File",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/User/Guide.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/User/Debugging.html",
+      "anchor": "Debugging",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/User/Guide.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/Bugs.html",
+      "anchor": "Known bugs",
+      "position": 8
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/User/Guide.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/Features.html",
+      "anchor": "History",
+      "position": 9
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/User/Guide.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Administration/Mailing/Overview.html",
+      "anchor": "mailing list",
+      "position": 10
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/User/Guide.html",
+      "to": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "anchor": "The W3 project",
+      "position": 11
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/User/Guide.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/Overview.html",
+      "anchor": "Other servers",
+      "position": 12
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/User/Guide.html",
+      "to": "http://info.cern.ch/hypertext/TBL_Disclaimer.html",
+      "anchor": "Tim BL",
+      "position": 13
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/VMSGateStatus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/People.html",
+      "anchor": "JF",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/VMSGateStatus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/VMSHelp/Overview.html",
+      "anchor": "Overview",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/VMSGateStatus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/VMSHelp/Bugs.html",
+      "anchor": "Bug list",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Daemon/VMSGateStatus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/VMSHelp/Features.html",
+      "anchor": "Feature list",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Erwise/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/People.html",
+      "anchor": "OHT-Erwise",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Erwise/Status.html",
+      "to": "http://info.cern.ch/hypertext/Erwise/Review.html",
+      "anchor": "Review",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/FAQ/Bootstrap.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Bibliography.html",
+      "anchor": "W3 bibliography",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/FAQ/Bootstrap.html",
+      "to": "http://info.cern.ch/hypertext/README.html",
+      "anchor": "about W3 distributed code",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/FAQ/Bootstrap.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Distribution.html",
+      "anchor": "using FTP",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/FAQ/Bootstrap.html",
+      "to": "http://info.cern.ch./hypertext/TBL_Disclaimer.html",
+      "anchor": "Tim BL",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/FAQ/KeepingTrack.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "anchor": "information by subject",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/FAQ/KeepingTrack.html",
+      "to": "http://info.cern.ch./hypertext/TBL_Disclaimer.html",
+      "anchor": "Tim BL",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/FAQ/List.html",
+      "to": "http://info.cern.ch/hypertext/WWW/FAQ/Bootstrap.html",
+      "anchor": "I am just starting: how do I find out more?",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/FAQ/List.html",
+      "to": "http://info.cern.ch/hypertext/WWW/FAQ/KeepingTrack.html",
+      "anchor": "How does www keep track of the available servers?",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/FAQ/List.html",
+      "to": "http://info.cern.ch/hypertext/WWW/FAQ/WAISandGopher.html",
+      "anchor": "How does W3 compare with WAIS and Gopher",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/FAQ/List.html",
+      "to": "http://info.cern.ch/hypertext/WWW/FAQ/Server.html",
+      "anchor": "How do I create my own server",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/FAQ/List.html",
+      "to": "http://info.cern.ch/hypertext/WWW/FAQ/NoInternet.html",
+      "anchor": "Can I get W3 documents if I'm not on the internet",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/FAQ/List.html",
+      "to": "http://info.cern.ch./hypertext/TBL_Disclaimer.html",
+      "anchor": "Tim BL",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/FAQ/NoInternet.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MailRobot/Help.html",
+      "anchor": "instructions",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/FAQ/NoInternet.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MailRobot/Overview.html",
+      "anchor": "about the robot",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/FAQ/NoInternet.html",
+      "to": "http://info.cern.ch./hypertext/TBL_Disclaimer.html",
+      "anchor": "Tim BL",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/FAQ/Server.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/Overview.html",
+      "anchor": "The server that we distribute",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/FAQ/Server.html",
+      "to": "http://info.cern.ch./hypertext/TBL_Disclaimer.html",
+      "anchor": "Tim BL",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/FAQ/WAISandGopher.html",
+      "to": "http://info.cern.ch/hypertext/Products/WAIS/Overview.html",
+      "anchor": "WAIS",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/FAQ/WAISandGopher.html",
+      "to": "http://info.cern.ch/hypertext/Products/Gopher/Overview.html",
+      "anchor": "Gopher",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/FAQ/WAISandGopher.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "navigation",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/FAQ/WAISandGopher.html",
+      "to": "http://info.cern.ch:8001/microworld.media.mit.edu:8000/POETRY",
+      "anchor": "example",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/FAQ/WAISandGopher.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "anchor": "example",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/FAQ/WAISandGopher.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Addressing/Addressing.html",
+      "anchor": "addressing scheme",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/FAQ/WAISandGopher.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Provider/Overview.html",
+      "anchor": "simple script",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/FAQ/WAISandGopher.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "link",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/FAQ/WAISandGopher.html",
+      "to": "http://info.cern.ch/hypertext/WWW/WhatIs.html",
+      "anchor": "background information",
+      "position": 8
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/FAQ/WAISandGopher.html",
+      "to": "http://info.cern.ch./hypertext/TBL_Disclaimer.html",
+      "anchor": "Tim BL",
+      "position": 9
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/FIND/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/People.html",
+      "anchor": "TBL",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/FIND/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/People.html",
+      "anchor": "BP",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/FIND/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/FIND/Bugs.html",
+      "anchor": "bug list",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/FIND/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/FIND/Overview.html",
+      "anchor": "Overview",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/FineWWW/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/FineWWW/Announcement_00.html",
+      "anchor": "Announcement",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Help.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/QuickGuide.html",
+      "anchor": "Line Mode Browser",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Help.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/WorldWideWeb.html",
+      "anchor": "NeXTStep",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Help.html",
+      "to": "http://slacvx.slac.stanford.edu/MidasWWW/v10/overview.html",
+      "anchor": "MidasWWW",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Help.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/User/Guide.html",
+      "anchor": "W3 server user manual",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Help.html",
+      "to": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "anchor": "W3 project page",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Helping.html",
+      "to": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "anchor": "web",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Helping.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Provider/Overview.html",
+      "anchor": "Put up some data",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Helping.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Provider/Overview.html",
+      "anchor": "more details",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Helping.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Provider/Etiquette.html",
+      "anchor": "etiquette",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Helping.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Bugs.html",
+      "anchor": "Write some software",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Helping.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Bugs.html",
+      "anchor": "list",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Helping.html",
+      "to": "http://info.cern.ch./hypertext/TBL_Disclaimer.html",
+      "anchor": "Tim BL",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/History.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Proposal.html",
+      "anchor": "project proposal",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/History.html",
+      "to": "http://info.cern.ch/hypertext/WWW/People.html",
+      "anchor": "(TBL)",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/History.html",
+      "to": "http://info.cern.ch/hypertext/WWW/HTandCERN.txt",
+      "anchor": "ASCII",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/History.html",
+      "to": "http://info.cern.ch/hypertext/WWW/HTandCERN.wn",
+      "anchor": "WriteNow",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/History.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Proposal.html",
+      "anchor": "proposal",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/History.html",
+      "to": "http://info.cern.ch/hypertext/WWW/People.html",
+      "anchor": "RC",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/History.html",
+      "to": "http://info.cern.ch/hypertext/WWW/People.html",
+      "anchor": "(TBL)",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/History.html",
+      "to": "http://info.cern.ch/hypertext/WWW/People.html",
+      "anchor": "Nicola Pellow",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/History.html",
+      "to": "http://info.cern.ch/hypertext/WWW/People.html",
+      "anchor": "Bernd Pollermann",
+      "position": 8
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/History.html",
+      "to": "http://info.cern.ch/hypertext/WWW/WorkplanECP-PT.html",
+      "anchor": "workplan",
+      "position": 10
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/History.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Talks/Title.html",
+      "anchor": "Presentation",
+      "position": 11
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/History.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Administration/AS_WorkPlan_91.html",
+      "anchor": "Workplan",
+      "position": 12
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/History.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Talks/C5_17_May_91.html",
+      "anchor": "Presentation",
+      "position": 13
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/History.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Talks/ComputerSeminar.html",
+      "anchor": "Computer Seminar",
+      "position": 14
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/History.html",
+      "to": "http://info.cern.ch/hypertext/WWW/People.html",
+      "anchor": "Jean-Francois Groff",
+      "position": 15
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/History.html",
+      "to": "http://info.cern.ch/hypertext/Conferences/HT91/Overview.html",
+      "anchor": "HT91",
+      "position": 16
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/History.html",
+      "to": "http://crnvmc/FIND?%3Acnl+204=",
+      "anchor": "computer newsletter",
+      "position": 17
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/History.html",
+      "to": "http://info.cern.ch/hypertext/WWW/News/9101.html",
+      "anchor": "news",
+      "position": 18
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/History.html",
+      "to": "http://info.cern.ch/hypertext/Conferences/JENC92/Demonstrations.html",
+      "anchor": "demo",
+      "position": 19
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/History.html",
+      "to": "http://info.cern.ch/hypertext/Conferences/JENC92/Sessions.html",
+      "anchor": "JENC3",
+      "position": 20
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/History.html",
+      "to": "http://info.cern.ch/hypertext/WWW/People.html",
+      "anchor": "Carl Barker",
+      "position": 21
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/History.html",
+      "to": "http://info.cern.ch/hypertext/WWW/IntroCVS.html",
+      "anchor": "introduction of CVS",
+      "position": 22
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Library/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Library/Status.html",
+      "anchor": "line mode browser",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Library/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Library/Bugs.html",
+      "anchor": "Things to be done",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Library/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Library/Features.html",
+      "anchor": "Change list",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Browser.html",
+      "to": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "anchor": "WWW project",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Browser.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/QuickGuide.html",
+      "anchor": "A quick user quide",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Browser.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/More.html",
+      "anchor": "More",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Browser.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Status.html",
+      "anchor": "Status",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Browser.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/DocIdeas.html",
+      "anchor": "Documentation guidelines",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Browser.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Bugs.html",
+      "anchor": "A list of bugs, and improvements needed",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Browser.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Internals.html",
+      "anchor": "Internals",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Browser.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Features.html",
+      "anchor": "Features introduced",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Bugs.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/QuickGuide.html",
+      "anchor": "line-mode browser",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Bugs.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Features.html",
+      "anchor": "features added.",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Distribution.html",
+      "to": "http://info.cern.ch/hypertext/Copyright.html",
+      "anchor": "copyright",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Distribution.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Installation.html",
+      "anchor": "install the line mode browser",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Distribution.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/User/Guide.html",
+      "anchor": "install the server",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Distribution.html",
+      "to": "http://info.cern.ch/hypertext/Viola/Installation.html",
+      "anchor": "install Viola",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Distribution.html",
+      "to": "http://info.cern.ch/hypertext/TBL_Disclaimer.html",
+      "anchor": "Tim BL",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Features.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/QuickGuide.html",
+      "anchor": "line-mode browser",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Features.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Bugs.html",
+      "anchor": "bug list",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Features.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Commands.html",
+      "anchor": "SOURCE",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Features.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/CommandLine.html",
+      "anchor": "-listrefs",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Features.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/CommandLine.html",
+      "anchor": "details",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Features.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/CommandLine.html",
+      "anchor": "details",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Features.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/NewsServer.html",
+      "anchor": "documentation",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Features.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/CommandLine.html",
+      "anchor": "option",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Features.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Implementation/Features.html",
+      "anchor": "as for NeXTStep editor",
+      "position": 8
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Features.html",
+      "to": "http://info.cern.ch/hypertext/WWW/People.html",
+      "anchor": "Nicola P",
+      "position": 9
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Features.html",
+      "to": "http://info.cern.ch/hypertext/TBL_Disclaimer.html",
+      "anchor": "Tim BL",
+      "position": 10
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Features.html",
+      "to": "http://info.cern.ch/hypertext/WWW/People.html",
+      "anchor": "JFG",
+      "position": 11
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/QuickGuide.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Commands.html",
+      "anchor": "existing commands",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/QuickGuide.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/CommandLine.html",
+      "anchor": "command line syntax",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/QuickGuide.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Shortcuts.html",
+      "anchor": "shortcuts",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/QuickGuide.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Installation.html",
+      "anchor": "installation",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/QuickGuide.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Customisation.html",
+      "anchor": "customization",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/QuickGuide.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/More.html",
+      "anchor": "deeper details",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/QuickGuide.html",
+      "to": "http://info.cern.ch/hypertext/TBL_Disclaimer.html",
+      "anchor": "Tim BL",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/DocIdeas.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/UsersGuide.html",
+      "anchor": "users guide",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Internals.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Browser.html",
+      "anchor": "line mode browser",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Internals.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Architecture/BrowserOverview.html",
+      "anchor": "architecture",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Internals.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Implementation/HTBrowse.c",
+      "anchor": "HTBrowse.c",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Internals.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Implementation/HTBrowse.h",
+      "anchor": ".h",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Internals.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Architecture/BrowserOverview.html",
+      "anchor": "main program",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Internals.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Implementation/GridText.c",
+      "anchor": "GridText.c",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Internals.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Implementation/GridText.h",
+      "anchor": ".h",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Internals.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Architecture/BrowserOverview.html",
+      "anchor": "hypertext object",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Internals.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Implementation/DefaultStyles.c",
+      "anchor": "DefaultStyles.c",
+      "position": 8
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Internals.html",
+      "to": "http://info.cern.ch./hypertext/TBL_Disclaimer.html",
+      "anchor": "Tim BL",
+      "position": 9
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/More.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/QuickGuide.html",
+      "anchor": "www",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/More.html",
+      "to": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "anchor": "World-Wide Web",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/More.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Bugs.html",
+      "anchor": "Bugs",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/More.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Features.html",
+      "anchor": "Features",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/More.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Installation.html",
+      "anchor": "Installation instructions",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/More.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Internals.html",
+      "anchor": "Internals",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/More.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/vm-cms/Overview.html",
+      "anchor": "Installation on VM/CMS",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/More.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Addressing/Addressing.html",
+      "anchor": "Document addresses",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/More.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Commands.html",
+      "anchor": "HELP command",
+      "position": 8
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/More.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MarkUp/MarkUp.html",
+      "anchor": "Hypertext file format",
+      "position": 9
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/More.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Status.html",
+      "anchor": "Other WWW browsers",
+      "position": 10
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/More.html",
+      "to": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "anchor": "The WWW project",
+      "position": 11
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/More.html",
+      "to": "http://info.cern.ch/hypertext/WWW/WhatIs.html",
+      "anchor": "Hypertext",
+      "position": 12
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/More.html",
+      "to": "http://info.cern.ch/WWW/disclaimer.html",
+      "anchor": "Tim BL",
+      "position": 13
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/People.html",
+      "anchor": "NP",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/People.html",
+      "anchor": "TBL",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Features.html",
+      "anchor": "features list",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/QuickGuide.html",
+      "anchor": "User Documentation",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Bugs.html",
+      "anchor": "Prioritzed list of things to be done",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/LineMode/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Internals.html",
+      "anchor": "Internals",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Macintosh/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/People.html",
+      "anchor": "RC",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Macintosh/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/People.html",
+      "anchor": "NP",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Macintosh/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Macintosh/Overview.html",
+      "anchor": "Overview",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/MailRobot/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "anchor": "world-wide web global information initiative",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/MailRobot/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MailRobot/Help.html",
+      "anchor": "Help",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/MailRobot/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MailRobot/Installation.html",
+      "anchor": "Installation",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/MailRobot/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MailRobot/Bugs.html",
+      "anchor": "Bugs",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/MailRobot/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MailRobot/Features.html",
+      "anchor": "Change history",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/MailRobot/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MailRobot/Overview.html",
+      "anchor": "Overview",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/MailRobot/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MailRobot/Bugs.html",
+      "anchor": "Bugs",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/MailRobot/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MailRobot/Features.html",
+      "anchor": "change history",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/MarkUp/MarkUp.html",
+      "to": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "anchor": "WWW",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/MarkUp/MarkUp.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MarkUp/SGML.html",
+      "anchor": "SGML",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/MarkUp/MarkUp.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MarkUp/Text.html",
+      "anchor": "Default text",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/MarkUp/MarkUp.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MarkUp/Tags.html",
+      "anchor": "The tags",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/MarkUp/MarkUp.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MarkUp/Entities.html",
+      "anchor": "Entities",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/MarkUp/MarkUp.html",
+      "to": "http://info.cern.ch/MarkUp/html-spec/html.dtd",
+      "anchor": "DTD",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/MarkUp/MarkUp.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MarkUp/SGML.html",
+      "anchor": "document type definition",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/MarkUp/MarkUp.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Test/test.html",
+      "anchor": "Example",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/MarkUp/MarkUp.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MarkUp/FindingExamples.html",
+      "anchor": "finding examples on the web",
+      "position": 8
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/MarkUp/MarkUp.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MarkUp/Future.html",
+      "anchor": "Future directions",
+      "position": 9
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/MarkUp/MarkUp.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MarkUp/HTMLConstraints.html",
+      "anchor": "Constraints",
+      "position": 10
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/MarkUp/MarkUp.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MarkUp/Connolly/MarkUp.html",
+      "anchor": "New spec",
+      "position": 11
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/MidasWWW/Status.html",
+      "to": "http://slacvm.slac.stanford.edu/FIND/wizards.html",
+      "anchor": "WWWizard",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/MidasWWW/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MidasWWW/Announce1.html",
+      "anchor": "announcement",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/MidasWWW/Status.html",
+      "to": "http://slacvx.slac.stanford.edu/MidasWWW/v10/overview.html",
+      "anchor": "Overview",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/WorldWideWeb.html",
+      "anchor": "WWW",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/CommandKeys.html",
+      "anchor": "the list of such keys",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "anchor": "Info",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "anchor": "Links",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "anchor": "Navigate",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "anchor": "File",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "anchor": "Edit",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "anchor": "Print",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "anchor": "Page Layout",
+      "position": 8
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "anchor": "Style",
+      "position": 9
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "anchor": "Keyword search",
+      "position": 10
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "anchor": "Help",
+      "position": 11
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "anchor": "Hide",
+      "position": 12
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "anchor": "Quit",
+      "position": 13
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Implementation/Features.html",
+      "anchor": "history",
+      "position": 14
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "links",
+      "position": 15
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "anchors",
+      "position": 16
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "anchor": "open it using its address",
+      "position": 17
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "anchor": "Next",
+      "position": 18
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Addressing/Addressing.html",
+      "anchor": "Address Formats",
+      "position": 19
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "anchor": "\"Link to New\"",
+      "position": 20
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "anchor": "Open",
+      "position": 21
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "anchor": "open",
+      "position": 22
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "anchor": "Save",
+      "position": 23
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "anchor": "New",
+      "position": 24
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "anchor": "Link to new",
+      "position": 25
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "anchor": "Close other windows",
+      "position": 26
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "anchor": "Close",
+      "position": 27
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "anchor": "BackUp",
+      "position": 28
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "anchor": "Miniturize",
+      "position": 29
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "anchor": "Page Layout",
+      "position": 30
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "anchor": "load",
+      "position": 31
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "anchor": "print",
+      "position": 32
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Styles.html",
+      "anchor": "(More on Styles)",
+      "position": 33
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Styles.html",
+      "anchor": "(More on styles.)",
+      "position": 34
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Styles.html",
+      "anchor": "stylesheet",
+      "position": 35
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "anchor": "save all edited",
+      "position": 36
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/People.html",
+      "anchor": "TBL",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Implementation/Features.html",
+      "anchor": "change history",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/WorldWideWeb.html",
+      "anchor": "User Documentation",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Implementation/Features.html",
+      "anchor": "Change history",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Implementation/Bugs.html",
+      "anchor": "Prioritized list of things still to be done",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/WorldWideWeb.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Menus.html",
+      "anchor": "HELP: A description of the Menu items.",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/WorldWideWeb.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Installation.html",
+      "anchor": "Installation notes.",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/WorldWideWeb.html",
+      "to": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "anchor": "Background: The WorldWideWeb project of which this is a part.",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/WorldWideWeb.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Implementation/Bugs.html",
+      "anchor": "Known problems: Bug list",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/WorldWideWeb.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Implementation/SourceFiles.html",
+      "anchor": "The source files used by the project software",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/NeXT/WorldWideWeb.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/MakingDocuments.html",
+      "anchor": "Making your own documents",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/News/9209.html",
+      "to": "http://fnala.fnal.gov:8000/",
+      "anchor": "Fermilab",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/News/9209.html",
+      "to": "http://heplibw3.slac.stanford.edu/SLAC.html",
+      "anchor": "SLAC",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/News/9209.html",
+      "to": "http://isis.cshl.org/main.html",
+      "anchor": "VOICE",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/News/9209.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/System33/Gateway.html",
+      "anchor": "the program (in csh) is",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/News/9209.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Tools/Overview.html",
+      "anchor": "Tools",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/News/9209.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/Overview.html",
+      "anchor": "list of server software",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/News/9209.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/Oracle/Overview.html",
+      "anchor": "Oracle gateway",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/News/9209.html",
+      "to": "http://info.cern.ch/hypertext/Conferences/CHEP92/chep92www.ps",
+      "anchor": "available in postscript form",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/News/9209.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Bibliography.html",
+      "anchor": "bibliography",
+      "position": 8
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/News/9209.html",
+      "to": "http://info.cern.ch/hypertext/WWW/News/9204.html",
+      "anchor": "April 1992",
+      "position": 9
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/News/9209.html",
+      "to": "http://info.cern.ch/hypertext/WWW/News/9211.html",
+      "anchor": "November 1992",
+      "position": 10
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/News/9211.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MidasWWW/Status.html",
+      "anchor": "MidasWWW",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/News/9211.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Macintosh/Status.html",
+      "anchor": "Mac Browser",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/News/9211.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Curses/Release_00.html",
+      "anchor": "release note",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/News/9211.html",
+      "to": "http://kviexp.kvi.nl/",
+      "anchor": "KVI",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/News/9211.html",
+      "to": "http://ftp.cwi.nl/pub/www/default.html",
+      "anchor": "CWI",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/News/9211.html",
+      "to": "http://info.in2p3.fr./",
+      "anchor": "IN2P3",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/News/9211.html",
+      "to": "http://hoohoo.ncsa.uiuc.edu/",
+      "anchor": "NCSA",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/News/9211.html",
+      "to": "http://ftp.cwi.nl/pub/www/audio-formats/a00.html",
+      "anchor": "Audio formats",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/News/9211.html",
+      "to": "http://hoohoo.ncsa.uiuc.edu/docs/collage.html",
+      "anchor": "X-Collage",
+      "position": 8
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/News/9211.html",
+      "to": "http://rd13doc/",
+      "anchor": "RD13",
+      "position": 9
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/News/9211.html",
+      "to": "http://fatty.law.cornell.edu./usr2/wwwtext/lii.table.html",
+      "anchor": "Cornell Law school",
+      "position": 10
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/News/9211.html",
+      "to": "http://info.cern.ch/hypertext/WWW/News/9209.html",
+      "anchor": "September 1992",
+      "position": 11
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/News/9211.html",
+      "to": "http://info.cern.ch./hypertext/TBL_Disclaimer.html",
+      "anchor": "Tim BL",
+      "position": 12
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/People.html",
+      "to": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "anchor": "WWW project",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/People.html",
+      "to": "http://crnvmc.cern.ch./WHO",
+      "anchor": "phone book",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/People.html",
+      "to": "http://slacvm.slac.stanford.edu/FIND/wizards.html",
+      "anchor": "Wizards at SLAC",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/People.html",
+      "to": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "anchor": "WorldWideWeb",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/People.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/WorldWideWeb.html",
+      "anchor": "application on the NeXT",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/People.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MarkUp/HTML.dtd",
+      "anchor": "DTD for HTML",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/People.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Tools/HTMLGeneration/fix-html.pl",
+      "anchor": "HTML legalizer",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/People.html",
+      "to": "http://crnvmc.cern.ch/FIND/DESY",
+      "anchor": "DESY database",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/People.html",
+      "to": "http://info.cern.ch/hypertext/WWW/VMSHelp/Overview.html",
+      "anchor": "gateway to the VMS Help system",
+      "position": 8
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/People.html",
+      "to": "http://info.cern.ch/hypertext/WWW/People/Groff.html",
+      "anchor": "Contact",
+      "position": 9
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/People.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Status.html",
+      "anchor": "MidasWWW",
+      "position": 10
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/People.html",
+      "to": "http://slacvm.slac.stanford.edu/FIND/wizards.html",
+      "anchor": "WWWizard",
+      "position": 11
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/People.html",
+      "to": "http://slacvm.slac.stanford.edu/FIND/wizards.html",
+      "anchor": "WWWizards",
+      "position": 12
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/People.html",
+      "to": "http://nic.nikhef.nl./user/a03/www/default/NikhefGuide.html",
+      "anchor": "servers",
+      "position": 13
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/People.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Browser.html",
+      "anchor": "line mode browser",
+      "position": 14
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/People.html",
+      "to": "http://info.cern.ch/hypertext/WWW/People/Pellow.html",
+      "anchor": "More",
+      "position": 15
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/People.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Macintosh/Status.html",
+      "anchor": "Mac browser",
+      "position": 16
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/People.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Status.html",
+      "anchor": "code",
+      "position": 17
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/People.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/Oracle/Overview.html",
+      "anchor": "W3-Oracle gateway",
+      "position": 18
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/People.html",
+      "to": "http://slacvm.slac.stanford.edu/FIND/wizards.html",
+      "anchor": "WWWizards",
+      "position": 19
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Policy.html",
+      "to": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "anchor": "W3 project",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Policy.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Protocols/HTTP/AsImplemented.html",
+      "anchor": "HTTP",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Policy.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MarkUp/MarkUp.html",
+      "anchor": "HTML",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Policy.html",
+      "to": "http://info.cern.ch./hypertext/TBL_Disclaimer.html",
+      "anchor": "Tim BL",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Protocols/HTTP/AsImplemented.html",
+      "to": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "anchor": "WorldWideWeb",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Protocols/HTTP/AsImplemented.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Protocols/HTTP.html",
+      "anchor": "proposed",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Protocols/HTTP/AsImplemented.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Policy.html",
+      "anchor": "policy",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Protocols/HTTP/AsImplemented.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Addressing/HTTPAddressing.html",
+      "anchor": "address",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Protocols/HTTP/AsImplemented.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Addressing/BNF.html",
+      "anchor": "domain name",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Protocols/HTTP/AsImplemented.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Addressing/BNF.html",
+      "anchor": "IP number",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Protocols/HTTP/AsImplemented.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Addressing/BNF.html",
+      "anchor": "port number",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Protocols/HTTP/AsImplemented.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Addressing/BNF.html",
+      "anchor": "document address",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Protocols/HTTP/AsImplemented.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Addressing/Search.html",
+      "anchor": "search on a named index",
+      "position": 8
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Protocols/HTTP/AsImplemented.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MarkUp/Tags.html",
+      "anchor": "ISINDEX tag",
+      "position": 9
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Protocols/HTTP/AsImplemented.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MarkUp/MarkUp.html",
+      "anchor": "HTML",
+      "position": 10
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Protocols/HTTP/AsImplemented.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MarkUp/Tags.html",
+      "anchor": "PLAINTEXT tag",
+      "position": 11
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Protocols/HTTP/AsImplemented.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Protocols/HTTP.html",
+      "anchor": "idempotent",
+      "position": 12
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Protocols/HTTP/AsImplemented.html",
+      "to": "http://info.cern.ch/hypertext/TBL_Disclaimer.html",
+      "anchor": "Tim BL",
+      "position": 13
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Provider/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "anchor": "\"web\"",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Provider/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Provider/Etiquette.html",
+      "anchor": "Web etiquette",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Provider/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Helping.html",
+      "anchor": "How can I help",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Provider/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Provider/AnonymousFTP.html",
+      "anchor": "anonymous FTP",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Provider/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/User/Guide.html",
+      "anchor": "HTTP daemon",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Provider/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/WorldWideWeb.html",
+      "anchor": "hypertext editor",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Provider/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Provider/ShellScript.html",
+      "anchor": "shell scripts under unix",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Provider/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/DCLServer.html",
+      "anchor": "in DCL under VMS",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Provider/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/User/Guide.html",
+      "anchor": "HTTP daemon",
+      "position": 8
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Provider/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MarkUp/MarkUp.html",
+      "anchor": "HTML",
+      "position": 9
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Provider/Overview.html",
+      "to": "http://info.cern.ch/hypertext/Products/WAIS/Overview.html",
+      "anchor": "WAIS",
+      "position": 10
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Provider/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/WAISGate.html",
+      "anchor": "WAIS gateway",
+      "position": 11
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Provider/Overview.html",
+      "to": "http://info.cern.ch/hypertext/README.html",
+      "anchor": "distribution",
+      "position": 12
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Provider/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Provider/ShellScript.html",
+      "anchor": "or sh",
+      "position": 13
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Provider/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Provider/ServerWriter.html",
+      "anchor": "A case study of one system",
+      "position": 14
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Provider/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Provider/ExistingData.html",
+      "anchor": "Making a W3 server for existing data",
+      "position": 15
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Provider/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Provider/RadioButtons.html",
+      "anchor": "Allowing multiple selections",
+      "position": 16
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Provider/Overview.html",
+      "to": "http://info.cern.ch./hypertext/TBL_Disclaimer.html",
+      "anchor": "Tim BL",
+      "position": 17
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "anchor": "WWW project",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Status.html",
+      "to": "http://info.cern.ch/hypertext/README.html",
+      "anchor": "getting the files",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Library/Status.html",
+      "anchor": "Common Library",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Status.html",
+      "anchor": "Line Mode Browser",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Curses/Status.html",
+      "anchor": "Curses Browser",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Macintosh/Status.html",
+      "anchor": "Macintosh Browser",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Erwise/Status.html",
+      "anchor": "\"Erwise\"",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Viola/Status.html",
+      "anchor": "\"ViolaWWW\" Browser for X11",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/TkWWW/Status.html",
+      "anchor": "tkWWW Browser",
+      "position": 8
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MidasWWW/Status.html",
+      "anchor": "MidasWWW",
+      "position": 9
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/Status.html",
+      "anchor": "Browser-Editor on the NeXT",
+      "position": 10
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/VMClient/Status.html",
+      "anchor": "Browser on CERNVM",
+      "position": 11
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/FineWWW/Status.html",
+      "anchor": "Tom Fine's Browser",
+      "position": 12
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/FIND/Status.html",
+      "anchor": "VM server",
+      "position": 13
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/Status.html",
+      "anchor": "Generic server",
+      "position": 14
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/VMSGateStatus.html",
+      "anchor": "VMS/Help gateway",
+      "position": 15
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MailRobot/Status.html",
+      "anchor": "Mail Robot",
+      "position": 16
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Summary.html",
+      "to": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "anchor": "WWW",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Summary.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Protocols/HTTP/AsImplemented.html",
+      "anchor": "HTTP",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Summary.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MarkUp/MarkUp.html",
+      "anchor": "SGML",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Summary.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/Overview.html",
+      "anchor": "daemon",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Summary.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Browser.html",
+      "anchor": "line mode browser",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Summary.html",
+      "to": "http://info.cern.ch/hypertext/WWW/JANETAccess.html",
+      "anchor": "Gateway",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Summary.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/WorldWideWeb.html",
+      "anchor": "hypertext editor",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Summary.html",
+      "to": "http://info.cern.ch/WWW/disclaimer.html",
+      "anchor": "Tim BL",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Technical.html",
+      "to": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "anchor": "W3 project",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Technical.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Provider/Overview.html",
+      "anchor": "How to provide data",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Technical.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Protocols/RelevantProtocols.html",
+      "anchor": "Protocols",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Technical.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MarkUp/MarkUp.html",
+      "anchor": "HTML format",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Technical.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Addressing/Addressing.html",
+      "anchor": "Addressing",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Technical.html",
+      "to": "http://info.cern.ch/hypertext/WWW/DesignIssues/Overview.html",
+      "anchor": "Design Issues",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Technical.html",
+      "to": "http://info.cern.ch/hypertext/WWW/RelatedProducts.html",
+      "anchor": "related products",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Technical.html",
+      "to": "http://info.cern.ch/hypertext/WWW/WorkingNotes/Overview.html",
+      "anchor": "Working notes",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Technical.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/ByAccess.html",
+      "anchor": "Data sources",
+      "position": 8
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Technical.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "anchor": "W3 servers",
+      "position": 9
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Technical.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Newsgroups.html",
+      "anchor": "News",
+      "position": 10
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Technical.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Notation.html",
+      "anchor": "Notation",
+      "position": 11
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Technical.html",
+      "to": "http://info.cern.ch/hypertext/WWW/DesignIssues/DosDonts.html",
+      "anchor": "Implementation guidelines",
+      "position": 12
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Technical.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Project/Coding.html",
+      "anchor": "Coding standards",
+      "position": 13
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "anchor": "WWW",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "node",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "link",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "node",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "web",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/DesignIssues/Multiuser.html",
+      "anchor": "(More...)",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/DesignIssues/BuildingBackLinks.html",
+      "anchor": "Building back-links",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "person",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "hypertext",
+      "position": 8
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "nodes",
+      "position": 9
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "navigating",
+      "position": 10
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "anchor",
+      "position": 11
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "link",
+      "position": 12
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "node",
+      "position": 13
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "browser",
+      "position": 14
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "nodes",
+      "position": 15
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "server",
+      "position": 16
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "Links",
+      "position": 17
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "browser",
+      "position": 18
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/DesignIssues/Navigation.html",
+      "anchor": "building indexes",
+      "position": 19
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "back-links",
+      "position": 20
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "server",
+      "position": 21
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "node",
+      "position": 22
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "database",
+      "position": 23
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "link",
+      "position": 24
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "node",
+      "position": 25
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "Database",
+      "position": 26
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "node",
+      "position": 27
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "web",
+      "position": 28
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "Hypertext",
+      "position": 29
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/WhatIs.html",
+      "anchor": "(More...)",
+      "position": 30
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/WhatIs.html",
+      "anchor": "(More...)",
+      "position": 31
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/DesignIssues/WhatIsAnIndex.html",
+      "anchor": "More",
+      "position": 32
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "link",
+      "position": 33
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "node",
+      "position": 34
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "database",
+      "position": 35
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "database",
+      "position": 36
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "anchors",
+      "position": 37
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "database",
+      "position": 38
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "\"Internal\"",
+      "position": 39
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/external",
+      "anchor": "\"External\"",
+      "position": 40
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "node",
+      "position": 41
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "web",
+      "position": 42
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "links",
+      "position": 43
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "browser",
+      "position": 44
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/DesignIssues/Navigation.html",
+      "anchor": "(More...)",
+      "position": 45
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "document",
+      "position": 46
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/DesignIssues/Multiuser.html",
+      "anchor": "(More...)",
+      "position": 47
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "web",
+      "position": 48
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "browser",
+      "position": 49
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "client",
+      "position": 50
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "hypertext",
+      "position": 51
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "browser",
+      "position": 52
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "daemon",
+      "position": 53
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "navigation",
+      "position": 54
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/DesignIssues/Topology.html",
+      "anchor": "(More...)",
+      "position": 55
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/DesignIssues/Versioning.html",
+      "anchor": "(More...)",
+      "position": 56
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "nodes",
+      "position": 57
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "links",
+      "position": 58
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "Topology",
+      "position": 59
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "to": "http://info.cern.ch/hypertext/WWW/WhatIs.html",
+      "anchor": "hypermedia",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Summary.html",
+      "anchor": "executive summary",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Administration/Mailing/Overview.html",
+      "anchor": "Mailing lists",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Policy.html",
+      "anchor": "Policy",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "to": "http://info.cern.ch/hypertext/WWW/News/9211.html",
+      "anchor": "W3 news",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "to": "http://info.cern.ch/hypertext/WWW/FAQ/List.html",
+      "anchor": "Frequently Asked Questions",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/Top.html",
+      "anchor": "What's out there?",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/bySubject/Overview.html",
+      "anchor": "subjects",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "to": "http://info.cern.ch/hypertext/DataSources/WWW/Servers.html",
+      "anchor": "W3 servers",
+      "position": 8
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Help.html",
+      "anchor": "Help",
+      "position": 9
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Status.html",
+      "anchor": "Software Products",
+      "position": 10
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Browser.html",
+      "anchor": "Line Mode",
+      "position": 11
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Status.html",
+      "anchor": "Viola",
+      "position": 12
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "to": "http://info.cern.ch/hypertext/WWW/NeXT/WorldWideWeb.html",
+      "anchor": "NeXTStep",
+      "position": 13
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/Overview.html",
+      "anchor": "Servers",
+      "position": 14
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Tools/Overview.html",
+      "anchor": "Tools",
+      "position": 15
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "to": "http://info.cern.ch/hypertext/WWW/MailRobot/Overview.html",
+      "anchor": "Mail robot",
+      "position": 16
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Status.html",
+      "anchor": "Library",
+      "position": 17
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Technical.html",
+      "anchor": "Technical",
+      "position": 18
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Bibliography.html",
+      "anchor": "Bibliography",
+      "position": 19
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "to": "http://info.cern.ch/hypertext/WWW/People.html",
+      "anchor": "People",
+      "position": 20
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "to": "http://info.cern.ch/hypertext/WWW/History.html",
+      "anchor": "History",
+      "position": 21
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Helping.html",
+      "anchor": "How can I help",
+      "position": 22
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "to": "http://info.cern.ch/hypertext/README.html",
+      "anchor": "Getting code",
+      "position": 23
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Defaults/Distribution.html",
+      "anchor": "anonymous FTP",
+      "position": 24
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/TkWWW/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/TkWWW/README",
+      "anchor": "README",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/TkWWW/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/TkWWW/BUGS",
+      "anchor": "Bugs",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/TkWWW/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/TkWWW/HISTORY",
+      "anchor": "History",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/TkWWW/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/TkWWW/COPYING",
+      "anchor": "Copying conditions",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Tools/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/Basic.html",
+      "anchor": "W3 basic daemon",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Tools/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Daemon/Overview.html",
+      "anchor": "Gateway servers",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Tools/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Frame/fminit2.0/www_and_frame.html",
+      "anchor": "Framemaker interface",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Tools/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Tools/TeX/Makefile",
+      "anchor": "Makefile",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Tools/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Tools/TeX/html2latex.sed",
+      "anchor": "html2latex.sed",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Tools/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Tools/TeX/sub1.sed",
+      "anchor": "sub1.sed",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Tools/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Tools/HTMLGeneration/Overview.html",
+      "anchor": "Generating HTML",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Tools/Overview.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Tools/LogAnalysis/httpd-analyse.c",
+      "anchor": "httpd-analyse.c",
+      "position": 7
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Tools/Overview.html",
+      "to": "http://info.cern.ch./hypertext/TBL_Disclaimer.html",
+      "anchor": "Tim BL",
+      "position": 8
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/VMClient/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/LineMode/Status.html",
+      "anchor": "line mode browser",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/VMClient/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/People.html",
+      "anchor": "TimBL",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/VMClient/Status.html",
+      "to": "http://crnvmc/FIND/PUB.PROGLIB.HELPPROG.VMPACK(X/A/H+P)",
+      "anchor": "calling VM commands from FORTRAN",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Viola/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/People.html",
+      "anchor": "Pei Wei",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Viola/Status.html",
+      "to": "http://info.cern.ch/hypertext/Viola-2.0/README",
+      "anchor": "README file (old)",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Viola/Status.html",
+      "to": "http://info.cern.ch/hypertext/Viola/Installation.html",
+      "anchor": "Installation instructions",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Viola/Status.html",
+      "to": "http://xcf.berkeley.edu/misc/ht/projects/viola/violaWWW/todo.html",
+      "anchor": "To-Do list",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Viola/Status.html",
+      "to": "http://xcf.berkeley.edu/misc/ht/projects/viola/violaWWW/news.html",
+      "anchor": "News",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Viola/Status.html",
+      "to": "http://info.cern.ch/hypertext/Viola/Review.html",
+      "anchor": "Review",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Viola/Status.html",
+      "to": "http://info.cern.ch/hypertext/WWW/X11/Overview.html",
+      "anchor": "Notes on X11 browers",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/WhatIs.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "links",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/WhatIs.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Xanadu.html",
+      "anchor": "Ted Nelson",
+      "position": 1
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/WhatIs.html",
+      "to": "http://info.cern.ch/hypertext/History.html",
+      "anchor": "History",
+      "position": 2
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/WhatIs.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Talks/YesWeCan.snd",
+      "anchor": "sound",
+      "position": 3
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/WhatIs.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "A list of terms",
+      "position": 4
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/WhatIs.html",
+      "to": "http://info.cern.ch/hypertext/Conferences/Overview.html",
+      "anchor": "Conferences",
+      "position": 5
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/WhatIs.html",
+      "to": "http://info.cern.ch/hypertext/Products/Overview.html",
+      "anchor": "Commercial (and academic) products",
+      "position": 6
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/WhatIs.html",
+      "to": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "anchor": "WorldWideWeb is a project",
+      "position": 8
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/WhatIs.html",
+      "to": "http://info.cern.ch/hypertext/Standards/Overview.html",
+      "anchor": "Standards",
+      "position": 9
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Xanadu.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Terms.html",
+      "anchor": "\"hypertext\"",
+      "position": 0
+    },
+    {
+      "from": "http://info.cern.ch/hypertext/WWW/Xanadu.html",
+      "to": "http://info.cern.ch/hypertext/WWW/Xanadu.html",
+      "anchor": "himself",
+      "position": 1
+    },
+    {
+      "from": "https://info.cern.ch/",
+      "to": "http://info.cern.ch/hypertext/WWW/TheProject.html",
+      "anchor": "Browse the first website",
+      "position": 0
+    },
+    {
+      "from": "https://info.cern.ch/",
+      "to": "http://line-mode.cern.ch/www/hypertext/WWW/TheProject.html",
+      "anchor": "Browse the first website using the line-mode browser simulator",
+      "position": 1
+    },
+    {
+      "from": "https://info.cern.ch/",
+      "to": "http://home.web.cern.ch/topics/birth-web",
+      "anchor": "Learn about the birth of the web",
+      "position": 2
+    },
+    {
+      "from": "https://info.cern.ch/",
+      "to": "http://home.web.cern.ch/about",
+      "anchor": "Learn about CERN, the physics laboratory where the web was born",
+      "position": 3
+    }
+  ]
+}
