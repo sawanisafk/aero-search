@@ -1,0 +1,105 @@
+{
+  "kind": "query-latency",
+  "timestamp": "2026-10-08T03:26:43.094Z",
+  "git": {
+    "sha": "05601f9ec98a191d963dd2b09798171cf6a0e273",
+    "clean": true,
+    "has_untracked": true
+  },
+  "config": {
+    "corpus": "scifact",
+    "query_source": "data/eval/scifact-queries.jsonl",
+    "queries": 1109,
+    "topk": 100,
+    "pipeline": "candidates: parse+analyze+retrieve; strategies: + rank + top-k mapping (e2e)"
+  },
+  "corpus": {
+    "name": "scifact",
+    "hash": "dec31c8182f3d744c7d2c09423756fd1d17cbef75808db13ba01cc0aab4d1ac6",
+    "numDocs": 5183,
+    "vocabSize": 26299
+  },
+  "parse_failures": {
+    "candidates": 2,
+    "boolean": 2,
+    "tfidf": 2,
+    "bm25": 2,
+    "bm25-phrase": 2,
+    "bm25-phrase-proximity": 2,
+    "bm25-pr": 2
+  },
+  "link_graph": {
+    "file": "data\\eval\\scifact-citations.json",
+    "sha256": "c780f9e6d2dcf79459025a4e68894a4cf1f82bd193eec7adafd865c5f0dd60f2",
+    "pr_weight": 0.2,
+    "pagerank": {
+      "damping": 0.85,
+      "tolerance": 0.000001,
+      "maxIterations": 100,
+      "iterations": 41,
+      "converged": true,
+      "residual": 8.642679683825609e-7,
+      "nodeCount": 5183,
+      "edgeCount": 2015,
+      "graphHash": "3d7b80d2ae4a482ed9a9f0f6e90d5cd1fa3e85481ea4da52b4b17e818e8b7823"
+    }
+  },
+  "stages": {
+    "candidates": {
+      "count": 1109,
+      "avg": 0.21210504959422738,
+      "median": 0.17569999999994934,
+      "p95": 0.4730000000000132,
+      "min": 0.03300000000001546,
+      "max": 2.629000000000019
+    },
+    "boolean": {
+      "count": 1109,
+      "avg": 0.3247419296663632,
+      "median": 0.2806000000000495,
+      "p95": 0.6934999999999718,
+      "min": 0.042300000000068394,
+      "max": 1.619100000000003
+    },
+    "tfidf": {
+      "count": 1109,
+      "avg": 0.7426167718665476,
+      "median": 0.7003999999999451,
+      "p95": 1.3955000000000837,
+      "min": 0.056100000000014916,
+      "max": 2.4243000000000166
+    },
+    "bm25": {
+      "count": 1109,
+      "avg": 1.0076499549143372,
+      "median": 0.9529999999999745,
+      "p95": 1.8467999999998028,
+      "min": 0.09500000000002728,
+      "max": 3.327299999999923
+    },
+    "bm25-phrase": {
+      "count": 1109,
+      "avg": 1.007224075743915,
+      "median": 0.9764000000000124,
+      "p95": 1.7584000000001652,
+      "min": 0.08989999999994325,
+      "max": 4.795599999999922
+    },
+    "bm25-phrase-proximity": {
+      "count": 1109,
+      "avg": 2.5681752930568242,
+      "median": 1.4971000000005006,
+      "p95": 7.825900000000729,
+      "min": 0.0875000000005457,
+      "max": 41.696100000000115
+    },
+    "bm25-pr": {
+      "count": 1109,
+      "avg": 1.1359288548241595,
+      "median": 1.1059000000004744,
+      "p95": 1.9957000000003973,
+      "min": 0.08910000000014406,
+      "max": 3.448099999999613
+    }
+  }
+}

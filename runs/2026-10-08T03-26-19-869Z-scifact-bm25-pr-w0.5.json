@@ -1,0 +1,103 @@
+{
+  "experiment_id": "scifact-bm25-pr-w0.5",
+  "timestamp": "2026-10-08T03:26:19.869Z",
+  "git": {
+    "sha": "05601f9ec98a191d963dd2b09798171cf6a0e273",
+    "clean": true,
+    "has_untracked": true
+  },
+  "corpus": {
+    "name": "scifact",
+    "hash": "dec31c8182f3d744c7d2c09423756fd1d17cbef75808db13ba01cc0aab4d1ac6",
+    "numDocs": 5183
+  },
+  "query_set": {
+    "file": "data\\eval\\scifact-queries.jsonl",
+    "sha256": "8ff84a7c903f722981cd8d595c022660140c51867b27608a6d4910db86080313",
+    "evaluated_queries": 300,
+    "parse_failures": [
+      {
+        "queryId": "42",
+        "code": "EMPTY_GROUP"
+      }
+    ]
+  },
+  "qrels": {
+    "file": "data\\eval\\scifact-qrels.tsv",
+    "sha256": "0864bb985e0ca2367ba217977e72004d549054b2b06666ed9d4825ac7c21284c",
+    "judged_queries": 300,
+    "rows": 339
+  },
+  "strategy": {
+    "id": "bm25-pr-w0.5",
+    "mode": "D",
+    "params": {
+      "k1": 1.2,
+      "b": 0.75,
+      "prWeight": 0.5,
+      "normBm25": "minmax-query",
+      "normPr": "minmax-corpus",
+      "normGuard": 1
+    }
+  },
+  "link_graph": {
+    "file": "data\\eval\\scifact-citations.json",
+    "sha256": "c780f9e6d2dcf79459025a4e68894a4cf1f82bd193eec7adafd865c5f0dd60f2",
+    "graph_hash": "3d7b80d2ae4a482ed9a9f0f6e90d5cd1fa3e85481ea4da52b4b17e818e8b7823",
+    "edges_in_file": 2015,
+    "pagerank": {
+      "damping": 0.85,
+      "tolerance": 0.000001,
+      "maxIterations": 100,
+      "iterations": 41,
+      "converged": true,
+      "residual": 8.642679683825609e-7,
+      "nodeCount": 5183,
+      "edgeCount": 2015,
+      "graphHash": "3d7b80d2ae4a482ed9a9f0f6e90d5cd1fa3e85481ea4da52b4b17e818e8b7823"
+    }
+  },
+  "topk": 1000,
+  "k_values": [
+    1,
+    5,
+    10,
+    100
+  ],
+  "metrics": {
+    "map": 0.5163192375787125,
+    "precision": {
+      "1": 0.36,
+      "5": 0.1493333333333336,
+      "10": 0.0853333333333336,
+      "100": 0.010433333333333272
+    },
+    "recall": {
+      "1": 0.3495555555555555,
+      "5": 0.6959444444444444,
+      "10": 0.7805,
+      "100": 0.9242222222222222
+    },
+    "f1": {
+      "1": 0.3522222222222222,
+      "5": 0.2427433862433864,
+      "10": 0.15217094017094013,
+      "100": 0.020586177561405305
+    },
+    "ndcg": {
+      "1": 0.36,
+      "5": 0.5493990470099482,
+      "10": 0.5787655560901745,
+      "100": 0.612244648356857
+    }
+  },
+  "latency_ms": {
+    "count": 300,
+    "avg": 1.478054999999997,
+    "median": 1.464000000000027,
+    "p95": 2.7273999999999887,
+    "min": 0.23429999999996198,
+    "max": 6.5730000000000075
+  },
+  "wall_ms": 444.35889999999995
+}
