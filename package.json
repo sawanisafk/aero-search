@@ -10,6 +10,11 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "build": "tsc -p tsconfig.json",
+    "start": "node dist/src/api/server.js",
+    "api": "tsx src/api/server.ts",
+    "api:dev": "tsx watch src/api/server.ts",
+    "demo": "tsx scripts/demo.ts",
+    "bench:api": "tsx scripts/bench-api.ts",
     "test": "vitest run",
     "test:watch": "vitest",
     "bench:index": "tsx benchmarks/index-benchmark.ts",
@@ -34,8 +39,11 @@
     "vitest": "^3.2.0"
   },
   "dependencies": {
+    "@fastify/cors": "^11.3.1",
+    "@fastify/static": "^10.1.5",
     "cheerio": "^1.2.0",
     "embedded-postgres": "^16.14.0-beta.17",
+    "fastify": "^5.12.5",
     "pg": "^8.23.1",
     "undici": "^8.11.2"
   }
