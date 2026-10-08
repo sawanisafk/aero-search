@@ -1017,6 +1017,7 @@ textarea {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 12px;
+  min-width: 0;
 }
 .card {
   background: var(--glass-strong);
@@ -1024,6 +1025,9 @@ textarea {
   border-radius: 8px;
   padding: 12px 14px;
   box-shadow: 0 3px 10px rgba(15, 45, 90, 0.14), inset 0 1px 0 #fff;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
 }
 .card h3 {
   margin: 0 0 8px;
@@ -1114,7 +1118,10 @@ textarea {
   border-bottom: none;
 }
 .table-scroll {
-  overflow: auto;
+  width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: auto;
   max-height: 340px;
   border-radius: 7px;
 }

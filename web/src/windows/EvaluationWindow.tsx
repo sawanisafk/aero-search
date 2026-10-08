@@ -78,32 +78,34 @@ function FuzzyBenchCard({ bench }: { bench: FuzzyBench }): React.JSX.Element {
         fuzzy recovery · edits ≤ {bench.maxEdits ?? '?'} · {bench.judgedQueries ?? '?'} judged
         queries
       </h3>
-      <table className="data-table">
-        <thead>
-          <tr>
-            <th>arm</th>
-            <th>MAP</th>
-            <th>nDCG@10</th>
-            <th>R@100</th>
-            <th>avg ms</th>
-            <th>p95 ms</th>
-            <th>parse failures</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Object.entries(bench.arms).map(([arm, m]) => (
-            <tr key={arm}>
-              <td>{ARM_LABELS[arm] ?? arm}</td>
-              <td className="metric">{metric(m.map)}</td>
-              <td className="metric">{metric(m.ndcg10)}</td>
-              <td className="num">{metric(m.recall100)}</td>
-              <td className="num">{metric(m.avgMs, 2)}</td>
-              <td className="num">{metric(m.p95Ms, 2)}</td>
-              <td className="num">{m.parseFailures ?? '—'}</td>
+      <div className="table-scroll">
+        <table className="data-table">
+          <thead>
+            <tr>
+              <th>arm</th>
+              <th>MAP</th>
+              <th>nDCG@10</th>
+              <th>R@100</th>
+              <th>avg ms</th>
+              <th>p95 ms</th>
+              <th>parse failures</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {Object.entries(bench.arms).map(([arm, m]) => (
+              <tr key={arm}>
+                <td>{ARM_LABELS[arm] ?? arm}</td>
+                <td className="metric">{metric(m.map)}</td>
+                <td className="metric">{metric(m.ndcg10)}</td>
+                <td className="num">{metric(m.recall100)}</td>
+                <td className="num">{metric(m.avgMs, 2)}</td>
+                <td className="num">{metric(m.p95Ms, 2)}</td>
+                <td className="num">{m.parseFailures ?? '—'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       {bench.correctionsSample.length > 0 && (
         <div style={{ marginTop: 8 }}>
           <span className="chip-row">
@@ -209,28 +211,30 @@ export function EvaluationWindow(): React.JSX.Element {
                   <span className="k">timestamp</span>
                   <span className="v">{shortTime(qb.timestamp)}</span>
                 </div>
-                <table className="data-table" style={{ marginTop: 8 }}>
-                  <thead>
-                    <tr>
-                      <th>stage</th>
-                      <th>count</th>
-                      <th>avg ms</th>
-                      <th>median</th>
-                      <th>p95</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {qb.stages.map((s) => (
-                      <tr key={s.stage}>
-                        <td>{s.stage}</td>
-                        <td className="num">{s.count ?? '—'}</td>
-                        <td className="num">{metric(s.avg ?? null, 3)}</td>
-                        <td className="num">{metric(s.median ?? null, 3)}</td>
-                        <td className="num">{metric(s.p95 ?? null, 3)}</td>
+                <div className="table-scroll" style={{ marginTop: 8 }}>
+                  <table className="data-table">
+                    <thead>
+                      <tr>
+                        <th>stage</th>
+                        <th>count</th>
+                        <th>avg ms</th>
+                        <th>median</th>
+                        <th>p95</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody>
+                      {qb.stages.map((s) => (
+                        <tr key={s.stage}>
+                          <td>{s.stage}</td>
+                          <td className="num">{s.count ?? '—'}</td>
+                          <td className="num">{metric(s.avg ?? null, 3)}</td>
+                          <td className="num">{metric(s.median ?? null, 3)}</td>
+                          <td className="num">{metric(s.p95 ?? null, 3)}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             ))}
           </div>
@@ -288,22 +292,24 @@ export function EvaluationWindow(): React.JSX.Element {
                     <span className="v">{sha(pr.gitSha)}</span>
                   </div>
                   {pr.top !== null && pr.top.length > 0 && (
-                    <table className="data-table" style={{ marginTop: 8 }}>
-                      <thead>
-                        <tr>
-                          <th>top url</th>
-                          <th>value</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {pr.top.map((t) => (
-                          <tr key={t.url}>
-                            <td>{t.url}</td>
-                            <td className="num">{t.value.toFixed(6)}</td>
+                    <div className="table-scroll" style={{ marginTop: 8 }}>
+                      <table className="data-table">
+                        <thead>
+                          <tr>
+                            <th>top url</th>
+                            <th>value</th>
                           </tr>
-                        ))}
-                      </tbody>
-                    </table>
+                        </thead>
+                        <tbody>
+                          {pr.top.map((t) => (
+                            <tr key={t.url}>
+                              <td>{t.url}</td>
+                              <td className="num">{t.value.toFixed(6)}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
                   )}
                 </div>
               );
