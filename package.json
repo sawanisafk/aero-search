@@ -3,16 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "workspaces": [
+    "web"
+  ],
   "description": "Custom information-retrieval search engine: controlled crawling, custom inverted/positional index, TF-IDF/BM25 ranking, PageRank, hybrid fusion, experimental evaluation.",
   "engines": {
     "node": ">=20"
   },
   "scripts": {
-    "typecheck": "tsc --noEmit",
-    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit && npm --workspace web run typecheck",
+    "build": "tsc -p tsconfig.json && npm run web:build",
     "start": "node dist/src/api/server.js",
     "api": "tsx src/api/server.ts",
     "api:dev": "tsx watch src/api/server.ts",
+    "web:dev": "npm --workspace web run dev",
+    "web:build": "npm --workspace web run build",
+    "web:test": "npm --workspace web run test",
     "demo": "tsx scripts/demo.ts",
     "bench:api": "tsx scripts/bench-api.ts",
     "test": "vitest run",
@@ -36,7 +42,7 @@
     "@types/pg": "^8.23.1",
     "tsx": "^4.20.0",
     "typescript": "^5.9.0",
-    "vitest": "^3.2.0"
+    "vitest": "^5.0.3"
   },
   "dependencies": {
     "@fastify/cors": "^11.3.1",
