@@ -131,5 +131,17 @@ describe('crawl persisted in PostgreSQL (E2E)', () => {
 
     const written = JSON.parse(fs.readFileSync(manifestPath, 'utf8')) as typeof manifest;
     expect(written.index.corpusHash).toBe(manifest.index.corpusHash);
+
+    // Committed link-graph export: full fidelity, deterministic order
+    const graph = JSON.parse(fs.readFileSync(path.join(DB_DIR, 'crawled.graph.json'), 'utf8')) as {
+      corpusHash: string;
+      counts: { edgeCount: number };
+      edges: { from: string; to: string; anchor: string; position: number }[];
+    };
+    expect(graph.corpusHash).toBe(manifest.index.corpusHash);
+    expect(graph.counts.edgeCount).toBe(13);
+    expect(graph.edges).toHaveLength(13);
+    expect(graph.edges[0]?.from).toBe(`${fixture.base}/`);
+    expect(graph.edges.every((e) => e.from.startsWith(fixture.base))).toBe(true);
   });
 });

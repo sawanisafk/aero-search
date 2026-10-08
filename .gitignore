@@ -16,6 +16,9 @@ data/corpora/*
 !data/corpora/static-v1/
 data/index/*
 !data/index/.gitkeep
+# M3 evidence: index built from the controlled crawl (tiny, manifest-recorded)
+!data/index/crawled.aidx
+!data/index/crawled.ids.json
 
 # embedded PostgreSQL clusters (dev/test, rebuildable)
 data/pg/

@@ -8,6 +8,7 @@
  *   data/index/<name>.aidx            segment (gitignored, rebuildable)
  *   data/index/<name>.ids.json        docId -> corpus id (normalized URL)
  *   data/eval/<name>.manifest.json    counts + config hash + git SHA (committed)
+ *   data/eval/<name>.graph.json       full link-graph export (committed)
  */
 
 import fs from 'node:fs';
@@ -40,7 +41,7 @@ async function main(): Promise<void> {
     await runMigrations(pool);
     const store = new PostgresStore(pool);
     const t0 = performance.now();
-    const { manifest, bytes, segmentPath } = await buildCrawlIndex({
+    const { manifest, bytes, segmentPath, graphPath } = await buildCrawlIndex({
       store,
       outDir: path.join(process.cwd(), 'data', 'index'),
       manifestPath: path.join(process.cwd(), 'data', 'eval', `${name}.manifest.json`),
@@ -60,6 +61,7 @@ async function main(): Promise<void> {
     console.log(`  corpusHash   ${manifest.index.corpusHash}`);
     console.log(`  segment      ${segmentPath} (${(bytes / 1024 / 1024).toFixed(2)} MB)`);
     console.log(`  manifest     data/eval/${name}.manifest.json`);
+    console.log(`  link graph   ${graphPath} (${manifest.counts.links.edgeCount} edges)`);
     console.log(`  built in     ${elapsed.toFixed(0)} ms`);
   } finally {
     await pool.end();

@@ -43,6 +43,8 @@ export interface BuildCrawlIndexOptions {
   outDir: string;
   /** Manifest destination (e.g. data/eval/crawled.manifest.json — committed). */
   manifestPath: string;
+  /** Link-graph export destination (default: sibling `<name>.graph.json`). */
+  graphPath?: string;
   git: GitInfo;
   configSha256: string | null;
   name?: string;
@@ -55,7 +57,7 @@ function corpusLines(docs: readonly StoredDocument[]): string {
 
 export async function buildCrawlIndex(
   opts: BuildCrawlIndexOptions,
-): Promise<{ manifest: CrawlManifest; bytes: number; segmentPath: string }> {
+): Promise<{ manifest: CrawlManifest; bytes: number; segmentPath: string; graphPath: string }> {
   const name = opts.name ?? 'crawled';
 
   const docs: StoredDocument[] = [];
@@ -99,5 +101,19 @@ export async function buildCrawlIndex(
     index: { ...data.stats, bytes, corpusHash },
   };
   writeJson(opts.manifestPath, manifest);
-  return { manifest, bytes, segmentPath };
+
+  // Committed edge-list export: the exact link graph PageRank consumes
+  // (M3 evidence + M4-A reproducibility, independent of the DB cluster).
+  const graphPath =
+    opts.graphPath ?? opts.manifestPath.replace(/\.manifest\.json$/, '.graph.json');
+  const edges = await opts.store.edges();
+  writeJson(graphPath, {
+    name,
+    generatedAt: manifest.builtAt,
+    corpusHash,
+    counts: manifest.counts.links,
+    edges: edges.map((e) => ({ from: e.fromUrl, to: e.toUrl, anchor: e.anchor, position: e.position })),
+  });
+
+  return { manifest, bytes, segmentPath, graphPath };
 }
