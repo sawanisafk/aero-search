@@ -155,10 +155,10 @@ const DOC = {
   phrases: [{ terms: ['stem', 'cell'], matched: true }],
 };
 
-function installFetch(): ReturnType<typeof vi.fn> {
+function installFetch(search: unknown = SEARCH): ReturnType<typeof vi.fn> {
   const fn = vi.fn(async (input: RequestInfo | URL) => {
     const url = String(input);
-    if (url.startsWith('/api/search')) return res(SEARCH);
+    if (url.startsWith('/api/search')) return res(search);
     if (url.startsWith('/api/config')) return res(CONFIG);
     if (url.startsWith('/api/benchmarks')) return res(BENCH);
     if (url.startsWith('/api/stats')) return res(STATS);
@@ -175,6 +175,35 @@ function installFetch(): ReturnType<typeof vi.fn> {
 afterEach(() => {
   vi.unstubAllGlobals();
 });
+
+/** A zero-result search response with the given query shape (for empty-state diagnosis). */
+function emptySearch(spec: {
+  query: string;
+  implicit: 'and' | 'or';
+  positive: readonly string[];
+  analyzed?: readonly string[];
+  fuzzyApplied?: boolean;
+}): unknown {
+  const analyzed = spec.analyzed ?? spec.positive;
+  return {
+    ...SEARCH,
+    query: spec.query,
+    results: [],
+    meta: {
+      ...SEARCH.meta,
+      totalCandidates: 0,
+      returned: 0,
+      fuzzyApplied: spec.fuzzyApplied ?? false,
+      diagnostics: {
+        ...SEARCH.meta.diagnostics,
+        implicitOperator: spec.implicit,
+        analyzedTerms: [...analyzed],
+        positiveTerms: [...spec.positive],
+        candidates: 0,
+      },
+    },
+  };
+}
 
 describe('Aero desktop', () => {
   it('boots with a search window and renders ranked results', async () => {
@@ -256,5 +285,50 @@ describe('Aero desktop', () => {
       expect(container.querySelector('.aero-window')).not.toBeNull();
     });
     expect(await screen.findByText('Stem cell therapy results')).toBeInTheDocument();
+  });
+
+  it('explains implicit-AND overreach on an empty search', async () => {
+    installFetch(
+      emptySearch({
+        query: 'stem cells can differentiate into many cell types',
+        implicit: 'and',
+        positive: ['stem', 'cell', 'differenti', 'mani', 'type'],
+      }),
+    );
+    render(<App />);
+
+    expect(await screen.findByText(/Implicit AND requires all 5 content terms/)).toBeInTheDocument();
+    expect(screen.getByText(/switch implicit to OR/)).toBeInTheDocument();
+    // the diagnosis also shows what the query actually analyzed to
+    expect(screen.getByText(/stem, cell, differenti, mani, type/)).toBeInTheDocument();
+  });
+
+  it('explains a quoted exact-phrase search on an empty result', async () => {
+    installFetch(
+      emptySearch({
+        query: '"neural network transformers"',
+        implicit: 'or',
+        positive: ['neural', 'network', 'transform'],
+      }),
+    );
+    render(<App />);
+
+    expect(await screen.findByText(/exact-phrase search/)).toBeInTheDocument();
+    expect(screen.getByText(/Remove the quotes/)).toBeInTheDocument();
+  });
+
+  it('explains all-stop-word queries', async () => {
+    installFetch(emptySearch({ query: 'what is it', implicit: 'or', positive: [], analyzed: [] }));
+    render(<App />);
+
+    expect(await screen.findByText(/Every word was a stop word/)).toBeInTheDocument();
+  });
+
+  it('suggests fuzzy only when it can actually help (absent terms)', async () => {
+    installFetch(emptySearch({ query: 'wonderlan', implicit: 'or', positive: ['wonderlan'] }));
+    render(<App />);
+
+    expect(await screen.findByText(/No indexed document contains these terms/)).toBeInTheDocument();
+    expect(screen.getByText(/enable fuzzy recovery/)).toBeInTheDocument();
   });
 });

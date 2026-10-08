@@ -10,7 +10,7 @@
 
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
 import { ApiError, api } from '../api/client';
-import type { ConfigResponse, SearchResponse, Snippet } from '../api/types';
+import type { ConfigResponse, SearchMeta, SearchResponse, Snippet } from '../api/types';
 import { SignalBars } from '../components/SignalBars';
 import { SearchIcon } from '../components/Icons';
 
@@ -31,6 +31,67 @@ const DEFAULT_OPTS: Opts = {
   fuzzyEdits: 1,
   implicit: 'or',
 };
+
+export interface EmptyDiagnosis {
+  readonly kind: 'stopwords' | 'not-only' | 'phrase' | 'implicit-and' | 'absent-terms' | 'generic';
+  readonly lines: readonly string[];
+}
+
+/**
+ * Explain WHY a query returned zero results, using only facts already in
+ * the response (never guesses): stop words removed, quoted exact phrase,
+ * implicit-AND overreach, or no indexed document containing the terms.
+ */
+export function diagnoseEmpty(
+  query: string,
+  meta: SearchMeta | undefined,
+  fuzzyEnabled: boolean,
+): EmptyDiagnosis {
+  if (meta === undefined) return { kind: 'generic', lines: [] };
+  const { implicitOperator, analyzedTerms, positiveTerms, candidates } = meta.diagnostics;
+
+  if (analyzedTerms.length === 0) {
+    return {
+      kind: 'stopwords',
+      lines: [
+        'Every word was a stop word (the, is, of …), so nothing was left to match — add content words.',
+      ],
+    };
+  }
+  if (positiveTerms.length === 0) {
+    return {
+      kind: 'not-only',
+      lines: ['The query only excludes terms (NOT …) — add a positive term to match against.'],
+    };
+  }
+  if (query.includes('"')) {
+    return {
+      kind: 'phrase',
+      lines: [
+        'Quotes make this an exact-phrase search — no document contains that exact sequence. Remove the quotes for loose term matching.',
+      ],
+    };
+  }
+  if (implicitOperator === 'and' && positiveTerms.length > 1) {
+    return {
+      kind: 'implicit-and',
+      lines: [
+        `Implicit AND requires all ${positiveTerms.length} content terms in one single document — switch implicit to OR, or drop some words.`,
+      ],
+    };
+  }
+  if (candidates === 0) {
+    return {
+      kind: 'absent-terms',
+      lines: fuzzyEnabled
+        ? ['Fuzzy recovery already ran and found no closer matches — try different or shorter words.']
+        : [
+            'No indexed document contains these terms — if they are misspellings, enable fuzzy recovery for bounded typo matching.',
+          ],
+    };
+  }
+  return { kind: 'generic', lines: [] };
+}
 
 function SnippetText({ snippet }: { snippet: Snippet }): React.JSX.Element {
   const parts: ReactNode[] = [];
@@ -151,6 +212,10 @@ export function SearchWindow({
   const strategies = config?.strategies ?? [];
   const corpora = config?.corpora ?? [];
   const meta = data?.meta;
+  const emptyAdvice =
+    data !== null && data.results.length === 0 && !loading
+      ? diagnoseEmpty(data.query, meta, opts.fuzzy || meta?.fuzzyApplied === true)
+      : null;
 
   return (
     <div>
@@ -158,7 +223,7 @@ export function SearchWindow({
         <input
           className="aero-input search-input"
           type="search"
-          placeholder="Search the index — e.g. stem cells, p value, coffee"
+          placeholder="Search the index — a term, a phrase, or a full sentence"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           aria-label="search query"
@@ -295,16 +360,21 @@ export function SearchWindow({
         </div>
       )}
 
-      {data !== null && data.results.length === 0 && !loading && (
+      {emptyAdvice !== null && data !== null && (
         <div className="empty-state">
           <p>
             No documents matched <strong>“{data.query}”</strong> on corpus{' '}
             <strong>{meta?.corpus}</strong>.
           </p>
-          {!opts.fuzzy && (
+          {emptyAdvice.lines.map((line) => (
+            <p className="small" key={emptyAdvice.kind}>
+              {line}
+            </p>
+          ))}
+          {meta !== undefined && meta.diagnostics.analyzedTerms.length > 0 && (
             <p className="small">
-              Tip: enable <em>fuzzy recovery</em> — absent terms are expanded with bounded edit
-              distance before retrieval.
+              analysis →{' '}
+              <span className="mono">{meta.diagnostics.analyzedTerms.join(', ')}</span>
             </p>
           )}
         </div>
