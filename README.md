@@ -70,11 +70,12 @@ cp .env.example .env
 The search service (REST/UI) arrives at M5. What runs today:
 
 ```bash
-npm test / npm run typecheck        # 219 tests
+npm test / npm run typecheck        # 257 tests
 npm run db:migrate                  # apply PostgreSQL migrations
 npm run corpus:scifact              # fetch + verify BEIR SciFact (md5-checked)
 npm run index:build -- --corpus scifact
 npm run eval:run -- --corpus scifact --strategy bm25     # → runs/*.json
+npm run eval:run -- --corpus scifact --strategy bm25-pr --pr-weight 0.05  # M4-B fusion
 npm run bench:query                 # → benchmarks/results/*.json
 
 npm run crawl                       # controlled crawl (configs/crawl.json)
@@ -105,6 +106,9 @@ seach  ← fuzzy/typo-tolerant     ← (low-df term expansion)
   `runs/`. Every reported number carries a config hash + git SHA.
 - **First results** (mode A vs B vs C + latency): [`docs/EXPERIMENTS.md`](docs/EXPERIMENTS.md) —
   e.g. BM25 MAP **0.6436** vs TF-IDF 0.4421 on SciFact, sub-4 ms median e2e queries.
+- **Hybrid fusion** (M4-B, same protocol): BM25 + citation-graph PageRank at
+  w = 0.05 → MAP **0.6451** (+0.0015); weight ablation from 0.01 to 0.5, latency
+  +13% — real but marginal gain, reported as measured (EXPERIMENTS.md §3).
 
 ## Screenshots
 

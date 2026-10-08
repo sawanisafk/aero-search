@@ -257,18 +257,21 @@ converged in 52 iterations (8.59e-7, 1.9 ms) over the crawl graph.
 ```
 signals (from config, not code)
   → raw scores per signal
-  → per-query normalization (min-max with outlier guard / z-score)
+  → normalization (min-max; optional outlier guard) — scopes per signal semantics:
+      BM25: per query over candidates; PageRank: once over the corpus (M4-B)
   → fusion:
-      (a) weighted linear: Σ wᵢ·ŝᵢ     — weights live in configs/, swept in evaluation
-      (b) RRF rank fusion (k=60)        — weight-free, normalization-free baseline
+      (a) weighted linear: Σ wᵢ·ŝᵢ     — implemented for mode D (bm25-pr-w<weight>);
+          weights swept in evaluation; config-driven modes A–E still planned
+      (b) RRF rank fusion (k=60)        — weight-free, normalization-free baseline (planned)
   → ScoredDoc { docId, score, breakdown: {bm25, phrase, proximity, pagerank, fuzzy} }
-     // M2 field name is `score` (single total; per-signal breakdown already present);
-     // a distinct `final` total appears in M4 when normalization/fusion land
+      // `score` is the fused total; per-signal contributions live in `breakdown`
 ```
 
 BM25 (~0–40), PageRank (~0–0.02), phrase bonus (~0–2) are incommensurable — normalization is
 mandatory before any weighted sum. RRF exists so the project has a defensible answer to
-"how did you choose the weights?"
+"how did you choose the weights?" (still planned — mode D's sweep is the interim answer,
+and its normalization pitfall is documented EXPERIMENTS §3: per-candidate min-max on a
+near-flat signal and p95-guard condensation both measurably hurt).
 
 ### Ranking modes (named config objects, used by API *and* evaluation)
 
@@ -279,6 +282,10 @@ mandatory before any weighted sum. RRF exists so the project has a defensible an
 | C | BM25 + phrase + proximity |
 | D | BM25 + PageRank |
 | E | Hybrid (all signals, tuned weights / fusion strategy) |
+
+As built (M4-B): mode D is the `bm25-pr` strategy (weighted-linear fusion with
+swept `w`; id encodes the weight). Named config objects for A–E are still
+planned — evaluation passes parameters via CLI flags recorded in run artifacts.
 
 ### Field weighting
 

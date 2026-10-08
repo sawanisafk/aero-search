@@ -46,7 +46,7 @@ perf items.
 | **M1** | Indexing core | tokenizer/normalizer/stopwords + Porter stemmer with test vectors; inverted **and positional** index built over bundled static docs; index serialization round-trip |
 | **M2** | Retrieval + ranking + eval harness | Boolean AND/OR; TF-IDF (3 tf weightings); BM25 with k1/b; phrase + proximity; qrels v1; P@K/R@K/F1/MAP/NDCG@K runner; first real mode comparison (A vs B) |
 | **M3** | Crawler + storage + link graph | controlled crawl of seed set → Postgres; link graph; persistent/resumable crawl state; crawled corpus rebuilt into the index + committed manifest |
-| **M4** | PageRank + hybrid + fuzzy | PageRank job over the crawled link graph; signal/normalizer/fusion architecture; modes A–E in `configs/`; RRF arm; fuzzy expansion for low-df terms; explanation payloads |
+| **M4** | PageRank + hybrid + fuzzy | sub-scoped: **A** PageRank job over link graphs (persisted, converged) · **B** hybrid BM25+PageRank fusion (normalize + weight ablation + latency) · **C** fuzzy edit-distance retrieval — original-scope leftovers deferred: `configs/` modes A–E, RRF arm, explanation payloads |
 | **M5** | API + Aero UI | REST contract + OpenAPI; search UI with window chrome, taskbar, ranking-details panel, settings window |
 | **M6** | Evaluation + benchmarks | 1K/10K/100K runs; latency, index size, RSS, throughput tables; mode comparison charts — **all numbers from committed artifacts** |
 | **M7** | Validation + viva | documentation consistency audit (README ↔ code ↔ results ↔ report), README polish, `docs/VIVA.md` |
@@ -237,13 +237,57 @@ publishable ("does link-based authority improve lexical relevance?").
 benchmark artifact committed) — **met**: 239 tests green; artifact
 `benchmarks/results/2026-10-08T02-29-21-953Z-pagerank.json`.
 
-### M4-B — Hybrid ranking (BM25 + PageRank fusion) — pending
+### M4-B — Hybrid ranking (BM25 + PageRank fusion) — COMPLETE
 
-BM25 baseline · PageRank as independent signal · normalization + weighted/RRF fusion ·
-BM25 vs BM25+PR comparison · ablation · latency impact — all via the existing
-`eval:run` harness on judged data (SciFact for lexical metrics; the crawl corpus has no
-qrels, so fusion quality is measured on SciFact with PageRank simulated/injected as a
-controlled signal, or on any judged set with a link graph — decide at kickoff).
+Decision at kickoff: **real citation graph over SciFact** (Semantic Scholar
+references, in-corpus pairs) as the PageRank source, same 300 judged queries as
+M2 → directly comparable to the committed baseline. (Alternatives considered and
+rejected: hand-judging the crawl corpus; synthetic graph injection.)
+
+**Fusion core (`src/core/ranking/fusion.ts`)**
+- [x] `normalizeScores`: min-max → [0, 1], strictly monotone, degenerate range → 0,
+      deterministic, inputs never mutated
+- [x] Optional quantile outlier guard (split-anchor mapping — never clamps
+      distinct scores into a tie band), **default OFF**: p95 anchoring measured
+      harmful on SciFact (candidate-pack condensation, MAP 0.64 → 0.12 at w=0.2);
+      mechanism documented in `fusion.ts` + EXPERIMENTS.md §3
+- [x] Tests: bounds, guard-band math, strict monotonicity, degenerate/empty,
+      validation, determinism
+
+**Mode D strategy (`bm25-pr`, `strategies.ts`)**
+- [x] `score = (1−w)·ŝ_bm25 + w·ŝ_pagerank`; breakdown = weighted components (Σ = score)
+- [x] Scope-correct normalization: BM25 per query over candidates; PageRank once
+      over the corpus (per-candidate min-max amplifies PageRank's near-flat tail
+      — observed MAP collapse; documented)
+- [x] w=0 reproduces BM25 ordering exactly (unit test + scale check: MAP 0.6436
+      identical); w=1 orders by PageRank; validation at construction/rank time
+- [x] Artifacts record `{k1, b, prWeight, normBm25, normPr, normGuard}`; id encodes
+      the weight (`bm25-pr-w0.05`); `STRATEGY_IDS` exposes data-dependent ids
+
+**Eval plumbing**
+- [x] `scripts/lib/pagerank-scores.ts`: citation-graph loader (graphHash verified
+      from file, endpoints must map onto index ids or we throw — no silent edge
+      drops) + PageRank via the shared core, computed once per run
+- [x] `run-experiment --strategy bm25-pr --pr-weight <w> [--norm-guard …
+      --linkgraph … --pr-damping/tolerance/max-iterations]`; artifacts carry
+      `link_graph {file, sha256, graph_hash, edges, pagerank convergence meta}`
+- [x] `bench:query` gains a `bm25-pr` stage whenever a corpus graph file exists
+      (PageRank computed outside the timed loop)
+
+**Ablation (SciFact, 300 judged; graph: 4,879/5,183 resolved → 2,015 in-corpus
+edges, 955 citing papers, hash `3d7b80d2…`; PR converged 41 iters / 8.64e-7)**
+- [x] BM25 vs BM25+PR at w ∈ {0.01, 0.02, 0.05, 0.1, 0.2, 0.3, 0.5}: best
+      **w=0.05 → MAP 0.6436 → 0.6451 (+0.0015), NDCG@10 0.6876 → 0.6886**;
+      flat/slightly negative through w=0.3; collapse at 0.5 (0.5163). Reported
+      as measured: link authority is a marginal tie-breaker on this testbed
+- [x] Latency impact: bench artifact — bm25 1.008 ms avg → bm25-pr 1.136 ms
+      avg (+13%) over 1,109 queries
+
+**Exit criteria B** (independent signal + normalization + fusion, BM25 vs
+BM25+PR on judged data, ablation, latency — all committed artifacts) — **met**:
+257 tests green; `runs/2026-10-08T03-26-*` (8 files) +
+`benchmarks/results/2026-10-08T03-26-43-094Z-query-benchmark.json`;
+walkthrough in EXPERIMENTS.md §3.
 
 ### M4-C — Fuzzy retrieval — pending
 
@@ -264,3 +308,6 @@ benchmark separate from exact retrieval (exact vs fuzzy as its own experiment).
 | 2026-10-07 | M3 | `benchmarks/results/2026-10-07T17-12-21-990Z-query-benchmark.json` | e2e query latency on the crawled corpus (77 docs, vocab 4,151, 60 derived queries): BM25 avg 0.089 ms / p95 0.117 ms; git SHA recorded in artifact |
 | 2026-10-07 | M3 | `data/eval/crawled.graph.json`, `data/index/crawled.aidx` | preservation: full 796-edge link-graph export (74 sources, 422 targets) + crawled index segment (77 docs, 0.27 MB, ids map) committed as frozen evidence; deterministic rebuild reproduced corpus hash `4e5bf3b0…`; frozen at git tag `m3-complete` |
 | 2026-10-08 | M4-A | `benchmarks/results/2026-10-08T02-29-21-953Z-pagerank.json` | PageRank over the M3 crawl graph: 77 nodes / 209 unique in-set edges / 16 dangling, d=0.85, tol=1e-6 → converged 52 iterations, residual 8.591e-7, 1.9 ms, Σπ=1.0000000000000002, graphHash `1a3f3ec4…`, corpus hash from crawled manifest, git SHA in artifact; scores persisted as `pagerank_runs` run_id 1 |
+| 2026-10-08 | M4-B | `data/eval/scifact-citations.json` | real citation graph over the SciFact corpus from Semantic Scholar (batch API, backoff): 5,183 ids requested → 4,879 resolved, 100,979 references → **2,015 in-corpus directed edges** (955 citing papers), 3,409 elided/no-refs counted as data; graphHash `3d7b80d2…` + corpus sha256 recorded in file; git `daae9c0` |
+| 2026-10-08 | M4-B | `runs/2026-10-08T03-26-*` (8 files) | fusion ablation on SciFact (300 judged, same protocol as M2), git `05601f9` clean: bm25 MAP 0.6436 → best fusion w=0.05 MAP 0.6451 / NDCG@10 0.6886; flat to w=0.2, degradation at 0.3, collapse at 0.5 (0.5163); every artifact embeds link_graph (hash, edges) + PageRank convergence (41 iters, 8.64e-7) + full strategy params; 257 tests green |
+| 2026-10-08 | M4-B | `benchmarks/results/2026-10-08T03-26-43-094Z-query-benchmark.json` | latency impact of mode D over 1,109 SciFact queries: bm25 1.008 ms avg / 0.953 median → bm25-pr 1.136 / 1.106 (+13%), all other stages unchanged; `bm25-pr` stage + `link_graph` block recorded; PageRank computed outside the timed loop; git `05601f9` clean |

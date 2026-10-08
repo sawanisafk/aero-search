@@ -1,13 +1,14 @@
-# Experiments — M2 Results (SciFact)
+# Experiments — M2 & M4-B Results (SciFact)
 
 > Every number below is copied from a committed artifact —
 > `runs/*.json` and `benchmarks/results/*query-benchmark.json`.
 > Evidence rule: [DEVELOPMENT.md](DEVELOPMENT.md) · Protocol: [EVALUATION.md](EVALUATION.md).
 
-**Suite:** git `7d9ef4c` (worktree clean in all artifacts) · 2026-10-07 ·
+**§1–§2 suite:** git `7d9ef4c` (worktree clean in all artifacts) · 2026-10-07 ·
 Node v24.13.0, Windows · corpus BEIR SciFact (5,183 docs, corpus hash `dec31c81…` in
 artifacts) · queries: test split, 300 judged (339 judgments) · top-K = 1000,
 k ∈ {1,5,10,100} · strategy params recorded per artifact (`strategy.params`).
+**§3 suite (M4-B):** git `05601f9`, clean · 2026-10-08 · same corpus/protocol.
 
 ---
 
@@ -123,12 +124,83 @@ same bytes every run (artifact `config.query_source = derived-top-df-templates`)
 
 ---
 
-## 3. Reproduce
+## 3. M4-B — hybrid fusion: BM25 + PageRank (mode D)
+
+**Signal:** PageRank over the *real* citation graph of the corpus — Semantic Scholar
+references restricted to in-corpus pairs (`data/eval/scifact-citations.json`:
+4,879/5,183 papers resolved, 100,979 references → **2,015 directed edges**, 955
+citing papers, graphHash `3d7b80d2…`, corpus sha256 recorded). Power iteration,
+d = 0.85, tol = 1e-6 → **converged in 41 iterations, residual 8.64e-7** (recorded
+in every run artifact under `link_graph.pagerank`).
+
+**Fusion:** `score = (1−w)·ŝ_BM25 + w·ŝ_PageRank`, both signals min-max normalized
+to [0, 1] with different scopes — BM25 per query over the query's candidates,
+PageRank once over the whole corpus (a query-independent signal gets a
+query-independent scale). Normalization + the outlier-guard experiment are
+`src/core/ranking/fusion.ts`; `w = 0` reproduces BM25 exactly.
+
+| Strategy | w | MAP | NDCG@10 | P@10 | R@100 | run avg ms |
+|---|---|---|---|---|---|---|
+| `bm25` (baseline) | — | 0.6436 | 0.6876 | 0.0913 | 0.9276 | 1.042 |
+| `bm25-pr-w0.01` | 0.01 | 0.6436 | 0.6876 | 0.0913 | 0.9276 | 1.471 |
+| `bm25-pr-w0.02` | 0.02 | 0.6434 | 0.6874 | 0.0913 | 0.9276 | 1.435 |
+| `bm25-pr-w0.05` | 0.05 | **0.6451** | **0.6886** | 0.0913 | 0.9276 | 1.478 |
+| `bm25-pr-w0.1` | 0.10 | 0.6440 | 0.6878 | 0.0913 | 0.9309 | 1.456 |
+| `bm25-pr-w0.2` | 0.20 | 0.6438 | 0.6866 | 0.0910 | 0.9309 | 1.521 |
+| `bm25-pr-w0.3` | 0.30 | 0.6413 | 0.6839 | 0.0907 | 0.9316 | 1.443 |
+| `bm25-pr-w0.5` | 0.50 | 0.5163 | 0.5788 | 0.0853 | 0.9242 | 1.478 |
+
+`run avg ms` = per-query e2e latency inside the run artifact (300 queries,
+top-K 1000) — cross-stage comparisons belong to the bench artifact below.
+
+### Reading the table
+
+1. **The academic answer: weakly positive.** Citation authority helps *slightly*
+   at low weights — best w = 0.05 gives **+0.0015 MAP / +0.0010 NDCG@10** over the
+   BM25 baseline, and recall@100 improves for w ≥ 0.1 (0.9276 → 0.9316). Honest
+   conclusion: on this corpus/query set link-based authority is a marginal
+   tie-breaker, not a new ranking regime. A null-ish result is still a result —
+   it is reported as measured, not oversold.
+2. **Dose-response:** flat through w ≈ 0.2, degradation at 0.3, collapse at 0.5
+   (MAP −20%, 0.64 → 0.52) where authority starts overriding lexical fit. The
+   usable band is w ∈ [0.01, 0.2]; that band is what a future mode config would
+   expose as its default range.
+3. **Ablation controls:** `--pr-weight 0` reproduces baseline MAP exactly and a
+   unit test asserts w = 0 yields byte-identical ordering to `bm25` — the fusion
+   plumbing cannot silently change results. Graph provenance (`graph_hash`,
+   edges, corpus sha256) and PageRank convergence are embedded in every artifact,
+   so any row is reproducible from committed inputs alone.
+4. **Normalization is the whole game — a documented negative result.** The first
+   implementation normalized PageRank per query over candidates and guarded
+   min-max at p95; both *destroyed* MAP (0.64 → 0.12 at w = 0.2). Two independent
+   failure modes: (a) per-candidate min-max stretches PageRank's near-flat tail —
+   ~75% of papers share the teleport floor — to the full [0, 1], amplifying
+   rounding-level differences into full-scale noise; (b) the p95 guard condenses
+   a 1,700–3,000-candidate query's top ~100 docs into a [0.95, 1] band where any
+   second signal picks the winner. Fixes: corpus-global PageRank scale, guard off
+   by default (kept as a strictly-monotone knob). Numbers above are the corrected
+   protocol; the failure and its mechanism are recorded in `fusion.ts` and RANKING.md.
+5. **Latency impact (+13%, bench artifact):** `bm25` 1.008 ms avg → `bm25-pr`
+   1.136 ms avg over 1,109 queries (median 0.953 → 1.106, p95 1.847 → 1.996) —
+   the cost of one extra min-max pass over candidates. PageRank itself is
+   computed once per run, outside the timed loop: the query path never touches
+   graph data (ADR-003 spirit).
+
+Artifacts (git `05601f9`, `git.clean = true`): quality rows = `runs/` files
+`2026-10-08T03-26-06-009Z-scifact-bm25-k1.2-b0.75.json` +
+`2026-10-08T03-26-{07-942,09-906,11-923,13-896,15-909,17-895,19-869}Z-scifact-bm25-pr-w*.json`
+(8 files); latency = `benchmarks/results/2026-10-08T03-26-43-094Z-query-benchmark.json`
+(includes a `bm25-pr` stage + `link_graph` block).
+
+---
+
+## 4. Reproduce
 
 ```bash
 npm run corpus:scifact && npm run index:build -- --corpus scifact
 npm run eval:run -- --corpus scifact --strategy bm25
 npm run eval:run -- --corpus scifact --strategy bm25-phrase-proximity --proximity-k 0
+npm run eval:run -- --corpus scifact --strategy bm25-pr --pr-weight 0.05   # M4-B
 npm run bench:query -- --corpus scifact --queries data/eval/scifact-queries.jsonl
 npm run corpus:20news && npm run index:build -- --corpus 20newsgroups
 npm run bench:query -- --corpus 20newsgroups
