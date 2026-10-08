@@ -194,13 +194,83 @@ Artifacts (git `05601f9`, `git.clean = true`): quality rows = `runs/` files
 
 ---
 
-## 4. Reproduce
+## 4. M4-C — fuzzy retrieval: typo recovery with bounded edit distance
+
+**Question:** does bounded edit-distance expansion recover queries whose terms
+miss the dictionary — and at what precision/latency cost?
+
+**Protocol — separate benchmark, same judged data.** `npm run bench:fuzzy`
+corrupts every judged SciFact query *deterministically* (no seeds): the first
+word token (length ≥ 4, indexed, non-stopword) gets a single-character
+substitution (position last → first, letter a → z) accepted only when the
+corrupted form analyzes to a dictionary miss at edit distance exactly 1.
+**300/300 queries corruptible, 0 skipped.** Arms run over the identical judged
+subset through the full e2e pipeline (strategy `bm25`):
+
+| Arm | query text | fuzzy | MAP | NDCG@10 | R@100 | avg ms |
+|---|---|---|---|---|---|---|
+| clean | original | off | 0.6436 | 0.6876 | 0.9276 | 1.005 |
+| typo-exact | corrupted | off | 0.5665 | 0.6101 | 0.9040 | 0.890 |
+| typo-fuzzy (k=1) | corrupted | on (default) | **0.6386** | 0.6819 | 0.9309 | 1.136 |
+| typo-fuzzy (k=2) | corrupted | on (maxEdits 2) | 0.6157 | 0.6624 | **0.9342** | 4.340 |
+
+### Reading the table
+
+1. **The typo is real damage; k=1 recovers most of it.** One wrong character
+   costs −0.0771 MAP / −0.0774 NDCG@10 (0.6436 → 0.5665). Bounded (k=1)
+   expansion recovers **0.0722 of the 0.0772 MAP gap = 93.5%** (NDCG@10:
+   92.8%) — the recovered arm lands within 0.005 MAP of the clean ceiling, and
+   R@100 actually exceeds clean (0.9309 vs 0.9276) because an expanded leaf is
+   a union (variants add recall).
+2. **k=2 is a measured negative result.** The wider radius finds more
+   neighbors — highest R@100 (0.9342) — but distance-2 noise outweighs the
+   extra recovery: MAP 0.6157, *below* k=1, only 63.9% of the gap, at ~4×
+   latency on the typo set (4.34 vs 1.14 ms avg). k=1 is the correct default;
+   k=2 stays opt-in with the same strict caps.
+3. **Expansion is a precision tradeoff — measured on clean queries too.**
+   Fuzzy over the *uncorrupted* queries (run artifact) attempts 72 absent
+   terms across 30/300 queries, adds 157 variants: those absences are genuine
+   OOV terms, not typos, so their expansions are noise — MAP 0.6436 → 0.6353
+   (−0.0083) while R@100 rises 0.9276 → 0.9309. Fuzzy pays when the miss is a
+   typo; it costs a little when the miss is real.
+4. **Strict limits, all recorded, all firing.** In the k=1 arm the
+   `expansionsPerTerm` cap fired 8× and `expansionsPerQuery` 3× across 300
+   queries (artifact `fuzzy.stats.caps`); defaults are 10 variants/term, 10
+   absent terms/query, 20 variants/query, min length 3, `maxEdits` 1.
+5. **Latency (bench artifact, 1,109 queries):** `bm25` 0.887 ms avg →
+   `bm25-fuzzy` 0.868 ms (the no-op expansion tax is indistinguishable from
+   noise — clean queries rarely miss) → `bm25-fuzzy2` 1.232 avg / 3.894 p95 /
+   7.773 max. History worth recording: the first k=2 implementation composed
+   edit1×edit1 sets — quadratic — and measured **max 1,554 ms** in the same
+   bench; it was replaced by a bounded dictionary scan (length ±2 filter +
+   early-exit DP), which is both faster and *complete* (no truncation), giving
+   the max above.
+6. **Integration semantics:** expansion rewrites only absent term leaves
+   (exact-match terms never expand; phrases and NOT subtrees stay exact) into
+   `[original, …variants]`, evaluated as a union — one transformation feeds
+   both candidate retrieval and BM25 scoring (variants carry their real idf).
+   `run-experiment --fuzzy` records resolved params + aggregate stats in the
+   artifact.
+
+Artifacts (git `b713150`, `git.clean = true`):
+`benchmarks/results/2026-10-08T03-59-11-510Z-fuzzy-benchmark.json` (k=1, all
+300 corrections listed), `…03-59-23-203Z-fuzzy-benchmark.json` (k=2),
+`…03-59-43-121Z-query-benchmark.json` (latency stages),
+`runs/2026-10-08T03-59-45-029Z-scifact-bm25-k1.2-b0.75-fuzzy.json`
+(clean-query arm).
+
+---
+
+## 5. Reproduce
 
 ```bash
 npm run corpus:scifact && npm run index:build -- --corpus scifact
 npm run eval:run -- --corpus scifact --strategy bm25
 npm run eval:run -- --corpus scifact --strategy bm25-phrase-proximity --proximity-k 0
 npm run eval:run -- --corpus scifact --strategy bm25-pr --pr-weight 0.05   # M4-B
+npm run eval:run -- --corpus scifact --strategy bm25 --fuzzy               # M4-C clean arm
+npm run bench:fuzzy                                                        # M4-C typo recovery
+npm run bench:fuzzy -- --fuzzy-edits 2                                     # M4-C k=2 (negative)
 npm run bench:query -- --corpus scifact --queries data/eval/scifact-queries.jsonl
 npm run corpus:20news && npm run index:build -- --corpus 20newsgroups
 npm run bench:query -- --corpus 20newsgroups

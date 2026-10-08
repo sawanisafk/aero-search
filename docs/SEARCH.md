@@ -78,6 +78,10 @@ lowercase) → tokenize → stop-word removal → Porter stem. A leaf expands to
 - a phrase leaf whose words survive analysis → ordered analyzed terms
 - a term that stops-words/stems away entirely → `terms: []` (**empty leaf**)
 
+After analysis, fuzzy expansion (§6) may annotate a term leaf with dictionary
+variants: `{ kind: 'term', terms: [t, v1, v2, …] }` — evaluated as their
+union; a plain single-word leaf keeps the fast path.
+
 Set semantics of empty leaves (matters for NOT):
 
 - empty leaf = ∅ (matches no documents); `NOT ∅` = universe — evaluating `NOT` against
@@ -143,13 +147,61 @@ proximityScore = k / (1 + (window − |q|))        window ≥ |q|, |q| = #query 
 
 ---
 
-## 6. End-to-end pipeline (implemented)
+## 6. Fuzzy retrieval (bounded edit distance)
+
+An absent query term — a typo (`seach`) or a genuine OOV word — silently
+contributes ∅ to Boolean retrieval. `expandFuzzyQuery(reader, analyzed, opts)`
+(`src/core/retrieval/fuzzy.ts`) recovers it **at query time**: no index
+changes, the M1 format freeze stands.
+
+**What expands, what never does**
+
+| Leaf / node | Behavior |
+|---|---|
+| term **absent** from the dictionary | expanded (the whole point) |
+| term present in the dictionary | never expanded — exact match wins |
+| phrase leaf | untouched — positional matching stays exact |
+| term under `NOT` | untouched — a negated typo must not exclude documents wrongly |
+| nothing to do | the *identical* tree is returned (identity pass-through) |
+
+**Two radii, both bounded**
+
+- `maxEdits = 1` (default): the ~27·len variants (delete / substitute / insert
+  over `a–z`) are generated directly and probed against the reader's O(1) term
+  hash.
+- `maxEdits = 2` (opt-in): a **bounded dictionary scan** — length ±2 filter,
+  then `boundedEditDistance(.., 2)` with row-min early exit. Only runs when
+  distance-1 did not already fill the per-term cap (closer terms outrank
+  farther ones anyway) and only for terms of length ≥ 5. (The first
+  implementation composed edit1×edit1 sets: quadratic, measured 1.55 s worst
+  case in the bench — replaced by the scan, which is faster and complete.)
+
+**Strict limits** (validated by `resolveFuzzy`, all recorded in artifacts):
+`maxEdits ∈ {1, 2}`, `minTermLength` 3, `maxExpansionsPerTerm` 10,
+`maxFuzzyTermsPerQuery` 10, `maxExpansionsPerQuery` 20. Candidates are ordered
+(distance asc → df desc → term asc) — deterministic across runs.
+
+**Integration — one transformation, both layers.** An expanded leaf becomes
+`[original, …variants]`; `evalAnalyzed` evaluates a multi-term leaf as their
+**union**, and `positiveQueryTerms` walks every leaf term — so candidate
+retrieval *and* scoring (BM25 with each variant's real idf) see the
+alternatives from a single rewrite. `runQuerySet(..., fuzzy)` performs the
+expansion inside the timed query loop and aggregates the cap counters.
+
+**Measured (M4-C, EXPERIMENTS.md §4):** a single-character typo costs −0.0771
+MAP on SciFact; k=1 expansion recovers 93.5% of that gap at +0.13 ms/query,
+while k=2 recovers less (63.9%) at higher cost — reported as measured.
+
+---
+
+## 7. End-to-end pipeline (implemented)
 
 ```
 raw text
   → parseQuery(text, {implicitOperator})         // AST, typed errors
   → analyzeQuery(ast, reader.analysis)           // shared analyzer
-  → retrieveBoolean(reader, ast)                 // candidates (set algebra)
+  → [expandFuzzyQuery(reader, analyzed, opts)]   // optional, absent terms only
+  → retrieveBoolean / retrieveAnalyzed           // candidates (set algebra)
   → strategy.rank(reader, analyzed, candidates)  // ScoredDoc[] (RANKING.md)
   → sort: score desc, docId asc → slice top-K → map to corpus ids
 ```
@@ -160,10 +212,11 @@ dropped silently).
 
 ---
 
-## 7. Tests
+## 8. Tests
 
 | Suite | Covers |
 |---|---|
 | `tests/query.test.ts` | lexer, both implicit-operator modes, precedence, parens, phrases, every error code + position |
 | `tests/boolean.test.ts` | set ops, `analyzeQuery` (incl. empty leaves), retrieval over a built index |
 | `tests/phrase.test.ts` | positional matching vs plain-AND counterexamples, stop-word gaps, windows, mode C fixtures |
+| `tests/fuzzy.test.ts` | hand-computed edit distances + sentinels, variant generation, typo recovery (`seach` → `search`), exact-match/phrase/NOT exclusions, every strict cap, determinism, identity pass-through, scoring integration |

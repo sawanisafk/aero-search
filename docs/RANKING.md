@@ -154,6 +154,11 @@ on `lung`+`cancer` only, while boolean candidates still exclude `smoking` hits.
 Combining them would make relevance scores depend on exclusion clauses (a doc's score
 would drop for containing an excluded word — not a relevance judgment).
 
+Conversely, fuzzy-expanded variants (M4-C, SEARCH.md §6) *are* positive terms: an
+expanded leaf `[seach, search, …]` scores every variant with its own idf (the absent
+original contributes nothing — no postings), so recovered terms are ranked exactly
+like typed ones.
+
 ---
 
 ## 8. Hand-verified tests

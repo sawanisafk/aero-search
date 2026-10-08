@@ -204,7 +204,7 @@ left resumable; manifest + query-latency artifact committed. Frozen at tag
 
 ---
 
-## M4 — status: IN PROGRESS
+## M4 — status: COMPLETE (A + B + C; tag decision pending)
 
 Sub-scoped per plan: **M4-A PageRank → M4-B hybrid fusion → M4-C fuzzy** — each with its
 own experiment; PageRank is *hypothesized* to help, a null/negative result is equally
@@ -289,10 +289,61 @@ BM25+PR on judged data, ablation, latency — all committed artifacts) — **met
 `benchmarks/results/2026-10-08T03-26-43-094Z-query-benchmark.json`;
 walkthrough in EXPERIMENTS.md §3.
 
-### M4-C — Fuzzy retrieval — pending
+### M4-C — Fuzzy retrieval — COMPLETE
 
-Bounded edit-distance candidate generation, typo cases, strict candidate-count limits,
-benchmark separate from exact retrieval (exact vs fuzzy as its own experiment).
+Decision: **query-time expansion, no index-layout change** (M1 freeze stands).
+An absent analyzed term contributes ∅ silently; bounded edit distance recovers
+it — measured as its own experiment, separate from exact retrieval.
+
+**Core (`src/core/retrieval/fuzzy.ts`)**
+- [x] `boundedEditDistance(a, b, max)` — row DP with row-min early exit,
+      returns `max + 1` sentinel outside the bound; hand-computed test vectors
+- [x] k=1: direct variant generation (~27·len delete/substitute/insert over
+      a-z) → O(1) hash probes against the dictionary
+- [x] k=2 (opt-in): bounded dictionary scan (length ±2 filter + early-exit
+      DP) — the first implementation composed edit1×edit1 sets (quadratic),
+      measured **max 1,554 ms** in the bench, replaced by the scan →
+      max 7.773 ms, and complete (no truncation)
+- [x] Expands ONLY absent term leaves; exact-match terms never expand;
+      phrase + NOT subtrees untouched; identity pass-through when nothing to
+      do (unit-tested with `toBe`)
+- [x] Strict limits, all validated by `resolveFuzzy` and recorded in
+      artifacts: `maxEdits ∈ {1,2}` (default 1), `minTermLength` 3,
+      `maxExpansionsPerTerm` 10, `maxFuzzyTermsPerQuery` 10,
+      `maxExpansionsPerQuery` 20; ordering (dist asc, df desc, term asc) is
+      deterministic
+
+**Integration (one rewrite feeds both layers)**
+- [x] Expanded leaf = `[original, ...variants]`; `evalAnalyzed` treats a
+      multi-term leaf as their union — candidates AND scoring
+      (`positiveQueryTerms`, real idf per variant) see it; regression:
+      baseline re-run reproduces M2 MAP 0.6436 / NDCG@10 0.6876 exactly
+- [x] `runQuerySet(..., fuzzy)` expands inside the timed loop, aggregates cap
+      counters; `run-experiment --fuzzy --fuzzy-*` → artifact
+      `fuzzy {enabled, params, stats}` block, `-fuzzy` filename suffix
+- [x] `bench:query` gains `bm25-fuzzy` / `bm25-fuzzy2` stages (expansion
+      stats recorded per stage); new `npm run bench:fuzzy` — the separate
+      typo experiment (`scripts/fuzzy-benchmark.ts`)
+
+**Typo benchmark (SciFact, deterministic single-substitution corruption,
+300/300 corruptible, identical judged subset in all arms, git `b713150` clean)**
+- [x] clean 0.6436 MAP → typo-exact 0.5665 (−0.0771) → **typo + k=1 fuzzy
+      0.6386 — recovers 0.0722/0.0772 = 93.5% of the gap** (NDCG@10: 92.8%);
+      R@100 0.9309 ≥ clean 0.9276 (union adds recall)
+- [x] k=2 reported as the measured negative it is: MAP 0.6157 (below k=1 —
+      distance-2 noise), R@100 0.9342 highest, ~4× latency; k=1 is default
+- [x] Clean-query cost measured honestly: fuzzy over uncorrupted queries
+      expands 72 OOV terms in 30/300 queries → MAP 0.6436 → 0.6353 —
+      expansion is a precision tradeoff, documented not hidden
+- [x] Latency: 1,109 queries — bm25 0.887 ms avg → bm25-fuzzy 0.868 (no-op
+      tax ≈ 0) → bm25-fuzzy2 1.232 avg / 7.773 max
+
+**Exit criteria C** (bounded edit distance, typo cases, strict candidate
+limits, separate benchmark — all committed artifacts) — **met**: 286 tests
+green; `benchmarks/results/2026-10-08T03-59-{11-510,23-203}-*-fuzzy-benchmark.json`
++ `…03-59-43-121Z-query-benchmark.json` +
+`runs/2026-10-08T03-59-45-029Z-scifact-bm25-k1.2-b0.75-fuzzy.json`;
+walkthrough in EXPERIMENTS.md §4.
 
 ---
 
@@ -311,3 +362,6 @@ benchmark separate from exact retrieval (exact vs fuzzy as its own experiment).
 | 2026-10-08 | M4-B | `data/eval/scifact-citations.json` | real citation graph over the SciFact corpus from Semantic Scholar (batch API, backoff): 5,183 ids requested → 4,879 resolved, 100,979 references → **2,015 in-corpus directed edges** (955 citing papers), 3,409 elided/no-refs counted as data; graphHash `3d7b80d2…` + corpus sha256 recorded in file; git `daae9c0` |
 | 2026-10-08 | M4-B | `runs/2026-10-08T03-26-*` (8 files) | fusion ablation on SciFact (300 judged, same protocol as M2), git `05601f9` clean: bm25 MAP 0.6436 → best fusion w=0.05 MAP 0.6451 / NDCG@10 0.6886; flat to w=0.2, degradation at 0.3, collapse at 0.5 (0.5163); every artifact embeds link_graph (hash, edges) + PageRank convergence (41 iters, 8.64e-7) + full strategy params; 257 tests green |
 | 2026-10-08 | M4-B | `benchmarks/results/2026-10-08T03-26-43-094Z-query-benchmark.json` | latency impact of mode D over 1,109 SciFact queries: bm25 1.008 ms avg / 0.953 median → bm25-pr 1.136 / 1.106 (+13%), all other stages unchanged; `bm25-pr` stage + `link_graph` block recorded; PageRank computed outside the timed loop; git `05601f9` clean |
+| 2026-10-08 | M4-C | `benchmarks/results/2026-10-08T03-59-11-510Z-fuzzy-benchmark.json` + `…03-59-23-203Z-…` | typo-recovery benchmark on SciFact: deterministic single-substitution corruption, 300/300 corruptible (0 skipped), identical judged subset in all arms, git `b713150` clean: clean 0.6436 MAP → typo-exact 0.5665 → fuzzy k=1 **0.6386 (93.5% of the 0.0772 gap recovered)**; k=2 MAP 0.6157 (distance-2 noise — measured negative), R@100 0.9342; latency 1.005 / 0.890 / 1.136 (k=1) / 4.340 (k=2) ms avg; all 300 corrections + fuzzy params/stats embedded |
+| 2026-10-08 | M4-C | `benchmarks/results/2026-10-08T03-59-43-121Z-query-benchmark.json` | fuzzy latency stages over 1,109 queries: bm25 0.887 ms avg → bm25-fuzzy 0.868 / max 2.966 → bm25-fuzzy2 1.232 / max 7.773; per-stage expansion stats recorded; documents the k=2 fix (first edit1×edit1 implementation measured max 1,554 ms in a pre-commit bench run, replaced by a bounded dictionary scan before this artifact); git `b713150` clean |
+| 2026-10-08 | M4-C | `runs/2026-10-08T03-59-45-029Z-scifact-bm25-k1.2-b0.75-fuzzy.json` | clean-query fuzzy arm (no corruption): 72 absent terms attempted in 30/300 queries → 157 variants (caps fired: expansionsPerTerm 8, expansionsPerQuery 3), MAP 0.6436 → 0.6353 (expansion trades precision when the miss is genuine OOV, not a typo), R@100 0.9276 → 0.9309, latency 1.089 ms avg; `fuzzy {params, stats}` block; git `b713150` clean |

@@ -70,12 +70,14 @@ cp .env.example .env
 The search service (REST/UI) arrives at M5. What runs today:
 
 ```bash
-npm test / npm run typecheck        # 257 tests
+npm test / npm run typecheck        # 286 tests
 npm run db:migrate                  # apply PostgreSQL migrations
 npm run corpus:scifact              # fetch + verify BEIR SciFact (md5-checked)
 npm run index:build -- --corpus scifact
 npm run eval:run -- --corpus scifact --strategy bm25     # → runs/*.json
 npm run eval:run -- --corpus scifact --strategy bm25-pr --pr-weight 0.05  # M4-B fusion
+npm run eval:run -- --corpus scifact --strategy bm25 --fuzzy  # M4-C fuzzy arm
+npm run bench:fuzzy                 # M4-C typo-recovery benchmark → benchmarks/results/
 npm run bench:query                 # → benchmarks/results/*.json
 
 npm run crawl                       # controlled crawl (configs/crawl.json)
@@ -89,12 +91,12 @@ Crawler details: [`docs/CRAWLER.md`](docs/CRAWLER.md) · schema & persistence:
 [`docs/DATABASE.md`](docs/DATABASE.md).
 Milestone plan: [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md).
 
-## Example queries (planned)
+## Example queries (for the M5 service)
 
 ```
 machine learning algorithms
 "neural network"                 ← phrase query
-seach  ← fuzzy/typo-tolerant     ← (low-df term expansion)
+seach  ← fuzzy/typo-tolerant     ← built: bounded edit-distance expansion (M4-C)
 ```
 
 ## Benchmarks & evaluation
@@ -109,6 +111,10 @@ seach  ← fuzzy/typo-tolerant     ← (low-df term expansion)
 - **Hybrid fusion** (M4-B, same protocol): BM25 + citation-graph PageRank at
   w = 0.05 → MAP **0.6451** (+0.0015); weight ablation from 0.01 to 0.5, latency
   +13% — real but marginal gain, reported as measured (EXPERIMENTS.md §3).
+- **Fuzzy typo recovery** (M4-C, separate deterministic typo benchmark): a
+  single-character typo costs −0.0771 MAP; bounded (k=1) edit-distance expansion
+  recovers **93.5% of the gap** (0.5665 → 0.6386 vs 0.6436 clean) at +0.13 ms;
+  k=2 measured negative — more recall, less precision (EXPERIMENTS.md §4).
 
 ## Screenshots
 
@@ -122,7 +128,7 @@ _pending (M5)_
 | M1 Indexing core | **done** |
 | M2 Retrieval + ranking + eval harness | **done** |
 | M3 Crawler + Postgres + link graph | **done** |
-| M4 PageRank + hybrid ranking + fuzzy | in progress |
+| M4 PageRank + hybrid ranking + fuzzy | **done** |
 | M5 API + Aero UI | pending |
 | M6 Benchmarks + evaluation | pending |
 | M7 Validation + viva prep | pending |

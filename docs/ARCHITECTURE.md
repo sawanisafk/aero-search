@@ -52,13 +52,13 @@ The system is split into three planes with hard boundaries:
       parse → normalize (shared tokenizer) → term lookup
         → candidate retrieval (boolean over postings)
         → phrase/proximity (positional intersection)
-        → fuzzy expansion (only for low-df terms)
+        → fuzzy expansion (absent terms only, bounded edit distance — M4-C)
                 ▼
       [RANKING ENGINE] pluggable signals → raw scores
                 ▼       → per-query normalization → fusion (mode config A–E)
       [POST-RANKING] snippet from stored positions, highlights, pagination
                 ▼
-      explain payload {bm25, phrase, proximity, pagerank, fuzzy, final}
+      explain payload {bm25, phrase, proximity, pagerank, final}
                 ▼
       [AERO UI] results + "Ranking Details" panel
 
@@ -115,7 +115,7 @@ interface TermPostingsView {
 }
 
 interface RankingSignal {
-  id: 'tfidf' | 'bm25' | 'phrase' | 'proximity' | 'pagerank' | 'fuzzy';
+  id: 'tfidf' | 'bm25' | 'phrase' | 'proximity' | 'pagerank';
   compute(q: ParsedQuery, candidates: number[], ctx: SearchContext): Map<number, RawScore>;
 }
 
@@ -203,8 +203,11 @@ Figures are estimates; benchmarks (`/benchmarks`) validate them.
 3. **BM25** — see §6.
 4. **Phrase** — `"a b c"` → positional intersection at offsets `pos, pos+1, pos+2`.
 5. **Proximity** — smallest window containing all query terms; score `k / (1 + (window − |q|))`.
-6. **Fuzzy** — only for low-df terms: vocabulary bucketed by length (`|Δlen| ≤ k`) + first-char
-   filter → bounded Levenshtein with early exit (threshold 1–2). Never all-pairs vocabulary scan.
+6. **Fuzzy** — absent terms only (typos / OOV), query time, no index change:
+   k=1 generates the ~27·len edit variants and probes the O(1) term hash;
+   k=2 (opt-in) is a bounded dictionary scan (length ±2 filter + early-exit
+   Levenshtein). Strict per-term/per-query caps; exact-match terms, phrases
+   and NOT subtrees untouched (SEARCH.md §6, built in M4-C).
 7. **PageRank** enters at fusion, not retrieval.
 
 ### Query pipeline
@@ -213,8 +216,10 @@ Figures are estimates; benchmarks (`/benchmarks`) validate them.
 parse (terms / quotes / fuzzy marker; bare adjacency = AND for the UI,
        = OR for evaluation — parseQuery(text, {implicitOperator}))
   → normalize (shared tokenize/stop/stem path with indexing)
-  → term lookup → candidates (boolean over postings)
-  → phrase/proximity (positional) → fuzzy expansion if needed
+  → fuzzy expansion of absent terms (bounded edit distance, opt-in — M4-C;
+    exact-match terms, phrases and NOT subtrees untouched)
+  → term lookup → candidates (boolean over postings; expanded leaf = union)
+  → phrase/proximity (positional)
   → per-signal scoring → normalization → fusion (mode A–E)
   → snippets (positions → best window + highlight offsets) → paginate
 ```
@@ -263,8 +268,9 @@ signals (from config, not code)
       (a) weighted linear: Σ wᵢ·ŝᵢ     — implemented for mode D (bm25-pr-w<weight>);
           weights swept in evaluation; config-driven modes A–E still planned
       (b) RRF rank fusion (k=60)        — weight-free, normalization-free baseline (planned)
-  → ScoredDoc { docId, score, breakdown: {bm25, phrase, proximity, pagerank, fuzzy} }
+  → ScoredDoc { docId, score, breakdown: {bm25, phrase, proximity, pagerank} }
       // `score` is the fused total; per-signal contributions live in `breakdown`
+      // (fuzzy is pre-scoring — it expands candidates, it is not a signal)
 ```
 
 BM25 (~0–40), PageRank (~0–0.02), phrase bonus (~0–2) are incommensurable — normalization is
@@ -357,7 +363,7 @@ Response shape (Fastify JSON Schema → generated OpenAPI):
     "score": 9.66,
     "explanation": {                        // present when explain=true
       "bm25": 7.82, "phrase": 1.20, "proximity": 0.31,
-      "pagerank": 0.14, "fuzzy": 0, "final": 9.66,
+      "pagerank": 0.14, "final": 9.66,
       "weights": { "bm25": 0.6, "phrase": 0.15, "pagerank": 0.1 },
       "matchedTerms": ["machine", "learn", "algorithm"],
       "docLength": 412,
