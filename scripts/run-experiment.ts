@@ -26,9 +26,11 @@
  *
  * Every artifact records: experiment id, timestamp, git sha + worktree state,
  * corpus id + sha256, query/qrels file hashes + counts, strategy id/mode/params,
- * metrics, latency stats, parse failures. Runs are evaluated against the
- * qrels query set (evaluation iterates qrels — a missing/failed query scores
- * zeros; it is never dropped silently).
+ * metrics, latency stats, and the full query disposition report (parse
+ * failures with category/stage/disposition, internal errors, lenient repairs,
+ * zero-result queries). Runs are evaluated against the qrels query set
+ * (evaluation iterates qrels — a missing/failed query scores zeros; it is
+ * never dropped silently).
  */
 
 import fs from 'node:fs';
@@ -144,7 +146,15 @@ function main(): void {
   }
 
   const t0 = performance.now();
-  const { run, latencyMs, parseFailures, fuzzy: fuzzyStats } = runQuerySet(
+  const {
+    run,
+    latencyMs,
+    parseFailures,
+    internalErrors,
+    lenientRepairs,
+    zeroResultQueries,
+    fuzzy: fuzzyStats,
+  } = runQuerySet(
     bundle,
     strategy,
     evalQueries,
@@ -170,7 +180,16 @@ function main(): void {
       file: queriesFile,
       sha256: hashFile('sha256', queriesFile),
       evaluated_queries: evalQueries.size,
+      // failures after the strict-first lenient path gave up; each entry keeps
+      // {queryId, code} (old shape) and adds corpus/text/category/stage/
+      // position/repairsApplied/disposition/retrievalExecuted (Plan A schema).
       parse_failures: parseFailures,
+      // non-QueryParseError exceptions — kept OUT of parse_failures on purpose
+      internal_errors: internalErrors,
+      // queries the lenient path had to edit to parse (source text preserved)
+      lenient_repairs: lenientRepairs,
+      // valid queries whose retrieval executed and returned nothing
+      zero_result_queries: zeroResultQueries,
     },
     qrels: {
       file: qrelsFile,
@@ -204,7 +223,16 @@ function main(): void {
 
   const fmt = (n: number): string => n.toFixed(4);
   console.log(`[experiment] ${corpus} · ${strategy.id} (mode ${strategy.mode})`);
-  console.log(`  queries    ${summary.queries} evaluated, ${parseFailures.length} parse failures`);
+  console.log(
+    `  queries    ${summary.queries} evaluated · ${parseFailures.length} parse failures` +
+      ` (${parseFailures.filter((f) => f.category === 'empty_query').length} empty,` +
+      ` ${parseFailures.filter((f) => f.category === 'unsupported_syntax').length} unsupported)` +
+      ` · ${internalErrors.length} internal errors`,
+  );
+  console.log(
+    `  lenient    ${lenientRepairs.length} queries repaired ·` +
+      ` ${zeroResultQueries.count} valid queries with zero results`,
+  );
   console.log(`  MAP        ${fmt(summary.map)}`);
   for (const k of kValues) {
     console.log(

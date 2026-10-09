@@ -66,6 +66,43 @@ Failures are typed `QueryParseError { code, position, message }` — never bare 
 Note the interaction with indexing: punctuation is not indexed, so a group containing
 only punctuation (`(+)`) is genuinely empty — the error mirrors what the index holds.
 
+### Lenient free-text parsing (evaluation harness only)
+
+`src/core/query/lenient.ts` wraps the strict parser with a **strict-first,
+error-targeted repair** loop for natural-language queries:
+
+1. Try `parseQuery` first — a query that parses strictly gets the exact strict
+   AST with **zero repairs** (`foo AND (bar OR baz)` and friends are never altered).
+2. Only on a `QueryParseError`, apply ONE minimal edit anchored at the exact
+   character the strict parser reported — remove a symbol-only `"…"` span
+   (`EMPTY_PHRASE`), drop the unclosed `"` (`UNBALANCED_QUOTE`), delete a
+   non-lexical `(...)` group (`EMPTY_GROUP`), drop a stray `)` or close an
+   unclosed `(` (`UNBALANCED_PAREN`) — then re-parse. Bounded + no-progress
+   guarded; no broad regex ever rewrites the query text.
+3. `EMPTY_QUERY` is never repaired (nothing to preserve); `MISSING_OPERAND` /
+   `UNEXPECTED_TOKEN` are deliberately not repaired (no evidence base — they
+   surface as the `unsupported_syntax` category); non-`QueryParseError`
+   exceptions always propagate untouched.
+
+Harness failure categories (`runQuerySet`, recorded in `query_set.parse_failures`):
+**`syntax`** (unrepairable strict error) · **`empty_query`** (no searchable terms
+after analysis) · **`unsupported_syntax`** (policy-refused codes). Internal engine
+errors are recorded separately in `query_set.internal_errors` — never re-labelled
+as parse failures. Repaired queries are listed in `query_set.lenient_repairs`;
+valid queries returning zero results in `query_set.zero_result_queries`.
+
+**Scope:** used by the evaluation harness (`scripts/lib/retrieval-run.ts`) only.
+The API/UI stays strict — `src/api/search-service.ts:527` (search) and `:700`
+(document highlighting) return `400 QUERY_PARSE` on purpose. The recommended
+future integration point is exactly those two call sites behind an explicit
+opt-in option (default off), so interactive parse-error underlining keeps its
+current contract; that is a separate, reviewed change.
+
+**Limitation (unchanged):** repairs preserve words, not symbols. The index has
+no symbol tokens, so a query about a symbol itself (`(!)` alone) parses after
+repair but still matches nothing — lenient parsing does not make symbols
+searchable.
+
 ---
 
 ## 2. Query analysis (index-time = query-time)
@@ -207,8 +244,9 @@ raw text
 ```
 
 `scripts/lib/retrieval-run.ts::runQuerySet` runs exactly this per query, times it,
-and records unparseable queries as failures (they score zeros in evaluation — never
-dropped silently).
+and records failure dispositions (repaired leniently → ranked for real; unrepairable
+→ typed failure record, ranked empty, scores zeros — never dropped silently; see §1
+"Lenient free-text parsing" for the four artifact fields).
 
 ---
 
@@ -217,6 +255,7 @@ dropped silently).
 | Suite | Covers |
 |---|---|
 | `tests/query.test.ts` | lexer, both implicit-operator modes, precedence, parens, phrases, every error code + position |
+| `tests/query-lenient.test.ts` | all 33 reported CQADupStack failures (strict code + recovered terms + repairs), strict-first equivalence on valid Boolean/phrase queries, classification inputs, termination |
 | `tests/boolean.test.ts` | set ops, `analyzeQuery` (incl. empty leaves), retrieval over a built index |
 | `tests/phrase.test.ts` | positional matching vs plain-AND counterexamples, stop-word gaps, windows, mode C fixtures |
 | `tests/fuzzy.test.ts` | hand-computed edit distances + sentinels, variant generation, typo recovery (`seach` → `search`), exact-match/phrase/NOT exclusions, every strict cap, determinism, identity pass-through, scoring integration |

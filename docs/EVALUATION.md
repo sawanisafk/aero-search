@@ -113,11 +113,19 @@ either mode. The UI (M5) defaults to the conjunction mode; the option lives in
    quality.
 5. **20 Newsgroups feeds no metric numbers** — it has no judgments. It exists for
    latency and retrieval-path development only.
-6. **CQADupStack unparseable queries** (same class as caveat 2: punctuation-only
-   groups/phrases analyze to ∅ → scored empty, never skipped): unix 13/1,072,
-   tex 20/2,906, programmers 0/876 — recorded per artifact under
-   `query_set.parse_failures`. A candidate for the analyzer/parser strengthening
-   step; metrics already account for them as zeros.
+6. **Unparseable queries (strict parser): 33 of 4,854** — unix 13/1,072,
+   tex 20/2,906, programmers 0/876 — all ordinary titles where `(`/`"` are
+   read as Boolean syntax (`(!)`, `"."`, stray `)`). The evaluation harness
+   now runs the **strict-first lenient path** (`src/core/query/lenient.ts`,
+   documented in SEARCH.md §1): each failure is repaired with a minimal
+   position-targeted edit, so these queries rank for real instead of scoring
+   zeros. Artifacts record every repair under `query_set.lenient_repairs`;
+   any residual failures keep their category/stage/disposition under
+   `query_set.parse_failures` (categories: `syntax`, `empty_query`,
+   `unsupported_syntax`); internal engine errors are kept separately under
+   `query_set.internal_errors` and never disguised as parse failures.
+   Regression-tested for all 33 (`tests/query-lenient.test.ts`).
+   The strict parser itself is unchanged (UI/API keep `400 QUERY_PARSE`).
 7. **Cross-dataset numbers are not comparable.** MAP/NDCG on programmers vs unix vs
    tex reflect different collections and judgment densities; report per-stack values
    side by side, never averaged into a single "CQADupStack score".
@@ -146,6 +154,17 @@ npm test                               # metrics golden tests
 
 Each run writes `runs/<timestamp>-<corpus>-<strategy>.json` containing
 `{experiment_id, timestamp, git{sha,clean,has_untracked}, corpus{hash,numDocs},
-query_set{sha256,evaluated,parse_failures}, qrels{sha256,rows}, strategy{id,mode,params},
-k_values, metrics, latency_ms, wall_ms}` — the evidence rule (DEVELOPMENT.md) applies
-verbatim: numbers in the report must come from these files.
+query_set{sha256,evaluated,parse_failures,internal_errors,lenient_repairs,zero_result_queries},
+qrels{sha256,rows}, strategy{id,mode,params}, topk, k_values, metrics, latency_ms, wall_ms}`
+— the evidence rule (DEVELOPMENT.md) applies verbatim: numbers in the report
+must come from these files.
+
+Query-disposition fields (added by the Plan A reporting patch; old artifacts
+carry only `parse_failures` as `{queryId, code}` rows):
+
+| Field | Meaning |
+|---|---|
+| `parse_failures[]` | non-internal query failures: `{queryId, corpus, text, code, category, stage, position, repairsApplied, disposition, retrievalExecuted}`; `category ∈ {syntax, empty_query, unsupported_syntax}` |
+| `internal_errors[]` | non-`QueryParseError` exceptions: `{queryId, corpus, text, phase, message, disposition, retrievalExecuted}` — never merged into `parse_failures` |
+| `lenient_repairs[]` | queries the lenient path had to edit: `{queryId, corpus, text, repairs:[{code, position, action, removed}]}` |
+| `zero_result_queries` | `{count, queryIds}` — valid queries whose retrieval executed and returned nothing (not failures) |

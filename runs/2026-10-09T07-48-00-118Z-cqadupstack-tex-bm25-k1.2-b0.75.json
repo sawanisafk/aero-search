@@ -1,0 +1,351 @@
+{
+  "experiment_id": "cqadupstack-tex-bm25-k1.2-b0.75",
+  "timestamp": "2026-10-09T07:48:00.118Z",
+  "git": {
+    "sha": "057b58fd9642489c4e61ffe4f573f914fa27cfa2",
+    "clean": false,
+    "has_untracked": true
+  },
+  "corpus": {
+    "name": "cqadupstack-tex",
+    "hash": "4a233f5bfe30a9d8afbf6a1fd3c62292407c5eb6fb97943c78bc2bb1b6e9b5aa",
+    "numDocs": 68184
+  },
+  "query_set": {
+    "file": "data\\eval\\cqadupstack-tex-queries.jsonl",
+    "sha256": "a0293ef3506d069e1b56b498ea15df70210582b10b859e1772a28267fc7c419d",
+    "evaluated_queries": 2906,
+    "parse_failures": [],
+    "internal_errors": [],
+    "lenient_repairs": [
+      {
+        "queryId": "169086",
+        "corpus": "cqadupstack-tex",
+        "text": "Why do we use a star (*) after a command in LaTeX?",
+        "repairs": [
+          {
+            "code": "EMPTY_GROUP",
+            "position": 21,
+            "action": "remove_group",
+            "removed": "(*)"
+          }
+        ]
+      },
+      {
+        "queryId": "80436",
+        "corpus": "cqadupstack-tex",
+        "text": "Testing for commercial at (@) in a string",
+        "repairs": [
+          {
+            "code": "EMPTY_GROUP",
+            "position": 26,
+            "action": "remove_group",
+            "removed": "(@)"
+          }
+        ]
+      },
+      {
+        "queryId": "89626",
+        "corpus": "cqadupstack-tex",
+        "text": "Marks like \"«»\"",
+        "repairs": [
+          {
+            "code": "EMPTY_PHRASE",
+            "position": 11,
+            "action": "remove_quoted_span",
+            "removed": "\"«»\""
+          }
+        ]
+      },
+      {
+        "queryId": "66893",
+        "corpus": "cqadupstack-tex",
+        "text": "How to get () instead of [] in bibliography list?",
+        "repairs": [
+          {
+            "code": "EMPTY_GROUP",
+            "position": 11,
+            "action": "remove_group",
+            "removed": "()"
+          }
+        ]
+      },
+      {
+        "queryId": "197958",
+        "corpus": "cqadupstack-tex",
+        "text": "How to break lines in a cell of table? a very long word contains \"::\" or \"_\"",
+        "repairs": [
+          {
+            "code": "EMPTY_PHRASE",
+            "position": 65,
+            "action": "remove_quoted_span",
+            "removed": "\"::\""
+          },
+          {
+            "code": "EMPTY_PHRASE",
+            "position": 69,
+            "action": "remove_quoted_span",
+            "removed": "\"_\""
+          }
+        ]
+      },
+      {
+        "queryId": "117252",
+        "corpus": "cqadupstack-tex",
+        "text": "A large \"#\" symbol",
+        "repairs": [
+          {
+            "code": "EMPTY_PHRASE",
+            "position": 8,
+            "action": "remove_quoted_span",
+            "removed": "\"#\""
+          }
+        ]
+      },
+      {
+        "queryId": "168146",
+        "corpus": "cqadupstack-tex",
+        "text": "Apostrophe (') in BibTeX not visible after compilation?",
+        "repairs": [
+          {
+            "code": "EMPTY_GROUP",
+            "position": 11,
+            "action": "remove_group",
+            "removed": "(')"
+          }
+        ]
+      },
+      {
+        "queryId": "50827",
+        "corpus": "cqadupstack-tex",
+        "text": "A simpleton's guide to (...)TeX workflow with emacs",
+        "repairs": [
+          {
+            "code": "EMPTY_GROUP",
+            "position": 23,
+            "action": "remove_group",
+            "removed": "(...)"
+          }
+        ]
+      },
+      {
+        "queryId": "134772",
+        "corpus": "cqadupstack-tex",
+        "text": "\\left. \\middle/ \\right doesn't match height \"/\" with \\rule",
+        "repairs": [
+          {
+            "code": "EMPTY_PHRASE",
+            "position": 44,
+            "action": "remove_quoted_span",
+            "removed": "\"/\""
+          }
+        ]
+      },
+      {
+        "queryId": "12773",
+        "corpus": "cqadupstack-tex",
+        "text": "\"(\" or \"\\left(\" parentheses?",
+        "repairs": [
+          {
+            "code": "EMPTY_PHRASE",
+            "position": 0,
+            "action": "remove_quoted_span",
+            "removed": "\"(\""
+          }
+        ]
+      },
+      {
+        "queryId": "165718",
+        "corpus": "cqadupstack-tex",
+        "text": "How to make a delimiter out of a character, eg \\right!, similar to \\right)",
+        "repairs": [
+          {
+            "code": "UNBALANCED_PAREN",
+            "position": 73,
+            "action": "remove_stray_rparen",
+            "removed": ")"
+          }
+        ]
+      },
+      {
+        "queryId": "74114",
+        "corpus": "cqadupstack-tex",
+        "text": "\\( \\) don't work with TOC?",
+        "repairs": [
+          {
+            "code": "EMPTY_GROUP",
+            "position": 1,
+            "action": "remove_group",
+            "removed": "( \\)"
+          }
+        ]
+      },
+      {
+        "queryId": "34670",
+        "corpus": "cqadupstack-tex",
+        "text": "babel shorthand \"| doesn't work in macros",
+        "repairs": [
+          {
+            "code": "UNBALANCED_QUOTE",
+            "position": 16,
+            "action": "remove_quote",
+            "removed": "\""
+          }
+        ]
+      },
+      {
+        "queryId": "28782",
+        "corpus": "cqadupstack-tex",
+        "text": "Left outer join symbol (⟕)",
+        "repairs": [
+          {
+            "code": "EMPTY_GROUP",
+            "position": 23,
+            "action": "remove_group",
+            "removed": "(⟕)"
+          }
+        ]
+      },
+      {
+        "queryId": "49115",
+        "corpus": "cqadupstack-tex",
+        "text": "Template (?) for Table Name Cards for a Formal Dinner",
+        "repairs": [
+          {
+            "code": "EMPTY_GROUP",
+            "position": 9,
+            "action": "remove_group",
+            "removed": "(?)"
+          }
+        ]
+      },
+      {
+        "queryId": "176855",
+        "corpus": "cqadupstack-tex",
+        "text": "exchanging the performance of \":“ and \"\\colon\"",
+        "repairs": [
+          {
+            "code": "UNBALANCED_QUOTE",
+            "position": 45,
+            "action": "remove_quote",
+            "removed": "\""
+          }
+        ]
+      },
+      {
+        "queryId": "55054",
+        "corpus": "cqadupstack-tex",
+        "text": "\\bordermatrix with brackets [ ] instead of parentheses ( )",
+        "repairs": [
+          {
+            "code": "EMPTY_GROUP",
+            "position": 55,
+            "action": "remove_group",
+            "removed": "( )"
+          }
+        ]
+      },
+      {
+        "queryId": "165126",
+        "corpus": "cqadupstack-tex",
+        "text": "How do I use the ampersand (&) inside a foreach or conditional (or other group/environment) when building tables?",
+        "repairs": [
+          {
+            "code": "EMPTY_GROUP",
+            "position": 27,
+            "action": "remove_group",
+            "removed": "(&)"
+          }
+        ]
+      },
+      {
+        "queryId": "108193",
+        "corpus": "cqadupstack-tex",
+        "text": "Not equal sign (≠) with a vertical bar",
+        "repairs": [
+          {
+            "code": "EMPTY_GROUP",
+            "position": 15,
+            "action": "remove_group",
+            "removed": "(≠)"
+          }
+        ]
+      },
+      {
+        "queryId": "124737",
+        "corpus": "cqadupstack-tex",
+        "text": "How to make citations appear within parentheses () instead of square brackets [ ]?",
+        "repairs": [
+          {
+            "code": "EMPTY_GROUP",
+            "position": 48,
+            "action": "remove_group",
+            "removed": "()"
+          }
+        ]
+      }
+    ],
+    "zero_result_queries": {
+      "count": 0,
+      "queryIds": []
+    }
+  },
+  "qrels": {
+    "file": "data\\eval\\cqadupstack-tex-qrels.tsv",
+    "sha256": "ec6952e95a549782a8d3b304ef0effaf12f24c567a7cbc0ae9f6d6328a43ff04",
+    "judged_queries": 2906,
+    "rows": 5154
+  },
+  "strategy": {
+    "id": "bm25-k1.2-b0.75",
+    "mode": "B",
+    "params": {
+      "k1": 1.2,
+      "b": 0.75
+    }
+  },
+  "topk": 1000,
+  "k_values": [
+    1,
+    5,
+    10,
+    100
+  ],
+  "metrics": {
+    "map": 0.2172707085614253,
+    "precision": {
+      "1": 0.18960770818995182,
+      "5": 0.06710254645560831,
+      "10": 0.04074328974535372,
+      "100": 0.006944253269098523
+    },
+    "recall": {
+      "1": 0.1579831928872397,
+      "5": 0.26350685235583,
+      "10": 0.31189049124943324,
+      "100": 0.49414404635454334
+    },
+    "f1": {
+      "1": 0.16597623814588722,
+      "5": 0.10174645091126194,
+      "10": 0.06857169110900227,
+      "100": 0.013431930800979885
+    },
+    "ndcg": {
+      "1": 0.18960770818995182,
+      "5": 0.22564503877020425,
+      "10": 0.2419279793364203,
+      "100": 0.2812164425535918
+    }
+  },
+  "latency_ms": {
+    "count": 2906,
+    "avg": 10.778313351686196,
+    "median": 8.701300000001538,
+    "p95": 23.98359999999957,
+    "p99": 35.11999999999989,
+    "min": 0.20019999999931315,
+    "max": 426.10410000000047
+  },
+  "wall_ms": 31329.395699999997
+}

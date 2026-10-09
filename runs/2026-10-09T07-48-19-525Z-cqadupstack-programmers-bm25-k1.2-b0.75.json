@@ -1,0 +1,84 @@
+{
+  "experiment_id": "cqadupstack-programmers-bm25-k1.2-b0.75",
+  "timestamp": "2026-10-09T07:48:19.525Z",
+  "git": {
+    "sha": "057b58fd9642489c4e61ffe4f573f914fa27cfa2",
+    "clean": false,
+    "has_untracked": true
+  },
+  "corpus": {
+    "name": "cqadupstack-programmers",
+    "hash": "c652ce07f0040a7ee4edad8d63d13e93170665dd0f412ab65eb607c80e1a583f",
+    "numDocs": 32176
+  },
+  "query_set": {
+    "file": "data\\eval\\cqadupstack-programmers-queries.jsonl",
+    "sha256": "c9ad8705445dace9a5bc81880a413a37275d5cc80098ef1ae6d1c6828794ceea",
+    "evaluated_queries": 876,
+    "parse_failures": [],
+    "internal_errors": [],
+    "lenient_repairs": [],
+    "zero_result_queries": {
+      "count": 0,
+      "queryIds": []
+    }
+  },
+  "qrels": {
+    "file": "data\\eval\\cqadupstack-programmers-qrels.tsv",
+    "sha256": "ed69afa873c64d34298792d694c82c4293e4b7e3c6ea3edc7a73662d4b0cba76",
+    "judged_queries": 876,
+    "rows": 1675
+  },
+  "strategy": {
+    "id": "bm25-k1.2-b0.75",
+    "mode": "B",
+    "params": {
+      "k1": 1.2,
+      "b": 0.75
+    }
+  },
+  "topk": 100,
+  "k_values": [
+    1,
+    5,
+    10,
+    100
+  ],
+  "metrics": {
+    "map": 0.2625893375533568,
+    "precision": {
+      "1": 0.23515981735159816,
+      "5": 0.08105022831050272,
+      "10": 0.05000000000000033,
+      "100": 0.008881278538812678
+    },
+    "recall": {
+      "1": 0.1982242516489092,
+      "5": 0.304315249691962,
+      "10": 0.3629950862287444,
+      "100": 0.58694313016521
+    },
+    "f1": {
+      "1": 0.20797554804404123,
+      "5": 0.12209180752694007,
+      "10": 0.08444513398136994,
+      "100": 0.01720782862627579
+    },
+    "ndcg": {
+      "1": 0.23515981735159816,
+      "5": 0.26833819487078586,
+      "10": 0.28874749808735295,
+      "100": 0.3384903097518087
+    }
+  },
+  "latency_ms": {
+    "count": 876,
+    "avg": 4.706681621004567,
+    "median": 4.1527999999999565,
+    "p95": 10.186699999999973,
+    "p99": 13.503400000000056,
+    "min": 0.16030000000000655,
+    "max": 15.834100000000035
+  },
+  "wall_ms": 4126.2465999999995
+}

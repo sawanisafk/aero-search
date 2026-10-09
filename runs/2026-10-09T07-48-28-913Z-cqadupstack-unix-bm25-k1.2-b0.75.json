@@ -1,0 +1,272 @@
+{
+  "experiment_id": "cqadupstack-unix-bm25-k1.2-b0.75",
+  "timestamp": "2026-10-09T07:48:28.913Z",
+  "git": {
+    "sha": "057b58fd9642489c4e61ffe4f573f914fa27cfa2",
+    "clean": false,
+    "has_untracked": true
+  },
+  "corpus": {
+    "name": "cqadupstack-unix",
+    "hash": "a52e7fb1f7370613eae79143b75ce0ea0a4be1bb2c908c6d9f83431fe2cf9a1a",
+    "numDocs": 47382
+  },
+  "query_set": {
+    "file": "data\\eval\\cqadupstack-unix-queries.jsonl",
+    "sha256": "f0af88a2ba4dc9e4249c046f54ee709bbef8656773ca6b98fe3d6d1cb7c678c9",
+    "evaluated_queries": 1072,
+    "parse_failures": [],
+    "internal_errors": [],
+    "lenient_repairs": [
+      {
+        "queryId": "3747",
+        "corpus": "cqadupstack-unix",
+        "text": "Understanding the exclamation mark (!) in bash",
+        "repairs": [
+          {
+            "code": "EMPTY_GROUP",
+            "position": 35,
+            "action": "remove_group",
+            "removed": "(!)"
+          }
+        ]
+      },
+      {
+        "queryId": "130824",
+        "corpus": "cqadupstack-unix",
+        "text": "Difference between \".\" and \"./\" while setting the environment variables using export?",
+        "repairs": [
+          {
+            "code": "EMPTY_PHRASE",
+            "position": 19,
+            "action": "remove_quoted_span",
+            "removed": "\".\""
+          },
+          {
+            "code": "EMPTY_PHRASE",
+            "position": 24,
+            "action": "remove_quoted_span",
+            "removed": "\"./\""
+          }
+        ]
+      },
+      {
+        "queryId": "98693",
+        "corpus": "cqadupstack-unix",
+        "text": "getaddrinfo() from shell?",
+        "repairs": [
+          {
+            "code": "EMPTY_GROUP",
+            "position": 11,
+            "action": "remove_group",
+            "removed": "()"
+          }
+        ]
+      },
+      {
+        "queryId": "17815",
+        "corpus": "cqadupstack-unix",
+        "text": "running script with \". \" and with \"source \"",
+        "repairs": [
+          {
+            "code": "EMPTY_PHRASE",
+            "position": 20,
+            "action": "remove_quoted_span",
+            "removed": "\". \""
+          }
+        ]
+      },
+      {
+        "queryId": "110822",
+        "corpus": "cqadupstack-unix",
+        "text": "Using bash \"&\" operator with \";\" delineator?",
+        "repairs": [
+          {
+            "code": "EMPTY_PHRASE",
+            "position": 11,
+            "action": "remove_quoted_span",
+            "removed": "\"&\""
+          },
+          {
+            "code": "EMPTY_PHRASE",
+            "position": 26,
+            "action": "remove_quoted_span",
+            "removed": "\";\""
+          }
+        ]
+      },
+      {
+        "queryId": "73750",
+        "corpus": "cqadupstack-unix",
+        "text": "difference between function foo() {} and foo() {}",
+        "repairs": [
+          {
+            "code": "EMPTY_GROUP",
+            "position": 31,
+            "action": "remove_group",
+            "removed": "()"
+          },
+          {
+            "code": "EMPTY_GROUP",
+            "position": 42,
+            "action": "remove_group",
+            "removed": "()"
+          }
+        ]
+      },
+      {
+        "queryId": "61401",
+        "corpus": "cqadupstack-unix",
+        "text": "\"~/\" receives a permission denied error in Csh",
+        "repairs": [
+          {
+            "code": "EMPTY_PHRASE",
+            "position": 0,
+            "action": "remove_quoted_span",
+            "removed": "\"~/\""
+          }
+        ]
+      },
+      {
+        "queryId": "151566",
+        "corpus": "cqadupstack-unix",
+        "text": "How can I pass a filename containing percent signs (%) as a parameter to a shell script in cron?",
+        "repairs": [
+          {
+            "code": "EMPTY_GROUP",
+            "position": 51,
+            "action": "remove_group",
+            "removed": "(%)"
+          }
+        ]
+      },
+      {
+        "queryId": "80934",
+        "corpus": "cqadupstack-unix",
+        "text": "C Shell Array Declaration Syntax, () vs {}",
+        "repairs": [
+          {
+            "code": "EMPTY_GROUP",
+            "position": 34,
+            "action": "remove_group",
+            "removed": "()"
+          }
+        ]
+      },
+      {
+        "queryId": "85021",
+        "corpus": "cqadupstack-unix",
+        "text": "In Bash scripting, what's the meaning of \" $! \"?",
+        "repairs": [
+          {
+            "code": "EMPTY_PHRASE",
+            "position": 41,
+            "action": "remove_quoted_span",
+            "removed": "\" $! \""
+          }
+        ]
+      },
+      {
+        "queryId": "9361",
+        "corpus": "cqadupstack-unix",
+        "text": "What does \"-\" mean as an argument to a command?",
+        "repairs": [
+          {
+            "code": "EMPTY_PHRASE",
+            "position": 10,
+            "action": "remove_quoted_span",
+            "removed": "\"-\""
+          }
+        ]
+      },
+      {
+        "queryId": "94345",
+        "corpus": "cqadupstack-unix",
+        "text": "Can i use & variable of sed for doing operation inside $()?",
+        "repairs": [
+          {
+            "code": "EMPTY_GROUP",
+            "position": 56,
+            "action": "remove_group",
+            "removed": "()"
+          }
+        ]
+      },
+      {
+        "queryId": "96579",
+        "corpus": "cqadupstack-unix",
+        "text": "What is the difference between ' and \"?",
+        "repairs": [
+          {
+            "code": "UNBALANCED_QUOTE",
+            "position": 37,
+            "action": "remove_quote",
+            "removed": "\""
+          }
+        ]
+      }
+    ],
+    "zero_result_queries": {
+      "count": 0,
+      "queryIds": []
+    }
+  },
+  "qrels": {
+    "file": "data\\eval\\cqadupstack-unix-qrels.tsv",
+    "sha256": "a7bd24ce081b0bb892602e9b0067017dc66fd03e7593563ad095cb3cd05e92ed",
+    "judged_queries": 1072,
+    "rows": 1693
+  },
+  "strategy": {
+    "id": "bm25-k1.2-b0.75",
+    "mode": "B",
+    "params": {
+      "k1": 1.2,
+      "b": 0.75
+    }
+  },
+  "topk": 100,
+  "k_values": [
+    1,
+    5,
+    10,
+    100
+  ],
+  "metrics": {
+    "map": 0.26518388408002747,
+    "precision": {
+      "1": 0.24253731343283583,
+      "5": 0.07388059701492589,
+      "10": 0.044123134328358564,
+      "100": 0.007192164179104378
+    },
+    "recall": {
+      "1": 0.2116876554726368,
+      "5": 0.3065821732682741,
+      "10": 0.3624057340358646,
+      "100": 0.5590045850190439
+    },
+    "f1": {
+      "1": 0.22046333458756626,
+      "5": 0.11570435161853032,
+      "10": 0.07695904050937574,
+      "100": 0.014136372183997938
+    },
+    "ndcg": {
+      "1": 0.24253731343283583,
+      "5": 0.27144574121103987,
+      "10": 0.29011815299802207,
+      "100": 0.33211728150112985
+    }
+  },
+  "latency_ms": {
+    "count": 1072,
+    "avg": 7.74619263059701,
+    "median": 6.413500000000056,
+    "p95": 16.329499999999825,
+    "p99": 23.575299999999515,
+    "min": 0.27590000000003556,
+    "max": 632.2342000000003
+  },
+  "wall_ms": 8308.1742
+}
