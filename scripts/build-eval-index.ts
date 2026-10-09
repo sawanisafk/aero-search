@@ -5,6 +5,7 @@
  *   npx tsx scripts/build-eval-index.ts --corpus scifact
  *   npx tsx scripts/build-eval-index.ts --corpus 20newsgroups
  *   npx tsx scripts/build-eval-index.ts --corpus static-v1
+ *   npx tsx scripts/build-eval-index.ts --corpus cqadupstack-tierb   (or -programmers/-unix/-tex, -tierc)
  *
  * Outputs (both gitignored, rebuildable from the corpus + manifest):
  *   data/index/<corpus>.aidx        serialized IndexData (corpusHash inside)
@@ -87,7 +88,9 @@ function loadStaticCorpus(dir: string): {
 function main(): void {
   const corpus = argValue('--corpus') ?? process.argv[2];
   if (corpus === undefined || corpus.startsWith('--')) {
-    throw new Error('usage: build-eval-index.ts --corpus scifact|20newsgroups|static-v1');
+    throw new Error(
+      'usage: build-eval-index.ts --corpus cqadupstack-tierb|cqadupstack-programmers|cqadupstack-unix|cqadupstack-tex|cqadupstack-tierc|scifact|20newsgroups|static-v1',
+    );
   }
   const dir = path.join(process.cwd(), 'data', 'corpora', corpus);
   if (!fs.existsSync(dir)) throw new Error(`corpus directory not found: ${dir}`);

@@ -30,12 +30,14 @@
     "corpus:static": "tsx scripts/build-static-corpus.ts",
     "corpus:scifact": "tsx scripts/fetch-scifact.ts",
     "corpus:20news": "tsx scripts/fetch-20newsgroups.ts",
+    "corpus:cqadupstack": "tsx scripts/fetch-cqadupstack.ts",
     "index:build": "tsx scripts/build-eval-index.ts",
     "eval:run": "tsx scripts/run-experiment.ts",
     "db:migrate": "tsx scripts/db-migrate.ts",
     "crawl": "tsx scripts/crawl.ts",
     "index:crawl": "tsx scripts/build-crawl-index.ts",
-    "pagerank:build": "tsx scripts/build-pagerank.ts"
+    "pagerank:build": "tsx scripts/build-pagerank.ts",
+    "trace:sample": "tsx scripts/trace-sample.ts"
   },
   "devDependencies": {
     "@types/node": "^26.6.4",

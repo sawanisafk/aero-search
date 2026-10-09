@@ -450,8 +450,8 @@ describe('GET /api/benchmarks', () => {
     expect(body.note).toContain('not recomputed');
     expect(body.runs.length).toBeGreaterThanOrEqual(10);
     const bm25 = body.runs.find(
-      (r: { strategy: string | null; fuzzy: boolean }) =>
-        r.strategy === 'bm25-k1.2-b0.75' && r.fuzzy === false,
+      (r: { corpus: string | null; strategy: string | null; fuzzy: boolean }) =>
+        r.corpus === 'scifact' && r.strategy === 'bm25-k1.2-b0.75' && r.fuzzy === false,
     );
     expect(bm25).toBeDefined();
     expect(bm25.map).toBeCloseTo(0.6436, 4);

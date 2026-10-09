@@ -31,7 +31,7 @@ npm run web:dev      # Vite on :5173 proxying /api + /health to :3000
 |---|---|---|
 | `HOST` | `127.0.0.1` | bind address (use `0.0.0.0` in containers) |
 | `PORT` | `3000` | HTTP port |
-| `AERO_CORPUS` | `scifact` | default corpus for `/api/search` and `/api/stats` |
+ | `AERO_CORPUS` | `cqadupstack-tierb` | default corpus for `/api/search` and `/api/stats` |
 | `AERO_STRATEGY` | `bm25` | default ranking strategy |
 | `AERO_IMPLICIT` | `or` | default operator between bare terms (`and`\|`or`) |
 | `AERO_CORS_ORIGINS` | `http://localhost:5173,http://127.0.0.1:5173` | comma list; **empty string = same-origin only** |

@@ -1,0 +1,159 @@
+{
+  "experiment_id": "cqadupstack-tex-bm25-k1.2-b0.75",
+  "timestamp": "2026-10-09T06:34:08.743Z",
+  "git": {
+    "sha": "087be968fae4b08731f8d3ed106ec6d52979091d",
+    "clean": false,
+    "has_untracked": true
+  },
+  "corpus": {
+    "name": "cqadupstack-tex",
+    "hash": "4a233f5bfe30a9d8afbf6a1fd3c62292407c5eb6fb97943c78bc2bb1b6e9b5aa",
+    "numDocs": 68184
+  },
+  "query_set": {
+    "file": "data\\eval\\cqadupstack-tex-queries.jsonl",
+    "sha256": "a0293ef3506d069e1b56b498ea15df70210582b10b859e1772a28267fc7c419d",
+    "evaluated_queries": 2906,
+    "parse_failures": [
+      {
+        "queryId": "169086",
+        "code": "EMPTY_GROUP"
+      },
+      {
+        "queryId": "80436",
+        "code": "EMPTY_GROUP"
+      },
+      {
+        "queryId": "89626",
+        "code": "EMPTY_PHRASE"
+      },
+      {
+        "queryId": "66893",
+        "code": "EMPTY_GROUP"
+      },
+      {
+        "queryId": "197958",
+        "code": "EMPTY_PHRASE"
+      },
+      {
+        "queryId": "117252",
+        "code": "EMPTY_PHRASE"
+      },
+      {
+        "queryId": "168146",
+        "code": "EMPTY_GROUP"
+      },
+      {
+        "queryId": "50827",
+        "code": "EMPTY_GROUP"
+      },
+      {
+        "queryId": "134772",
+        "code": "EMPTY_PHRASE"
+      },
+      {
+        "queryId": "12773",
+        "code": "EMPTY_PHRASE"
+      },
+      {
+        "queryId": "165718",
+        "code": "UNBALANCED_PAREN"
+      },
+      {
+        "queryId": "74114",
+        "code": "EMPTY_GROUP"
+      },
+      {
+        "queryId": "34670",
+        "code": "UNBALANCED_QUOTE"
+      },
+      {
+        "queryId": "28782",
+        "code": "EMPTY_GROUP"
+      },
+      {
+        "queryId": "49115",
+        "code": "EMPTY_GROUP"
+      },
+      {
+        "queryId": "176855",
+        "code": "UNBALANCED_QUOTE"
+      },
+      {
+        "queryId": "55054",
+        "code": "EMPTY_GROUP"
+      },
+      {
+        "queryId": "165126",
+        "code": "EMPTY_GROUP"
+      },
+      {
+        "queryId": "108193",
+        "code": "EMPTY_GROUP"
+      },
+      {
+        "queryId": "124737",
+        "code": "EMPTY_GROUP"
+      }
+    ]
+  },
+  "qrels": {
+    "file": "data\\eval\\cqadupstack-tex-qrels.tsv",
+    "sha256": "ec6952e95a549782a8d3b304ef0effaf12f24c567a7cbc0ae9f6d6328a43ff04",
+    "judged_queries": 2906,
+    "rows": 5154
+  },
+  "strategy": {
+    "id": "bm25-k1.2-b0.75",
+    "mode": "B",
+    "params": {
+      "k1": 1.2,
+      "b": 0.75
+    }
+  },
+  "topk": 100,
+  "k_values": [
+    1,
+    5,
+    10,
+    100
+  ],
+  "metrics": {
+    "map": 0.21399299916339,
+    "precision": {
+      "1": 0.1882312456985547,
+      "5": 0.06648313833447965,
+      "10": 0.040433585684789386,
+      "100": 0.00689951823812811
+    },
+    "recall": {
+      "1": 0.15660673039584258,
+      "5": 0.26063922216541935,
+      "10": 0.3090228610590226,
+      "100": 0.4901293640879684
+    },
+    "f1": {
+      "1": 0.1645997756544901,
+      "5": 0.1007427803446183,
+      "10": 0.06801821842889502,
+      "100": 0.013343611209226785
+    },
+    "ndcg": {
+      "1": 0.1882312456985547,
+      "5": 0.2233305768428862,
+      "10": 0.23961351740910217,
+      "100": 0.2786171927717497
+    }
+  },
+  "latency_ms": {
+    "count": 2906,
+    "avg": 10.798617515485219,
+    "median": 8.745649999999841,
+    "p95": 24.126100000001315,
+    "p99": 36.60059999999794,
+    "min": 0.1157999999995809,
+    "max": 428.3809000000001
+  },
+  "wall_ms": 31391.8092
+}

@@ -86,8 +86,11 @@ docker compose up --build         # postgres + api + web(:8080)   [docs/DEPLOYME
 
 # engine + evidence
 npm run db:migrate                # PostgreSQL migrations
-npm run corpus:scifact            # fetch + verify BEIR SciFact (md5-checked)
-npm run index:build -- --corpus scifact
+npm run corpus:cqadupstack        # fetch + validate CQADupStack Tier B (programmers/unix/tex)
+npm run index:build -- --corpus cqadupstack-tierb     # default demo corpus
+npm run eval:run -- --corpus cqadupstack-tierb --strategy bm25 --qrels data/eval/cqadupstack-tierb-unix-qrels.tsv --queries data/eval/cqadupstack-tierb-unix-queries.jsonl
+npm run trace:sample              # real per-stage Trace query artifact → data/eval/
+npm run corpus:scifact            # SciFact baseline (retired as primary, kept for comparison)
 npm run eval:run -- --corpus scifact --strategy bm25            # → runs/*.json
 npm run eval:run -- --corpus scifact --strategy bm25-pr --pr-weight 0.05
 npm run eval:run -- --corpus scifact --strategy bm25 --fuzzy
@@ -112,8 +115,13 @@ the parsed AST, stemmed terms, and per-stage timings. Walkthrough: [`docs/DEMO.m
 - Benchmarks: `benchmarks/` — configs committed, results committed as evidence
   (1K / 10K / 100K documents; indexing time, query latency, index size, RSS).
 - Evaluation: metrics in `src/eval` (P@K, R@K, F1, MAP, NDCG@K) over committed BEIR
-  SciFact judgments (md5-verified corpus, 300 test queries). Experiment runs land in
-  `runs/`. Every reported number carries a config hash + git SHA.
+  judgments. Default corpus: **CQADupStack Tier B** (147,742 technical Q&A docs;
+  per-stack metrics — never aggregated across datasets), artifacts in `runs/`;
+  SciFact baseline (300 queries) preserved. Every reported number carries a config
+  hash + git SHA.
+- **CQADupStack BM25** (k1.2/b0.75, per stack, MAP / NDCG@10): programmers
+  0.2638 / 0.2887 · unix 0.2645 / 0.2881 · tex 0.2151 / 0.2396; p50 latency
+  4.3 / 6.8 / 8.8 ms (topk 1000 artifacts in `runs/`).
 - **First results** (mode A vs B vs C + latency): [`docs/EXPERIMENTS.md`](docs/EXPERIMENTS.md) —
   e.g. BM25 MAP **0.6436** vs TF-IDF 0.4421 on SciFact, sub-4 ms median e2e queries.
 - **Hybrid fusion** (M4-B, same protocol): BM25 + citation-graph PageRank at

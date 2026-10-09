@@ -1,0 +1,54 @@
+{
+  "name": "cqadupstack",
+  "source": "CQADupStack technical Q&A stacks via the BEIR benchmark (Thakur et al., EMNLP 2021); originally distributed by the University of Melbourne NLP group (nlp.cis.unimelb.edu.au/resources/cqadupstack/, unreachable at retrieval time); derived from the Stack Exchange data dump",
+  "dataset_url": "https://public.ukp.informatik.tu-darmstadt.de/thakur/BEIR/datasets/cqadupstack.zip",
+  "zip_size_bytes": 5343728040,
+  "retrieval": "HTTP range fetch of individual zip members (ZIP64 central directory from a 128 KB tail) + Hugging Face datasets-server /rows for queries (the zip queries.jsonl embeds full duplicate-question bodies, 92 MB-2.7 GB compressed per stack)",
+  "hf_dataset": "https://huggingface.co/datasets/BeIR/cqadupstack",
+  "hf_revision": "e84b7220ce5a4e6c49aeb568983b0ec5a7584c2c",
+  "retrieved": "2026-10-09",
+  "counts": {
+    "cqadupstack-tierb": {
+      "stacks": [
+        "programmers",
+        "unix",
+        "tex"
+      ],
+      "documents": 147742,
+      "queries": 4854,
+      "judgments": 8522,
+      "default_demo": true,
+      "corpus_jsonl_sha256": "ed717c1f04609d26411630978fff95da10bd649ee58e82784bb488bf9489d8d5",
+      "id_scheme": "<stack>:<originalId> (Stack Exchange post ids collide across sites)"
+    }
+  },
+  "merged_eval_policy": "Merged-tier document ids are <stack>:<originalId> (Stack Exchange post ids collide across sites — verified: 110557 exists in both programmers and unix). Evaluate each dataset separately against the merged index using cqadupstack-<tier>-<stack>-{queries.jsonl,qrels.tsv} (qrels corpus ids carry the same prefix); documents from other stacks are unjudged and contribute zero gain. Qrels are never merged across datasets, and metrics from different datasets are not comparable.",
+  "stacks": {
+    "programmers": {
+      "documents": 32176,
+      "queries": 876,
+      "judgments": 1675,
+      "corpus_jsonl_sha256": "c652ce07f0040a7ee4edad8d63d13e93170665dd0f412ab65eb607c80e1a583f",
+      "queries_jsonl_sha256": "c9ad8705445dace9a5bc81880a413a37275d5cc80098ef1ae6d1c6828794ceea",
+      "qrels_test_tsv_sha256": "ed69afa873c64d34298792d694c82c4293e4b7e3c6ea3edc7a73662d4b0cba76"
+    },
+    "unix": {
+      "documents": 47382,
+      "queries": 1072,
+      "judgments": 1693,
+      "corpus_jsonl_sha256": "a52e7fb1f7370613eae79143b75ce0ea0a4be1bb2c908c6d9f83431fe2cf9a1a",
+      "queries_jsonl_sha256": "f0af88a2ba4dc9e4249c046f54ee709bbef8656773ca6b98fe3d6d1cb7c678c9",
+      "qrels_test_tsv_sha256": "a7bd24ce081b0bb892602e9b0067017dc66fd03e7593563ad095cb3cd05e92ed"
+    },
+    "tex": {
+      "documents": 68184,
+      "queries": 2906,
+      "judgments": 5154,
+      "corpus_jsonl_sha256": "4a233f5bfe30a9d8afbf6a1fd3c62292407c5eb6fb97943c78bc2bb1b6e9b5aa",
+      "queries_jsonl_sha256": "a0293ef3506d069e1b56b498ea15df70210582b10b859e1772a28267fc7c419d",
+      "qrels_test_tsv_sha256": "ec6952e95a549782a8d3b304ef0effaf12f24c567a7cbc0ae9f6d6328a43ff04"
+    }
+  },
+  "license": "Derived from the Stack Exchange data dump as redistributed by BEIR; the BEIR Hugging Face card lists cc-by-sa-4.0. The original CQADupStack distribution site was unreachable at retrieval time, so the exact CC BY-SA version and attribution requirements must be verified before redistributing the data. Used here for research/evaluation with attribution to CQADupStack and BEIR (Thakur et al., \"BEIR: A Heterogeneous Benchmark for Zero-shot Evaluation of Information Retrieval Models\", EMNLP 2021).",
+  "generator": "scripts/fetch-cqadupstack.ts"
+}

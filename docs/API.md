@@ -63,7 +63,7 @@ The retrieval pipeline.
 | Param | Type | Default | Notes |
 |---|---|---|---|
 | `q` | string | *required* | 1…512 chars; Boolean syntax: `AND OR NOT "phrases"` |
-| `corpus` | string | `scifact` (`AERO_CORPUS`) | must be built (`data/index/<name>.aidx`) |
+| `corpus` | string | `cqadupstack-tierb` (`AERO_CORPUS`) | must be built (`data/index/<name>.aidx`) |
 | `strategy` | string | `bm25` (`AERO_STRATEGY`) | `boolean`, `tfidf`, `bm25`, `bm25-phrase`, `bm25-phrase-proximity`, `bm25-pr` |
 | `k` | int | 10 | results per page (≤ 50) |
 | `page` | int | 1 | 1-based paging over candidates |

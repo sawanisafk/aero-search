@@ -1,0 +1,131 @@
+{
+  "experiment_id": "cqadupstack-tierb-bm25-k1.2-b0.75",
+  "timestamp": "2026-10-09T06:35:12.579Z",
+  "git": {
+    "sha": "087be968fae4b08731f8d3ed106ec6d52979091d",
+    "clean": false,
+    "has_untracked": true
+  },
+  "corpus": {
+    "name": "cqadupstack-tierb",
+    "hash": "ed717c1f04609d26411630978fff95da10bd649ee58e82784bb488bf9489d8d5",
+    "numDocs": 147742
+  },
+  "query_set": {
+    "file": "data/eval/cqadupstack-tierb-unix-queries.jsonl",
+    "sha256": "f0af88a2ba4dc9e4249c046f54ee709bbef8656773ca6b98fe3d6d1cb7c678c9",
+    "evaluated_queries": 1072,
+    "parse_failures": [
+      {
+        "queryId": "3747",
+        "code": "EMPTY_GROUP"
+      },
+      {
+        "queryId": "130824",
+        "code": "EMPTY_PHRASE"
+      },
+      {
+        "queryId": "98693",
+        "code": "EMPTY_GROUP"
+      },
+      {
+        "queryId": "17815",
+        "code": "EMPTY_PHRASE"
+      },
+      {
+        "queryId": "110822",
+        "code": "EMPTY_PHRASE"
+      },
+      {
+        "queryId": "73750",
+        "code": "EMPTY_GROUP"
+      },
+      {
+        "queryId": "61401",
+        "code": "EMPTY_PHRASE"
+      },
+      {
+        "queryId": "151566",
+        "code": "EMPTY_GROUP"
+      },
+      {
+        "queryId": "80934",
+        "code": "EMPTY_GROUP"
+      },
+      {
+        "queryId": "85021",
+        "code": "EMPTY_PHRASE"
+      },
+      {
+        "queryId": "9361",
+        "code": "EMPTY_PHRASE"
+      },
+      {
+        "queryId": "94345",
+        "code": "EMPTY_GROUP"
+      },
+      {
+        "queryId": "96579",
+        "code": "UNBALANCED_QUOTE"
+      }
+    ]
+  },
+  "qrels": {
+    "file": "data/eval/cqadupstack-tierb-unix-qrels.tsv",
+    "sha256": "248ace4f86b9f0a7b7934903b06948ca856ec38d72d411b9cc563534672df778",
+    "judged_queries": 1072,
+    "rows": 1693
+  },
+  "strategy": {
+    "id": "bm25-k1.2-b0.75",
+    "mode": "B",
+    "params": {
+      "k1": 1.2,
+      "b": 0.75
+    }
+  },
+  "topk": 100,
+  "k_values": [
+    1,
+    5,
+    10,
+    100
+  ],
+  "metrics": {
+    "map": 0.2540789287996076,
+    "precision": {
+      "1": 0.23041044776119404,
+      "5": 0.07164179104477661,
+      "10": 0.04169776119403018,
+      "100": 0.006940298507462592
+    },
+    "recall": {
+      "1": 0.20142646144278606,
+      "5": 0.2989699937810945,
+      "10": 0.3437956594089989,
+      "100": 0.5374533012592714
+    },
+    "f1": {
+      "1": 0.20958025001045189,
+      "5": 0.11242091759815602,
+      "10": 0.07281629270991141,
+      "100": 0.013638595161102877
+    },
+    "ndcg": {
+      "1": 0.23041044776119404,
+      "5": 0.26159659960034004,
+      "10": 0.27689001119796786,
+      "100": 0.31893316679083566
+    }
+  },
+  "latency_ms": {
+    "count": 1072,
+    "avg": 22.24397639925372,
+    "median": 18.121599999999717,
+    "p95": 50.04190000000017,
+    "p99": 66.53269999999975,
+    "min": 0.11019999999916763,
+    "max": 1437.4412000000011
+  },
+  "wall_ms": 23850.4912
+}

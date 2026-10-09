@@ -24,7 +24,7 @@ interface Opts {
 }
 
 const DEFAULT_OPTS: Opts = {
-  corpus: 'scifact',
+  corpus: 'cqadupstack-tierb',
   strategy: 'bm25',
   k: 10,
   fuzzy: false,

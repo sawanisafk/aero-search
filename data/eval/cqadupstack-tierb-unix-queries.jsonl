@@ -1,0 +1,1072 @@
+{"_id":"103549","title":"","text":"Yanked USB Key During Move"}
+{"_id":"97157","title":"","text":"Syntax error in shell script"}
+{"_id":"272","title":"","text":"Simple file transfer"}
+{"_id":"64672","title":"","text":"How to cut (select) a field from text line counting from the end?"}
+{"_id":"46796","title":"","text":"How to pass a variable to an sh child process?"}
+{"_id":"49567","title":"","text":"How do you access internet in RHEL 5 using Android smartphone USB LAN?"}
+{"_id":"96131","title":"","text":"What does * next to the file name mean in the output of ls?"}
+{"_id":"137955","title":"","text":"Directory permissions for read/write children"}
+{"_id":"44421","title":"","text":"One machine & two keyboard, mouse & monitors"}
+{"_id":"111331","title":"","text":"Evolution of the shell"}
+{"_id":"629","title":"","text":"Is it possible to rename a Unix user account?"}
+{"_id":"22674","title":"","text":"Shell script for moving oldest files?"}
+{"_id":"60901","title":"","text":"Recover ext3 files from hard disk with bad sector"}
+{"_id":"60905","title":"","text":"Shell script to delete all files which are older"}
+{"_id":"92880","title":"","text":"How to print dates between two different dates"}
+{"_id":"32222","title":"","text":"Shell script executing in the terminal but not from shell script file"}
+{"_id":"75289","title":"","text":"difference between non-builtin 'test' and '['"}
+{"_id":"3747","title":"","text":"Understanding the exclamation mark (!) in bash"}
+{"_id":"98103","title":"","text":"Hard link for directories"}
+{"_id":"52108","title":"","text":"How to create SHA512 password hashes on command line"}
+{"_id":"24145","title":"","text":"How can different file descriptors point to the same file in open file table?"}
+{"_id":"76162","title":"","text":"How do I capture the return status and use tee at the same time in korn shell?"}
+{"_id":"132669","title":"","text":"What is bitwise.c~?"}
+{"_id":"6777","title":"","text":"How to clean up file extensions?"}
+{"_id":"140857","title":"","text":"i3 mirrors laptop screen on monitor, wasting space"}
+{"_id":"18583","title":"","text":"Why is my PATH not listed in my .bashrc file?"}
+{"_id":"85678","title":"","text":"insert text in a file using echo command"}
+{"_id":"124351","title":"","text":"Transfer files client-server inside a SSH session"}
+{"_id":"124356","title":"","text":"centos patch heartbleed bug"}
+{"_id":"122014","title":"","text":"setting output of a command to a variable"}
+{"_id":"18760","title":"","text":"How does the \"tail\" command's \"-f\" parameter work?"}
+{"_id":"89941","title":"","text":"How proc gets updated about the devices"}
+{"_id":"18765","title":"","text":"Best way to remove file extension from a string?"}
+{"_id":"87129","title":"","text":"Customizing console appearance"}
+{"_id":"151238","title":"","text":"characters stick at the CLI"}
+{"_id":"155463","title":"","text":"Understanding the Different Bin Locations"}
+{"_id":"154591","title":"","text":"Repeat Last N commands"}
+{"_id":"43338","title":"","text":"Renaming a bunch of files with date modified timestamp at the end of the filename?"}
+{"_id":"60257","title":"","text":"How to create a sequence with leading zeroes using brace expansion"}
+{"_id":"148420","title":"","text":"Tmux log output"}
+{"_id":"90294","title":"","text":"How can I pipe colored tree result to less or more?"}
+{"_id":"63783","title":"","text":"What is the function of user group root?"}
+{"_id":"12203","title":"","text":"\"rsync: failed to set permissions on ...\" error with rsync -a or -p option"}
+{"_id":"53563","title":"","text":"Is it possible to modify the colors in bash?"}
+{"_id":"55124","title":"","text":"Remove a block of lines between two patterns"}
+{"_id":"144190","title":"","text":"cd to the most recently created directory"}
+{"_id":"126349","title":"","text":"Disable commands for users"}
+{"_id":"27006","title":"","text":"Which *nix distro is most lightweight for running virtual machines?"}
+{"_id":"78925","title":"","text":"How to sort by multiple columns?"}
+{"_id":"32584","title":"","text":"Insert a multiline string into another string"}
+{"_id":"35580","title":"","text":"What is the difference between $var and \"$var\"?"}
+{"_id":"56473","title":"","text":"Linux isn't sure whether a file exists or not"}
+{"_id":"107917","title":"","text":"How to modify the shell prompt?"}
+{"_id":"55875","title":"","text":"Why is some filesystem space used even though the filesystem is empty?"}
+{"_id":"138592","title":"","text":"How to clone a Debian installation?"}
+{"_id":"33729","title":"","text":"Need help to make rows into column with awk or sed"}
+{"_id":"797","title":"","text":"Where is implemented the definitions of the kernel header files?"}
+{"_id":"83381","title":"","text":"Visualizing ansi color escape codes in log files correctly in Emacs"}
+{"_id":"107131","title":"","text":"Find files systemwide that are created within a date range"}
+{"_id":"77934","title":"","text":"Parameters of script"}
+{"_id":"42379","title":"","text":"Find recursively all archive files of diverse archive formats and search them for file name patterns"}
+{"_id":"10355","title":"","text":"git and remote security with Encfs"}
+{"_id":"1729","title":"","text":"Does installing and using Wine open up your Linux platform to windows virus'?"}
+{"_id":"114235","title":"","text":"Weird behaviour on debian machine"}
+{"_id":"7772","title":"","text":"Is there a tool that hooks to two directories and synchronizes them as soon as something changes?"}
+{"_id":"119779","title":"","text":"alternatives to adding entry in /etc/hosts"}
+{"_id":"119772","title":"","text":"Why is GParted listing an empty parition as using 43.90 GB?"}
+{"_id":"49058","title":"","text":"Shouldn't there be more RAM free than this?"}
+{"_id":"116498","title":"","text":"List the file permissions of only the current directory"}
+{"_id":"11472","title":"","text":"Automount USB drives with no GUI requirement (halevt replacement)"}
+{"_id":"52559","title":"","text":"How to compile a c program without leaving the editor?"}
+{"_id":"153318","title":"","text":"Storing whitespace in a shell script variable"}
+{"_id":"80466","title":"","text":"Making Debian Bleeding Edge"}
+{"_id":"27594","title":"","text":"Why do we need to use visudo instead of directly modifying the sudoers file?"}
+{"_id":"1449","title":"","text":"Lightweight outgoing SMTP server"}
+{"_id":"28615","title":"","text":"How to hide commands typed in a Linux shell?"}
+{"_id":"25690","title":"","text":"How do I prevent a script from terminating when the shell exits?"}
+{"_id":"27271","title":"","text":"What file system is my file on?"}
+{"_id":"77492","title":"","text":"Special File that causes I/O error"}
+{"_id":"41336","title":"","text":"Where do the files go if you mount a drive to a folder that already contains files?"}
+{"_id":"103019","title":"","text":"Can't install new applications"}
+{"_id":"47048","title":"","text":"Combining 2 different cut outputs in a single command?"}
+{"_id":"15360","title":"","text":"How to add a ssh user who only has permissions to access specific folder?"}
+{"_id":"88313","title":"","text":"how to duplicate values of each row under each for n times?"}
+{"_id":"46715","title":"","text":"Piping from grep to awk not working"}
+{"_id":"101321","title":"","text":"Proper escape sequence for a non-standard file name"}
+{"_id":"48653","title":"","text":"Does quiesce exist for Linux?"}
+{"_id":"41070","title":"","text":"Aptitude on Debian 6.0.4 \"media change\" to CD ROM"}
+{"_id":"134155","title":"","text":"How do you keep the password hidden when invoked during the su command?"}
+{"_id":"111631","title":"","text":"Windows partition hidden?"}
+{"_id":"126176","title":"","text":"VPN client for linux machine + support checkpoint gateway"}
+{"_id":"92809","title":"","text":"What are the numbers after program names in Linux/GNU documentation?"}
+{"_id":"7215","title":"","text":"Deleting all files in a folder except files X, Y, and Z"}
+{"_id":"80733","title":"","text":"Possible to get RAID1, by simply adding HDD?"}
+{"_id":"25327","title":"","text":"watch command alias expansion"}
+{"_id":"116849","title":"","text":"Why load is high despite the fact that neither CPU or disk is overused"}
+{"_id":"61947","title":"","text":"Move files replacing?"}
+{"_id":"81677","title":"","text":"Setting up network from a \"minimal\" CentOS 6.4 install"}
+{"_id":"21316","title":"","text":"Which application should I blame for compulsively creating a directory again and again?"}
+{"_id":"56975","title":"","text":"What's the command to \"prepend\" a line to a file?"}
+{"_id":"143871","title":"","text":"What is the difference between ~ and / in paths"}
+{"_id":"86296","title":"","text":"Is it OK to store /var/tmp on a SSD?"}
+{"_id":"3958","title":"","text":"What's difference between FISH and SFTP?"}
+{"_id":"24441","title":"","text":"Get file created/creation time?"}
+{"_id":"55546","title":"","text":"Removing Color Codes From Output"}
+{"_id":"151455","title":"","text":"Show signals received by processes"}
+{"_id":"73228","title":"","text":"Input/output file.txt in bash shell"}
+{"_id":"152733","title":"","text":"bashrc in custom folder"}
+{"_id":"138224","title":"","text":"Remote access - grey background in Debian 7"}
+{"_id":"39652","title":"","text":"Colorized `cat` for source and script files?"}
+{"_id":"33030","title":"","text":"process files in a directory as they appear"}
+{"_id":"84540","title":"","text":"twitter status updates from command line (via cURL)"}
+{"_id":"84544","title":"","text":"Mapping single key (such as 'F1') to multiple keys (such as 'Ctrl+C') in Gnome"}
+{"_id":"47941","title":"","text":"What's wrong with these two cron job's?"}
+{"_id":"47360","title":"","text":"Associating a function in Emacs after looking up the code with M-x describe-key"}
+{"_id":"82657","title":"","text":"Trouble with mv and adding the date"}
+{"_id":"12755","title":"","text":"How to forward X over SSH from Ubuntu machine?"}
+{"_id":"100755","title":"","text":"Bring Debian to second Position in the GRUB Menu at startup"}
+{"_id":"12283","title":"","text":"unix, difference between path starting with '/' and '//'"}
+{"_id":"101118","title":"","text":"Is there an easy method for installing binary builds of glibc?"}
+{"_id":"13157","title":"","text":"Renaming multiple files based on their contents"}
+{"_id":"10597","title":"","text":"Reattach to lost X11 session"}
+{"_id":"1340","title":"","text":"Is there any program to provide a consistent interface across multiple archive types?"}
+{"_id":"110595","title":"","text":"Why do forked processes sometimes appear with brackets [] around their name in ps?"}
+{"_id":"151113","title":"","text":"How to change primary group?"}
+{"_id":"26350","title":"","text":"Mail vs. mail what is the difference"}
+{"_id":"148353","title":"","text":"Show error messages and information that a program was killed on another terminal"}
+{"_id":"98029","title":"","text":"Need a shell script which should send a mail to me once every 20 days"}
+{"_id":"75364","title":"","text":"copy sas file from prior version directory to new version directory"}
+{"_id":"57706","title":"","text":"Difference between 3 commands which are used to execute shell script?"}
+{"_id":"104429","title":"","text":"How do I edit a file as root?"}
+{"_id":"106377","title":"","text":"How to route traffic to different interfaces for different ports"}
+{"_id":"45582","title":"","text":"Can servers be synchronised to share the same configurations?"}
+{"_id":"82515","title":"","text":"How can I filter those \"Permission denied\" from find output?"}
+{"_id":"97223","title":"","text":"Fix broken apt: insserv: Service killprocs has to be enabled to start service single"}
+{"_id":"115686","title":"","text":"How to route \"single ip\" to different interfaces"}
+{"_id":"4271","title":"","text":"bash get file name and extension"}
+{"_id":"45051","title":"","text":"Format external hard drive to linux compatible file system"}
+{"_id":"73527","title":"","text":"why . and .. are listed when ls -a command executed?"}
+{"_id":"121222","title":"","text":"Identifying genes from a list of genes"}
+{"_id":"128060","title":"","text":"finding specific path for an installed program"}
+{"_id":"78821","title":"","text":"How can I rename all files with one extension to a different extension recursively"}
+{"_id":"33203","title":"","text":"How does load average work with modern CPU's?"}
+{"_id":"122289","title":"","text":"why is install-recommends default true?"}
+{"_id":"14384","title":"","text":"How do I know that my CPU supports 64bit operating systems under Linux?"}
+{"_id":"87005","title":"","text":"How to download files from a remote Linux (Ubuntu) Server?"}
+{"_id":"39755","title":"","text":"Find out exact CPU model, Mainboard, RAM / server model?"}
+{"_id":"12976","title":"","text":"How to move 100 files from a folder containing thousands?"}
+{"_id":"88808","title":"","text":"Empty the contents of a file"}
+{"_id":"120796","title":"","text":"logic behind deleting files where user does not have right to write"}
+{"_id":"52268","title":"","text":"Why is it a bad idea to run as root?"}
+{"_id":"119999","title":"","text":"Linux Mint Booting Installed Partition"}
+{"_id":"119996","title":"","text":"How can I hide a command line from (e.g.) top & htop?"}
+{"_id":"80757","title":"","text":"Add a suffix string to end of each line?"}
+{"_id":"16815","title":"","text":"What does DISPLAY=:0.0 actually mean?"}
+{"_id":"10418","title":"","text":"How to find power draw in watts?"}
+{"_id":"121144","title":"","text":"Authentication failure for FTP server"}
+{"_id":"49942","title":"","text":"Simple jail for user with open-ssh"}
+{"_id":"1993","title":"","text":"Make package explicitly installed in pacman"}
+{"_id":"94780","title":"","text":"Alternative shells (Javascript, Ruby, etc)?"}
+{"_id":"126269","title":"","text":"Passwordless sudo not working"}
+{"_id":"32314","title":"","text":"using SSH to connect to remote CentOS 5.6 server where Firefox running on server is very slow"}
+{"_id":"2051","title":"","text":"bash: recall command by typing some characters of it"}
+{"_id":"2059","title":"","text":"Linux for low-end hardware and internet browsing"}
+{"_id":"103180","title":"","text":"How does the Linux desktop perform system actions?"}
+{"_id":"36540","title":"","text":"Why am I still getting a password prompt with ssh with public key authentication?"}
+{"_id":"138877","title":"","text":"Extracting text using sed does not work as expected"}
+{"_id":"125850","title":"","text":"changing the names of files within a directory"}
+{"_id":"137520","title":"","text":"How do I log out/disconnect from SSH after starting a process with output to keep it running?"}
+{"_id":"129072","title":"","text":"What's the difference between $@ and $*"}
+{"_id":"42032","title":"","text":"How to set environment variable JAVA_HOME that will be saved on exit?"}
+{"_id":"128921","title":"","text":"Regular expressions in a shell"}
+{"_id":"6681","title":"","text":"Re hardlink and old rsnapshot backups"}
+{"_id":"6686","title":"","text":"Clean up / after accidentally extracting archive into it?"}
+{"_id":"14887","title":"","text":"The way to use `/usr/bin/env sed -f ` in shebang?"}
+{"_id":"71176","title":"","text":"Howto find duplicate files on disk"}
+{"_id":"5478","title":"","text":"What process created this X11 window?"}
+{"_id":"87633","title":"","text":"Physical host or VM"}
+{"_id":"117643","title":"","text":"Check for Process if Same is Running"}
+{"_id":"52764","title":"","text":"/ is out of blocks, can't find out why"}
+{"_id":"17779","title":"","text":"How can I build a custom distribution for running a simple web browser?"}
+{"_id":"45746","title":"","text":"Group Permission on public_html"}
+{"_id":"122824","title":"","text":"My Kali desktop is messed up after trying to change Login-Background.png in /usr/share/images"}
+{"_id":"37964","title":"","text":"Disable direct login for normal users (like oracle) in linux but allow scp and sftp?"}
+{"_id":"34435","title":"","text":"top output: cpu usage > 100%"}
+{"_id":"73116","title":"","text":"Time synchronization of machines on LAN to GPS NTP server on the LAN"}
+{"_id":"25404","title":"","text":"Is there a difference between Linux and Unix?"}
+{"_id":"138150","title":"","text":"How to combine Bash's read with HERE-document when shopt -os errexit is in place?"}
+{"_id":"40143","title":"","text":"How to know if /dev/sdX is a connected USB or HDD?"}
+{"_id":"90206","title":"","text":"What does the `who` command result `root :0` mean?"}
+{"_id":"88452","title":"","text":"Concatenating two variables with an underscore"}
+{"_id":"52349","title":"","text":"Bash while loop and reading from pipe"}
+{"_id":"111118","title":"","text":"How can I interact with my home router via a device on the local network using ssh?"}
+{"_id":"140267","title":"","text":"Why do I have to execute bash programs with ./?"}
+{"_id":"118964","title":"","text":"Share config among ssh aliases"}
+{"_id":"85009","title":"","text":"Shell, Concatenating 2 strings to reference a 3rd variable"}
+{"_id":"59171","title":"","text":"Why is cd not a file in /bin?"}
+{"_id":"1033","title":"","text":"How to change font-size, number of rows / columns on a terminal"}
+{"_id":"28269","title":"","text":"How to get root inside of vi?"}
+{"_id":"28267","title":"","text":"what does \"serial=${serial##*.}\" do?"}
+{"_id":"130824","title":"","text":"Difference between \".\" and \"./\" while setting the environment variables using export?"}
+{"_id":"61313","title":"","text":"Renaming Files according to Pattern"}
+{"_id":"96712","title":"","text":"Variable Substitution in sed"}
+{"_id":"16301","title":"","text":"Open Group Base Specifications, Single UNIX Specification and POSIX"}
+{"_id":"116389","title":"","text":"Recursively delete all files with a given extension"}
+{"_id":"43617","title":"","text":"Tools to visualize file size distributions"}
+{"_id":"81023","title":"","text":"Which tool can tell me the distribution of Linux that is running when uname is generic?"}
+{"_id":"49477","title":"","text":"Got less output with print0 option on find?"}
+{"_id":"49471","title":"","text":"How do I find out if my computer has PAE using Linux?"}
+{"_id":"90299","title":"","text":"How to get 256 color support in a login shell TTY?"}
+{"_id":"58344","title":"","text":"mounting problem during installation of archlinux on dell xps one"}
+{"_id":"147386","title":"","text":"chown as non-root user"}
+{"_id":"604","title":"","text":"Isn't less just more?"}
+{"_id":"73836","title":"","text":"Failed to sign CSR with the CA root key"}
+{"_id":"91976","title":"","text":"What is the cheapest way to run AIX 6-7 at home?"}
+{"_id":"55195","title":"","text":"kill -9 hangs, unable to kill process (murder proof process)"}
+{"_id":"22762","title":"","text":"How to give regular users the write privilege to an external drive?"}
+{"_id":"38951","title":"","text":"What is the 'working directory' when cron executes a job"}
+{"_id":"55223","title":"","text":"Can't boot Scientific Linux"}
+{"_id":"75686","title":"","text":"Online course that covers Unix/Linux Systems programming"}
+{"_id":"148967","title":"","text":"How to use a shell variable inside sed's s command?"}
+{"_id":"84191","title":"","text":"How to create nested directory in a single command?"}
+{"_id":"18684","title":"","text":"Access history of a file"}
+{"_id":"746","title":"","text":"How could I remember how to use redirection?"}
+{"_id":"83357","title":"","text":"Staggering the authentication delay on failed `su` or `sudo`"}
+{"_id":"140902","title":"","text":"Archives used for software packaging and distribution"}
+{"_id":"120327","title":"","text":"Cron Job - Log Each Minutes Activity"}
+{"_id":"16890","title":"","text":"How to make a machine accessible from the LAN using its hostname"}
+{"_id":"81224","title":"","text":"How to go to the previous working directory in terminal?"}
+{"_id":"96868","title":"","text":"Why do I see myself twice when I run the who command?"}
+{"_id":"1910","title":"","text":"How linux handles multiple path separators (/home////username///file)"}
+{"_id":"13214","title":"","text":"How many files can be saved in one directory on Linux?"}
+{"_id":"881","title":"","text":"Ensure a process is always running"}
+{"_id":"14971","title":"","text":"Searching for string in files"}
+{"_id":"29470","title":"","text":"Keep running a script via ssh"}
+{"_id":"1262","title":"","text":"Where did the \"wheel\" group get its name?"}
+{"_id":"98993","title":"","text":"What is the language that appears on the first line of a script?"}
+{"_id":"8430","title":"","text":"How to remove all empty directories in a subtree?"}
+{"_id":"65354","title":"","text":"Why can't I trim a file using `head`?"}
+{"_id":"99129","title":"","text":"Extract in beteen tages in a text file"}
+{"_id":"107541","title":"","text":"Add ssh user with minimum rights for backup"}
+{"_id":"134498","title":"","text":"mysql database no space available"}
+{"_id":"20972","title":"","text":"Which is the best KDE-based distribution?"}
+{"_id":"71857","title":"","text":"What is the @ after directory listing mean?"}
+{"_id":"67462","title":"","text":"Linux kernel is not finding the initrd correctly"}
+{"_id":"15324","title":"","text":"None of the dot-files is sourced when running bash via ssh, part II"}
+{"_id":"145207","title":"","text":"Upgraded to mint 17, keyboard stuck in non-english (wrong layout) language - can't login"}
+{"_id":"138485","title":"","text":"Is there a way to administrate multiple computers at the same time?"}
+{"_id":"30676","title":"","text":"Block Internet Access for 1 User"}
+{"_id":"7631","title":"","text":"error booting the custom compiled kernel 2.6.37 on ubuntu 10.04 : gave up waiting on root device"}
+{"_id":"56479","title":"","text":"How to delete a file to the trash in BASH (Linux)"}
+{"_id":"5959","title":"","text":"How can I pause/resume rsync"}
+{"_id":"65110","title":"","text":"No more coredumps after migrating to systemd"}
+{"_id":"65115","title":"","text":"Total vs listed directories"}
+{"_id":"60544","title":"","text":"Allowing ssh, but only to execute a specific script"}
+{"_id":"99325","title":"","text":"Automatically save bash command history in screen session"}
+{"_id":"17263","title":"","text":"Launching application from terminal"}
+{"_id":"118853","title":"","text":"What means the s in ls file permissions?"}
+{"_id":"150844","title":"","text":"File manager that shows bit rate for mp3 files"}
+{"_id":"11889","title":"","text":"Pasting X selection (not clipboard contents) with keyboard"}
+{"_id":"20193","title":"","text":"How to make putty to not break my session after some time?"}
+{"_id":"94517","title":"","text":"Removing in interactive mode"}
+{"_id":"61627","title":"","text":"How to find the device is connected to which usb hub in linux OS?"}
+{"_id":"127421","title":"","text":"Ransomware like BitCrypt dangerous for linux system"}
+{"_id":"32210","title":"","text":"using single or double bracket - bash"}
+{"_id":"52845","title":"","text":"How do I use this .ttf file as my terminal font?"}
+{"_id":"26598","title":"","text":"How can I increase the number of inodes in an ext4 filesystem?"}
+{"_id":"150158","title":"","text":"how to create a v.imrc"}
+{"_id":"98693","title":"","text":"getaddrinfo() from shell?"}
+{"_id":"30303","title":"","text":"How to create a DEB file manually?"}
+{"_id":"34174","title":"","text":"How can I limit the output speed of stdout?"}
+{"_id":"58963","title":"","text":"Script to convert filenames to lowercase depending on extension"}
+{"_id":"105402","title":"","text":"/dev/disk/ lists disks, why /dev/net/ doesn't list network interfaces?"}
+{"_id":"103731","title":"","text":"Run a command without making me wait"}
+{"_id":"101772","title":"","text":"Xorg.conf to only use part of screen"}
+{"_id":"43886","title":"","text":"Monitor file system"}
+{"_id":"128118","title":"","text":"Filter partial output of some script"}
+{"_id":"33519","title":"","text":"How to make X less sensitive when right clicking?"}
+{"_id":"17810","title":"","text":"Computer terminal and virtual console"}
+{"_id":"17815","title":"","text":"running script with \". \" and with \"source \""}
+{"_id":"16076","title":"","text":"Is it possible to follow a command (run repeatedly)? as one would follow a file using tail -f?"}
+{"_id":"88718","title":"","text":"Setting up a shared folder with group: ACL and file creation"}
+{"_id":"120615","title":"","text":"How to comment multiple lines at once?"}
+{"_id":"10893","title":"","text":"What did Ken Thompson mean when he said, \"I'd spell create with an 'e'.\""}
+{"_id":"155418","title":"","text":"Is it possible to run binvox (or any X11 app) on a Linux server without display?"}
+{"_id":"119463","title":"","text":"Updating last modified time of a file"}
+{"_id":"56836","title":"","text":"Can you specify an enclosure for cut?"}
+{"_id":"56834","title":"","text":"How do I force a user to log out?"}
+{"_id":"97446","title":"","text":"Why this sort command gives me an empty file?"}
+{"_id":"60404","title":"","text":"Manipulate file name piped from find command"}
+{"_id":"12236","title":"","text":"Best resources to learn bash scripting?"}
+{"_id":"49785","title":"","text":"Distribution for eldery people"}
+{"_id":"21439","title":"","text":"Get Position of RAID Hard Drives"}
+{"_id":"147309","title":"","text":"Can I move the source folder after I compiled the code inside?"}
+{"_id":"149451","title":"","text":"Install R in my own directory"}
+{"_id":"685","title":"","text":"Why put things other than /home to a separate partition?"}
+{"_id":"110540","title":"","text":"Adding Postgres bins to PATH: should I `export`?"}
+{"_id":"27382","title":"","text":"How do I reverse a for loop?"}
+{"_id":"55808","title":"","text":"Make program first read from pipe, then from keyboard"}
+{"_id":"32000","title":"","text":"stdout , stderr and logging using the script command"}
+{"_id":"22494","title":"","text":"Copy file to xclip and paste to Firefox"}
+{"_id":"26385","title":"","text":"Use command line to download file which is accessible only in a given session"}
+{"_id":"26035","title":"","text":"What are suitable distros for the Asus EEE PC 701 4G?"}
+{"_id":"49809","title":"","text":"Console Text Editor with Windows-like keyboard shortcuts (ctrl-z, x, c, v)"}
+{"_id":"38634","title":"","text":"Is there any way to exit \"less\" without clearing the screen?"}
+{"_id":"30400","title":"","text":"Execute remote commands, completely detaching from the ssh connection"}
+{"_id":"122889","title":"","text":"Debian and Systemd: breaking ordering cycle error"}
+{"_id":"77969","title":"","text":"'screen' utility : how to prevent it to handle the display?"}
+{"_id":"31751","title":"","text":"Doubt on the value of PS1 environment variable"}
+{"_id":"88550","title":"","text":"vlookup function in unix"}
+{"_id":"35929","title":"","text":"How can we change root password?"}
+{"_id":"103963","title":"","text":"cycle through one command's output and use in another command"}
+{"_id":"101527","title":"","text":"How can the number of files in a directory be determined by viewing \"ls -ld\" output?"}
+{"_id":"20720","title":"","text":"Managing disk space on servers"}
+{"_id":"122944","title":"","text":"Unable to open Windows Disk partitions in solaris 11"}
+{"_id":"80177","title":"","text":"How to install Cinnamon with SLiM on Arch Linux?"}
+{"_id":"6199","title":"","text":"How do I install mercurial on openSUSE?"}
+{"_id":"130628","title":"","text":"Why does it take more time for a login to fail than to succeed?"}
+{"_id":"121761","title":"","text":"Having ssh tunneling itself for remote access from a third machine"}
+{"_id":"41141","title":"","text":"How to clean up the RAM memory that is being used as cache memory?"}
+{"_id":"118558","title":"","text":"Is the busybox cpio THAT different from GNU cpio?"}
+{"_id":"105030","title":"","text":"Bash Syntax Colouring"}
+{"_id":"43154","title":"","text":"How do I set permissions for a directory so that files and directories created under it maintain group write permissions?"}
+{"_id":"2505","title":"","text":"Which run dialog"}
+{"_id":"153587","title":"","text":"environement variable assignment followed by command"}
+{"_id":"36815","title":"","text":"Find out network traffic per IP"}
+{"_id":"101285","title":"","text":"What does a high load with an empty top mean?"}
+{"_id":"59570","title":"","text":"Implementing patch for changing a CPU frequency governor"}
+{"_id":"67794","title":"","text":"How to search files where two different words exist?"}
+{"_id":"92503","title":"","text":"Access a NTFS external drive in centos"}
+{"_id":"24758","title":"","text":"what is the difference between \"/sbin/nologin\" and \"/bin/false\"?"}
+{"_id":"27220","title":"","text":"ssh + nohup does not work"}
+{"_id":"5665","title":"","text":"What does etc stand for?"}
+{"_id":"6409","title":"","text":"How does Linux kernel compare to microkernel architectures?"}
+{"_id":"125058","title":"","text":"How can I use iptables to block certain processes from accessing the network?"}
+{"_id":"97105","title":"","text":"How to use grep command to find the matching pattern and some more characters?"}
+{"_id":"12046","title":"","text":"Is there any book , Tutorial on very very advanced shell scripting"}
+{"_id":"119812","title":"","text":"setting environment variable as a function of another env variable"}
+{"_id":"13314","title":"","text":"File system for an SSD drive"}
+{"_id":"13316","title":"","text":"Good OpenWRT alternative?"}
+{"_id":"20112","title":"","text":"sudo without password - security?"}
+{"_id":"129175","title":"","text":"Redirect output of a command to two different files"}
+{"_id":"110822","title":"","text":"Using bash \"&\" operator with \";\" delineator?"}
+{"_id":"22604","title":"","text":"How to bulk convert all the file in a file system branch between Unix and Windows line break format?"}
+{"_id":"25372","title":"","text":"Turn off buffering in pipe"}
+{"_id":"117148","title":"","text":"How can I run reboot as a normal user without needing to enter a password?"}
+{"_id":"9496","title":"","text":"Looping through files with spaces in the names?"}
+{"_id":"78578","title":"","text":"What is the '+' in find command for?"}
+{"_id":"137486","title":"","text":"Disallow Changing of Passwords"}
+{"_id":"30925","title":"","text":"In Bash, when to alias, when to script, and when to write a function?"}
+{"_id":"6726","title":"","text":"How do I ensure that a terminal remains scrollable?"}
+{"_id":"130906","title":"","text":"Why doesn't setuid not work?"}
+{"_id":"92710","title":"","text":"How to create alias to kill processes running on a TCP/IP port?"}
+{"_id":"4422","title":"","text":"Is gnu coreutils sort broken?"}
+{"_id":"4426","title":"","text":"Access to original contents of mount point"}
+{"_id":"39663","title":"","text":"How to disable laptop keyboard on plugging in a USB keyboard?"}
+{"_id":"74135","title":"","text":"LINUX: Permissions for files: Identify if it is a file or directory, and its access allowed to the world, user, and group"}
+{"_id":"86621","title":"","text":"The difference that quotation marks make in find command"}
+{"_id":"47918","title":"","text":"How to grep a specific line _and_ the first line of a file?"}
+{"_id":"131699","title":"","text":"Difference between useradd and adduser"}
+{"_id":"89262","title":"","text":"How to adapt a Linux like fedora, ubuntu etc. to make my own linux distro?"}
+{"_id":"103270","title":"","text":"How do I get the current bandwidth speed of an interface from the terminal?"}
+{"_id":"64762","title":"","text":"how to convert a shell script into binary executable?"}
+{"_id":"19686","title":"","text":"Open Sakura in home directory"}
+{"_id":"97735","title":"","text":"Start up commads in LUBUNTU"}
+{"_id":"9123","title":"","text":"Is there a one-liner that allows me to create a directory and move into it at the same time?"}
+{"_id":"9125","title":"","text":"How do I find text within a file and have it search multiple subfolders?"}
+{"_id":"63284","title":"","text":"why cannot rename subdir when parent dir owner is not the same user"}
+{"_id":"53591","title":"","text":"Command line e-mailing"}
+{"_id":"80088","title":"","text":"How to find files by the time in their filename?"}
+{"_id":"46974","title":"","text":"What is the difference between > and >> (especially as it relates to use with the cat program)?"}
+{"_id":"67503","title":"","text":"Move all files with a certain extension from multiple subdirectories into one directory"}
+{"_id":"92150","title":"","text":"Multiple media convertions fail"}
+{"_id":"18841","title":"","text":"Measuring RAM usage of a program"}
+{"_id":"56429","title":"","text":"How to print all lines after a match up to the end of the file?"}
+{"_id":"115202","title":"","text":"Third level domains"}
+{"_id":"22419","title":"","text":"Show lines matching a pattern and the 4 lines before each"}
+{"_id":"57777","title":"","text":"connect to a remote server through ssh"}
+{"_id":"107168","title":"","text":"What's the practical difference between `command` and $(command)?"}
+{"_id":"13260","title":"","text":"How to run command at startup in linux?"}
+{"_id":"79211","title":"","text":"Can linux systems on multiple virtual machines share the same swap partition?"}
+{"_id":"91343","title":"","text":"What option(s) would you use to sort a file named foo in place, that is replacing the original file with the sorted version?"}
+{"_id":"57239","title":"","text":"Unix cp wildcard with directory structure"}
+{"_id":"81845","title":"","text":"difference between bash, -bash and /bin/bash in ps output"}
+{"_id":"138398","title":"","text":"How to get lines 10 to 100 from a 200 line file into a new file"}
+{"_id":"11182","title":"","text":"Mapping key combination with xmodmap"}
+{"_id":"41493","title":"","text":"How to ssh to a server using another server?"}
+{"_id":"44040","title":"","text":"A standard tool to convert a byte-count into human KiB MiB etc; like du, ls1"}
+{"_id":"12986","title":"","text":"How to copy the partition layout of a whole disk using standard tools"}
+{"_id":"127117","title":"","text":"Why Service accounts in Linux and Unix Systems?"}
+{"_id":"123590","title":"","text":"How to copy remote files to local if you don't have permission on the remote directory?"}
+{"_id":"96348","title":"","text":"Reason for the inability of root to send a fatal signal to PID 1/init"}
+{"_id":"96343","title":"","text":"How to take effect `usermod` command without logout and login"}
+{"_id":"94270","title":"","text":"How to install squashfs-tools on Ubuntu?"}
+{"_id":"11406","title":"","text":"How to search for file contents"}
+{"_id":"19232","title":"","text":"Boot-loader to boot to an encrypted partition"}
+{"_id":"96698","title":"","text":"Mac OS X Darwin: how to reset admin password?"}
+{"_id":"49003","title":"","text":"How do I unbooklet a PDF-booklet?"}
+{"_id":"45580","title":"","text":"Loading a custom library"}
+{"_id":"80437","title":"","text":"How can I run an hdparm command after boot and resume on Fedora 19?"}
+{"_id":"62830","title":"","text":"\"error setting up gummiboot-efi\" on Archboot UEFI install"}
+{"_id":"26928","title":"","text":"Should I install 32 or 64 bit?"}
+{"_id":"68721","title":"","text":"Where should user configuration files go?"}
+{"_id":"34238","title":"","text":"Complete files from a different directory in bash"}
+{"_id":"73750","title":"","text":"difference between function foo() {} and foo() {}"}
+{"_id":"34584","title":"","text":"How to make unused dependencies clean with yum?"}
+{"_id":"61712","title":"","text":"Change command name in Linux"}
+{"_id":"61719","title":"","text":"Changing tmux .bash_profile behavior"}
+{"_id":"3409","title":"","text":"Beginning to learn Unix and Linux"}
+{"_id":"2062","title":"","text":"grep - why do brackets in grep pattern remove the grep process from ps results?"}
+{"_id":"83257","title":"","text":"Does kernel: EDAC MC0: UE page 0x0 point to bad memory, a driver, or something else?"}
+{"_id":"136444","title":"","text":"AWK: Nested Conditional Subset of Rows"}
+{"_id":"86996","title":"","text":"Is there something as flexible as crontab for user-level autostarts?"}
+{"_id":"101392","title":"","text":"Why does halt not turn the machine off?"}
+{"_id":"46749","title":"","text":"Find and remove many files by specific content"}
+{"_id":"6301","title":"","text":"How do I read from /proc/$pid/mem under Linux?"}
+{"_id":"1636","title":"","text":"How do I bind the tmux prefix to a Super?"}
+{"_id":"92643","title":"","text":"Is there way to replace value of symbolic link?"}
+{"_id":"92876","title":"","text":"How to copy multiple files but keep their extensions the same?"}
+{"_id":"61997","title":"","text":"Recovering from \"chmod -R 777 /\" in Ubuntu"}
+{"_id":"81628","title":"","text":"is there an alternative to tail -f that has convenient scrolling?"}
+{"_id":"63594","title":"","text":"Avoiding temporary files in zsh"}
+{"_id":"113774","title":"","text":"Permission denied to change gid(group) of a file I own"}
+{"_id":"109536","title":"","text":"If you ^Z from a process, it gets \"stopped\". How do you switch back in?"}
+{"_id":"24410","title":"","text":"How do I connect to a new wifi on the command line?"}
+{"_id":"101158","title":"","text":"SSH tunneling via few hosts"}
+{"_id":"152412","title":"","text":"`seq` and bash brace expansion failing"}
+{"_id":"126393","title":"","text":"I get low disk space warning after my last upgrade"}
+{"_id":"101847","title":"","text":"Cannot expand asterisk without proper permission"}
+{"_id":"3239","title":"","text":"How can I reproduce commands run on one machine on another machine?"}
+{"_id":"137219","title":"","text":"Execute snippet of code when key is pressed"}
+{"_id":"34898","title":"","text":"Can an interupt be processed by software, without hardware support?"}
+{"_id":"18151","title":"","text":"How to follow links in linux man pages?"}
+{"_id":"47330","title":"","text":"What exactly are Linux kernel headers?"}
+{"_id":"57570","title":"","text":"Connect to SSH from outside LAN"}
+{"_id":"39168","title":"","text":"bash: get last stdout"}
+{"_id":"31379","title":"","text":"install firefox in ubuntu-server edition"}
+{"_id":"12725","title":"","text":"how to build lc tool in linux?"}
+{"_id":"117050","title":"","text":"Program for making a complete ISO-image of damaged DVD by multiple readings?"}
+{"_id":"81355","title":"","text":"Trouble with read line script in Cygwin"}
+{"_id":"90244","title":"","text":"bash: Run command in background and capture pid"}
+{"_id":"13451","title":"","text":"What is the \"directory order\" of files in a directory (used by `ls -U`)?"}
+{"_id":"7998","title":"","text":"Which bash will expand  {1..$VAR} in the same way that zsh does"}
+{"_id":"96957","title":"","text":"Delete all jpg in a folder that are smaller than specific width/heigth"}
+{"_id":"118950","title":"","text":"What do the number in the file metadata mean"}
+{"_id":"15932","title":"","text":"How do I add a user in SVN?"}
+{"_id":"126068","title":"","text":"How to know my server's time offset?"}
+{"_id":"9997","title":"","text":"Resources for portable shell programming"}
+{"_id":"66899","title":"","text":"How to tell grep to match special character at beginning of each word"}
+{"_id":"93209","title":"","text":"Should I use LVM or not?"}
+{"_id":"114943","title":"","text":"Can sed replace new line characters?"}
+{"_id":"9605","title":"","text":"How can I detect if the shell is controlled from SSH?"}
+{"_id":"1800","title":"","text":"How to specify a custom autocomplete for specific commands?"}
+{"_id":"112326","title":"","text":"How to start command in bash without blocking console"}
+{"_id":"66131","title":"","text":"upgrade OpenSSL from 0.9.8w to 1.0.0i or 1.0.1a on Linux server"}
+{"_id":"3809","title":"","text":"How can I make a program executable from everywhere"}
+{"_id":"113715","title":"","text":"How can I concatenate all files in a directory together in one command line operation?"}
+{"_id":"50044","title":"","text":"Use a script parameter in awk"}
+{"_id":"24625","title":"","text":"How to completely disable swap?"}
+{"_id":"52668","title":"","text":"How to fix hard-disk error connected by usb?"}
+{"_id":"76490","title":"","text":"\"No such file or directory\" on an executable, yet file exists and ldd reports all libraries present"}
+{"_id":"14680","title":"","text":"How to use find command with wildcard when current directory contains a match?"}
+{"_id":"14537","title":"","text":"How to limit resource usage to save CPU+RAM for a certain process?"}
+{"_id":"146666","title":"","text":"How do you patch a kernel?"}
+{"_id":"89107","title":"","text":"Which cmd is the best for determining the OS' word size (32/64)-bit?"}
+{"_id":"19101","title":"","text":"Does Mint Linux have apport-bug for bug reporting?"}
+{"_id":"5711","title":"","text":"Why does '/' have an '..' entry?"}
+{"_id":"43481","title":"","text":"File not found for file which is there"}
+{"_id":"86209","title":"","text":"Why is bash interpreting characters that I have character escaped?"}
+{"_id":"121130","title":"","text":"difference between \"ls –alR /\" and \"ls –alR / &\"?"}
+{"_id":"149001","title":"","text":"moving a process to fg and bg"}
+{"_id":"1924","title":"","text":"Create services in Linux (Start up in linux)"}
+{"_id":"15366","title":"","text":"newgrp and groups assigned via pam_group.so"}
+{"_id":"148843","title":"","text":"Searching in man pages"}
+{"_id":"105940","title":"","text":"Nested POSIX groups in Linux"}
+{"_id":"93012","title":"","text":"-bash: syntax error near unexpected token `;'"}
+{"_id":"116702","title":"","text":"How can I listen to communication between a process and a serial port?"}
+{"_id":"2605","title":"","text":"Change main partition size to install another distribution"}
+{"_id":"2606","title":"","text":"Get list of required libraries when installing something from source"}
+{"_id":"33413","title":"","text":"Change directory with -d in shell script"}
+{"_id":"102024","title":"","text":"How to install linux (BackBox) and windows on the same computer?"}
+{"_id":"79316","title":"","text":"How to deal with spaces in a variable"}
+{"_id":"91576","title":"","text":"mail doesn't work"}
+{"_id":"76805","title":"","text":"Read log file between two dates"}
+{"_id":"76803","title":"","text":"How to run a script when install a rpm package?"}
+{"_id":"131168","title":"","text":"renaming multiple files increment order"}
+{"_id":"85757","title":"","text":"Store password as hash in wpa_supplicant.conf?"}
+{"_id":"71121","title":"","text":"determine shell in script during runtime"}
+{"_id":"134483","title":"","text":"Why my ethernet interface is called enp0s10 instead of eth0?"}
+{"_id":"87667","title":"","text":"cp : short way of copying"}
+{"_id":"124995","title":"","text":"TAR Backup to Remote Server"}
+{"_id":"51971","title":"","text":"Ssh through two servers and a user in one command line"}
+{"_id":"153248","title":"","text":"Looking at the content of a character device's file"}
+{"_id":"101326","title":"","text":"Set Static IP in CentOS 6.4?"}
+{"_id":"53460","title":"","text":"Change PS1 without hitting enter"}
+{"_id":"151498","title":"","text":"What does \"mv *\" do?"}
+{"_id":"35732","title":"","text":"What is the easiest way to execute text from tail at the command line?"}
+{"_id":"96526","title":"","text":"BIOS don't recognize my bootable USB"}
+{"_id":"26237","title":"","text":"ISO file readonly?"}
+{"_id":"21956","title":"","text":"Pretty tail -f for log files"}
+{"_id":"14010","title":"","text":"The merits of a partitionless filesystem"}
+{"_id":"53875","title":"","text":"Is there any impact of reaping zombie processes?"}
+{"_id":"18224","title":"","text":"How to add a user to sudoers file?"}
+{"_id":"77852","title":"","text":"How to recover from a chmod -R 000 /bin?"}
+{"_id":"133950","title":"","text":"convert many eps files in single page pdf or ps file using shell script"}
+{"_id":"84888","title":"","text":"Can we run objective c on UNIX operating system?"}
+{"_id":"86036","title":"","text":"Use same arguments with different command"}
+{"_id":"44288","title":"","text":"Run gui application on startup"}
+{"_id":"17865","title":"","text":"How can I find out which package installed a particular executable?"}
+{"_id":"7412","title":"","text":"How to reconnect a logically disconnected USB device?"}
+{"_id":"19520","title":"","text":"Is it possible to \"fork\" STDOUT to two different locations?"}
+{"_id":"2342","title":"","text":"Why is there a * When There is Mention of Unix Throughout the Internet?"}
+{"_id":"46344","title":"","text":"How do I get this find and rename command to work with subdirectories?"}
+{"_id":"148777","title":"","text":"scroll through output using `less` or `tail -f` while keeping the header visible"}
+{"_id":"48777","title":"","text":"Command to display first few and last few lines of a file"}
+{"_id":"3886","title":"","text":"Difference between nohup, disown and &"}
+{"_id":"56495","title":"","text":"What's the difference between running a program as a daemon and forking it into background with '&'?"}
+{"_id":"61401","title":"","text":"\"~/\" receives a permission denied error in Csh"}
+{"_id":"26006","title":"","text":"Is there a root password on OS X and Ubuntu?"}
+{"_id":"83491","title":"","text":"Wrapper for package managers"}
+{"_id":"102732","title":"","text":"Regex and patterns on a ksh command line"}
+{"_id":"30470","title":"","text":"What does `:-` mean in a shell script"}
+{"_id":"77951","title":"","text":"Traceback (most recent call last) error appears on terminal"}
+{"_id":"154733","title":"","text":"Operations only on complete files"}
+{"_id":"151566","title":"","text":"How can I pass a filename containing percent signs (%) as a parameter to a shell script in cron?"}
+{"_id":"20751","title":"","text":"Note-taking and outlining using Vi: On startup, highlight tags and display tags in a preview window"}
+{"_id":"121716","title":"","text":"unable to open X server"}
+{"_id":"48103","title":"","text":"Construct a command by putting a string into a tty"}
+{"_id":"116847","title":"","text":"lsmod outputs: Not tainted"}
+{"_id":"11172","title":"","text":"How can I kill a <defunct> process whose parent is init?"}
+{"_id":"120432","title":"","text":"How can I have a SSH banner appear BEFORE the \"login as:\" prompt?"}
+{"_id":"56123","title":"","text":"Remove line containing certain string and the following line"}
+{"_id":"65505","title":"","text":"How can I configure zsh to let it explain to me where I can retrieve an executable instead of saying file not found?"}
+{"_id":"98868","title":"","text":"Self complied version of GCC overwriting package installed version"}
+{"_id":"102492","title":"","text":"raid5 exchange 1 of 3 harddrives"}
+{"_id":"93686","title":"","text":"Can I prove that an SSD is broken?"}
+{"_id":"104018","title":"","text":"Set dynamic window title based on command input"}
+{"_id":"25541","title":"","text":"Updating tar.gz daily only with changed files"}
+{"_id":"173","title":"","text":"How to compile and install programs from source"}
+{"_id":"18937","title":"","text":"Why most unix don't have undelete function?"}
+{"_id":"30621","title":"","text":"Execute command for x seconds?"}
+{"_id":"82424","title":"","text":"How to check which client is accessing Unix?"}
+{"_id":"143964","title":"","text":"How to slice a text file into several files of 100 lines each?"}
+{"_id":"102812","title":"","text":"Can't execute a file with execute permission bit set"}
+{"_id":"149694","title":"","text":"Automatic sleep not working in Gnome"}
+{"_id":"93117","title":"","text":"find all commands with wh, find by part of keyword in man page"}
+{"_id":"37366","title":"","text":"Alt-Left on OSX to behave like Alt-Left on Ubuntu"}
+{"_id":"35279","title":"","text":"Typescript -terminal recording into video?"}
+{"_id":"23246","title":"","text":"Hard links vs. Soft links: When would you want to use one over the other?"}
+{"_id":"33099","title":"","text":"How to check progress when cloning a disk using `dd`?"}
+{"_id":"33541","title":"","text":"`free`: output format"}
+{"_id":"18743","title":"","text":"What's the point in adding a new line to the end of a file?"}
+{"_id":"8056","title":"","text":"Disable screen blanking on text console"}
+{"_id":"7493","title":"","text":"Why is the US international keyboard layout on Debian different?"}
+{"_id":"103242","title":"","text":"Need help in removing specific character"}
+{"_id":"56868","title":"","text":"Modify environment variable in a running process"}
+{"_id":"90853","title":"","text":"How can I run ssh-add automatically, without password prompt?"}
+{"_id":"113589","title":"","text":"How to have longer key bindings for stty"}
+{"_id":"16978","title":"","text":"How to make password-less login work"}
+{"_id":"53542","title":"","text":"How to determine the filesystem of an unmounted device?"}
+{"_id":"23734","title":"","text":"What are the significant differences between different shells?"}
+{"_id":"27021","title":"","text":"How to name a file in the deepest level of a directory tree"}
+{"_id":"74076","title":"","text":"Permanent Environment Variable for all users"}
+{"_id":"9926","title":"","text":"Can I redirect stdout from a background application after starting it?"}
+{"_id":"3646","title":"","text":"How can I list only the directories present in a directory using ls?"}
+{"_id":"3645","title":"","text":"How can I check which shell I am currently using?"}
+{"_id":"132657","title":"","text":"how to avoid NSCD for DNS"}
+{"_id":"53937","title":"","text":"How can I choose which OS grub will reboot me into—before I reboot?"}
+{"_id":"106680","title":"","text":"Invert colors on one window"}
+{"_id":"146145","title":"","text":"How do I stop a bash shell PS1 color to stop at the end of the command?"}
+{"_id":"27841","title":"","text":"How to make \"notify-send\" work from daemon application"}
+{"_id":"99243","title":"","text":"How can I grep for a string containing regex metacharacters like $ and '?"}
+{"_id":"78176","title":"","text":"vmblock on archlinux"}
+{"_id":"45025","title":"","text":"How to suspend and bring a background process to foreground"}
+{"_id":"129596","title":"","text":"Some puzzles of how to close file descriptors on sh or bash"}
+{"_id":"81834","title":"","text":"How can I change the default \"ens33\" network device to old \"eth0\" on Fedora 19?"}
+{"_id":"78316","title":"","text":"How to use arguments with 'find -exec'?"}
+{"_id":"80876","title":"","text":"/usr/ucb/cc: language optional software package not installed"}
+{"_id":"17949","title":"","text":"What is the difference between `grep`, `egrep`, and `fgrep`?"}
+{"_id":"66918","title":"","text":"Run a program at startup after starting display services"}
+{"_id":"47730","title":"","text":"Rescale a PDF file"}
+{"_id":"82805","title":"","text":"file modified while doing scp/cp"}
+{"_id":"2577","title":"","text":"How can I move files and view the progress (e.g. with a progress bar)?"}
+{"_id":"17122","title":"","text":"Is it possible to install the linux kernel alone?"}
+{"_id":"83017","title":"","text":"How does one view what the contents of symbolic link are, instead of the destination?"}
+{"_id":"48381","title":"","text":"Fixing scrolling in nano running in tmux in mate-terminal"}
+{"_id":"50343","title":"","text":"I specifically want to delete my grep output string from the text file"}
+{"_id":"29182","title":"","text":"Meaning of \"* */1 * * *\" cron entry?"}
+{"_id":"1469","title":"","text":"bash directory shortcuts"}
+{"_id":"1464","title":"","text":"vim auto indenting even after setting noai option"}
+{"_id":"93602","title":"","text":"Resize an extended partition to the whole drive"}
+{"_id":"55954","title":"","text":"How to build a custom kernel?"}
+{"_id":"3431","title":"","text":"What to use to harden Linux box? Apparmor, SELinux, grsecurity, SMACK, chroot?"}
+{"_id":"2038","title":"","text":"Commandline gstreamer player"}
+{"_id":"122399","title":"","text":"Where is the value for current \"In USE\" keyboard layout in the system"}
+{"_id":"59098","title":"","text":"How can I access (including read and write) a linux file system from a windows machine on the same network"}
+{"_id":"80934","title":"","text":"C Shell Array Declaration Syntax, () vs {}"}
+{"_id":"148074","title":"","text":"Unix filesys reserved space"}
+{"_id":"84233","title":"","text":"Keyboard shortcut to copy current command from terminal to clipboard"}
+{"_id":"126154","title":"","text":"Unrar local files to remote server"}
+{"_id":"111650","title":"","text":"How to set up wireshark with correct permissions"}
+{"_id":"78659","title":"","text":"Setting up Helvetica with fontconfig"}
+{"_id":"152763","title":"","text":"Memory Usage in Linux"}
+{"_id":"71902","title":"","text":"Is there any website having command line environment of Linux, for practicing commands?"}
+{"_id":"53250","title":"","text":"Package managers for local installations under home directory"}
+{"_id":"53252","title":"","text":"How to read the messages during power off"}
+{"_id":"147242","title":"","text":"How to kill - softly?"}
+{"_id":"97876","title":"","text":"How to unpack a downloaded tar.bz2 archive?"}
+{"_id":"68945","title":"","text":"Working of the [0-9]"}
+{"_id":"78501","title":"","text":"Ssh to a box, run a command, output data to a file, then move on to the next IP adress"}
+{"_id":"105908","title":"","text":"How to display meminfo in megabytes in top?"}
+{"_id":"28771","title":"","text":"How to remove last part of a path in bash?"}
+{"_id":"123652","title":"","text":"Openssl upgraded via apt-get, `openssl version` showing previous version"}
+{"_id":"77410","title":"","text":"CentOS conservative governor, nice error"}
+{"_id":"123650","title":"","text":"What is the ` character or symbol called and what is its significance outside of SE code formatting?"}
+{"_id":"35416","title":"","text":"Four tasks in parallel... how do I do that?"}
+{"_id":"145133","title":"","text":"How to search and list files and folders with specific pattern?"}
+{"_id":"140565","title":"","text":"Backup of data from Linux PC"}
+{"_id":"85305","title":"","text":"Is there a standard POSIX way of doing `tac`"}
+{"_id":"41258","title":"","text":"What is a good tool to sync two computers"}
+{"_id":"18877","title":"","text":"What is the proper sudoers syntax to add a user?"}
+{"_id":"47344","title":"","text":"The \"yes\" command"}
+{"_id":"5888","title":"","text":"How to apply recursively chmod directories without affecting files?"}
+{"_id":"6551","title":"","text":"How can I set env variables so that KDE recognizes them?"}
+{"_id":"120067","title":"","text":"Copy files without changing owner"}
+{"_id":"53017","title":"","text":"How do you enter a directory that's name is only a minus?"}
+{"_id":"58643","title":"","text":"How to fix dpkg-buildpackage: command not found?"}
+{"_id":"96965","title":"","text":"How to check where users come from?"}
+{"_id":"111197","title":"","text":"Routing Application through different network interfaces"}
+{"_id":"8396","title":"","text":"Bash: Display exit status in prompt:"}
+{"_id":"119698","title":"","text":"When was file created"}
+{"_id":"105717","title":"","text":"upgrading an O.S. affects which file systems?"}
+{"_id":"152426","title":"","text":"How to combine arithmetic expansion and brace expansion?"}
+{"_id":"25948","title":"","text":"Parallelizing a for loop"}
+{"_id":"3838","title":"","text":"zsh autcomplete not updating path executables"}
+{"_id":"35338","title":"","text":"su vs sudo -s vs sudo bash"}
+{"_id":"75992","title":"","text":"Renamed network interfaces"}
+{"_id":"104125","title":"","text":"How do I delete files with spaces in them in bash script?"}
+{"_id":"41770","title":"","text":"How can I copy a file and create the target directories at the same time?"}
+{"_id":"38162","title":"","text":"How can I force unzip / zip not to create a subdirectory when I extract it?"}
+{"_id":"43212","title":"","text":"X11 send notification to all users on all DISPLAY's"}
+{"_id":"60481","title":"","text":"Match word containing characters beyond a-zA-Z"}
+{"_id":"53196","title":"","text":"How to block https facebook site using iptables"}
+{"_id":"54975","title":"","text":"How to check that a daemon is listening on what interface?"}
+{"_id":"44686","title":"","text":"Finding command execution time in hindsight"}
+{"_id":"28506","title":"","text":"How do you install Grub2 on a USB stick?"}
+{"_id":"62221","title":"","text":"Find functions, commands, and builtins"}
+{"_id":"50508","title":"","text":"Reusing ssh session for repeated rsync commands"}
+{"_id":"52908","title":"","text":"How do I \"merge\" two text files?"}
+{"_id":"58825","title":"","text":"Assigning IP address to environment variable"}
+{"_id":"146062","title":"","text":"Missing repository problem (404 Not Found)"}
+{"_id":"139854","title":"","text":"Why does wget return a HTTP 403 error to download openSSH pet?"}
+{"_id":"15611","title":"","text":"What is the difference between 'su -' and 'su root'?"}
+{"_id":"68255","title":"","text":"Why do . and .. have a file size of 4 kB and 12 kB, respectively?"}
+{"_id":"110563","title":"","text":"How can the order of execution in the shell as it relates to redirection be upset about 1 time out of a 1000 on my system?"}
+{"_id":"42010","title":"","text":"Re-assigning (specifically, incrementing) a variable in a bash script"}
+{"_id":"86219","title":"","text":"one IP several guests same port 22"}
+{"_id":"85728","title":"","text":"How to switch to editing command in text editor"}
+{"_id":"87380","title":"","text":"Using a reference to a bash string variable in sed"}
+{"_id":"76478","title":"","text":"What does this code do?"}
+{"_id":"117629","title":"","text":"How to ask for a password to mount crypted swap at boot time on Linux Mint 16 with initramfs-tools?"}
+{"_id":"31187","title":"","text":"How to enable crash reports/core dumps/stack trace logging globally?"}
+{"_id":"88675","title":"","text":"Is there any way to check df -k hanging for nfs mount issues?"}
+{"_id":"118219","title":"","text":"Free disk space from a JBoss log file which is still being written to"}
+{"_id":"10220","title":"","text":"listing packages in Debian, a la `dpkg -l`, but including the package origin/source"}
+{"_id":"50208","title":"","text":"How to change the working directory of invoking shell using a script?"}
+{"_id":"24351","title":"","text":"Remotely control an xorg session"}
+{"_id":"111355","title":"","text":"How to redirect the output of any command?"}
+{"_id":"61646","title":"","text":"Why are .so files executable?"}
+{"_id":"110401","title":"","text":"Need a command sequence that will move files from one directory to another based on a particular year?"}
+{"_id":"32140","title":"","text":"Autentification on SSH connection in OneLine"}
+{"_id":"3842","title":"","text":"How can I scroll within the output of my watch command?"}
+{"_id":"4965","title":"","text":"keep duplicates out of $PATH on source"}
+{"_id":"4961","title":"","text":"Which mp3 tagging tool for Linux?"}
+{"_id":"4144","title":"","text":"How to have correct permissions of files from usb disks?"}
+{"_id":"19654","title":"","text":"Changing extension to multiple files"}
+{"_id":"101797","title":"","text":"How to report time and other information on all bash commands?"}
+{"_id":"85021","title":"","text":"In Bash scripting, what's the meaning of \" $! \"?"}
+{"_id":"84376","title":"","text":"How to remove the last character from every line in a text file"}
+{"_id":"29884","title":"","text":"Two prefix commands for tmux?"}
+{"_id":"8647","title":"","text":"gnu find and masking the {} for some shells - which?"}
+{"_id":"127268","title":"","text":"Delete all files in a directory whose name do not match a line in a file list"}
+{"_id":"89469","title":"","text":"What should I be aware of when installing Linux on a Mac?"}
+{"_id":"82021","title":"","text":"What is the equivalent of apt-file in portage, if any?"}
+{"_id":"96484","title":"","text":"How can I configure syslog.conf file, to log iptables messages in a separate file?"}
+{"_id":"43636","title":"","text":"Why does this compound command report errors when copying directories?"}
+{"_id":"43638","title":"","text":"How to change environment variables without re-logging to UI?"}
+{"_id":"90883","title":"","text":"Is it possible to run pure GNU?"}
+{"_id":"60710","title":"","text":"Cannot boot into Windows 7 after deleting Linux partitions"}
+{"_id":"90772","title":"","text":"First characters of the command repeated in the display when completing"}
+{"_id":"144109","title":"","text":"command type \"hashed\"?"}
+{"_id":"23163","title":"","text":"Newlines in filenames"}
+{"_id":"98697","title":"","text":"Bash command to open a system's terminal"}
+{"_id":"31876","title":"","text":"What do these commands mean?"}
+{"_id":"147831","title":"","text":"Get number of installed RAM sticks on server and size"}
+{"_id":"146773","title":"","text":"why bash increment: `n=0;((n++));` return error?"}
+{"_id":"64861","title":"","text":"How to display numbers in reverse order using seq(1)?"}
+{"_id":"98527","title":"","text":"sox returns an error when I try to handle mp3 files"}
+{"_id":"70630","title":"","text":"Must parse ls -Al output and get file or directory name"}
+{"_id":"84179","title":"","text":"Why is the first line comment of .sh file necessary?"}
+{"_id":"84175","title":"","text":"Create a symbolic link relative to the current directory"}
+{"_id":"3543","title":"","text":"Expand KDE activities concept to the shell"}
+{"_id":"767","title":"","text":"What is the real difference between \"apt-get\" and \"aptitude\"? (How about \"wajig\"?)"}
+{"_id":"71585","title":"","text":"Convert ls -l output format to chmod format"}
+{"_id":"70","title":"","text":"What Unix commands can be used as a semaphore/lock?"}
+{"_id":"84955","title":"","text":"Given a CSV file, how do I delete the content between the 2nd and 3rd tabs of each row?"}
+{"_id":"12186","title":"","text":"Are there any good tools besides SeleniumRC that can fetch webpages including content post-painted by JavaScript?"}
+{"_id":"53119","title":"","text":"Best distro for programming"}
+{"_id":"57046","title":"","text":"Remote GUI login from Windows machine to Linux machine"}
+{"_id":"29450","title":"","text":"Shell: how to go to the beginning of line when you are inside a screen?"}
+{"_id":"56174","title":"","text":"Permanently fixed screen titles"}
+{"_id":"127110","title":"","text":"Which process scheduler is my linux system using?"}
+{"_id":"153569","title":"","text":"SSH - Is it possible for an SSH session to take complete control of the client?"}
+{"_id":"2658","title":"","text":"Why use swap when there is more than enough free space in RAM?"}
+{"_id":"36871","title":"","text":"Where should a local executable be placed?"}
+{"_id":"137634","title":"","text":"\"including\" files in fstab"}
+{"_id":"30111","title":"","text":"How to grep a text recursively on BusyBox 1.0?"}
+{"_id":"130844","title":"","text":"How do I route traffic between eth0:0 and eth0"}
+{"_id":"36682","title":"","text":"Printing files as PDF with syntax highlighting via terminal"}
+{"_id":"117928","title":"","text":"Disable login for useradd"}
+{"_id":"78210","title":"","text":"How do I find the running GUI environment from the terminal?"}
+{"_id":"7658","title":"","text":"Linux: Writing a watchdog to monitor multiple processes"}
+{"_id":"120114","title":"","text":"How to use quick substitution to replace all the strings of the previous command?"}
+{"_id":"10731","title":"","text":"Common multiple SSH connections file handling issue"}
+{"_id":"13046","title":"","text":"Format of /etc/hosts on Linux (different from Windows?)"}
+{"_id":"29791","title":"","text":".bash_profile not sourced when running su"}
+{"_id":"1168","title":"","text":"how to glob every hidden file except current and parent directory"}
+{"_id":"8554","title":"","text":"Parsing XML's , JSON's and newer data file formats in UNIX using command line utilities"}
+{"_id":"21920","title":"","text":"SSH output isn't line buffered?"}
+{"_id":"6800","title":"","text":"pwd without symlinks"}
+{"_id":"37313","title":"","text":"How do I grep for multiple patterns?"}
+{"_id":"76151","title":"","text":"Remove random string from particular position in file names"}
+{"_id":"73475","title":"","text":"List all my variables"}
+{"_id":"123959","title":"","text":"How to limit a user's RAM on Ubuntu?"}
+{"_id":"139152","title":"","text":"configure ToggleShowDesktop in Openbox to only act on specified layer"}
+{"_id":"137856","title":"","text":"How hide the grub 2 start up screen in debian during bootup?"}
+{"_id":"13996","title":"","text":"How can I break away from an SSH session that has crashed?"}
+{"_id":"13660","title":"","text":"Is it possible to login via ssh to unlock LUKS drives?"}
+{"_id":"63266","title":"","text":"mv * folder (avoiding 'cannot move' error)"}
+{"_id":"1555","title":"","text":"How can I move files by type recursively from a directory and its sub-directories to another directory?"}
+{"_id":"34315","title":"","text":"What is the best book every Unix or Linux user should read?"}
+{"_id":"144187","title":"","text":"Calculate Total disk i/o by a single process"}
+{"_id":"9971","title":"","text":"How do I find how long ago a Linux system was installed?"}
+{"_id":"26051","title":"","text":"What are all the items on the cover of the \"Linux Administration Handbook\"?"}
+{"_id":"38619","title":"","text":"Numerically sorting files"}
+{"_id":"146114","title":"","text":"How to find which application is creating a particular file in a path?"}
+{"_id":"71504","title":"","text":"File extensions and association with programs in linux"}
+{"_id":"150063","title":"","text":"Why are these values not appending correctly when appended to the pipeline?"}
+{"_id":"4770","title":"","text":"Quoting in ssh $host $FOO and ssh $host \"sudo su user -c $FOO\" type constructs"}
+{"_id":"94297","title":"","text":"ksh:Get files created on specific date in directory"}
+{"_id":"60459","title":"","text":"How to make bash put prompt on a new line after cat command?"}
+{"_id":"102504","title":"","text":"Hard links versus symbolic links: which one is faster / smaller?"}
+{"_id":"64203","title":"","text":"How to get lighter (more white) themes for Xfce?"}
+{"_id":"26676","title":"","text":"How to check if a shell is login/interactive/batch"}
+{"_id":"139886","title":"","text":"Terminal sometimes fails to find executables on local directory"}
+{"_id":"3467","title":"","text":"What does \"rc\" in .bashrc stand for?"}
+{"_id":"85928","title":"","text":"How to make apt recognize an installed tar package?"}
+{"_id":"131649","title":"","text":"Free DNS Clients"}
+{"_id":"127978","title":"","text":"ext4 to btrfs conversion: how many times the whole volume will be read during the process?"}
+{"_id":"120045","title":"","text":"How to sed and put back the part of the match?"}
+{"_id":"17428","title":"","text":"Moved bin and other folders! How to get them back?"}
+{"_id":"101330","title":"","text":"Pin or hold? What's the proper way to tell apt-get dist-upgrade that I want to keep a particular package over another?"}
+{"_id":"46898","title":"","text":"Sort a file based on 1 column"}
+{"_id":"14815","title":"","text":"Process descendants"}
+{"_id":"126165","title":"","text":"How to access my webserver from the host machine?"}
+{"_id":"110269","title":"","text":"The amount of time since the system was last booted"}
+{"_id":"105365","title":"","text":"How to add the logs to a crontab with time stamp"}
+{"_id":"51993","title":"","text":"A Web ssh/telnet client"}
+{"_id":"61931","title":"","text":"Redirect all subsequent commands' stderr using exec"}
+{"_id":"2759","title":"","text":"Why does sed act differently depending on the output file?"}
+{"_id":"106544","title":"","text":"Use xargs input in eval command"}
+{"_id":"6704","title":"","text":"How can I grep in PDF files?"}
+{"_id":"50101","title":"","text":"Where to locate \"sockets\""}
+{"_id":"98231","title":"","text":"Symbolic link path"}
+{"_id":"85352","title":"","text":"How can I `alias sudo !!`?"}
+{"_id":"18796","title":"","text":"How to apply changes of newly added user groups without needing to reboot?"}
+{"_id":"97715","title":"","text":"Ubuntu- How do I change clock speed from terminal?"}
+{"_id":"17323","title":"","text":"Installing a .deb package in home directory"}
+{"_id":"96938","title":"","text":"Bash script - determine vendor and install system (apt-get, yum etc)"}
+{"_id":"90198","title":"","text":"What happens to argument in alias after using it once?"}
+{"_id":"145801","title":"","text":"paths for searching executables"}
+{"_id":"107967","title":"","text":"Is there a way to keep an app running after closing the terminal that calls it?"}
+{"_id":"148953","title":"","text":"Unix Useradd - Audit list of users added to system"}
+{"_id":"107823","title":"","text":"How can the output of ldd be checked to see of they exist on a different system or not?"}
+{"_id":"24878","title":"","text":"How do I install g++ on RHEL6?"}
+{"_id":"78182","title":"","text":"How to lock users after 5 unsuccessful login tries?"}
+{"_id":"132856","title":"","text":"Writing a shell script in Ubuntu to process several layers as a single animated GIF file"}
+{"_id":"44068","title":"","text":"Use a shell variable to execute a comand"}
+{"_id":"52277","title":"","text":"Pacman option to assume \"yes\" to every question?"}
+{"_id":"7870","title":"","text":"How to check how long a process has been running?"}
+{"_id":"28571","title":"","text":"Redirect traffic through vpn on an as needed basis"}
+{"_id":"92172","title":"","text":"Can Any one Suggest good Linux OS Tutorial?"}
+{"_id":"102624","title":"","text":"What does a dot after the file permission bits mean?"}
+{"_id":"34970","title":"","text":"Way to determine where certain global parameter is configured"}
+{"_id":"83273","title":"","text":"How To Diagnose Faulty (onboard) Network Adapter"}
+{"_id":"108222","title":"","text":"Linux - Sending a command to a screen through a shell script?"}
+{"_id":"10158","title":"","text":"Splitting large directory tree into specified-size chunks?"}
+{"_id":"123821","title":"","text":"How to record the actual running time of a program with other programs running?"}
+{"_id":"80968","title":"","text":"How can I create automatically expiring user accounts?"}
+{"_id":"84246","title":"","text":"How many clipboards are in system?"}
+{"_id":"366","title":"","text":"Convince grep to output all lines, not just those with matches"}
+{"_id":"51911","title":"","text":"Unable to change file permissions"}
+{"_id":"16120","title":"","text":"In bash how can I change the color of my command prompt?"}
+{"_id":"88602","title":"","text":"scp from remote host fails due to login greeting set in .bashrc"}
+{"_id":"116210","title":"","text":"What is the appropriate kernel for the i7-4770K CPU?"}
+{"_id":"114013","title":"","text":"Edit file on image created with dd"}
+{"_id":"48124","title":"","text":"File descriptor linked to socket or pipe in proc"}
+{"_id":"147430","title":"","text":"Compare two strings in a shell script"}
+{"_id":"50279","title":"","text":"Is it against linux ethos to provide a progress indicator for running commands?"}
+{"_id":"50186","title":"","text":"Home folder name with Unicode characters?"}
+{"_id":"66097","title":"","text":"Find all files with a Python Shebang"}
+{"_id":"73293","title":"","text":"In bash, how can I erase an alias without logout?"}
+{"_id":"74117","title":"","text":"Why is resolv.conf spelled without the 'e'?"}
+{"_id":"56065","title":"","text":"Where to place a Bash shell redirection for a command?"}
+{"_id":"86535","title":"","text":"File permissions of file when tranferring from Windows to Unix"}
+{"_id":"6505","title":"","text":"Need to upgrade svn on centos"}
+{"_id":"39145","title":"","text":"Execute command in remote active terminal"}
+{"_id":"125862","title":"","text":"How to find out when an application was installed and when the applications/libraries it depends on are installed?"}
+{"_id":"61308","title":"","text":"Is setting up fstab like this dangerous?"}
+{"_id":"61305","title":"","text":"What should I check after an unauthorized access?"}
+{"_id":"126914","title":"","text":"How does sudo really work?"}
+{"_id":"144271","title":"","text":"Unix - Addressing filename with space for script"}
+{"_id":"148715","title":"","text":"I don't know how to cancel job"}
+{"_id":"66110","title":"","text":"Contradictory information from \"top\""}
+{"_id":"4561","title":"","text":"How do I find out what hard disks are in the system?"}
+{"_id":"74322","title":"","text":"Tailing a New File with an Old Name"}
+{"_id":"105220","title":"","text":"Why is learning command line imporatant?"}
+{"_id":"127432","title":"","text":"Logging SSH access attempts"}
+{"_id":"19871","title":"","text":"Have to type out whole path in order to execute an application in OSX"}
+{"_id":"81238","title":"","text":"How should I compile a dev package from source?"}
+{"_id":"53143","title":"","text":"Move a file and re-target all of its symlinks"}
+{"_id":"13208","title":"","text":"GCC installation prefix under Linux"}
+{"_id":"119298","title":"","text":"How can I extract images from a pdf file?"}
+{"_id":"92920","title":"","text":"Use the command bar in bash without I/O?"}
+{"_id":"9053","title":"","text":"Why does \"xdg-open\" fail although \"xdg-mime query defaut \" succeeds on Ubuntu 10.10?"}
+{"_id":"130796","title":"","text":"What is the difference between all and default in kernel setting?"}
+{"_id":"21306","title":"","text":"Use the system Compose database in Gtk applications"}
+{"_id":"23306","title":"","text":"Can the background of the log-in screen of linux mint 11 change?"}
+{"_id":"105840","title":"","text":"nohup: ignoring input and redirecting stderr to stdout"}
+{"_id":"102312","title":"","text":"No matter how many times I try re-installing Linux Mint, I get a GRUB error. How do I fix it?"}
+{"_id":"44853","title":"","text":"Why process wont start in Inittab"}
+{"_id":"87054","title":"","text":"Booting into shell instead of graphical interface"}
+{"_id":"46821","title":"","text":"Duplicate keystrokes onto remote computer in realtime"}
+{"_id":"79688","title":"","text":"Directories are listed twice"}
+{"_id":"56395","title":"","text":"Replace semicolons to commas between the quotes only"}
+{"_id":"53814","title":"","text":"Configure up-arrow to browse through commands with same initial characters rather than all previous commands"}
+{"_id":"138291","title":"","text":"replace $ with £ using sed command"}
+{"_id":"6854","title":"","text":"Can I identify my RAM without shutting down linux?"}
+{"_id":"10055","title":"","text":"Why does `last` show '{' and '|' in the TTY field?"}
+{"_id":"125683","title":"","text":"Moving pacman from root to /home partition"}
+{"_id":"155289","title":"","text":"How to SFTP through proxy if there is no netcat?"}
+{"_id":"90838","title":"","text":"(standard_in) 1: parse error"}
+{"_id":"80692","title":"","text":"Refer to an item in `dirs`"}
+{"_id":"75059","title":"","text":"How to blacklist a correct bad RAM sector according to MemTest86+ error indication?"}
+{"_id":"3515","title":"","text":"31 Debian CDs -- Why? and which do I need for a vanilla desktop install?"}
+{"_id":"85865","title":"","text":"Trim with LVM and dm-crypt"}
+{"_id":"40749","title":"","text":"Remove duplicate $PATH entries with awk command"}
+{"_id":"117184","title":"","text":"Most efficient way of purging of 10TB data from SAN?"}
+{"_id":"132122","title":"","text":"shell or python script to transpose rows to columns"}
+{"_id":"152691","title":"","text":"How to disable beep sound in Linux CentOS 7 command line?"}
+{"_id":"43465","title":"","text":"What's the default order of linux sort?"}
+{"_id":"122971","title":"","text":"Logging and controlling changes to the system"}
+{"_id":"114274","title":"","text":"An init-script does not get called on shutdown"}
+{"_id":"25049","title":"","text":"How do I close a terminal without saving the history?"}
+{"_id":"105026","title":"","text":"boot partition is almost full in CentOS"}
+{"_id":"102553","title":"","text":"Current IP address as visible from the internet?"}
+{"_id":"72096","title":"","text":"Grab text from detached screen"}
+{"_id":"74867","title":"","text":"Can I bridge \"backwards\" from an ssh connection to my local emacs-server?"}
+{"_id":"91060","title":"","text":"Why is `find -name *.jks` not returning some files?"}
+{"_id":"119583","title":"","text":"How to trick a particular command into thinking it is a different date?"}
+{"_id":"9107","title":"","text":"How can I run Firefox on Linux headlessly (i.e. without requiring libgtk-x11-2.0.so.0)?"}
+{"_id":"66062","title":"","text":"Reasons for choosing primary over logical partitions"}
+{"_id":"30956","title":"","text":"How to access the data stored in guest operating system(i.e Virtual machine) from Host system"}
+{"_id":"50150","title":"","text":"Can I map a key (caps lock) so it does one thing pressed alone, and another when pressed with a second key?"}
+{"_id":"87258","title":"","text":"Delete all files except certain subfolder"}
+{"_id":"108782","title":"","text":"Pass the output of previous command to next as an argument"}
+{"_id":"70796","title":"","text":"Sort with unequal whitespace in first column"}
+{"_id":"71221","title":"","text":"How to use find to remove *.py~ and *.pyc files at once?"}
+{"_id":"84760","title":"","text":"Should /usr and /home be on different partitions?"}
+{"_id":"154803","title":"","text":"Obtaining information about system hardware"}
+{"_id":"45665","title":"","text":"Default Guake tab names"}
+{"_id":"82612","title":"","text":"Installed Win7 after Ubuntu, Win removed Ubuntu boot option"}
+{"_id":"17316","title":"","text":"Check for process already running in webfaction?"}
+{"_id":"21449","title":"","text":"How can I prevent Apt-Get from autoremoving packages?"}
+{"_id":"126694","title":"","text":"Enabling wired internet connection with dhcp during Arch Linux Installation?"}
+{"_id":"114613","title":"","text":"How to determine which init system is used?"}
+{"_id":"104797","title":"","text":"HDD indicator blinks when I run out of memory, but I have no swap configured"}
+{"_id":"104791","title":"","text":"How can I disable the button of my CD/DVD drive?"}
+{"_id":"99004","title":"","text":"udev rules to identify a USB storage media?"}
+{"_id":"34004","title":"","text":"How does tcp-keepalive work in ssh?"}
+{"_id":"80362","title":"","text":"What does <<< mean?"}
+{"_id":"79207","title":"","text":"When using 'yum list installed' why are some entries listed in bold?"}
+{"_id":"139501","title":"","text":"How to determine who started a process?"}
+{"_id":"4595","title":"","text":"Searching for a command line tagging tool for mp3 and ogg that supports pictures"}
+{"_id":"55719","title":"","text":"How to loop through each file in FTP directory using a bash script"}
+{"_id":"44031","title":"","text":"How to save command line history without logout?"}
+{"_id":"136228","title":"","text":"-exec isn't being passed all the files found by find"}
+{"_id":"119733","title":"","text":"Can a superuser (with 'root' access) manipulate data on a database installed on the server?"}
+{"_id":"94247","title":"","text":"SSH connection establishment too slow"}
+{"_id":"19225","title":"","text":"Where can I find the Official File Hierarchy Standard for UNIX?"}
+{"_id":"17108","title":"","text":"Why is there a '.d' in 'init.d'?"}
+{"_id":"97572","title":"","text":"Logging violations of rules in limits.conf"}
+{"_id":"954","title":"","text":"How does keyboard mapping work in Linux?"}
+{"_id":"26934","title":"","text":"Using sftp to Transfer a Directory?"}
+{"_id":"78886","title":"","text":"LVM to extend a partition?"}
+{"_id":"2010","title":"","text":"What does the Broken pipe message mean in an SSH session?"}
+{"_id":"116640","title":"","text":"What is maximum RAM supportable by Linux?"}
+{"_id":"85971","title":"","text":"Rsync and take name/path changes into account"}
+{"_id":"19915","title":"","text":"Is there any method to mount a block of memory as a filesystem in linux?"}
+{"_id":"102453","title":"","text":"What does `init [2]` mean in the COMMAND column of ps?"}
+{"_id":"27178","title":"","text":"Vim :s replace first N < g occurrences on a line"}
+{"_id":"56054","title":"","text":"Time Machine Server on Fedora"}
+{"_id":"139154","title":"","text":"Show output only if both words match using grep"}
+{"_id":"128279","title":"","text":"How Linux is implementing case sensitivity and what are its benefits over windows"}
+{"_id":"123364","title":"","text":"Where can I find more information about /dev/pts/*, /dev/ptmx, tty and pseudo terminals"}
+{"_id":"86694","title":"","text":"Can I use several pipelines as a argument?"}
+{"_id":"124293","title":"","text":"Why does fstrim trim all of the free space on my mdraid mirror after a reboot?"}
+{"_id":"49779","title":"","text":"Can I change the font of terminal?"}
+{"_id":"20396","title":"","text":"Make cd automatically ls"}
+{"_id":"148950","title":"","text":"I have to calculate values from two files and store the result in output file"}
+{"_id":"25138","title":"","text":"How to print certain columns by name?"}
+{"_id":"138674","title":"","text":"Dynamic congifuration of monitors (Debian, Intel i915)"}
+{"_id":"40442","title":"","text":"Which installed software packages use the most disk space on Debian?"}
+{"_id":"11343","title":"","text":"Linux tools to treat files as sets and perform set operations on them"}
+{"_id":"42543","title":"","text":"Can I restrict a user to use special programs?"}
+{"_id":"9361","title":"","text":"What does \"-\" mean as an argument to a command?"}
+{"_id":"13251","title":"","text":"Batch delete exif info"}
+{"_id":"14560","title":"","text":"How to recover data from a bad SD card?"}
+{"_id":"65315","title":"","text":"How to do a continous 'wc -l' with gnu texttools?"}
+{"_id":"129240","title":"","text":"tail display whole file and then only changes"}
+{"_id":"6393","title":"","text":"How do you move all files (including hidden) in a directory to another?"}
+{"_id":"74195","title":"","text":"Watch goes blank on refresh"}
+{"_id":"117609","title":"","text":"Capture Error of LS to file"}
+{"_id":"42735","title":"","text":"Run a script automatically as I switch to a directory"}
+{"_id":"12332","title":"","text":"Which are the biggest offshoots of UNIX?"}
+{"_id":"62015","title":"","text":"Running an executable in PATH with the same name as an existing function"}
+{"_id":"100874","title":"","text":"need to display hard error , transport error & soft errors above 2"}
+{"_id":"143907","title":"","text":"How can one ensure bandwidth is not hijacked?"}
+{"_id":"38737","title":"","text":"SSH login with clear text password as a parameter?"}
+{"_id":"46410","title":"","text":"package management"}
+{"_id":"87928","title":"","text":"Combining rsync --files-from with --delete"}
+{"_id":"46350","title":"","text":"Switching to superuser while shell script is running"}
+{"_id":"38910","title":"","text":"Cygwin has no watch command?"}
+{"_id":"105278","title":"","text":"Resetting password of another Linux"}
+{"_id":"141402","title":"","text":"SCP Automation in production environment"}
+{"_id":"132115","title":"","text":"How to find reason a notebook wakes up?"}
+{"_id":"154740","title":"","text":"Using nohup to keep a script running indefinitely"}
+{"_id":"19882","title":"","text":"Directory size calculation difference"}
+{"_id":"118593","title":"","text":"Wrapper command that runs program in temporary directory and deletes it after execution"}
+{"_id":"58880","title":"","text":"How does vim steal root owned files?"}
+{"_id":"93657","title":"","text":"How driver is specified for any device?"}
+{"_id":"138737","title":"","text":"tmux protocol mismatch with no upgrade"}
+{"_id":"83120","title":"","text":"iptables: how to allow traffic from redirected port"}
+{"_id":"83127","title":"","text":"Ubuntu directory permissions - Sticky bit - Prevent deletion of a file"}
+{"_id":"86674","title":"","text":"How can I change the date modified of a folder to the last changed file inside?"}
+{"_id":"120134","title":"","text":"Terminal data flows"}
+{"_id":"3757","title":"","text":"Find the disk-space usage of a directory and all it's files"}
+{"_id":"94345","title":"","text":"Can i use & variable of sed for doing operation inside $()?"}
+{"_id":"107290","title":"","text":"Extract date from a variable in a different format"}
+{"_id":"41555","title":"","text":"can't change file permission"}
+{"_id":"136171","title":"","text":"ACL is NOT enabled but it's working"}
+{"_id":"136258","title":"","text":"What are the advantages / disadvantages Linux file hierarchy has in compare to other OSs?"}
+{"_id":"20878","title":"","text":"Tmux not scaling to fill the window"}
+{"_id":"45626","title":"","text":"Output file contents while they change"}
+{"_id":"10692","title":"","text":"How do I get which to show aliases?"}
+{"_id":"150331","title":"","text":"How to customize Linux without sudo/root access?"}
+{"_id":"55848","title":"","text":"Xmodmap on bashrc not working"}
+{"_id":"105417","title":"","text":"GPS stopped working, gpsctl says: \"gpsctl:ERROR: packet recognition timed out\""}
+{"_id":"71566","title":"","text":"read file record by record and do transformation to the subsequent record based on above record and write into another file"}
+{"_id":"62109","title":"","text":"How can I see a process' thread count?"}
+{"_id":"116070","title":"","text":"granting write permissions to a group to a folder"}
+{"_id":"1736","title":"","text":"When do su and sudo use different passwords?"}
+{"_id":"144601","title":"","text":"Bash script question - skip enter key press"}
+{"_id":"82837","title":"","text":"Fedora's command-not-found doesn't work"}
+{"_id":"146521","title":"","text":"Result of diff two files with switched lines says missing the same line twice"}
+{"_id":"144007","title":"","text":"Symbolic link permission changes"}
+{"_id":"50313","title":"","text":"How do I perform an action on all files with a specific extension in subfolders in an elegant way?"}
+{"_id":"148069","title":"","text":"IPTables rules for specific processes"}
+{"_id":"110282","title":"","text":"CP: max source files number arguments for copy utility"}
+{"_id":"82314","title":"","text":"how to find the type of img file and mount it"}
+{"_id":"3892","title":"","text":"How do I send stdin to the clipboard?"}
+{"_id":"57012","title":"","text":"Coloring shell command and output differrently"}
+{"_id":"131918","title":"","text":"Is it possible to make zcat output text even if it's uncompressed?"}
+{"_id":"55576","title":"","text":"PS command ouput limited to 80 bytes only"}
+{"_id":"10617","title":"","text":"Arch Linux not booting after system update"}
+{"_id":"58651","title":"","text":"Adjusting keyboard sensitivity in a command line terminal?"}
+{"_id":"13147","title":"","text":"Rename all the files within a folder with prefix “Unix_”"}
+{"_id":"20692","title":"","text":"Knowing Privilege rights on a file in Linux"}
+{"_id":"119662","title":"","text":"Can we make grep faster by indexing words in files?"}
+{"_id":"92653","title":"","text":"Proper way to delete contents of directory"}
+{"_id":"12949","title":"","text":"sudo nt passing after redirection operator"}
+{"_id":"150847","title":"","text":"How can I run a GUI on my server through SSH?"}
+{"_id":"90073","title":"","text":"Does 'rm .*' ever delete the parent directory?"}
+{"_id":"67758","title":"","text":"move a directory with a single character (back quote) as its name"}
+{"_id":"79837","title":"","text":"How to delete directory ' :q!'?"}
+{"_id":"45259","title":"","text":"list Windows shared folders (samba) available in the local network?"}
+{"_id":"63335","title":"","text":"How to remove all white spaces just between brackets [] using bash?"}
+{"_id":"23833","title":"","text":"How can I tell what version of linux I'm using?"}
+{"_id":"12522","title":"","text":"Installing two glibc alongside in debian/ubuntu"}
+{"_id":"96728","title":"","text":"Extract a single file from a tar file and put it to another directory"}
+{"_id":"96700","title":"","text":"Equivalent of iwlist to see who is around?"}
+{"_id":"132225","title":"","text":"bash completion on posix mode"}
+{"_id":"4547","title":"","text":"NIS and autofs error"}
+{"_id":"73","title":"","text":"How can I set the processor affinity of a process on Linux?"}
+{"_id":"132142","title":"","text":"\"error while loading shared libraries: libopenal.so.1\" while installing Drox Operative"}
+{"_id":"53128","title":"","text":"Difference between passwd and passwd- file"}
+{"_id":"120800","title":"","text":"Bash in php exec don't color png and mp3 files on Linux"}
+{"_id":"98353","title":"","text":"Executable not visible when run with sudo"}
+{"_id":"147568","title":"","text":"Is there a way to pass a Password to ssh automatically?"}
+{"_id":"98820","title":"","text":"Why does a working standalone nested function/script not work inside a larger script?"}
+{"_id":"76263","title":"","text":"`ps | grep | kill` aborts my script prematurely"}
+{"_id":"132350","title":"","text":"What are the specific naming conventions for variables in bash shell scripting language?"}
+{"_id":"6790","title":"","text":"executing a sh script from the cron"}
+{"_id":"141307","title":"","text":"What does typing a single apostrophe do in terminal?"}
+{"_id":"10575","title":"","text":"Can't add user to sudoers file"}
+{"_id":"24550","title":"","text":"Unix (Ubuntu Server): $PYTHONPATH resets to blank when I reboot"}
+{"_id":"38191","title":"","text":"Terminal 256 colors don't work through Tmux"}
+{"_id":"107111","title":"","text":"what is meant by vi and emacs editing modes"}
+{"_id":"10825","title":"","text":"Remember a half-typed command while I check something"}
+{"_id":"78442","title":"","text":"How to start tmux so that it won't get killed on exit in last windows?"}
+{"_id":"1709","title":"","text":"How to fix Ctrl + arrows in Vim?"}
+{"_id":"5268","title":"","text":"How do I merge two *.avi files into one?"}
+{"_id":"151091","title":"","text":"Determin if the currnet terminal has a dark or light theme"}
+{"_id":"34516","title":"","text":"Can I create a man page for a script?"}
+{"_id":"2888","title":"","text":"Correct textual name for <<"}
+{"_id":"58017","title":"","text":"Upstart script produces folder with question mark at the end. Why?"}
+{"_id":"62355","title":"","text":"Is there a tool/website to compare package status in different Linux distributions?"}
+{"_id":"153974","title":"","text":"How to export a subset of a 'less' output"}
+{"_id":"153977","title":"","text":"Automatically put an alias into ~/.bashrc or ~/.zshrc"}
+{"_id":"46382","title":"","text":"Recreating EXT4 partition without losing data"}
+{"_id":"10646","title":"","text":"Repeat a Unix command every x seconds forever"}
+{"_id":"20804","title":"","text":"In a regular expression, which characters need escaping?"}
+{"_id":"116989","title":"","text":"Why is df -h size, util and dispo not corresponding to each other"}
+{"_id":"4219","title":"","text":"How do I get bash completion for command aliases?"}
+{"_id":"45040","title":"","text":"Why isn't there a server edition for Fedora like Ubuntu?"}
+{"_id":"1426","title":"","text":"How do you choose a distribution?"}
+{"_id":"144070","title":"","text":"What is \"built-in\" command in bash"}
+{"_id":"117467","title":"","text":"How to permanently set environmental variables"}
+{"_id":"24989","title":"","text":"How to use regrex with AWK for string replacement in this example?"}
+{"_id":"141558","title":"","text":"Using regex in locate"}
+{"_id":"47577","title":"","text":"rsync: how to include files with name ending in a specific string"}
+{"_id":"121415","title":"","text":"shell script header for best compatibility"}
+{"_id":"94837","title":"","text":"Having trouble uncompressing a few files"}
+{"_id":"154509","title":"","text":"How can I make sed not append a newline character?"}
+{"_id":"64595","title":"","text":"Why do inode-based file systems NOT need reboot after updating library versions?"}
+{"_id":"109862","title":"","text":"#!/bin/bash: No such file or directory"}
+{"_id":"131527","title":"","text":"routing based on source IP"}
+{"_id":"107138","title":"","text":"I want to print a line when a user login"}
+{"_id":"49183","title":"","text":"MySQL not getting started on linux"}
+{"_id":"1832","title":"","text":"Why do some commands have man pages and other commands use --help?"}
+{"_id":"151023","title":"","text":"Reading file with different formats"}
+{"_id":"117975","title":"","text":"disable mail notification on login"}
+{"_id":"79882","title":"","text":"What exactly did mv /tmp/folder/* /* do to my filesystem?"}
+{"_id":"102016","title":"","text":"How do I columnate a list of items with minimal width?"}
+{"_id":"45120","title":"","text":"Given a git patch id, how to find out which kernel release contains it?"}
+{"_id":"92689","title":"","text":"Distro for low-RAM with most recent package versions"}
+{"_id":"46645","title":"","text":"how can I use bash as my login shell when my sysadmin refuses to let me change it"}
+{"_id":"28363","title":"","text":"What's the difference between \"s\" and \"S\" in ls -la?"}
+{"_id":"66796","title":"","text":"Select greatest numbered filename"}
+{"_id":"76870","title":"","text":"cat files in current folder and all subfolders"}
+{"_id":"35241","title":"","text":"How to combine two grep statements and display their results together?"}
+{"_id":"4402","title":"","text":"What is a Superblock, Inode, Dentry and a File?"}
+{"_id":"114608","title":"","text":"ls: show file size with thousand separator"}
+{"_id":"138374","title":"","text":"Extract Values from simple html file via grep/awk"}
+{"_id":"138376","title":"","text":"Why All the text is invisible in Intellij?"}
+{"_id":"73989","title":"","text":"Why do Unix man pages use double backticks in place of double quotes?"}
+{"_id":"96579","title":"","text":"What is the difference between ' and \"?"}
+{"_id":"43073","title":"","text":"Custom xkb layout in which one key creates two unicode code points"}
+{"_id":"20900","title":"","text":"Recommended reverse firewall applications for linux?"}
+{"_id":"94775","title":"","text":"List all commands that a shell knows"}
+{"_id":"16785","title":"","text":"Is 'some_program <some_file' faster than 'cat some_file | some_program'?"}
+{"_id":"20536","title":"","text":"reformatting output with aligned columns"}

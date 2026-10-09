@@ -1,0 +1,1908 @@
+{
+  "generated_at": "2026-10-09T06:42:14.368Z",
+  "git": {
+    "sha": "087be968fae4b08731f8d3ed106ec6d52979091d",
+    "clean": false,
+    "has_untracked": true
+  },
+  "corpus": {
+    "name": "cqadupstack-tierb",
+    "corpus_hash": "ed717c1f04609d26411630978fff95da10bd649ee58e82784bb488bf9489d8d5",
+    "num_docs": 147742,
+    "vocab_size": 361438,
+    "num_postings": 8985091,
+    "avg_doc_length": 116.2489068782066
+  },
+  "strategy": "bm25-k1.2-b0.75",
+  "notes": "Every value is produced by the engine over the committed eval inputs (no fabricated data). Timings are single-run wall-clock per stage — indicative, not benchmark stats. Regenerate after index rebuilds: npm run trace:sample",
+  "selection_count": 8,
+  "queries": [
+    {
+      "stack": "unix",
+      "query_id": "116498",
+      "why": "canonical short technical query (file permissions)",
+      "text": "List the file permissions of only the current directory",
+      "parsed": {
+        "kind": "or",
+        "left": {
+          "kind": "or",
+          "left": {
+            "kind": "or",
+            "left": {
+              "kind": "or",
+              "left": {
+                "kind": "or",
+                "left": {
+                  "kind": "or",
+                  "left": {
+                    "kind": "or",
+                    "left": {
+                      "kind": "or",
+                      "left": {
+                        "kind": "term",
+                        "term": "list"
+                      },
+                      "right": {
+                        "kind": "term",
+                        "term": "the"
+                      }
+                    },
+                    "right": {
+                      "kind": "term",
+                      "term": "file"
+                    }
+                  },
+                  "right": {
+                    "kind": "term",
+                    "term": "permissions"
+                  }
+                },
+                "right": {
+                  "kind": "term",
+                  "term": "of"
+                }
+              },
+              "right": {
+                "kind": "term",
+                "term": "only"
+              }
+            },
+            "right": {
+              "kind": "term",
+              "term": "the"
+            }
+          },
+          "right": {
+            "kind": "term",
+            "term": "current"
+          }
+        },
+        "right": {
+          "kind": "term",
+          "term": "directory"
+        }
+      },
+      "analyzed": {
+        "kind": "or",
+        "left": {
+          "kind": "or",
+          "left": {
+            "kind": "or",
+            "left": {
+              "kind": "or",
+              "left": {
+                "kind": "or",
+                "left": {
+                  "kind": "or",
+                  "left": {
+                    "kind": "or",
+                    "left": {
+                      "kind": "or",
+                      "left": {
+                        "kind": "term",
+                        "terms": [
+                          "list"
+                        ]
+                      },
+                      "right": {
+                        "kind": "term",
+                        "terms": []
+                      }
+                    },
+                    "right": {
+                      "kind": "term",
+                      "terms": [
+                        "file"
+                      ]
+                    }
+                  },
+                  "right": {
+                    "kind": "term",
+                    "terms": [
+                      "permiss"
+                    ]
+                  }
+                },
+                "right": {
+                  "kind": "term",
+                  "terms": []
+                }
+              },
+              "right": {
+                "kind": "term",
+                "terms": []
+              }
+            },
+            "right": {
+              "kind": "term",
+              "terms": []
+            }
+          },
+          "right": {
+            "kind": "term",
+            "terms": [
+              "current"
+            ]
+          }
+        },
+        "right": {
+          "kind": "term",
+          "terms": [
+            "directori"
+          ]
+        }
+      },
+      "postings": [
+        {
+          "term": "list",
+          "in_index": true,
+          "df": 14851,
+          "postings": 14851
+        },
+        {
+          "term": "file",
+          "in_index": true,
+          "df": 37341,
+          "postings": 37341
+        },
+        {
+          "term": "permiss",
+          "in_index": true,
+          "df": 2402,
+          "postings": 2402
+        },
+        {
+          "term": "current",
+          "in_index": true,
+          "df": 13472,
+          "postings": 13472
+        },
+        {
+          "term": "directori",
+          "in_index": true,
+          "df": 8160,
+          "postings": 8160
+        }
+      ],
+      "candidate_docs": 57973,
+      "results": [
+        {
+          "rank": 1,
+          "corpus_id": "unix:61585",
+          "title": "The relationship between execute permission on a directory and its inode structure",
+          "score": 20.94818
+        },
+        {
+          "rank": 2,
+          "corpus_id": "unix:62629",
+          "title": "How to display directory permission without listing permission for their contents",
+          "score": 20.851451
+        },
+        {
+          "rank": 3,
+          "corpus_id": "unix:34030",
+          "title": "How do I make all current and future files in a directory readable by a certain group/user?",
+          "score": 19.435125
+        },
+        {
+          "rank": 4,
+          "corpus_id": "unix:71597",
+          "title": "write only permissions on samba",
+          "score": 19.290855
+        },
+        {
+          "rank": 5,
+          "corpus_id": "unix:62451",
+          "title": "Can a user brute-force a directory listing without having read permission on the directory?",
+          "score": 18.813423
+        },
+        {
+          "rank": 6,
+          "corpus_id": "unix:49048",
+          "title": "Asking ls to only list files in a path that match a specific glob/regex",
+          "score": 18.494318
+        },
+        {
+          "rank": 7,
+          "corpus_id": "unix:114905",
+          "title": "list out owned file/directories and change its permissions",
+          "score": 18.442459
+        },
+        {
+          "rank": 8,
+          "corpus_id": "unix:49380",
+          "title": "How to permanently change the file/directory permission",
+          "score": 18.134818
+        },
+        {
+          "rank": 9,
+          "corpus_id": "unix:117868",
+          "title": "ls -ld list files inside a folder which is having only execute permission",
+          "score": 18.126236
+        },
+        {
+          "rank": 10,
+          "corpus_id": "unix:119637",
+          "title": "setfacl default --x on directories and r-- on files for user",
+          "score": 18.122309
+        }
+      ],
+      "timings_ms": {
+        "parse_ms": 1.442,
+        "analysis_ms": 0.762,
+        "postings_ms": 0.183,
+        "retrieve_ms": 6.137,
+        "rank_ms": 46.023,
+        "total_ms": 54.584
+      },
+      "parse_failure": null
+    },
+    {
+      "stack": "unix",
+      "query_id": "18760",
+      "why": "quoted command names + hyphenated flag (tail -f)",
+      "text": "How does the \"tail\" command's \"-f\" parameter work?",
+      "parsed": {
+        "kind": "or",
+        "left": {
+          "kind": "or",
+          "left": {
+            "kind": "or",
+            "left": {
+              "kind": "or",
+              "left": {
+                "kind": "or",
+                "left": {
+                  "kind": "or",
+                  "left": {
+                    "kind": "or",
+                    "left": {
+                      "kind": "term",
+                      "term": "how"
+                    },
+                    "right": {
+                      "kind": "term",
+                      "term": "does"
+                    }
+                  },
+                  "right": {
+                    "kind": "term",
+                    "term": "the"
+                  }
+                },
+                "right": {
+                  "kind": "phrase",
+                  "terms": [
+                    "tail"
+                  ]
+                }
+              },
+              "right": {
+                "kind": "term",
+                "term": "commands"
+              }
+            },
+            "right": {
+              "kind": "phrase",
+              "terms": [
+                "f"
+              ]
+            }
+          },
+          "right": {
+            "kind": "term",
+            "term": "parameter"
+          }
+        },
+        "right": {
+          "kind": "term",
+          "term": "work"
+        }
+      },
+      "analyzed": {
+        "kind": "or",
+        "left": {
+          "kind": "or",
+          "left": {
+            "kind": "or",
+            "left": {
+              "kind": "or",
+              "left": {
+                "kind": "or",
+                "left": {
+                  "kind": "or",
+                  "left": {
+                    "kind": "or",
+                    "left": {
+                      "kind": "term",
+                      "terms": []
+                    },
+                    "right": {
+                      "kind": "term",
+                      "terms": []
+                    }
+                  },
+                  "right": {
+                    "kind": "term",
+                    "terms": []
+                  }
+                },
+                "right": {
+                  "kind": "phrase",
+                  "terms": [
+                    "tail"
+                  ]
+                }
+              },
+              "right": {
+                "kind": "term",
+                "terms": [
+                  "command"
+                ]
+              }
+            },
+            "right": {
+              "kind": "phrase",
+              "terms": [
+                "f"
+              ]
+            }
+          },
+          "right": {
+            "kind": "term",
+            "terms": [
+              "paramet"
+            ]
+          }
+        },
+        "right": {
+          "kind": "term",
+          "terms": [
+            "work"
+          ]
+        }
+      },
+      "postings": [
+        {
+          "term": "tail",
+          "in_index": true,
+          "df": 697,
+          "postings": 697
+        },
+        {
+          "term": "command",
+          "in_index": true,
+          "df": 25434,
+          "postings": 25434
+        },
+        {
+          "term": "f",
+          "in_index": true,
+          "df": 6185,
+          "postings": 6185
+        },
+        {
+          "term": "paramet",
+          "in_index": true,
+          "df": 3684,
+          "postings": 3684
+        },
+        {
+          "term": "work",
+          "in_index": true,
+          "df": 43296,
+          "postings": 43296
+        }
+      ],
+      "candidate_docs": 64549,
+      "results": [
+        {
+          "rank": 1,
+          "corpus_id": "unix:37447",
+          "title": "issues with GNU tail -f and combination of commands",
+          "score": 20.916143
+        },
+        {
+          "rank": 2,
+          "corpus_id": "unix:65824",
+          "title": "Tail -f piped through grep not outputing to file, but outputs to console",
+          "score": 20.429527
+        },
+        {
+          "rank": 3,
+          "corpus_id": "unix:39747",
+          "title": "Is there any other way to use tail -f for grep -q && operation?",
+          "score": 20.411303
+        },
+        {
+          "rank": 4,
+          "corpus_id": "unix:154861",
+          "title": "Why does \"tail -f ... | tail\" fail to produce any output?",
+          "score": 19.362799
+        },
+        {
+          "rank": 5,
+          "corpus_id": "unix:45941",
+          "title": "`tail -f` until text is seen",
+          "score": 19.132458
+        },
+        {
+          "rank": 6,
+          "corpus_id": "unix:101681",
+          "title": "saving output of another command",
+          "score": 19.062626
+        },
+        {
+          "rank": 7,
+          "corpus_id": "unix:143698",
+          "title": "tail -f produces no output in Ubuntu live CD",
+          "score": 19.001743
+        },
+        {
+          "rank": 8,
+          "corpus_id": "unix:53699",
+          "title": "How do I tail a log file and keep tailing it when the latest one changes date?",
+          "score": 18.674781
+        },
+        {
+          "rank": 9,
+          "corpus_id": "unix:84606",
+          "title": "whats a good tool to search tail -f output",
+          "score": 18.414882
+        },
+        {
+          "rank": 10,
+          "corpus_id": "unix:467",
+          "title": "The 'less' command-line equivalent of 'tail -f'",
+          "score": 18.340891
+        }
+      ],
+      "timings_ms": {
+        "parse_ms": 0.162,
+        "analysis_ms": 0.114,
+        "postings_ms": 0.032,
+        "retrieve_ms": 1.1,
+        "rank_ms": 31.423,
+        "total_ms": 32.839
+      },
+      "parse_failure": null
+    },
+    {
+      "stack": "unix",
+      "query_id": "12203",
+      "why": "error-message style query with punctuation-heavy quoted text",
+      "text": "\"rsync: failed to set permissions on ...\" error with rsync -a or -p option",
+      "parsed": {
+        "kind": "or",
+        "left": {
+          "kind": "or",
+          "left": {
+            "kind": "or",
+            "left": {
+              "kind": "or",
+              "left": {
+                "kind": "or",
+                "left": {
+                  "kind": "or",
+                  "left": {
+                    "kind": "or",
+                    "left": {
+                      "kind": "phrase",
+                      "terms": [
+                        "rsync",
+                        "failed",
+                        "to",
+                        "set",
+                        "permissions",
+                        "on"
+                      ]
+                    },
+                    "right": {
+                      "kind": "term",
+                      "term": "error"
+                    }
+                  },
+                  "right": {
+                    "kind": "term",
+                    "term": "with"
+                  }
+                },
+                "right": {
+                  "kind": "term",
+                  "term": "rsync"
+                }
+              },
+              "right": {
+                "kind": "term",
+                "term": "a"
+              }
+            },
+            "right": {
+              "kind": "term",
+              "term": "or"
+            }
+          },
+          "right": {
+            "kind": "term",
+            "term": "p"
+          }
+        },
+        "right": {
+          "kind": "term",
+          "term": "option"
+        }
+      },
+      "analyzed": {
+        "kind": "or",
+        "left": {
+          "kind": "or",
+          "left": {
+            "kind": "or",
+            "left": {
+              "kind": "or",
+              "left": {
+                "kind": "or",
+                "left": {
+                  "kind": "or",
+                  "left": {
+                    "kind": "or",
+                    "left": {
+                      "kind": "phrase",
+                      "terms": [
+                        "rsync",
+                        "fail",
+                        "set",
+                        "permiss"
+                      ]
+                    },
+                    "right": {
+                      "kind": "term",
+                      "terms": [
+                        "error"
+                      ]
+                    }
+                  },
+                  "right": {
+                    "kind": "term",
+                    "terms": []
+                  }
+                },
+                "right": {
+                  "kind": "term",
+                  "terms": [
+                    "rsync"
+                  ]
+                }
+              },
+              "right": {
+                "kind": "term",
+                "terms": []
+              }
+            },
+            "right": {
+              "kind": "term",
+              "terms": []
+            }
+          },
+          "right": {
+            "kind": "term",
+            "terms": [
+              "p"
+            ]
+          }
+        },
+        "right": {
+          "kind": "term",
+          "terms": [
+            "option"
+          ]
+        }
+      },
+      "postings": [
+        {
+          "term": "rsync",
+          "in_index": true,
+          "df": 595,
+          "postings": 595
+        },
+        {
+          "term": "fail",
+          "in_index": true,
+          "df": 6785,
+          "postings": 6785
+        },
+        {
+          "term": "set",
+          "in_index": true,
+          "df": 20746,
+          "postings": 20746
+        },
+        {
+          "term": "permiss",
+          "in_index": true,
+          "df": 2402,
+          "postings": 2402
+        },
+        {
+          "term": "error",
+          "in_index": true,
+          "df": 18983,
+          "postings": 18983
+        },
+        {
+          "term": "p",
+          "in_index": true,
+          "df": 7203,
+          "postings": 7203
+        },
+        {
+          "term": "option",
+          "in_index": true,
+          "df": 13294,
+          "postings": 13294
+        }
+      ],
+      "candidate_docs": 35041,
+      "results": [
+        {
+          "rank": 1,
+          "corpus_id": "unix:71851",
+          "title": "rsync: failed to set permissions on \"/path/to/file.txt\": Operation not permitted (1)",
+          "score": 31.560005
+        },
+        {
+          "rank": 2,
+          "corpus_id": "unix:49109",
+          "title": "How to force rsync to overwrite read-only archive files?",
+          "score": 26.16877
+        },
+        {
+          "rank": 3,
+          "corpus_id": "unix:10044",
+          "title": "Why do I get an \"rsync: failed to set times on ... : Operation not permitted (1)\" error on Ubuntu 10.10 with SME Server 7.4?",
+          "score": 26.14115
+        },
+        {
+          "rank": 4,
+          "corpus_id": "unix:83756",
+          "title": "rsync \"Permission denied\" despite ownership",
+          "score": 25.987124
+        },
+        {
+          "rank": 5,
+          "corpus_id": "unix:3606",
+          "title": "root user denied access to .gvfs in rsnapshot?",
+          "score": 24.85769
+        },
+        {
+          "rank": 6,
+          "corpus_id": "unix:42685",
+          "title": "rsync: how to exclude the topmost directory",
+          "score": 23.049581
+        },
+        {
+          "rank": 7,
+          "corpus_id": "unix:129491",
+          "title": "Privileges for jenkins at apache's folder",
+          "score": 22.637958
+        },
+        {
+          "rank": 8,
+          "corpus_id": "unix:46783",
+          "title": "rsync and write permissions at the target",
+          "score": 22.562561
+        },
+        {
+          "rank": 9,
+          "corpus_id": "unix:26846",
+          "title": "Using cygwin and rsync -- \"password file must not be other-accessible\"",
+          "score": 22.558824
+        },
+        {
+          "rank": 10,
+          "corpus_id": "unix:120679",
+          "title": "Configuring anonymous rsync daemon",
+          "score": 22.229452
+        }
+      ],
+      "timings_ms": {
+        "parse_ms": 0.071,
+        "analysis_ms": 0.103,
+        "postings_ms": 0.027,
+        "retrieve_ms": 4.451,
+        "rank_ms": 15.382,
+        "total_ms": 20.042
+      },
+      "parse_failure": null
+    },
+    {
+      "stack": "unix",
+      "query_id": "73750",
+      "why": "known parse failure (EMPTY_GROUP on foo() {}) — records the failure path honestly",
+      "text": "difference between function foo() {} and foo() {}",
+      "parsed": null,
+      "analyzed": null,
+      "postings": [],
+      "candidate_docs": 0,
+      "results": [],
+      "timings_ms": {
+        "total_ms": 0.227
+      },
+      "parse_failure": "EMPTY_GROUP"
+    },
+    {
+      "stack": "tex",
+      "query_id": "103546",
+      "why": "LaTeX control sequences (\\ref, \\label) through the analyzer",
+      "text": "How do I configure a \\ref of a \\label to print more than just the number?",
+      "parsed": {
+        "kind": "or",
+        "left": {
+          "kind": "or",
+          "left": {
+            "kind": "or",
+            "left": {
+              "kind": "or",
+              "left": {
+                "kind": "or",
+                "left": {
+                  "kind": "or",
+                  "left": {
+                    "kind": "or",
+                    "left": {
+                      "kind": "or",
+                      "left": {
+                        "kind": "or",
+                        "left": {
+                          "kind": "or",
+                          "left": {
+                            "kind": "or",
+                            "left": {
+                              "kind": "or",
+                              "left": {
+                                "kind": "or",
+                                "left": {
+                                  "kind": "or",
+                                  "left": {
+                                    "kind": "or",
+                                    "left": {
+                                      "kind": "term",
+                                      "term": "how"
+                                    },
+                                    "right": {
+                                      "kind": "term",
+                                      "term": "do"
+                                    }
+                                  },
+                                  "right": {
+                                    "kind": "term",
+                                    "term": "i"
+                                  }
+                                },
+                                "right": {
+                                  "kind": "term",
+                                  "term": "configure"
+                                }
+                              },
+                              "right": {
+                                "kind": "term",
+                                "term": "a"
+                              }
+                            },
+                            "right": {
+                              "kind": "term",
+                              "term": "ref"
+                            }
+                          },
+                          "right": {
+                            "kind": "term",
+                            "term": "of"
+                          }
+                        },
+                        "right": {
+                          "kind": "term",
+                          "term": "a"
+                        }
+                      },
+                      "right": {
+                        "kind": "term",
+                        "term": "label"
+                      }
+                    },
+                    "right": {
+                      "kind": "term",
+                      "term": "to"
+                    }
+                  },
+                  "right": {
+                    "kind": "term",
+                    "term": "print"
+                  }
+                },
+                "right": {
+                  "kind": "term",
+                  "term": "more"
+                }
+              },
+              "right": {
+                "kind": "term",
+                "term": "than"
+              }
+            },
+            "right": {
+              "kind": "term",
+              "term": "just"
+            }
+          },
+          "right": {
+            "kind": "term",
+            "term": "the"
+          }
+        },
+        "right": {
+          "kind": "term",
+          "term": "number"
+        }
+      },
+      "analyzed": {
+        "kind": "or",
+        "left": {
+          "kind": "or",
+          "left": {
+            "kind": "or",
+            "left": {
+              "kind": "or",
+              "left": {
+                "kind": "or",
+                "left": {
+                  "kind": "or",
+                  "left": {
+                    "kind": "or",
+                    "left": {
+                      "kind": "or",
+                      "left": {
+                        "kind": "or",
+                        "left": {
+                          "kind": "or",
+                          "left": {
+                            "kind": "or",
+                            "left": {
+                              "kind": "or",
+                              "left": {
+                                "kind": "or",
+                                "left": {
+                                  "kind": "or",
+                                  "left": {
+                                    "kind": "or",
+                                    "left": {
+                                      "kind": "term",
+                                      "terms": []
+                                    },
+                                    "right": {
+                                      "kind": "term",
+                                      "terms": []
+                                    }
+                                  },
+                                  "right": {
+                                    "kind": "term",
+                                    "terms": []
+                                  }
+                                },
+                                "right": {
+                                  "kind": "term",
+                                  "terms": [
+                                    "configur"
+                                  ]
+                                }
+                              },
+                              "right": {
+                                "kind": "term",
+                                "terms": []
+                              }
+                            },
+                            "right": {
+                              "kind": "term",
+                              "terms": [
+                                "ref"
+                              ]
+                            }
+                          },
+                          "right": {
+                            "kind": "term",
+                            "terms": []
+                          }
+                        },
+                        "right": {
+                          "kind": "term",
+                          "terms": []
+                        }
+                      },
+                      "right": {
+                        "kind": "term",
+                        "terms": [
+                          "label"
+                        ]
+                      }
+                    },
+                    "right": {
+                      "kind": "term",
+                      "terms": []
+                    }
+                  },
+                  "right": {
+                    "kind": "term",
+                    "terms": [
+                      "print"
+                    ]
+                  }
+                },
+                "right": {
+                  "kind": "term",
+                  "terms": []
+                }
+              },
+              "right": {
+                "kind": "term",
+                "terms": []
+              }
+            },
+            "right": {
+              "kind": "term",
+              "terms": [
+                "just"
+              ]
+            }
+          },
+          "right": {
+            "kind": "term",
+            "terms": []
+          }
+        },
+        "right": {
+          "kind": "term",
+          "terms": [
+            "number"
+          ]
+        }
+      },
+      "postings": [
+        {
+          "term": "configur",
+          "in_index": true,
+          "df": 6913,
+          "postings": 6913
+        },
+        {
+          "term": "ref",
+          "in_index": true,
+          "df": 1990,
+          "postings": 1990
+        },
+        {
+          "term": "label",
+          "in_index": true,
+          "df": 9021,
+          "postings": 9021
+        },
+        {
+          "term": "print",
+          "in_index": true,
+          "df": 6553,
+          "postings": 6553
+        },
+        {
+          "term": "just",
+          "in_index": true,
+          "df": 27408,
+          "postings": 27408
+        },
+        {
+          "term": "number",
+          "in_index": true,
+          "df": 17520,
+          "postings": 17520
+        }
+      ],
+      "candidate_docs": 55807,
+      "results": [
+        {
+          "rank": 1,
+          "corpus_id": "tex:44042",
+          "title": "Printing \\ref as a letter",
+          "score": 21.689567
+        },
+        {
+          "rank": 2,
+          "corpus_id": "tex:104486",
+          "title": "Section reference shows section then subsection number",
+          "score": 21.37978
+        },
+        {
+          "rank": 3,
+          "corpus_id": "tex:62796",
+          "title": "`\\ref` including \"lemma\", \"theorem\", \"section\" or whatever",
+          "score": 21.020802
+        },
+        {
+          "rank": 4,
+          "corpus_id": "tex:175883",
+          "title": "\\ref counter for equation off by one for labels in align environment",
+          "score": 20.858568
+        },
+        {
+          "rank": 5,
+          "corpus_id": "tex:147028",
+          "title": "Inadvertent effect of figure numbering style change",
+          "score": 18.553088
+        },
+        {
+          "rank": 6,
+          "corpus_id": "tex:70974",
+          "title": "Referencing an enumeration item with redefined \\labelenumi",
+          "score": 18.5461
+        },
+        {
+          "rank": 7,
+          "corpus_id": "tex:58713",
+          "title": "\\ref should use enumerate label name",
+          "score": 18.539996
+        },
+        {
+          "rank": 8,
+          "corpus_id": "tex:15101",
+          "title": "How to get a list of all the labels in a LaTeX document in WinEdt",
+          "score": 18.377909
+        },
+        {
+          "rank": 9,
+          "corpus_id": "tex:14000",
+          "title": "Enumerate after \\label",
+          "score": 18.344787
+        },
+        {
+          "rank": 10,
+          "corpus_id": "tex:171849",
+          "title": "Use label to refer to text and print it",
+          "score": 18.294149
+        }
+      ],
+      "timings_ms": {
+        "parse_ms": 0.076,
+        "analysis_ms": 0.07,
+        "postings_ms": 0.02,
+        "retrieve_ms": 1.314,
+        "rank_ms": 33.273,
+        "total_ms": 34.759
+      },
+      "parse_failure": null
+    },
+    {
+      "stack": "tex",
+      "query_id": "114223",
+      "why": "long natural question with repeated topic words (font files/sizes)",
+      "text": "Is there a way to use different local font files for different font size in fontspec?",
+      "parsed": {
+        "kind": "or",
+        "left": {
+          "kind": "or",
+          "left": {
+            "kind": "or",
+            "left": {
+              "kind": "or",
+              "left": {
+                "kind": "or",
+                "left": {
+                  "kind": "or",
+                  "left": {
+                    "kind": "or",
+                    "left": {
+                      "kind": "or",
+                      "left": {
+                        "kind": "or",
+                        "left": {
+                          "kind": "or",
+                          "left": {
+                            "kind": "or",
+                            "left": {
+                              "kind": "or",
+                              "left": {
+                                "kind": "or",
+                                "left": {
+                                  "kind": "or",
+                                  "left": {
+                                    "kind": "or",
+                                    "left": {
+                                      "kind": "term",
+                                      "term": "is"
+                                    },
+                                    "right": {
+                                      "kind": "term",
+                                      "term": "there"
+                                    }
+                                  },
+                                  "right": {
+                                    "kind": "term",
+                                    "term": "a"
+                                  }
+                                },
+                                "right": {
+                                  "kind": "term",
+                                  "term": "way"
+                                }
+                              },
+                              "right": {
+                                "kind": "term",
+                                "term": "to"
+                              }
+                            },
+                            "right": {
+                              "kind": "term",
+                              "term": "use"
+                            }
+                          },
+                          "right": {
+                            "kind": "term",
+                            "term": "different"
+                          }
+                        },
+                        "right": {
+                          "kind": "term",
+                          "term": "local"
+                        }
+                      },
+                      "right": {
+                        "kind": "term",
+                        "term": "font"
+                      }
+                    },
+                    "right": {
+                      "kind": "term",
+                      "term": "files"
+                    }
+                  },
+                  "right": {
+                    "kind": "term",
+                    "term": "for"
+                  }
+                },
+                "right": {
+                  "kind": "term",
+                  "term": "different"
+                }
+              },
+              "right": {
+                "kind": "term",
+                "term": "font"
+              }
+            },
+            "right": {
+              "kind": "term",
+              "term": "size"
+            }
+          },
+          "right": {
+            "kind": "term",
+            "term": "in"
+          }
+        },
+        "right": {
+          "kind": "term",
+          "term": "fontspec"
+        }
+      },
+      "analyzed": {
+        "kind": "or",
+        "left": {
+          "kind": "or",
+          "left": {
+            "kind": "or",
+            "left": {
+              "kind": "or",
+              "left": {
+                "kind": "or",
+                "left": {
+                  "kind": "or",
+                  "left": {
+                    "kind": "or",
+                    "left": {
+                      "kind": "or",
+                      "left": {
+                        "kind": "or",
+                        "left": {
+                          "kind": "or",
+                          "left": {
+                            "kind": "or",
+                            "left": {
+                              "kind": "or",
+                              "left": {
+                                "kind": "or",
+                                "left": {
+                                  "kind": "or",
+                                  "left": {
+                                    "kind": "or",
+                                    "left": {
+                                      "kind": "term",
+                                      "terms": []
+                                    },
+                                    "right": {
+                                      "kind": "term",
+                                      "terms": []
+                                    }
+                                  },
+                                  "right": {
+                                    "kind": "term",
+                                    "terms": []
+                                  }
+                                },
+                                "right": {
+                                  "kind": "term",
+                                  "terms": [
+                                    "wai"
+                                  ]
+                                }
+                              },
+                              "right": {
+                                "kind": "term",
+                                "terms": []
+                              }
+                            },
+                            "right": {
+                              "kind": "term",
+                              "terms": [
+                                "us"
+                              ]
+                            }
+                          },
+                          "right": {
+                            "kind": "term",
+                            "terms": [
+                              "differ"
+                            ]
+                          }
+                        },
+                        "right": {
+                          "kind": "term",
+                          "terms": [
+                            "local"
+                          ]
+                        }
+                      },
+                      "right": {
+                        "kind": "term",
+                        "terms": [
+                          "font"
+                        ]
+                      }
+                    },
+                    "right": {
+                      "kind": "term",
+                      "terms": [
+                        "file"
+                      ]
+                    }
+                  },
+                  "right": {
+                    "kind": "term",
+                    "terms": []
+                  }
+                },
+                "right": {
+                  "kind": "term",
+                  "terms": [
+                    "differ"
+                  ]
+                }
+              },
+              "right": {
+                "kind": "term",
+                "terms": [
+                  "font"
+                ]
+              }
+            },
+            "right": {
+              "kind": "term",
+              "terms": [
+                "size"
+              ]
+            }
+          },
+          "right": {
+            "kind": "term",
+            "terms": []
+          }
+        },
+        "right": {
+          "kind": "term",
+          "terms": [
+            "fontspec"
+          ]
+        }
+      },
+      "postings": [
+        {
+          "term": "wai",
+          "in_index": true,
+          "df": 35400,
+          "postings": 35400
+        },
+        {
+          "term": "us",
+          "in_index": true,
+          "df": 86594,
+          "postings": 86594
+        },
+        {
+          "term": "differ",
+          "in_index": true,
+          "df": 18780,
+          "postings": 18780
+        },
+        {
+          "term": "local",
+          "in_index": true,
+          "df": 6385,
+          "postings": 6385
+        },
+        {
+          "term": "font",
+          "in_index": true,
+          "df": 8281,
+          "postings": 8281
+        },
+        {
+          "term": "file",
+          "in_index": true,
+          "df": 37341,
+          "postings": 37341
+        },
+        {
+          "term": "size",
+          "in_index": true,
+          "df": 8847,
+          "postings": 8847
+        },
+        {
+          "term": "fontspec",
+          "in_index": true,
+          "df": 1652,
+          "postings": 1652
+        }
+      ],
+      "candidate_docs": 116178,
+      "results": [
+        {
+          "rank": 1,
+          "corpus_id": "tex:166476",
+          "title": "fontspec: Configuring project-local opticals font",
+          "score": 24.4794
+        },
+        {
+          "rank": 2,
+          "corpus_id": "tex:190818",
+          "title": "Is there a simple way to manually change font with font size in XeTeX?",
+          "score": 24.304097
+        },
+        {
+          "rank": 3,
+          "corpus_id": "tex:26276",
+          "title": "Fontspec SizeFeatures and recursive font definition",
+          "score": 23.073239
+        },
+        {
+          "rank": 4,
+          "corpus_id": "tex:154895",
+          "title": "How to choose fonts with different optical sizes with fontspec",
+          "score": 21.997775
+        },
+        {
+          "rank": 5,
+          "corpus_id": "tex:137451",
+          "title": "Why does LuaLaTeX produce smaller files than pdfLaTeX in this example?",
+          "score": 21.345314
+        },
+        {
+          "rank": 6,
+          "corpus_id": "tex:141694",
+          "title": "Change default font size while using fontspec",
+          "score": 21.339968
+        },
+        {
+          "rank": 7,
+          "corpus_id": "tex:163390",
+          "title": "Fine-tuning letter space for small caps with fontspec",
+          "score": 21.152006
+        },
+        {
+          "rank": 8,
+          "corpus_id": "tex:20451",
+          "title": "How to display the font size in use in the final output",
+          "score": 20.924646
+        },
+        {
+          "rank": 9,
+          "corpus_id": "tex:8367",
+          "title": "xelatex+fontspec is slow (after a fast xelatex -no-pdf)",
+          "score": 20.836647
+        },
+        {
+          "rank": 10,
+          "corpus_id": "tex:94859",
+          "title": "Is there a way to use external font files with unicode-math?",
+          "score": 20.684891
+        }
+      ],
+      "timings_ms": {
+        "parse_ms": 0.105,
+        "analysis_ms": 0.109,
+        "postings_ms": 0.023,
+        "retrieve_ms": 5.536,
+        "rank_ms": 61.369,
+        "total_ms": 67.151
+      },
+      "parse_failure": null
+    },
+    {
+      "stack": "programmers",
+      "query_id": "54451",
+      "why": "short conceptual query with vs. separators",
+      "text": "Library vs. framework vs API?",
+      "parsed": {
+        "kind": "or",
+        "left": {
+          "kind": "or",
+          "left": {
+            "kind": "or",
+            "left": {
+              "kind": "or",
+              "left": {
+                "kind": "term",
+                "term": "library"
+              },
+              "right": {
+                "kind": "term",
+                "term": "vs"
+              }
+            },
+            "right": {
+              "kind": "term",
+              "term": "framework"
+            }
+          },
+          "right": {
+            "kind": "term",
+            "term": "vs"
+          }
+        },
+        "right": {
+          "kind": "term",
+          "term": "api"
+        }
+      },
+      "analyzed": {
+        "kind": "or",
+        "left": {
+          "kind": "or",
+          "left": {
+            "kind": "or",
+            "left": {
+              "kind": "or",
+              "left": {
+                "kind": "term",
+                "terms": [
+                  "librari"
+                ]
+              },
+              "right": {
+                "kind": "term",
+                "terms": [
+                  "vs"
+                ]
+              }
+            },
+            "right": {
+              "kind": "term",
+              "terms": [
+                "framework"
+              ]
+            }
+          },
+          "right": {
+            "kind": "term",
+            "terms": [
+              "vs"
+            ]
+          }
+        },
+        "right": {
+          "kind": "term",
+          "terms": [
+            "api"
+          ]
+        }
+      },
+      "postings": [
+        {
+          "term": "librari",
+          "in_index": true,
+          "df": 4491,
+          "postings": 4491
+        },
+        {
+          "term": "vs",
+          "in_index": true,
+          "df": 2346,
+          "postings": 2346
+        },
+        {
+          "term": "framework",
+          "in_index": true,
+          "df": 2483,
+          "postings": 2483
+        },
+        {
+          "term": "api",
+          "in_index": true,
+          "df": 2078,
+          "postings": 2078
+        }
+      ],
+      "candidate_docs": 10224,
+      "results": [
+        {
+          "rank": 1,
+          "corpus_id": "programmers:136860",
+          "title": "What is the difference between APIs, Libraries, Runtime systems, and frameworks?",
+          "score": 26.793015
+        },
+        {
+          "rank": 2,
+          "corpus_id": "programmers:208239",
+          "title": "Clean, Modular Code vs MV* Frameworks",
+          "score": 21.999754
+        },
+        {
+          "rank": 3,
+          "corpus_id": "programmers:84119",
+          "title": "License compatibility question",
+          "score": 20.124939
+        },
+        {
+          "rank": 4,
+          "corpus_id": "programmers:87939",
+          "title": "Java API vs. Other APIs",
+          "score": 19.874356
+        },
+        {
+          "rank": 5,
+          "corpus_id": "programmers:106004",
+          "title": "What is a *slightly* less extreme equivalent to being \"fluent\" in a language?",
+          "score": 19.443742
+        },
+        {
+          "rank": 6,
+          "corpus_id": "programmers:155141",
+          "title": "A solution for a PHP website without a framework",
+          "score": 18.771852
+        },
+        {
+          "rank": 7,
+          "corpus_id": "programmers:115725",
+          "title": "Why use services (REST/SOAP) instead of a library?",
+          "score": 18.630405
+        },
+        {
+          "rank": 8,
+          "corpus_id": "programmers:117399",
+          "title": "xpath vs DOM API",
+          "score": 18.549186
+        },
+        {
+          "rank": 9,
+          "corpus_id": "programmers:245069",
+          "title": "Do dependency injection frameworks pose a dependency risk?",
+          "score": 18.495583
+        },
+        {
+          "rank": 10,
+          "corpus_id": "programmers:153265",
+          "title": "iOS: Versioned static frameworks vs Git Submodules and included code",
+          "score": 18.459786
+        }
+      ],
+      "timings_ms": {
+        "parse_ms": 0.047,
+        "analysis_ms": 0.041,
+        "postings_ms": 0.015,
+        "retrieve_ms": 0.234,
+        "rank_ms": 3.931,
+        "total_ms": 4.274
+      },
+      "parse_failure": null
+    },
+    {
+      "stack": "programmers",
+      "query_id": "251126",
+      "why": "natural question with comma + domain term (Web API)",
+      "text": "Error messages from Web API, should I use error codes?",
+      "parsed": {
+        "kind": "or",
+        "left": {
+          "kind": "or",
+          "left": {
+            "kind": "or",
+            "left": {
+              "kind": "or",
+              "left": {
+                "kind": "or",
+                "left": {
+                  "kind": "or",
+                  "left": {
+                    "kind": "or",
+                    "left": {
+                      "kind": "or",
+                      "left": {
+                        "kind": "or",
+                        "left": {
+                          "kind": "term",
+                          "term": "error"
+                        },
+                        "right": {
+                          "kind": "term",
+                          "term": "messages"
+                        }
+                      },
+                      "right": {
+                        "kind": "term",
+                        "term": "from"
+                      }
+                    },
+                    "right": {
+                      "kind": "term",
+                      "term": "web"
+                    }
+                  },
+                  "right": {
+                    "kind": "term",
+                    "term": "api"
+                  }
+                },
+                "right": {
+                  "kind": "term",
+                  "term": "should"
+                }
+              },
+              "right": {
+                "kind": "term",
+                "term": "i"
+              }
+            },
+            "right": {
+              "kind": "term",
+              "term": "use"
+            }
+          },
+          "right": {
+            "kind": "term",
+            "term": "error"
+          }
+        },
+        "right": {
+          "kind": "term",
+          "term": "codes"
+        }
+      },
+      "analyzed": {
+        "kind": "or",
+        "left": {
+          "kind": "or",
+          "left": {
+            "kind": "or",
+            "left": {
+              "kind": "or",
+              "left": {
+                "kind": "or",
+                "left": {
+                  "kind": "or",
+                  "left": {
+                    "kind": "or",
+                    "left": {
+                      "kind": "or",
+                      "left": {
+                        "kind": "or",
+                        "left": {
+                          "kind": "term",
+                          "terms": [
+                            "error"
+                          ]
+                        },
+                        "right": {
+                          "kind": "term",
+                          "terms": [
+                            "messag"
+                          ]
+                        }
+                      },
+                      "right": {
+                        "kind": "term",
+                        "terms": []
+                      }
+                    },
+                    "right": {
+                      "kind": "term",
+                      "terms": [
+                        "web"
+                      ]
+                    }
+                  },
+                  "right": {
+                    "kind": "term",
+                    "terms": [
+                      "api"
+                    ]
+                  }
+                },
+                "right": {
+                  "kind": "term",
+                  "terms": []
+                }
+              },
+              "right": {
+                "kind": "term",
+                "terms": []
+              }
+            },
+            "right": {
+              "kind": "term",
+              "terms": [
+                "us"
+              ]
+            }
+          },
+          "right": {
+            "kind": "term",
+            "terms": [
+              "error"
+            ]
+          }
+        },
+        "right": {
+          "kind": "term",
+          "terms": [
+            "code"
+          ]
+        }
+      },
+      "postings": [
+        {
+          "term": "error",
+          "in_index": true,
+          "df": 18983,
+          "postings": 18983
+        },
+        {
+          "term": "messag",
+          "in_index": true,
+          "df": 6820,
+          "postings": 6820
+        },
+        {
+          "term": "web",
+          "in_index": true,
+          "df": 6687,
+          "postings": 6687
+        },
+        {
+          "term": "api",
+          "in_index": true,
+          "df": 2078,
+          "postings": 2078
+        },
+        {
+          "term": "us",
+          "in_index": true,
+          "df": 86594,
+          "postings": 86594
+        },
+        {
+          "term": "code",
+          "in_index": true,
+          "df": 32493,
+          "postings": 32493
+        }
+      ],
+      "candidate_docs": 105163,
+      "results": [
+        {
+          "rank": 1,
+          "corpus_id": "programmers:232522",
+          "title": "Web API architecture design",
+          "score": 20.860911
+        },
+        {
+          "rank": 2,
+          "corpus_id": "programmers:219814",
+          "title": "Shoud I directly return a string message or rather a i18n key when dealing with JSON api?",
+          "score": 19.303299
+        },
+        {
+          "rank": 3,
+          "corpus_id": "programmers:53324",
+          "title": "Translating error messages from an external API?",
+          "score": 18.890413
+        },
+        {
+          "rank": 4,
+          "corpus_id": "programmers:199742",
+          "title": "RESTful API design. What should I return if there are no rows?",
+          "score": 18.772874
+        },
+        {
+          "rank": 5,
+          "corpus_id": "programmers:216690",
+          "title": "What layer to introduce human readable error messages?",
+          "score": 18.482665
+        },
+        {
+          "rank": 6,
+          "corpus_id": "tex:42328",
+          "title": "Testing Framework API for LaTeX",
+          "score": 18.085604
+        },
+        {
+          "rank": 7,
+          "corpus_id": "programmers:204387",
+          "title": "Best Practice: Should error messages be handled by the API or by the App?",
+          "score": 17.663665
+        },
+        {
+          "rank": 8,
+          "corpus_id": "programmers:227895",
+          "title": "iOS chat application design, sending/relaying the message over to the end user",
+          "score": 17.614745
+        },
+        {
+          "rank": 9,
+          "corpus_id": "programmers:103123",
+          "title": "What ever happened to the Google AJAX Search API",
+          "score": 17.436974
+        },
+        {
+          "rank": 10,
+          "corpus_id": "programmers:187261",
+          "title": "Configuration file for an API - should it be web.config?",
+          "score": 17.353943
+        }
+      ],
+      "timings_ms": {
+        "parse_ms": 0.052,
+        "analysis_ms": 0.063,
+        "postings_ms": 0.02,
+        "retrieve_ms": 2.602,
+        "rank_ms": 56.127,
+        "total_ms": 58.87
+      },
+      "parse_failure": null
+    }
+  ]
+}

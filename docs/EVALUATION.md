@@ -61,7 +61,26 @@ either mode. The UI (M5) defaults to the conjunction mode; the option lives in
 |---|---|---|---|---|
 | `static-v1` | regression fixture (M1) + latency dev | 84 docs (Gutenberg, public domain) | — | **yes** (corpus + manifest) |
 | `20newsgroups-bydate` | latency/retrieval dev | 18,846 docs, 20 groups | **none — never used for metrics** | no (fetch script; manifest committed) |
-| **BEIR SciFact** | formal evaluation | 5,183 docs, 1,109 queries | **test: 339 rows / 300 queries, grade 1** | eval inputs yes (queries, qrels, manifest); corpus via script |
+| **CQADupStack `cqadupstack-tierb`** | **default demo + evaluation corpus (Tier B)** | 147,742 docs (programmers + unix + tex), 4,854 queries | 8,522 judgments (evaluated per stack) | eval inputs yes; corpus via script |
+| — per stack (`cqadupstack-programmers` / `-unix` / `-tex`) | individually evaluable Tier B stacks | 32,176 / 47,382 / 68,184 docs | 876 / 1,072 / 2,906 queries | eval inputs yes; corpus via script |
+| **CQADupStack Tier C (`cqadupstack-tierc`)** | full 9-stack research config | 330,736 docs, 10,149 queries | 18,080 judgments (evaluated per stack) | eval inputs via `npm run corpus:cqadupstack -- --full`; corpus via script |
+| BEIR SciFact | retired as primary — **baseline kept** (prior results + `static-v1` fixtures unaffected) | 5,183 docs, 1,109 queries | **test: 339 rows / 300 queries, grade 1** | eval inputs yes; corpus via script |
+
+**CQADupStack provenance & verification** (`data/eval/cqadupstack.manifest.json`):
+
+- Corpus + qrels: HTTP range fetch of individual members from BEIR's
+  `cqadupstack.zip` (`public.ukp.informatik.tu-darmstadt.de`); queries: HuggingFace
+  `BeIR/cqadupstack` rows API (the zip's `queries.jsonl` embeds duplicate bodies).
+  Source revision and per-file SHA-256 recorded; in-memory validation (published
+  counts, qrels↔queries equality, judged ⊆ corpus, no dup ids) before any write.
+- Derived from the Stack Exchange data dump via BEIR (Thakur et al., EMNLP 2021);
+  HF card lists CC-BY-SA-4.0. The original Melbourne host is unreachable — the exact
+  CC BY-SA version must be verified before redistribution (recorded honestly).
+- **Stack Exchange post ids collide across sites** → merged tiers prefix corpus ids
+  with the stack (`unix:116498`); per-stack qrels stay on original ids. Merged-tier
+  evals use the remapped copies `data/eval/cqadupstack-tierb-<stack>-qrels.tsv`.
+- **Never aggregate metrics across datasets.** Each stack is evaluated against its own
+  qrels; merged runs report one number per stack, not one global number.
 
 **SciFact provenance & verification** (`data/eval/scifact.manifest.json`):
 
@@ -94,10 +113,30 @@ either mode. The UI (M5) defaults to the conjunction mode; the option lives in
    quality.
 5. **20 Newsgroups feeds no metric numbers** — it has no judgments. It exists for
    latency and retrieval-path development only.
+6. **CQADupStack unparseable queries** (same class as caveat 2: punctuation-only
+   groups/phrases analyze to ∅ → scored empty, never skipped): unix 13/1,072,
+   tex 20/2,906, programmers 0/876 — recorded per artifact under
+   `query_set.parse_failures`. A candidate for the analyzer/parser strengthening
+   step; metrics already account for them as zeros.
+7. **Cross-dataset numbers are not comparable.** MAP/NDCG on programmers vs unix vs
+   tex reflect different collections and judgment densities; report per-stack values
+   side by side, never averaged into a single "CQADupStack score".
 
 ## 7. Reproducing an experiment
 
 ```bash
+# CQADupStack (default demo corpus, Tier B)
+npm run corpus:cqadupstack                        # fetch + validate + merge programmers/unix/tex
+npm run corpus:cqadupstack -- --full              # all 9 stacks (+ tierc merge)
+npm run index:build -- --corpus cqadupstack-tierb
+npm run eval:run -- --corpus cqadupstack-tierb --strategy bm25 --qrels data/eval/cqadupstack-tierb-unix-qrels.tsv --queries data/eval/cqadupstack-tierb-unix-queries.jsonl
+npm run trace:sample                              # real per-stage Trace query artifact
+
+# per-stack (independently evaluable; defaults resolve queries/qrels by corpus name)
+npm run index:build -- --corpus cqadupstack-tex
+npm run eval:run -- --corpus cqadupstack-tex --strategy bm25            # MAP@100: add --topk 100
+
+# SciFact baseline (retired as primary; preserved for comparison)
 npm run corpus:scifact                 # fetch + verify md5 + publish data/eval inputs
 npm run index:build -- --corpus scifact
 npm run eval:run -- --corpus scifact --strategy bm25            # mode B

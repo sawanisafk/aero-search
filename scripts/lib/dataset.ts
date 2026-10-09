@@ -73,19 +73,20 @@ export function getGitInfo(): GitInfo {
   }
 }
 
-/** Latency summary in milliseconds (nearest-rank p95). */
+/** Latency summary in milliseconds (nearest-rank p95/p99). */
 export interface LatencyStats {
   readonly count: number;
   readonly avg: number;
   readonly median: number;
   readonly p95: number;
+  readonly p99: number;
   readonly min: number;
   readonly max: number;
 }
 
 export function latencyStats(samples: number[]): LatencyStats {
   if (samples.length === 0) {
-    return { count: 0, avg: 0, median: 0, p95: 0, min: 0, max: 0 };
+    return { count: 0, avg: 0, median: 0, p95: 0, p99: 0, min: 0, max: 0 };
   }
   const sorted = [...samples].sort((a, b) => a - b);
   const n = sorted.length;
@@ -93,11 +94,13 @@ export function latencyStats(samples: number[]): LatencyStats {
   const median =
     n % 2 === 1 ? sorted[(n - 1) / 2]! : (sorted[n / 2 - 1]! + sorted[n / 2]!) / 2;
   const p95 = sorted[Math.min(n - 1, Math.ceil(0.95 * n) - 1)]!;
+  const p99 = sorted[Math.min(n - 1, Math.ceil(0.99 * n) - 1)]!;
   return {
     count: n,
     avg: sum / n,
     median,
     p95,
+    p99,
     min: sorted[0]!,
     max: sorted[n - 1]!,
   };

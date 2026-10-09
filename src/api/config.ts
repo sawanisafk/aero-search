@@ -52,7 +52,7 @@ export function loadConfig(
     root,
     host: env.HOST ?? '127.0.0.1',
     port: intFromEnv(env.PORT, 3000, 'PORT'),
-    defaultCorpus: env.AERO_CORPUS ?? 'scifact',
+    defaultCorpus: env.AERO_CORPUS ?? 'cqadupstack-tierb',
     defaultStrategy: env.AERO_STRATEGY ?? 'bm25',
     defaultK: DEFAULT_K,
     maxK: MAX_K,

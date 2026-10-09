@@ -200,7 +200,7 @@ export function App(): React.JSX.Element {
       case 'doc':
         return (
           <DocWindow
-            corpus={w.payload?.corpus ?? 'scifact'}
+            corpus={w.payload?.corpus ?? 'cqadupstack-tierb'}
             docId={w.payload?.docId ?? ''}
             q={w.payload?.q ?? ''}
           />

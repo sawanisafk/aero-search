@@ -3,13 +3,13 @@
  * committed qrels, computes the full metric suite, measures per-query e2e
  * latency, and writes a self-describing artifact under runs/.
  *
- *   npx tsx scripts/run-experiment.ts --corpus scifact --strategy bm25
+ *   npx tsx scripts/run-experiment.ts --corpus cqadupstack-tierb --strategy bm25
  *
  * Options:
- *   --corpus <name>           data/index/<name>.aidx (default scifact)
+ *   --corpus <name>           data/index/<name>.aidx (default cqadupstack-tierb)
  *   --strategy <id>           boolean|tfidf|bm25|bm25-phrase|bm25-phrase-proximity|bm25-pr
- *   --queries <file>          BEIR queries JSONL (default data/eval/scifact-queries.jsonl)
- *   --qrels <file>            BEIR qrels TSV (default data/eval/scifact-qrels.tsv)
+ *   --queries <file>          BEIR queries JSONL (default data/eval/<corpus>-queries.jsonl)
+ *   --qrels <file>            BEIR qrels TSV (default data/eval/<corpus>-qrels.tsv)
  *   --topk <n>                retrieved docs kept per query (default 1000)
  *   --k <1,5,10,100>          cutoff values for P/R/F1/NDCG (default 1,5,10,100)
  *   --k1/--b/--tf/--phrase-bonus/--proximity-k   strategy parameters
@@ -62,7 +62,7 @@ function argNumber(flag: string): number | undefined {
 }
 
 function main(): void {
-  const corpus = argValue('--corpus') ?? 'scifact';
+  const corpus = argValue('--corpus') ?? 'cqadupstack-tierb';
   const strategyId = argValue('--strategy');
   if (strategyId === undefined) throw new Error('missing --strategy');
   if (!STRATEGY_IDS.includes(strategyId)) {
@@ -216,7 +216,8 @@ function main(): void {
   }
   const lat = artifact.latency_ms;
   console.log(
-    `  latency    avg ${lat.avg.toFixed(3)} ms · median ${lat.median.toFixed(3)} ms · p95 ${lat.p95.toFixed(3)} ms`,
+    `  latency    avg ${lat.avg.toFixed(3)} ms · median ${lat.median.toFixed(3)} ms · ` +
+      `p95 ${lat.p95.toFixed(3)} ms · p99 ${lat.p99.toFixed(3)} ms`,
   );
   if (fuzzyStats !== undefined) {
     console.log(

@@ -1,0 +1,876 @@
+{"_id":"88392","title":"","text":"Why is closure important for JavaScript?"}
+{"_id":"16708","title":"","text":"How do you stay motivated for hobby projects?"}
+{"_id":"88028","title":"","text":"Be a better programmer or an irreplacable employee?"}
+{"_id":"64671","title":"","text":"For a large website developed in PHP, is it necessary to have a framework?"}
+{"_id":"23507","title":"","text":"What is the path to JavaScript mastery?"}
+{"_id":"8544","title":"","text":"MonoTouch vs Objective-C for iPhone/iPod/iPad development"}
+{"_id":"145437","title":"","text":"Why use an interface when the class can directly implement the functions?"}
+{"_id":"164599","title":"","text":"Verification of requirements question"}
+{"_id":"3747","title":"","text":"How can I sell a legacy program rewrite to the business?"}
+{"_id":"210327","title":"","text":"What is the one or the few major changes from Java 6 to Java 7, couldn't JBoss do that already with Java 5?"}
+{"_id":"170138","title":"","text":"Is this a violation of the Liskov Substitution Principle?"}
+{"_id":"232812","title":"","text":"Too many CS files in a single project"}
+{"_id":"109279","title":"","text":"License validation and calling home"}
+{"_id":"206816","title":"","text":"Clarification of \"avoid if-else\" advice"}
+{"_id":"201894","title":"","text":"embedding programming languages into other languages"}
+{"_id":"131314","title":"","text":"Certifications needed to get an interview with no experience and no degree."}
+{"_id":"42817","title":"","text":"Why not Spring framework?"}
+{"_id":"204443","title":"","text":"Coding convention regarding the usage of underscores"}
+{"_id":"38566","title":"","text":"The importance of javascript and the best way to learn it?"}
+{"_id":"236903","title":"","text":"What are the benefits of using Polymorphism 'in the real world' - as opposed to not using it?"}
+{"_id":"36175","title":"","text":"What are the disadvantages of writing code before writing unit tests?"}
+{"_id":"89947","title":"","text":"How can I keep my visualstudio database project in sync with my database?"}
+{"_id":"41545","title":"","text":"Reasons to Use a VM For Development"}
+{"_id":"86656","title":"","text":"Are \"TDD Tests\" different to Unit Tests?"}
+{"_id":"89491","title":"","text":"Almost graduate, how to prepare myself for the \"real world\"?"}
+{"_id":"120628","title":"","text":"Is using build-in sorting considered cheating in practice tests?"}
+{"_id":"155469","title":"","text":"Keep coding the wrong way to remain consistent?"}
+{"_id":"154593","title":"","text":"How to get motivation and time to learn outside of work?"}
+{"_id":"13676","title":"","text":"Would you allow your programmers to use Messenger and social networks like Facebook?"}
+{"_id":"199303","title":"","text":"How can a non-developer help promote/develop unit tests?"}
+{"_id":"56848","title":"","text":"How does one keep up with all the new tools/languages/framework?"}
+{"_id":"118301","title":"","text":"A simple ways to improve the release quality in RAD environment"}
+{"_id":"161809","title":"","text":"Is it typical for a unit test suite to be larger than the code it tests?"}
+{"_id":"167890","title":"","text":"Is StackOverflow making me stupid?"}
+{"_id":"223815","title":"","text":"Auto Transaction Failsafe's, Coldfusion Schedule Files"}
+{"_id":"21403","title":"","text":"Why do large IT projects tend to fail or have big cost/schedule overruns?"}
+{"_id":"197251","title":"","text":"Write then optimise or write optimised"}
+{"_id":"110518","title":"","text":"Binaries in source control"}
+{"_id":"198995","title":"","text":"Evaluate one's skill and improve it?"}
+{"_id":"115920","title":"","text":"First Steps of Making a Programming Language"}
+{"_id":"9944","title":"","text":"What is the difference between software engineer and software developer?"}
+{"_id":"9948","title":"","text":"How to sell a high SO reputation at an interview"}
+{"_id":"57435","title":"","text":"How to Structure Bonuses for Software Developers?"}
+{"_id":"223596","title":"","text":"Should I refactor a F class from code climate?"}
+{"_id":"133872","title":"","text":"Localised programming languages"}
+{"_id":"4765","title":"","text":"When do you know it's time to move on from your current job?"}
+{"_id":"130743","title":"","text":"How do I choose what code to review?"}
+{"_id":"202889","title":"","text":"Getting work done in a small office"}
+{"_id":"111003","title":"","text":"How to promote my open source project"}
+{"_id":"254936","title":"","text":"Database conceptual Question"}
+{"_id":"129603","title":"","text":"How do I approach a coworker about his or her code quality?"}
+{"_id":"161303","title":"","text":"Is it bad practice to use public fields?"}
+{"_id":"82286","title":"","text":"Open Source Licenses Question"}
+{"_id":"117766","title":"","text":"How can I learn to write idiomatic C++?"}
+{"_id":"116491","title":"","text":"Do employers care about what college your degree is from?"}
+{"_id":"201237","title":"","text":"I am incompetent; how can I fix it?"}
+{"_id":"102518","title":"","text":"What are the benefits and disadvantages in the approaches of C#, Java and Scala to Closures/Lambdas/...?"}
+{"_id":"223718","title":"","text":"Specifics of Switch and If statements"}
+{"_id":"193996","title":"","text":"How important is it to have a computer science degree?"}
+{"_id":"26642","title":"","text":"How useful is a portfolio of home projects?"}
+{"_id":"92393","title":"","text":"What does the Spring framework do? Should I use it?  Why or why not?"}
+{"_id":"130582","title":"","text":"Linux Programmer moving to Windows"}
+{"_id":"145055","title":"","text":"Are there guidelines on how many parameters a function should accept?"}
+{"_id":"192","title":"","text":"Is test coverage an adequate measure of code quality?"}
+{"_id":"147977","title":"","text":"Is it wrong to use a boolean parameter to determine behavior?"}
+{"_id":"40063","title":"","text":"Should character encodings besides UTF-8 (and maybe UTF-16/UTF-32) be deprecated?"}
+{"_id":"18679","title":"","text":"How do I learn algorithms and data structures?"}
+{"_id":"137344","title":"","text":"How does one decide if a data object type should be designed to be immutable?"}
+{"_id":"6476","title":"","text":"Have you tried programming via Collaborative Text Editing?"}
+{"_id":"69242","title":"","text":"How to get started in opensource projects and programs"}
+{"_id":"81131","title":"","text":"Going from PHP to Java"}
+{"_id":"100095","title":"","text":"Should organizations penalize developers for the amount of defect reports filed against code they worked on?"}
+{"_id":"210532","title":"","text":"What are the alternatives to resx file"}
+{"_id":"218121","title":"","text":"Good fix vs Quick fix"}
+{"_id":"124533","title":"","text":"Will it hurt my reputation if I don't deliver what I'm expected to?"}
+{"_id":"253026","title":"","text":"Python case statement?"}
+{"_id":"111633","title":"","text":"What does SVN do better than Git?"}
+{"_id":"28050","title":"","text":"API/Technical Writers Guide"}
+{"_id":"147185","title":"","text":"How does a beginner programmer find a mentor for learning from doing?"}
+{"_id":"163752","title":"","text":"How can I give a basic idea of what I'm working on to a non programmer?"}
+{"_id":"220023","title":"","text":"Evolution versions of applications"}
+{"_id":"110270","title":"","text":"What's the difference between Enterprise Architect , Software/Solution Architect and a Dev Senior?"}
+{"_id":"253650","title":"","text":"How to write a user story specific to tasks in this case"}
+{"_id":"195719","title":"","text":"Functional Programming: efficiently handling whole world changes?"}
+{"_id":"176471","title":"","text":"Seeking documents on the philosophy of Google's Go?"}
+{"_id":"51987","title":"","text":"How to include an apache library with my opensource code?"}
+{"_id":"194395","title":"","text":"Command line tools vs IDE (Eclipse )"}
+{"_id":"81674","title":"","text":"Do you create a design with UML before you start?"}
+{"_id":"233038","title":"","text":"Why many Ruby gems won't work on Windows"}
+{"_id":"27410","title":"","text":"Is there a canonical book on Ruby on Rails?"}
+{"_id":"115769","title":"","text":"What are these different Java versions for?"}
+{"_id":"225931","title":"","text":"Workaround for Java checked exceptions"}
+{"_id":"189426","title":"","text":"About the usage of assertions"}
+{"_id":"117852","title":"","text":"Using \"catching exceptions\" to improve readability, Good or Bad?"}
+{"_id":"61558","title":"","text":"Turn away a bug if no reproducible test case exists?"}
+{"_id":"212932","title":"","text":"What's better either pass a class instance to the method or just primitives?"}
+{"_id":"246532","title":"","text":"Estimated work remaining doesn't get lower"}
+{"_id":"81478","title":"","text":"Starting career as SDET, is this a big block to be SDE later (1 or 2 years later)"}
+{"_id":"133096","title":"","text":"Is it OK to put a link to Q&A sites in a program's comments?"}
+{"_id":"7126","title":"","text":"Advantages of object-oriented programming"}
+{"_id":"219198","title":"","text":"Why do modern websites still insist on archaic username/password requirements?"}
+{"_id":"38265","title":"","text":"What does the suffix after software engineer/developer job titles mean?  (e.g. Software Developer III)"}
+{"_id":"214734","title":"","text":"Is programming in layers real?"}
+{"_id":"195416","title":"","text":"Why do we still use a programming language instead of using just SQL?"}
+{"_id":"153631","title":"","text":"Should each app have its own database, or should small apps be merged into one?"}
+{"_id":"176102","title":"","text":"A toolset for self improvement and learning"}
+{"_id":"190955","title":"","text":"Using public final rather than private getters"}
+{"_id":"211610","title":"","text":"Refactorable God v.s. too many classe"}
+{"_id":"90217","title":"","text":"Determining what is a useful unit test"}
+{"_id":"20684","title":"","text":"Why would you use MVC over Web Forms?"}
+{"_id":"237431","title":"","text":"Algorithm to calculate scheduling of task list, check feasibility"}
+{"_id":"161711","title":"","text":"Is it must for a junior Programmer to have a mentor?"}
+{"_id":"29534","title":"","text":"Are debugging skills important to become a good programmer?"}
+{"_id":"50755","title":"","text":"Should I keep investing into data structures and algorithms?"}
+{"_id":"221234","title":"","text":"Is there a license that forbids distribution and gives a Github repo owner full rights?"}
+{"_id":"95335","title":"","text":"How much HTML and CSS should server side developer know?"}
+{"_id":"110595","title":"","text":"git / other VCS - how often to commit?"}
+{"_id":"118108","title":"","text":"Why is an array of characters called a String in Object Oriented languages?"}
+{"_id":"141961","title":"","text":"Teaching java interfaces to absolute beginners: What is a good example?"}
+{"_id":"251756","title":"","text":"Customer is \"deeply disappointed\" in software because of one bug. How to reply?"}
+{"_id":"199698","title":"","text":"What are the best ways to find fellow coders to work on hobby open-source projects?"}
+{"_id":"196876","title":"","text":"Is C a pre-requisite in order to learn C++ effectively?"}
+{"_id":"37029","title":"","text":"Difference between defect and bug in testing"}
+{"_id":"136629","title":"","text":"Should developers enter bugs into the bug tracking system?"}
+{"_id":"197056","title":"","text":"The need for adding an interface to every class"}
+{"_id":"234449","title":"","text":"How to avoid programmers duplicating code"}
+{"_id":"108395","title":"","text":"Application development practices in a non-software company"}
+{"_id":"204521","title":"","text":"Is there a canonical source supporting \"all-surrogates\"?"}
+{"_id":"237157","title":"","text":"UML class diagram - instantiation dependency relationship: who depends on who?"}
+{"_id":"202804","title":"","text":"How to organise OO code"}
+{"_id":"136908","title":"","text":"Why Use !boolean_variable Over boolean_variable == false"}
+{"_id":"215235","title":"","text":"unit level testing, agile, and refactoring"}
+{"_id":"9320","title":"","text":"Why is Lisp useful?"}
+{"_id":"54959","title":"","text":"How do I know when my development skills are good enough for a real job?"}
+{"_id":"209857","title":"","text":"Open source development life cycle"}
+{"_id":"54373","title":"","text":"When would someone use MongoDB (or similar) over traditional RDMS?"}
+{"_id":"89819","title":"","text":"Getting management approval to invest more in unit testing"}
+{"_id":"61745","title":"","text":"Effective methods for managing work tasks? (documenting/remembering/prioritizing)"}
+{"_id":"129520","title":"","text":"Difference between static testing and code review"}
+{"_id":"117403","title":"","text":"Will Python developers find it easier to learn C (and vice versa)?"}
+{"_id":"220444","title":"","text":"Should we always write Defensive null check in code?"}
+{"_id":"105380","title":"","text":"Architectural differences between dynamic and static languages"}
+{"_id":"196930","title":"","text":"GSOC along with an internship"}
+{"_id":"116730","title":"","text":"Programming with ADD/ADHD"}
+{"_id":"18444","title":"","text":"What should you bring to the table as a Software Architect?"}
+{"_id":"189824","title":"","text":"I would like to learn to write database-driven web applications. Where should I start?"}
+{"_id":"89944","title":"","text":"if I use .NET Framework for my application, do I have to pay anything to Microsoft?"}
+{"_id":"228584","title":"","text":"Why is BigDecimal the best data type for currency?"}
+{"_id":"133782","title":"","text":"How to properly approach a GitHub workflow as a solo developer?"}
+{"_id":"123834","title":"","text":"Prerequisites to become a technical architect"}
+{"_id":"10998","title":"","text":"What does the Jamie Zawinski's quotation about regular expressions mean?"}
+{"_id":"158591","title":"","text":"How to avoid typo errors, etc?"}
+{"_id":"96504","title":"","text":"How can I teach a bright person, with no programming experience, how to program?"}
+{"_id":"190542","title":"","text":"Steps to open source a small project"}
+{"_id":"215474","title":"","text":"What are the tools required to build a compiler?"}
+{"_id":"254008","title":"","text":"What would you call the concept of CofeeScript or Sass to be?"}
+{"_id":"21397","title":"","text":"What's the recommended control naming convention for XAML markup?"}
+{"_id":"210637","title":"","text":"Program design with multiple data sets, algorithms and results"}
+{"_id":"210635","title":"","text":"Determine dependency between .NET projects"}
+{"_id":"193895","title":"","text":"Responsibilities of Build Script and Build Server"}
+{"_id":"195073","title":"","text":"How to properly design REST"}
+{"_id":"142612","title":"","text":"When Agile goes wrong"}
+{"_id":"194679","title":"","text":"Is it common to spend your first few weeks at a new job trying to fix your designated workstation?"}
+{"_id":"136634","title":"","text":"What degree of mathematical knowledge should a programmer have?"}
+{"_id":"127535","title":"","text":"Has the time gone to think about user with JavaScript disabled in browser?"}
+{"_id":"199803","title":"","text":"Is the development of CLI apps considered \"backward\"?"}
+{"_id":"221615","title":"","text":"Why do dynamic languages make it more difficult to maintain large codebases?"}
+{"_id":"221619","title":"","text":"How to handle multiple similar projects? Why?"}
+{"_id":"130335","title":"","text":"Why is Scala more scalable than other languages?"}
+{"_id":"70755","title":"","text":"Are long hours and no benefits the norm for a junior programmer?"}
+{"_id":"102999","title":"","text":"Should we use python 2.6 or 2.7 or 3.x?"}
+{"_id":"238057","title":"","text":"Can the possibility of a data race be ignored in some cases? (while having concurrent threads)"}
+{"_id":"230199","title":"","text":"How to identify performance bottlenecks in your software"}
+{"_id":"225504","title":"","text":"Is it normal to look back on codes when coding?"}
+{"_id":"15004","title":"","text":"At which point do you \"know\" a technology enough to list it on a resume"}
+{"_id":"239016","title":"","text":"Is this the correct understanding of tight coupling and loose coupling"}
+{"_id":"204938","title":"","text":"When is it okay to open-source something?"}
+{"_id":"229657","title":"","text":"Is there a difference between declaring variables outside or inside a loop?"}
+{"_id":"235645","title":"","text":"Singleton: Why is a global point of access bad?"}
+{"_id":"140264","title":"","text":"Is a company order to switch to a certain IDE a red flag?"}
+{"_id":"174762","title":"","text":"How to show code samples in an interview?"}
+{"_id":"119367","title":"","text":"Should service test classes connect to the database"}
+{"_id":"154339","title":"","text":"Advice on SCRUM for the solitary developer"}
+{"_id":"17898","title":"","text":"What's a nice explanation for pointers?"}
+{"_id":"114520","title":"","text":"Is it wrong or bad to use autocomplete?"}
+{"_id":"229170","title":"","text":"Scrum: requirements clarification vs changing scope"}
+{"_id":"126965","title":"","text":"Learning Django by example"}
+{"_id":"163933","title":"","text":"What technologies are used for Game development now days?"}
+{"_id":"215703","title":"","text":"Is the Joel Test really a good gauging tool?"}
+{"_id":"166884","title":"","text":"Should I extract specific functionality into a function and why?"}
+{"_id":"210864","title":"","text":"Is Pair Programming also used to train less experienced developers and bring them up to speed?"}
+{"_id":"604","title":"","text":"Is the 80 character limit still relevant in times of widescreen monitors?"}
+{"_id":"196366","title":"","text":"How to fix quickly, dummy errors?"}
+{"_id":"114958","title":"","text":"Is Safari Books Online still the best game in town?"}
+{"_id":"91976","title":"","text":"On developing deep programming knowledge"}
+{"_id":"107326","title":"","text":"How much Stack Overflow reputation makes it worth putting in CV?"}
+{"_id":"73304","title":"","text":"How do you deal with an information hoarder?"}
+{"_id":"98509","title":"","text":"Why would a company develop an atmosphere which discourage code comments?"}
+{"_id":"224835","title":"","text":"How should I validate code when there is no one to do code review?"}
+{"_id":"74086","title":"","text":"if ('constant' == $variable) vs. if ($variable == 'constant')"}
+{"_id":"25234","title":"","text":"What to do about \"stopping point syndrome\"?"}
+{"_id":"87082","title":"","text":"web framework or not for web app development"}
+{"_id":"215727","title":"","text":"Double equals (Not equality) during assigning Java"}
+{"_id":"86904","title":"","text":"Why do most of us use 'i' as a loop counter variable?"}
+{"_id":"144829","title":"","text":"Standards for mixing languages within one application?"}
+{"_id":"19842","title":"","text":"What are some well known applications written in F#?"}
+{"_id":"236415","title":"","text":"Is machine language always binary?"}
+{"_id":"10495","title":"","text":"Do you work contract projects in addition to your full-time job?"}
+{"_id":"14975","title":"","text":"What do you do with a heisenbug?"}
+{"_id":"18371","title":"","text":"How do you interview someone with more experience than you?"}
+{"_id":"114286","title":"","text":"What books or resources would you recommend to learn practical OO design and development concepts?"}
+{"_id":"32425","title":"","text":"I still can't figure out how to program?"}
+{"_id":"114755","title":"","text":"Transitioning To Java"}
+{"_id":"253496","title":"","text":"How do we add software to a machine?"}
+{"_id":"222464","title":"","text":"Designing online exam"}
+{"_id":"193496","title":"","text":"What is the netiquette for forking other people's open source projects?"}
+{"_id":"108292","title":"","text":"Java developing server-client solutions"}
+{"_id":"225153","title":"","text":"Best practice or design patterns for retrieval of data for reporting and dashboards in a domain-rich application"}
+{"_id":"181780","title":"","text":"When should the VCS history of a project be deleted?"}
+{"_id":"23313","title":"","text":"Programmers forgetting syntax"}
+{"_id":"135701","title":"","text":"Why is it so difficult to fix buffer overflows?"}
+{"_id":"99647","title":"","text":"How do I adapt to pre-interview challenge questions?"}
+{"_id":"87321","title":"","text":"What is the Best Way to Incentivize a Team of Developers?"}
+{"_id":"159666","title":"","text":"Which programming language is Curiosity written in?"}
+{"_id":"208698","title":"","text":"Multiple meanings for one variable?"}
+{"_id":"230604","title":"","text":"What exactly is procedural programming? How exactly is it different from OOP? Is it the same as functional programming?"}
+{"_id":"192037","title":"","text":"How does understanding computer architecture help a programmer?"}
+{"_id":"254083","title":"","text":"If there's no problem treating a statement as an expression, why was there a distinction in the first place in some programming languages?"}
+{"_id":"99499","title":"","text":"iOS Development Certifications"}
+{"_id":"252595","title":"","text":"Android testing - bugs not reproducible"}
+{"_id":"143127","title":"","text":"Android Development: MVC vs MVVM"}
+{"_id":"253042","title":"","text":"Is it a newbie mistake to avoid branching?"}
+{"_id":"209479","title":"","text":"School vs Self-Taught"}
+{"_id":"21907","title":"","text":"Open Source but not Free Software (or vice versa)"}
+{"_id":"104517","title":"","text":"How can I get more experience with lower level programming?"}
+{"_id":"186377","title":"","text":"Developers taking code home - how bad is it?"}
+{"_id":"54451","title":"","text":"Library vs. framework vs API?"}
+{"_id":"146810","title":"","text":"Interpreting profiling results"}
+{"_id":"34173","title":"","text":"Does heavy library and code snippet usage make you a bad programmer?"}
+{"_id":"232843","title":"","text":"From a TDD perspective, am I a bad person if I test against a live endpoint instead of a mock?"}
+{"_id":"201844","title":"","text":"Ways for a young programmer to not feel intimidated at my first REAL programming job?"}
+{"_id":"111846","title":"","text":"Should you write good documentation and clean code to increase the \"Bus Factor\"?"}
+{"_id":"236370","title":"","text":"Query regarding MIT licence"}
+{"_id":"204410","title":"","text":"How are GPL-compatible licenses like MIT usable in GPL programs without being subject to the copyleft provision?"}
+{"_id":"214784","title":"","text":"Rails: The Law of Demeter"}
+{"_id":"119466","title":"","text":"Traditional ASP.Net WebForms vs ASP.Net MVC"}
+{"_id":"97446","title":"","text":"If a variable has getter and setter, should it be public?"}
+{"_id":"195337","title":"","text":"Is there any difference between pointers and references?"}
+{"_id":"53517","title":"","text":"What does Tim Peters mean by \"complex is better than complicated\"?"}
+{"_id":"225870","title":"","text":"Deploying Database Schema changes in a patching process"}
+{"_id":"240612","title":"","text":"Forking BSD-Project and changing license"}
+{"_id":"142974","title":"","text":"best way to handle a many to many relationship?"}
+{"_id":"223027","title":"","text":"At what point is version control needed?"}
+{"_id":"57405","title":"","text":"If you have designed (and implemented) a programming language, what to do to make it gain attention/popularity?"}
+{"_id":"26030","title":"","text":"At what point during a project is it unreasonable to leave?"}
+{"_id":"250707","title":"","text":"How should I remember what I was doing and why on a project 3 months back?"}
+{"_id":"234962","title":"","text":"What are the advantages of recursion compared to iteration?"}
+{"_id":"233615","title":"","text":"Joel Test: Quiet working space as a developer?"}
+{"_id":"35925","title":"","text":"When is it more productive to build your own framework than to use an existing one?"}
+{"_id":"159089","title":"","text":"Return magic value, throw exception or return false on failure?"}
+{"_id":"175583","title":"","text":"Alternative to \"inheritance versus composition?\""}
+{"_id":"20092","title":"","text":"How do I convince my company to contribute towards Open-Source?"}
+{"_id":"179618","title":"","text":"How to test if a hashing algorithm is good?"}
+{"_id":"80826","title":"","text":"What should I do to leave a job professionally?"}
+{"_id":"220872","title":"","text":"Structured code vs Duplicate code. Modifiability"}
+{"_id":"122233","title":"","text":"How to deal with checked exceptions that cannot ever be thrown"}
+{"_id":"238325","title":"","text":"Is it okay to not completely understand code functionality?"}
+{"_id":"110788","title":"","text":"Anonymous chat and fear of talking openly"}
+{"_id":"118558","title":"","text":"How do I make code open-source?"}
+{"_id":"111788","title":"","text":"Selling a webapp: I don't want sell my source code!!! What do I sell so?"}
+{"_id":"193415","title":"","text":"Best practices for sharing tiny snippets of code across projects"}
+{"_id":"206754","title":"","text":"What is the best way to track / record the current programming project you work on?"}
+{"_id":"206755","title":"","text":"IDE vs. Text Editor"}
+{"_id":"57243","title":"","text":"Resources for improving your comprehension of recursion?"}
+{"_id":"158359","title":"","text":"How can calculus and linear algebra be useful to a system programmer?"}
+{"_id":"150633","title":"","text":"Exception hierarchy design"}
+{"_id":"153581","title":"","text":"What does RESTful web applications mean?"}
+{"_id":"167277","title":"","text":"How is it possible to write the compiler of a programming language with that language itself"}
+{"_id":"81705","title":"","text":"Rewriting GPL code to change license"}
+{"_id":"152678","title":"","text":"Save match details to SQLite or XML?"}
+{"_id":"222362","title":"","text":"If I fork an open source project and make improvements in the fork, will it or I offend the original authors?"}
+{"_id":"61798","title":"","text":"How much database access should developers have?"}
+{"_id":"227720","title":"","text":"How to shorten the case statement from hades?"}
+{"_id":"223250","title":"","text":"Do Scrum sprints mean to work at the fastest pace possible?"}
+{"_id":"15829","title":"","text":"Advice for solo programmer whose team will expand in the near future"}
+{"_id":"79624","title":"","text":"What is the reason most people have predetermined fear of programming & how should skilled make them fearless?"}
+{"_id":"45378","title":"","text":"Is commented out code really always bad?"}
+{"_id":"119814","title":"","text":"What should be tested in Javascript?"}
+{"_id":"43796","title":"","text":"How to open-source a project whose git repository has copyrighted media in the history?"}
+{"_id":"14831","title":"","text":"How to teach Exception Handling for New Programmers?"}
+{"_id":"175561","title":"","text":"When to open source a project under development?"}
+{"_id":"67960","title":"","text":"When do you not give help to less experienced programmers?"}
+{"_id":"199838","title":"","text":"How can I avoid editing conflicts repeatedly when merging from one to branch to another?"}
+{"_id":"154954","title":"","text":"How to refactor a method which breaks \"The law of Demeter\" principle?"}
+{"_id":"165668","title":"","text":"How to manage/control software versions?"}
+{"_id":"222508","title":"","text":"Can you call yourself a programmer if you don't understand how a computer works"}
+{"_id":"210049","title":"","text":"What kind of programming languages have the highest pedagogical value?"}
+{"_id":"166314","title":"","text":"How Do I Determine the Value of a Technical book?"}
+{"_id":"52158","title":"","text":"What are best practices when giving a presentation to programmers?"}
+{"_id":"169962","title":"","text":"Hiring developers - listing IDE as a requirement?"}
+{"_id":"189983","title":"","text":"Obsessed with finding most elegant solution"}
+{"_id":"190649","title":"","text":"What's the right balance between code consistency and code improvement?"}
+{"_id":"145722","title":"","text":"Freelancing - Share the source code?"}
+{"_id":"246568","title":"","text":"Linking a GPL executable from proprietary .bat script"}
+{"_id":"235283","title":"","text":"How To Invoke A Method When It's Class is Accessed (Any Method) - \"OnClassEnter\""}
+{"_id":"133664","title":"","text":"Ideas to get you programming mojo back?"}
+{"_id":"135993","title":"","text":"How can I quantify the amount of technical debt that exists in a project?"}
+{"_id":"37677","title":"","text":"Programming skills, problem solving genius or language guru?"}
+{"_id":"208867","title":"","text":"Component based software engineering vs Service Oriented Architecture"}
+{"_id":"191759","title":"","text":"Can a developer perform testing efficiently?"}
+{"_id":"95465","title":"","text":"Language Choice for Algorithm Competitions"}
+{"_id":"1319","title":"","text":"What questions do you ask about a company before deciding to work there?"}
+{"_id":"114629","title":"","text":"Is there an alternative to Google Code Search?"}
+{"_id":"103471","title":"","text":"How should I handle invalid user input?"}
+{"_id":"237577","title":"","text":"How to (or should I) have one assert per test with object comparisons?"}
+{"_id":"116148","title":"","text":"Which is more important career-wise: Length of time spent on a project, or personal projects?"}
+{"_id":"138396","title":"","text":"How to Mentor a Junior Developer"}
+{"_id":"246066","title":"","text":"Using GPL library in our software"}
+{"_id":"120488","title":"","text":"Programming in academic environment vs industry environment"}
+{"_id":"215248","title":"","text":"Is there an established or defined best practice for source control branching between development and production builds?"}
+{"_id":"940","title":"","text":"What are your favorite version control systems?"}
+{"_id":"193929","title":"","text":"\"Too object-oriented\""}
+{"_id":"95637","title":"","text":"How can I tell in an interview if a programmer is passionate about programming?"}
+{"_id":"160628","title":"","text":"version control security"}
+{"_id":"196990","title":"","text":"OOP principles and method names"}
+{"_id":"247103","title":"","text":"How to manage a relatively large one-man project?"}
+{"_id":"113209","title":"","text":"Is garbage collection necessary?"}
+{"_id":"164665","title":"","text":"Programming languages with a Lisp-like syntax extension mechanism"}
+{"_id":"136449","title":"","text":"Importance of bitwise thinking"}
+{"_id":"170966","title":"","text":"Isn't class scope purely for organization?"}
+{"_id":"254339","title":"","text":"When to to use which - Interface vs. Abstract Class?"}
+{"_id":"179554","title":"","text":"What is the difference between technical specifications and design documents?"}
+{"_id":"1180","title":"","text":"VB.Net vs C# debate"}
+{"_id":"175309","title":"","text":"Code maintenance: To add comments in code or to just leave it to the version control?"}
+{"_id":"111663","title":"","text":"Why isn't functional programming embraced more widely? "}
+{"_id":"119513","title":"","text":"Learning to program without a computer"}
+{"_id":"211319","title":"","text":"Excessive use “this” keyword in Java"}
+{"_id":"94024","title":"","text":"Does unit test increase productivity?"}
+{"_id":"191191","title":"","text":"How to deal with undesired commits that break long-running release builds?"}
+{"_id":"220890","title":"","text":"When did current source control management emerge?"}
+{"_id":"20653","title":"","text":"Is it better to specialize in a single field I like, or expand into other fields to broaden my horizons?"}
+{"_id":"147273","title":"","text":"Confusion about proper use of * wildcard in SQL"}
+{"_id":"92465","title":"","text":"How should I structure our common modules to maximize reuse and reduce duplication?"}
+{"_id":"194646","title":"","text":"What methods are there to avoid a stack overflow in a recursive algorithm?"}
+{"_id":"228848","title":"","text":"How does Java handle cyclic data references when serializing an object?"}
+{"_id":"205638","title":"","text":"When is a catch clause empty"}
+{"_id":"203776","title":"","text":"What exactly is \"big O\" notation?"}
+{"_id":"178916","title":"","text":"Store image as logic file (in db by using binary format) or physical file (in the server)"}
+{"_id":"230250","title":"","text":"outOfMemoryException in android emulator"}
+{"_id":"233503","title":"","text":"How to reuse c++ code?"}
+{"_id":"76182","title":"","text":"How to get a job with no experience?"}
+{"_id":"213173","title":"","text":"What To Do If I've Found a Vulnerability In a Possible Future Employers Site?"}
+{"_id":"57576","title":"","text":"About plagiarism"}
+{"_id":"154679","title":"","text":"Reformatting and version control"}
+{"_id":"234820","title":"","text":"design patterns in Javascript - toggle functionality"}
+{"_id":"162583","title":"","text":"Why is the rec keyword needed in F#?"}
+{"_id":"255912","title":"","text":"Can I use Agile even when the client doesn't want to participate?"}
+{"_id":"39378","title":"","text":"When should I use mock objects?"}
+{"_id":"95363","title":"","text":"Should code reviewers test as part of the review?"}
+{"_id":"19558","title":"","text":"How to start project?"}
+{"_id":"245274","title":"","text":"How to define different names for the same type and have the compiler check them?"}
+{"_id":"142292","title":"","text":"Are there code reviews in opensource projects? If so, what tools are used to do this?"}
+{"_id":"111802","title":"","text":"Should I learn design patterns or algorithms to improve my logical thinking skills?"}
+{"_id":"156771","title":"","text":"How to get good design when using agile methods?"}
+{"_id":"196356","title":"","text":"iPhone development - Which model to test?"}
+{"_id":"180012","title":"","text":"Is there any reason not to go directly from client-side Javascript to a database?"}
+{"_id":"233981","title":"","text":"Characterization in Testing: Unit test or Functional test"}
+{"_id":"32617","title":"","text":"Would you see any use of a Trilean (True, False, ??)"}
+{"_id":"200360","title":"","text":"How to generate random numbers with a (negative) sloping distribution?"}
+{"_id":"204840","title":"","text":"Difference between application-level and system-level testing"}
+{"_id":"138642","title":"","text":"Is there a drawback in defining multiple small DRY classes, instead of bigger more repetitive classes?"}
+{"_id":"138643","title":"","text":"Why is Python used for high-performance/scientific computing (but Ruby isn't)?"}
+{"_id":"128548","title":"","text":"When should I stop programming / coding?"}
+{"_id":"125715","title":"","text":"Do we still have a case against the goto statement?"}
+{"_id":"246354","title":"","text":"What are the benefits of learning an old programming language?"}
+{"_id":"84638","title":"","text":"What is the objective of unit testing?"}
+{"_id":"236853","title":"","text":"Is there a performance difference between ++x over x++?"}
+{"_id":"163822","title":"","text":"Code Measuring and Metrics Tools?"}
+{"_id":"123456","title":"","text":"What are the most needed skills for someone entering the workforce as a software engineer?"}
+{"_id":"202273","title":"","text":"When does SOAP make more sense than REST?"}
+{"_id":"226233","title":"","text":"Use of LGPL libraries on android devices (in a single closed source .apk)"}
+{"_id":"171701","title":"","text":"Big Oh notation does not mention constant value"}
+{"_id":"238546","title":"","text":"Single programmer working on a project from different computers: is Dropbox a good solution?"}
+{"_id":"251707","title":"","text":"Client-side coding: How to prevent malicious use?"}
+{"_id":"152094","title":"","text":"null pointers vs. Null Object Pattern"}
+{"_id":"211477","title":"","text":"Test Driven Development vs Behavior Driven Development"}
+{"_id":"164799","title":"","text":"QA - Developer communication"}
+{"_id":"143722","title":"","text":"Is there a language that transcompiles to C with a better syntax?"}
+{"_id":"20023","title":"","text":"Is Java (still) the cross platform language of choice?"}
+{"_id":"111757","title":"","text":"Raw JavaScript or jQuery? Where to start from?"}
+{"_id":"9813","title":"","text":"Where do you find the time?"}
+{"_id":"36961","title":"","text":"Where can I find statistics / figures on how long testing should / could take?"}
+{"_id":"37249","title":"","text":"The Singleton Pattern"}
+{"_id":"115425","title":"","text":"Is there a list of common usernames to reserve in a new system?"}
+{"_id":"186690","title":"","text":"Relative value of manual vs automated testing"}
+{"_id":"136195","title":"","text":"Do I need to know how to program before going to university if I want to study programming?"}
+{"_id":"76801","title":"","text":"Why functional programming?"}
+{"_id":"194958","title":"","text":"Which Agile methodology could my small team use?"}
+{"_id":"139418","title":"","text":"Reference public exposed property or private field in other parts of a class"}
+{"_id":"125108","title":"","text":"Will I ever be able to code client-side browser code in a language of my choice?"}
+{"_id":"237226","title":"","text":"Designing XML - confused between attributes and elements"}
+{"_id":"110471","title":"","text":"Open source projects - motivation"}
+{"_id":"98749","title":"","text":"Work in a company as a Soft. Engineer or take a Master?"}
+{"_id":"98651","title":"","text":"What are the advantages of the Intel C++ compiler?"}
+{"_id":"194373","title":"","text":"Learning new concepts is an infinite loop. How do I go about it?"}
+{"_id":"210346","title":"","text":"After years of working alone, other developers will finally see my (buggy) code. What should I do?"}
+{"_id":"147134","title":"","text":"How should I test randomness?"}
+{"_id":"137439","title":"","text":"Intellectual Property Rights - Starting a new Job"}
+{"_id":"228187","title":"","text":"Licensing - Using Standard C Library"}
+{"_id":"253453","title":"","text":"How to convey that a project is too ambitious?"}
+{"_id":"247135","title":"","text":"Using rvalue references to signal function behaviour"}
+{"_id":"125373","title":"","text":"How should I write my if statements?"}
+{"_id":"134037","title":"","text":"Advice for improving analytical skills and thought process"}
+{"_id":"133565","title":"","text":"Programming with a group of people I've never met"}
+{"_id":"252495","title":"","text":"When using Visual Studio 2012 do you have to use the drag and drop system?"}
+{"_id":"179763","title":"","text":"How to create a manager class without global variables nor singletons?"}
+{"_id":"200362","title":"","text":"Does dedicated maintenance work hamper a programmer's career?"}
+{"_id":"121998","title":"","text":"MIT vs. BSD vs. Dual License"}
+{"_id":"251126","title":"","text":"Error messages from Web API, should I use error codes?"}
+{"_id":"78431","title":"","text":"How much should my project manager know?"}
+{"_id":"150888","title":"","text":"Using static in PHP"}
+{"_id":"198936","title":"","text":"How does a new programmer plan a code?"}
+{"_id":"104111","title":"","text":"What is meant by a senior (insert language here) developer?"}
+{"_id":"74386","title":"","text":"How Do You Organize Your ASP.NET MVC 3 Applications?"}
+{"_id":"141411","title":"","text":"What is enterprise software, exactly?"}
+{"_id":"182009","title":"","text":"Why notify and wait are not declared in threads?"}
+{"_id":"209129","title":"","text":"Without C++-like destructors, how do we return resources that aren't managed by garbage collector in Java?"}
+{"_id":"138026","title":"","text":"IF ELSE shorthand. Does it hurt readability"}
+{"_id":"18059","title":"","text":"How do you explain refactoring to a non-technical person?"}
+{"_id":"144892","title":"","text":"Depend on built technology, or build your own"}
+{"_id":"210623","title":"","text":"GPLv3 licensing and Software-as-a-Service web apps"}
+{"_id":"173320","title":"","text":"Does a programmer really need college?"}
+{"_id":"127867","title":"","text":"What programmers should do if there are no tasks in hand for few days?"}
+{"_id":"201119","title":"","text":"Web Authentication using PKI Certs"}
+{"_id":"254424","title":"","text":"Changelog in Comments Versus Source Control Log"}
+{"_id":"139037","title":"","text":"Simple & short license notice for proprietary code"}
+{"_id":"59606","title":"","text":"Is type safety worth the trade-offs?"}
+{"_id":"28379","title":"","text":"Place to have my code reviewed by others"}
+{"_id":"114258","title":"","text":"As a sole developer (for now), how should I be using Git?"}
+{"_id":"51268","title":"","text":"How important is Domain knowledge vs. Technical knowledge?"}
+{"_id":"25063","title":"","text":"Google is good or bad for programmer?"}
+{"_id":"82227","title":"","text":"Programming practice - Is there a site that has a daily \"write a method to do X\" type challange?"}
+{"_id":"194106","title":"","text":"What are the advantages of server-side Javascript and when would you use it?"}
+{"_id":"97338","title":"","text":"What are the boundaries between the responsibilities of a web designer and a web developer?"}
+{"_id":"91064","title":"","text":"Mono & Commercial Projects"}
+{"_id":"29109","title":"","text":"Is there any reason to use C++ instead of C, Perl, Python, etc.?"}
+{"_id":"34559","title":"","text":"How do you keep track of the authors of code?"}
+{"_id":"55334","title":"","text":"High level vs. low level programming. Do I really have to choose?"}
+{"_id":"66764","title":"","text":"Recomendation for Math books related to computer science"}
+{"_id":"100959","title":"","text":"How do you unit test private methods?"}
+{"_id":"138726","title":"","text":"What are proven advantages of tools like GWT over pure JavaScript frameworks?"}
+{"_id":"130256","title":"","text":"Should I focus on web development or try other technologies?"}
+{"_id":"185671","title":"","text":"Should methods always return from one place?"}
+{"_id":"55065","title":"","text":"How to calculate the quality of software project"}
+{"_id":"245115","title":"","text":"static or non-static, that is the question?"}
+{"_id":"155659","title":"","text":"Java language book for an experienced programmer?"}
+{"_id":"257","title":"","text":"I program from home. What can I do to be more productive?"}
+{"_id":"97912","title":"","text":"How do you define elegant code?"}
+{"_id":"52833","title":"","text":"Is writing comments inside methods not a good practice?"}
+{"_id":"220049","title":"","text":"Verbose or concise logging"}
+{"_id":"102348","title":"","text":"My lead does not co-operate (may be lack of knowledge or unwillingness)"}
+{"_id":"37987","title":"","text":"I've been hired on as a entry-level game developer at a company and have little/no experience in API programming, what should I expect?"}
+{"_id":"140876","title":"","text":"Options for Opensource license?"}
+{"_id":"206199","title":"","text":"What should a self-taught developer learn in order to work with others?"}
+{"_id":"8886","title":"","text":"Can someone find a job as a programmer without an education?"}
+{"_id":"211678","title":"","text":"How to do you judge the value of using TDD or plain unit testing in an Open Source project? Is there a good rule of thumb?"}
+{"_id":"220343","title":"","text":"Which is better approach for writing automated tests?"}
+{"_id":"186438","title":"","text":"Why does File.Open in .Net throw exceptions and not follow exception handling best practices?"}
+{"_id":"27022","title":"","text":"How do you take advantage of your whiteboard in your development team?"}
+{"_id":"35074","title":"","text":"I'm a Subversion geek, why should I consider or not consider Mercurial or Git or any other DVCS?"}
+{"_id":"251222","title":"","text":"How to learn new technologies in short period of time?"}
+{"_id":"78903","title":"","text":"How can I be more productive at work? (additional context inside)"}
+{"_id":"23276","title":"","text":"How does one become a leader in a team of programmers?"}
+{"_id":"166798","title":"","text":"What does \"general purpose system\" mean for Java SE Embedded?"}
+{"_id":"78176","title":"","text":"How do I comply with the EU Cookie Directive?"}
+{"_id":"39282","title":"","text":"Building a DSL: Scripted atop a general-purpose language or stand-alone?"}
+{"_id":"100685","title":"","text":"Making money with Open Source as a developer?"}
+{"_id":"73541","title":"","text":"Writing an (end-) user documentation"}
+{"_id":"81838","title":"","text":"What is the difference between the factory pattern and abstract factory?"}
+{"_id":"182207","title":"","text":"Can I ask the job interviewer to show me their code before joining the company?"}
+{"_id":"247382","title":"","text":"Value of passing by reference"}
+{"_id":"94932","title":"","text":"Compiler/OS Design - Where to start"}
+{"_id":"110730","title":"","text":"Benefits to starting JavaScript \"for\" loops at 0, or just traditional?"}
+{"_id":"191358","title":"","text":"How does one sandbox a web application"}
+{"_id":"97511","title":"","text":"What should an embedded developer know on day one?"}
+{"_id":"60409","title":"","text":"stuck on a programming problem solution"}
+{"_id":"59520","title":"","text":"Good interview programming projects"}
+{"_id":"197443","title":"","text":"Whatever happened to Pascal?"}
+{"_id":"32956","title":"","text":"What are the common revenue models for free-software companies?"}
+{"_id":"104096","title":"","text":"Which platform to choose, Java or .NET?"}
+{"_id":"65918","title":"","text":"Importance of learning to google efficiently for a programmer?"}
+{"_id":"189096","title":"","text":"Knowledge Transfer and software development"}
+{"_id":"93016","title":"","text":"Is age a factor when looking for internships?"}
+{"_id":"84778","title":"","text":"Trailing forward slash in directory names - good programming practice?"}
+{"_id":"144058","title":"","text":"Why do different languages use different Code Line Delimiters?"}
+{"_id":"102679","title":"","text":"What should I do before open sourcing a project?"}
+{"_id":"87452","title":"","text":"Internationalization : What things to think about?"}
+{"_id":"43729","title":"","text":"Learning Multiple Languages Simultaneously"}
+{"_id":"200031","title":"","text":"Do I need JUnit tests for the controller layer on a MVC when I have a database layer"}
+{"_id":"237584","title":"","text":"Zero Day Exploit Ethics/Etiquette"}
+{"_id":"59091","title":"","text":"Why does a computer science degree matter to a professional programmer?"}
+{"_id":"127201","title":"","text":"How do you manage extensibility in your multi-tenant systems?"}
+{"_id":"207815","title":"","text":"Why don't we have a non-turing complete general purpose language yet?"}
+{"_id":"158534","title":"","text":"Pros and Cons of holding all the business logic in stored procedures in web application"}
+{"_id":"210693","title":"","text":"Who fixes broken tests?"}
+{"_id":"116242","title":"","text":"How to name parts of your program as a non native English speaker"}
+{"_id":"71904","title":"","text":"Scrum for a single programmer?"}
+{"_id":"147240","title":"","text":"Where are functional languages used?"}
+{"_id":"132578","title":"","text":"What issues should we be aware of converting to Agile/Scrum with a project that's underway?"}
+{"_id":"91816","title":"","text":"When to use a API/Library and when to write your own?"}
+{"_id":"67931","title":"","text":"How do you handle database change deployments?"}
+{"_id":"136382","title":"","text":"Should a novice programmer learn several languages at once?"}
+{"_id":"140561","title":"","text":"Difference between software analyst, software developer and programmer?"}
+{"_id":"56031","title":"","text":"Version control comments - past or present tense"}
+{"_id":"139171","title":"","text":"Defensive Programming vs Exception Handling?"}
+{"_id":"249892","title":"","text":"Started wrong with a project. Should I start over?"}
+{"_id":"230280","title":"","text":"How to address the concerns of the software architect but still maintain collective code ownership?"}
+{"_id":"234620","title":"","text":"Developing an big system in a a small company"}
+{"_id":"12773","title":"","text":"Is the GoF book still the one to read?"}
+{"_id":"236571","title":"","text":"Understanding object-oriented programming: why is it important?"}
+{"_id":"221030","title":"","text":"What is the difference between apache and tomcat in the xampp control panel?"}
+{"_id":"26371","title":"","text":"Do employers hiring for software jobs care about the classes you took in CS masters program?"}
+{"_id":"120541","title":"","text":"Is there a language that allows this syntax: add(elements)at(index);"}
+{"_id":"163924","title":"","text":"Where can I find a punched card simulator?"}
+{"_id":"42938","title":"","text":"Dealing with frustration when things don't work"}
+{"_id":"53572","title":"","text":"How to improve the quality of app descriptions"}
+{"_id":"104122","title":"","text":"Dealing with change requests from clients for an old system that only take 5 minutes to implement"}
+{"_id":"128044","title":"","text":"How to protect own software from copying"}
+{"_id":"206254","title":"","text":"Difference between a server and a client"}
+{"_id":"208976","title":"","text":"Good practice to use namespace or prefix to indicate what file function is from?"}
+{"_id":"191539","title":"","text":"Wrapping specific checked exception in domain unchecked ones?"}
+{"_id":"46685","title":"","text":"Tips for a first year CS student looking for a summer internship to gain experience?"}
+{"_id":"121167","title":"","text":"Why do some languages recommend using spaces rather than tabs?"}
+{"_id":"197838","title":"","text":"What are the downsides of mixing tabs and spaces?"}
+{"_id":"178018","title":"","text":"Tips or techniques to use when you don't know how to code something?"}
+{"_id":"129543","title":"","text":"What is the best way to handle product versioning and branching of long term projects?"}
+{"_id":"32482","title":"","text":"Can an algorithm be patented?"}
+{"_id":"92339","title":"","text":"When do you use a struct instead of a class?"}
+{"_id":"113726","title":"","text":"Simplifying Database Schema for Extensibility by non-expert Users"}
+{"_id":"196913","title":"","text":"Is the use of JUnit feasible for a short duration project of around 3 months?"}
+{"_id":"146065","title":"","text":"Is there really Object-relational impedance mismatch?"}
+{"_id":"36561","title":"","text":"Woes of a Junior Developer - is it possible to not be cut out for programming?"}
+{"_id":"218184","title":"","text":"How should I make searching a relational database more efficient?"}
+{"_id":"139442","title":"","text":"How do I prove I'm a capable full-time hire after 3 years of a CS degree & lots of summer experience?"}
+{"_id":"255031","title":"","text":"How 'child proof' should i write code as a solo programmer?"}
+{"_id":"123851","title":"","text":"How do you estimate?"}
+{"_id":"123270","title":"","text":"Why \"Foo\" is so a special word?"}
+{"_id":"7565","title":"","text":"How to learn Agile as a Solo Developer"}
+{"_id":"175014","title":"","text":"Strategies for invoking subclass methods on generic objects"}
+{"_id":"181527","title":"","text":"Why is reverse debugging rarely used?"}
+{"_id":"60994","title":"","text":"Why is software schedule estimation so hard?"}
+{"_id":"55697","title":"","text":"How do managers know if a person is a good or a bad programmer?"}
+{"_id":"230206","title":"","text":"Is it better to use already build plugins/extensions or code your own in programming projects"}
+{"_id":"103133","title":"","text":"Is there a canonical source for learning C# and .NET internals?"}
+{"_id":"225387","title":"","text":"C# Code Design Issue"}
+{"_id":"234001","title":"","text":"Is a language that provides more abstractions to use it's own API, considered higher-level than a language that doesn't?"}
+{"_id":"46434","title":"","text":"How can software be protected from piracy?"}
+{"_id":"246813","title":"","text":"Redundant function to clarify purpose?"}
+{"_id":"203469","title":"","text":"If my team has low skill, should I lower the skill of my code?"}
+{"_id":"28825","title":"","text":"Open Source code bounties"}
+{"_id":"214494","title":"","text":"Throwing exception from a property when my object state is invalid"}
+{"_id":"213449","title":"","text":"How do I create every permutation"}
+{"_id":"250203","title":"","text":"Refactoring previous intern's noodle code with future interns in mind"}
+{"_id":"81591","title":"","text":"In the absense of a CS degree, how can I \"fill in the gaps\" so to speak?"}
+{"_id":"21230","title":"","text":"What are the pros and cons for the employer of code questions during an interview?"}
+{"_id":"148747","title":"","text":"Abstract Data Type and Data Structure"}
+{"_id":"663","title":"","text":"What should be the ideal computer science and engineering course topics?"}
+{"_id":"98691","title":"","text":"Excessive use \"final\" keyword in Java"}
+{"_id":"14582","title":"","text":"How do you organize your projects folders?"}
+{"_id":"213603","title":"","text":"Handling Server Response Timeouts"}
+{"_id":"15239","title":"","text":"For what problems is object oriented programming not a good choice?"}
+{"_id":"16528","title":"","text":"Single statement if block - braces or no?"}
+{"_id":"241411","title":"","text":"How to structure my java packages"}
+{"_id":"17696","title":"","text":"Writing a Software Requirement Specification"}
+{"_id":"122437","title":"","text":"How to organize functional programs"}
+{"_id":"98324","title":"","text":"When does TDD fail?"}
+{"_id":"2654","title":"","text":"What parts of your coding standard contribute to quality code?"}
+{"_id":"6625","title":"","text":"How to recruit programmers for an open source project and kick-start it?"}
+{"_id":"202903","title":"","text":"Do teams get more productive by adding more developers?"}
+{"_id":"203362","title":"","text":"Need help understanding Mocks and Stubs"}
+{"_id":"38087","title":"","text":"What does a standard code review contain?"}
+{"_id":"103089","title":"","text":"How to improve my programming knowledge?"}
+{"_id":"43086","title":"","text":"Colleague unwilling to use unit tests \"as it's more to code\""}
+{"_id":"221365","title":"","text":"Mozilla Public License (MPL 2.0) vs Lesser GNU General Public License (LGPL 3.0)"}
+{"_id":"194321","title":"","text":"Software Design and architecture from Scratch"}
+{"_id":"234511","title":"","text":"What is the best practice for arranging third-party library licenses \"paperwork\"?"}
+{"_id":"101164","title":"","text":"How difficult is it to transition from a software test engineer to a software development engineer?"}
+{"_id":"203970","title":"","text":"When to use primitive vs class in Java?"}
+{"_id":"135970","title":"","text":"how can I improve my c++ skills"}
+{"_id":"190758","title":"","text":"Should I check integrity in my application code or defer to the database?"}
+{"_id":"108855","title":"","text":"When is it necessary to use ORM tools?"}
+{"_id":"233342","title":"","text":"Best practices for introducing testing to a large, stable, legacy Java application?"}
+{"_id":"244866","title":"","text":"Matching the superclass's constructor's parameter list, is treating a null default value as a non-null value within a constructor a violation of LSP?"}
+{"_id":"212575","title":"","text":"Why are algorithms and data structures important?"}
+{"_id":"16010","title":"","text":"Is it bad to use Unicode characters in variable names?"}
+{"_id":"204206","title":"","text":"Painfully Stupid Method Names in Legacy Code: Fix or Leave as Warning?"}
+{"_id":"168685","title":"","text":"Does software rot refer primarily to performance, or to messy code?"}
+{"_id":"24542","title":"","text":"Choosing a functional programming language"}
+{"_id":"59496","title":"","text":"What pricing model has more benefits in mobile app stores: free or paid?"}
+{"_id":"115910","title":"","text":"Does adding unit tests make sense for well-known legacy code?"}
+{"_id":"196139","title":"","text":"Programming by Intention, Depth-First or Breadth-First?"}
+{"_id":"133330","title":"","text":"What's wrong with mutability and can it be desirable?"}
+{"_id":"224752","title":"","text":"In which file types I should include the copyright header?"}
+{"_id":"131408","title":"","text":"Java GNU Licensing"}
+{"_id":"108309","title":"","text":"Extracting user requirements from a person who does not know how to express himself"}
+{"_id":"19750","title":"","text":"How to get back to Software Engineering after a break?"}
+{"_id":"94780","title":"","text":"Do Diversified Skills Foster or Hinder Specialization?"}
+{"_id":"230778","title":"","text":"Should I consider loosely-coupling for class methods as well?"}
+{"_id":"12472","title":"","text":"How to deal with customers who don't understand the complexity of their requests?"}
+{"_id":"211276","title":"","text":"Why would I ever use delegates if I'm not doing events?"}
+{"_id":"215427","title":"","text":"What should I do if I have a genius team lead which does not share?"}
+{"_id":"154155","title":"","text":"Should you keep a copy of all the code you write?"}
+{"_id":"90438","title":"","text":"Monitor screen size and programming ease"}
+{"_id":"235468","title":"","text":"How can I make my logging more useful?"}
+{"_id":"244705","title":"","text":"What kind of code would Kent Beck avoid unit testing?"}
+{"_id":"251643","title":"","text":"Which language introduced the idea of private (hidden) variables?"}
+{"_id":"2757","title":"","text":"How many monitors do you use? Why? How they are used?"}
+{"_id":"132520","title":"","text":"How to emphasize the differences between Software Engineering, Computer Engineering and Computer Science to high schoolers?"}
+{"_id":"196546","title":"","text":"What is a good analogy to explain how software development is different than building a bridge?"}
+{"_id":"34485","title":"","text":"What is the difference between all-static-methods and applying a singleton pattern?"}
+{"_id":"224036","title":"","text":"How to isolate a massive and changeable web service"}
+{"_id":"117825","title":"","text":"Is it ok to write a quick software programme and then refactor it?"}
+{"_id":"22146","title":"","text":"Best books on the theory and practice of software architecture?"}
+{"_id":"131381","title":"","text":"What are the best-practice / norms to order functions in files or classes?"}
+{"_id":"93462","title":"","text":"Career Prospects: Women at Management positions in Software"}
+{"_id":"205562","title":"","text":"Good logging technique for small projects on Java"}
+{"_id":"241389","title":"","text":"Should interface only be used for behavior and not to show logical data grouped together?"}
+{"_id":"179162","title":"","text":"Best way to protect website application code"}
+{"_id":"78956","title":"","text":"I no longer want to be a developer"}
+{"_id":"151103","title":"","text":"What is the purpose of \"re-type your email\" field?"}
+{"_id":"32571","title":"","text":"design pattern for unit testing?"}
+{"_id":"165725","title":"","text":"Git branching and tagging best practices"}
+{"_id":"190853","title":"","text":"Is using `continue`, `break` in non-`switch` loops and `?:` bad practice?"}
+{"_id":"141973","title":"","text":"How do you achieve a numeric versioning scheme with Git?"}
+{"_id":"132281","title":"","text":"Are C and/or C++ viable/practical options for web development?"}
+{"_id":"115525","title":"","text":"Packages organisation with MVC design pattern"}
+{"_id":"121218","title":"","text":"What are the pros and cons of storing files in DB2 vs folders?"}
+{"_id":"40297","title":"","text":"What is a \"side effect?\""}
+{"_id":"238386","title":"","text":"Is inheritance that adds rules bad?"}
+{"_id":"8958","title":"","text":"What are signs that a project might turn out bad?"}
+{"_id":"26901","title":"","text":"How to convince your boss to give you a better developer machine?"}
+{"_id":"111881","title":"","text":"How much do i need to learn in order to get an entry level asp.net job?"}
+{"_id":"51465","title":"","text":"How to differentiate between trivial and non-trivial software?"}
+{"_id":"198549","title":"","text":"Re-architecting a classic inheritance design"}
+{"_id":"201041","title":"","text":"Programming against a protocol in Objective-C"}
+{"_id":"184874","title":"","text":"Is Ken Thompson's compiler hack still a threat?"}
+{"_id":"125252","title":"","text":"Worth it to Learn an Archaic Language?"}
+{"_id":"89554","title":"","text":"Is learning technology by reading books obsolete?"}
+{"_id":"7536","title":"","text":"If you favor \"T *var\", do you ever write \"T*\"?"}
+{"_id":"200064","title":"","text":"Is there a unified source code documentation generator?"}
+{"_id":"97660","title":"","text":"What recommendations can you give in managing a team of remote software engineers?"}
+{"_id":"250953","title":"","text":"Referencing StackOverflow questions in comments"}
+{"_id":"84001","title":"","text":"Is it worth Learning XML as a web developer when JSON is better for AJAX?"}
+{"_id":"85019","title":"","text":"Making an internship most effective, useful and fun for both parties"}
+{"_id":"139663","title":"","text":"Confusion about dual license (MIT/GPL) javascript for use on my website"}
+{"_id":"166895","title":"","text":"What are the problems python 3 new features solve?"}
+{"_id":"198240","title":"","text":"Approaches to isolating tests that require a database?"}
+{"_id":"156794","title":"","text":"Database lock on gSoap server during storing data in table"}
+{"_id":"91945","title":"","text":"How are you handling browser compatibility in the new \"rapid release\" world?"}
+{"_id":"187026","title":"","text":"How to get better at debugging?"}
+{"_id":"218447","title":"","text":"Do algorithms published in academic journals need to be licensed?"}
+{"_id":"750","title":"","text":"What should you test with unit tests?"}
+{"_id":"136993","title":"","text":"Interpreted vs Compiled: A useful distinction?"}
+{"_id":"13786","title":"","text":"How is software scalability measured?"}
+{"_id":"239210","title":"","text":"Theoretically bug-free programs"}
+{"_id":"240454","title":"","text":"Should I feel \"uncomfortable\" using auto in C++?"}
+{"_id":"179002","title":"","text":"IoC containers and service locator pattern"}
+{"_id":"246634","title":"","text":"Select design pattern - user stage"}
+{"_id":"97832","title":"","text":"How to motivate someone(including myself) not to give up learning something?"}
+{"_id":"131451","title":"","text":"Difference between Dependency Injection (DI) & Inversion of Control (IOC)"}
+{"_id":"97357","title":"","text":"Programming at Home vs Programming at Workplace"}
+{"_id":"102008","title":"","text":"Why isn't the line count in Visual Studio zero-based?"}
+{"_id":"140004","title":"","text":"Why choose an established CMS as opposed to building one from scratch?"}
+{"_id":"72768","title":"","text":"Does \"Inversion of Control\" promote \"Anemic Domain Model\"?"}
+{"_id":"194975","title":"","text":"Readable regular expressions without losing their power?"}
+{"_id":"240734","title":"","text":"For web apps (vs web pages) why not put scripts and css inline?"}
+{"_id":"77731","title":"","text":"Does Salary mean being On-Call 24/7?"}
+{"_id":"134244","title":"","text":"Is validating HTML a thing of the past?"}
+{"_id":"252532","title":"","text":"Should I place functions that are only used in one other function, within that function?"}
+{"_id":"49836","title":"","text":"Are there any downsides of 2 developers getting married?"}
+{"_id":"175594","title":"","text":"C++ - Constructor or Initialize Method to Startup"}
+{"_id":"210360","title":"","text":"Stopping developers committing to the wrong branch on DVCS"}
+{"_id":"109818","title":"","text":"Is code like this a \"train wreck\" (in violation of Law of Demeter)?"}
+{"_id":"221009","title":"","text":"SPA thin or thick architecture"}
+{"_id":"205359","title":"","text":"API Authentication, One time token VS Dynamic tokens"}
+{"_id":"66834","title":"","text":"What is the best practice for gathering requirements when a customer does not know what he wants?"}
+{"_id":"193586","title":"","text":"Using a development language (Python) before putting it into C++"}
+{"_id":"97785","title":"","text":"My Dad is impatient with the pace of my learning to program. What do I do?"}
+{"_id":"80694","title":"","text":"How do I choose an Android phone for testing my application?"}
+{"_id":"180165","title":"","text":"Hardware requirements"}
+{"_id":"15286","title":"","text":"Best approach to learning web programming"}
+{"_id":"84909","title":"","text":"Jobs that use programming which aren't in the technology sector"}
+{"_id":"224434","title":"","text":"Why do we still use floats?"}
+{"_id":"201130","title":"","text":"How do you balance out code structuring (few big functions vs. many small ones)?"}
+{"_id":"242610","title":"","text":"what's the point of method overloading?"}
+{"_id":"185712","title":"","text":"Bridge Design Pattern - I still don't get it"}
+{"_id":"237738","title":"","text":"Should failing unit tests that we're not going to fix be removed?"}
+{"_id":"162931","title":"","text":"How to avoid being an API programmer only?"}
+{"_id":"166136","title":"","text":"Switching licenses, or cross licensing existing GNU GPL v3 software"}
+{"_id":"46513","title":"","text":"Working for international NGO's as a programmer"}
+{"_id":"209764","title":"","text":"catch(Exception ex) would this example be a code smell?"}
+{"_id":"188381","title":"","text":"Engineering interview candidate refuses to use whiteboard"}
+{"_id":"31558","title":"","text":"version control for small team"}
+{"_id":"140266","title":"","text":"To program in free time as a programmer, is to show that programming is passion. If not, is the programmer good?"}
+{"_id":"73934","title":"","text":"Should CSS be listed on your resume under Languages?"}
+{"_id":"129141","title":"","text":"Is CSS a programming language?"}
+{"_id":"191961","title":"","text":"Why do some big projects, like Git and Debian, only use a mailing list and not an issue tracker?"}
+{"_id":"126130","title":"","text":"Example of an Object Oriented System design"}
+{"_id":"93826","title":"","text":"How do I explain \"Recursion\" to a 8 years old kid?"}
+{"_id":"95942","title":"","text":"\"Benefit Package\" as part of consulting fee"}
+{"_id":"225354","title":"","text":"Logic inside class properties setters & getters"}
+{"_id":"186465","title":"","text":"What will be the better way for data retrieval on application that needs to handle limited amount of data?"}
+{"_id":"44959","title":"","text":"Is C++ suitable as a first language?"}
+{"_id":"209070","title":"","text":"Tips for managing an offshore development team"}
+{"_id":"208815","title":"","text":"Drawbacks of using pure html in webforms?"}
+{"_id":"103263","title":"","text":"Scrum: how to handle backlog-items that are longer than one sprint"}
+{"_id":"60216","title":"","text":"Does programming knowledge have a half-life?"}
+{"_id":"79765","title":"","text":"What is \"the Cloud\" and how does it relate to development?"}
+{"_id":"24804","title":"","text":"Is Page Scraping and Data Mining Moral / Legal?"}
+{"_id":"36731","title":"","text":"Where do you draw the line for your perfectionism?"}
+{"_id":"138182","title":"","text":"Can Javascript code be encrypted making it hard for someone to copy?"}
+{"_id":"182229","title":"","text":"Why does Java's Collections.unmodifiableList return a List interface instead of an UnmodifiableList interface?"}
+{"_id":"133424","title":"","text":"Being the goto developer vs being a solid team member?"}
+{"_id":"122244","title":"","text":"Single Line Conditions and Loops - Best Practice"}
+{"_id":"111475","title":"","text":"C++ Renaissance - marketing slogan?"}
+{"_id":"118064","title":"","text":"Is it necessary to know and understand design patterns in order to be a professional programmer?"}
+{"_id":"196700","title":"","text":"How to maintain a steady pace at development?"}
+{"_id":"95626","title":"","text":"Getting start with Zend PHP framwork"}
+{"_id":"216195","title":"","text":"Should single purpose utility app use a class"}
+{"_id":"243347","title":"","text":"Regex to String generation"}
+{"_id":"67707","title":"","text":"When and why you should use void (instead of i.e. bool/int)"}
+{"_id":"91629","title":"","text":"Best Java book you have read so far"}
+{"_id":"77146","title":"","text":"Why to let / not let developers test their own work"}
+{"_id":"136774","title":"","text":"Flipping the desired bit of an integer number"}
+{"_id":"138447","title":"","text":"Can I show previous company work in a CV portfolio?"}
+{"_id":"8588","title":"","text":"What's the history of the non-official pronunciation of SQL?"}
+{"_id":"121887","title":"","text":"How to estimate effort required to convert a large codebase to another language/platform"}
+{"_id":"61980","title":"","text":"Is ageism in software development based on anything other than bias?"}
+{"_id":"46252","title":"","text":"How to explain a layperson why a developer should not be interrupted while neck-deep in coding?"}
+{"_id":"57047","title":"","text":"How do you classify bug severity? "}
+{"_id":"159373","title":"","text":"What backs up the claim that C++ can be faster than a JVM or CLR with JIT?"}
+{"_id":"114819","title":"","text":"Are 9 to 5 programmers looked down upon?"}
+{"_id":"209609","title":"","text":"How to use unit testing?"}
+{"_id":"3997","title":"","text":"Does off-shore resourcing work?"}
+{"_id":"223148","title":"","text":"Two months in my new job, still having trouble learning a new codebase. How can I improve?"}
+{"_id":"216301","title":"","text":"Are there any formalized/mathematical theories of software testing?"}
+{"_id":"95373","title":"","text":"How much time do you / is acceptable to waste?"}
+{"_id":"195656","title":"","text":"Power of HTML5?"}
+{"_id":"118140","title":"","text":"How can I get the benefit of working with a co-worker if I have no co-workers?"}
+{"_id":"124817","title":"","text":"Using frameworks or writing code without any framework ? Which is better for 3 months aged PHP programmer?"}
+{"_id":"97269","title":"","text":"How do you handle a graphic designer who thinks he's a web designer?"}
+{"_id":"21256","title":"","text":"Why do we study Java at university?"}
+{"_id":"55267","title":"","text":"How do you balance documentation requirements with Agile developments"}
+{"_id":"23652","title":"","text":"How can I promote software reuse in a large company?"}
+{"_id":"52961","title":"","text":"Need for a framework"}
+{"_id":"113295","title":"","text":"When to use C over C++, and C++ over C?"}
+{"_id":"210472","title":"","text":"Is renewal of MIT license needed on github at the beginning of each year?"}
+{"_id":"144556","title":"","text":"Is continuous integration useful for a team of two developers who write a lot of code?"}
+{"_id":"137973","title":"","text":"if it's been designed correctly is AOP useful?"}
+{"_id":"213070","title":"","text":"What are the guidelines for either throwing an exception or failing silently for nonvalid arguments?"}
+{"_id":"215042","title":"","text":"How to cut the line between quality and time?"}
+{"_id":"216639","title":"","text":"Unit-testing code that relies on untestable 3rd party code"}
+{"_id":"144717","title":"","text":"Advantages and disadvantages of building a single page web application"}
+{"_id":"107774","title":"","text":"With agile, what do when a user story doesn't get completed in an iteration?"}
+{"_id":"233592","title":"","text":"Unit testing of non-atomic methods"}
+{"_id":"135047","title":"","text":"New to TDD. Should I avoid private methods now?"}
+{"_id":"193269","title":"","text":"Unit-testing functions without business logic (only checks)"}
+{"_id":"117030","title":"","text":"What is the point of Java's package naming convention?"}
+{"_id":"10857","title":"","text":"Should you document everything or just most?"}
+{"_id":"81062","title":"","text":"Data input validation - Where? How much?"}
+{"_id":"131701","title":"","text":"Search algorithm with co-ordinate (x,y) hints?"}
+{"_id":"228973","title":"","text":"Upgrading old ASP classic to newer standards"}
+{"_id":"107986","title":"","text":"Should we encourage coding styles in favor of developer's autonomy, or discourage it in favor of consistency?"}
+{"_id":"234066","title":"","text":"Publish an app on Google Play from Iran"}
+{"_id":"227993","title":"","text":"Coding standards for c#"}
+{"_id":"199162","title":"","text":"Should I write compact code or code with lots of spaces?"}
+{"_id":"7242","title":"","text":"What are the chances of Google's Go becoming a mainstream language?"}
+{"_id":"213452","title":"","text":"Is there any reason zero should still equal false in a new programming language?"}
+{"_id":"58887","title":"","text":"How do you feel that it is time to move and learn another programming language?"}
+{"_id":"74493","title":"","text":"Proper syntax formatting for SQL?"}
+{"_id":"159626","title":"","text":"Licensing for hosted open source and 3rd party libraries"}
+{"_id":"95786","title":"","text":"How did the idea of Exception-handling emerge into programming languages?"}
+{"_id":"93124","title":"","text":"EAV - is it really bad in all scenarios?"}
+{"_id":"24170","title":"","text":"After how much experience, should one start to use a framework for serious development?"}
+{"_id":"203483","title":"","text":"What is a Non-Functional Requirement?"}
+{"_id":"237065","title":"","text":"How to know what to test in TDD?"}
+{"_id":"66735","title":"","text":"What do great APIs have in common?"}
+{"_id":"17341","title":"","text":"Compiler Warnings"}
+{"_id":"226357","title":"","text":"Should unit-tests be entirely self-contained?"}
+{"_id":"230534","title":"","text":"Able to read Code but struggling majorly to write it"}
+{"_id":"7747","title":"","text":"Do you think that exposure to BASIC can mutilate your mind?"}
+{"_id":"215826","title":"","text":"Make methods that do not depend on instance fields, static?"}
+{"_id":"23021","title":"","text":"Refactor or Concentrate on Completing App"}
+{"_id":"219028","title":"","text":"How to safeguard a REST API for only trusted mobile applications"}
+{"_id":"218869","title":"","text":"Is explicit else needed in initialisers?"}
+{"_id":"237593","title":"","text":"how to find average bits per symbol using huffman code?"}
+{"_id":"156848","title":"","text":"Designing a library that is easy to use: composition or inheritance"}
+{"_id":"71917","title":"","text":"Getting involved with an Open Source Project"}
+{"_id":"199873","title":"","text":"Is it bad to use giant label comments to mark off sections of code?"}
+{"_id":"130948","title":"","text":"Stack-instructions machines"}
+{"_id":"47370","title":"","text":"Java dev learning Python: what concepts do I need to wrap my head around?"}
+{"_id":"64722","title":"","text":"Getting Overwhelmed: Tips for noobs"}
+{"_id":"212300","title":"","text":"Why are CIL and CLR required in .NET?"}
+{"_id":"93245","title":"","text":"Software Testing Techniques"}
+{"_id":"250291","title":"","text":"Why does C have no competitors in low level stuff?"}
+{"_id":"98905","title":"","text":"How can I get better at whiteboard interview questions?"}
+{"_id":"141232","title":"","text":"What's shell script's advantage over interpreted programming languages?"}
+{"_id":"146272","title":"","text":"Method size in an OOP language, for instance - in Java"}
+{"_id":"158397","title":"","text":"Do large test methods indicate a code smell?"}
+{"_id":"53612","title":"","text":"Is it essential to learn algorithms to be a real programmer?"}
+{"_id":"49959","title":"","text":"Recommended books on C++"}
+{"_id":"163408","title":"","text":"How do I advertise for volunteers for my open source project"}
+{"_id":"67750","title":"","text":"Can one forget programming if it is not practiced for some time?"}
+{"_id":"227818","title":"","text":"Is it bad practice to encapsulate a single operation in a class?"}
+{"_id":"25600","title":"","text":"What would you consider best practice workflow tools for web application (PHP) development?"}
+{"_id":"17568","title":"","text":"As a programmer, are you required to do timesheets?"}
+{"_id":"150479","title":"","text":"How to make sure the application source code has a proper documentation for new programmers?"}
+{"_id":"36925","title":"","text":"Weeding out real agile from buzzword agile in an interview"}
+{"_id":"62765","title":"","text":"How can I get into \"programmer mind\" more quickly and more often?"}
+{"_id":"253267","title":"","text":"Equal or less than 15 lines per method(function) principle?"}
+{"_id":"200497","title":"","text":"Tex and Absence of bugs"}
+{"_id":"200861","title":"","text":"How does the operating system regain control when multitasking?"}
+{"_id":"84966","title":"","text":"Should Git be used for documentation and project management? Should the code be in a separate repository?"}
+{"_id":"120477","title":"","text":"What Part of Your Project Should be in Source Code Control?"}
+{"_id":"112974","title":"","text":"If not working an internship, should I work for free?"}
+{"_id":"62060","title":"","text":"Intentional misspellings to avoid reserved words"}
+{"_id":"3766","title":"","text":"How to tackle a boss who thinks everybody in this world is wrong except him?"}
+{"_id":"200709","title":"","text":"Is the usage of internal scope blocks within a function bad style?"}
+{"_id":"197746","title":"","text":"What is the benefit of the MoSCoW technique?"}
+{"_id":"17826","title":"","text":"How do people read big technical books?"}
+{"_id":"116330","title":"","text":"Why don't more languages support recursive/nested comments?"}
+{"_id":"14645","title":"","text":"What are effective interview questions?"}
+{"_id":"205279","title":"","text":"How your team manage shared password/key"}
+{"_id":"68867","title":"","text":"How to decide between storage formats and what are example use cases for some of them?"}
+{"_id":"231491","title":"","text":"Why is quality engineering difficult?"}
+{"_id":"237935","title":"","text":"High-Level Classes and Low-Level Classes"}
+{"_id":"93848","title":"","text":"How to measure an IT workplace?"}
+{"_id":"492","title":"","text":"How important is the ability to touch-type?"}
+{"_id":"122071","title":"","text":"What's cool about Lisp nowadays?"}
+{"_id":"85691","title":"","text":"Building websites, which is the better approach MVP or MVC?"}
+{"_id":"29513","title":"","text":"Is reinventing the wheel really all that bad?"}
+{"_id":"145518","title":"","text":"Teaching Programming to Kids"}
+{"_id":"165735","title":"","text":"Improving without mentor"}
+{"_id":"116988","title":"","text":"How to improve typing skills for a developer"}
+{"_id":"196260","title":"","text":"Does a programming language have to be compiled to be considered a programming language?"}
+{"_id":"57068","title":"","text":"Why are objects passed by reference?"}
+{"_id":"107265","title":"","text":"When should I start learning a PHP Framework"}
+{"_id":"199827","title":"","text":"I don't understand how TDD helps me get a good design if I need a design to start testing it"}
+{"_id":"186932","title":"","text":"How to deal with Ghost bugs which appears in undocumented test-case scenarios?"}
+{"_id":"132074","title":"","text":"How do I write a specification?"}
+{"_id":"177907","title":"","text":"What's the difference between VBA and VB Script?"}
+{"_id":"204580","title":"","text":"managing information/functionality on shared common project classes"}
+{"_id":"236473","title":"","text":"Advantages and disadvantages of making one DB per customer"}
+{"_id":"1200","title":"","text":"Is there a canonical tutorial or book on functional programming concepts?"}
+{"_id":"210496","title":"","text":"Is it common to run out of work towards the end of a sprint?"}
+{"_id":"180904","title":"","text":"Are header files actually good?"}
+{"_id":"195094","title":"","text":"Day-to-Day Differences between Software Engineering and Web Developer Positions"}
+{"_id":"98758","title":"","text":"Will using Linux make me a better programmer?"}
+{"_id":"202770","title":"","text":"Why should I adopt MVC?"}
+{"_id":"95933","title":"","text":"What are practitioner's thoughts of the IEEE software engineering certifications?"}
+{"_id":"196615","title":"","text":"XML vs SQL for content display on an ecommerce website"}
+{"_id":"96638","title":"","text":"Interviewing a developer who's skilled in a language you don't know"}
+{"_id":"250164","title":"","text":"Can someone help me understand MVC?"}
+{"_id":"200545","title":"","text":"Over thinking development"}
+{"_id":"16732","title":"","text":"Unit testing internal components"}
+{"_id":"110190","title":"","text":"How granular should TDD tests be?"}
+{"_id":"112485","title":"","text":"What is the benefit of studying bitwise operators?"}
+{"_id":"106693","title":"","text":"Should a design document contain a discussion of the pros/cons to a given design or should it focus on facts and rationale?"}
+{"_id":"36297","title":"","text":"Switching Programming Languages"}
+{"_id":"230145","title":"","text":"what is the meaning of f(n) = O(g(n))?"}
+{"_id":"41981","title":"","text":"Where can I find programming work online?"}
+{"_id":"211640","title":"","text":"Switch Parent Children relationship in C#"}
+{"_id":"35610","title":"","text":"test driven development - Who should write the tests?"}
+{"_id":"74580","title":"","text":"Looking for Case Studies of How TDD Improved Quality and/or Speed of Development"}
+{"_id":"138908","title":"","text":"Is a Front-End Web Developer a \"Programmer\"?"}
+{"_id":"133937","title":"","text":"Methods to rewrite a program"}

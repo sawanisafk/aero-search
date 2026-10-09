@@ -34,7 +34,7 @@ services:
     environment:
       HOST: 0.0.0.0
       PORT: "3000"
-      AERO_CORPUS: scifact
+      AERO_CORPUS: cqadupstack-tierb
       AERO_STRATEGY: bm25
       # same-origin only: the browser talks to nginx, which proxies /api here
       AERO_CORS_ORIGINS: ""

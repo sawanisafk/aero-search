@@ -1,0 +1,78 @@
+{
+  "experiment_id": "cqadupstack-programmers-bm25-k1.2-b0.75",
+  "timestamp": "2026-10-09T06:33:26.608Z",
+  "git": {
+    "sha": "087be968fae4b08731f8d3ed106ec6d52979091d",
+    "clean": false,
+    "has_untracked": true
+  },
+  "corpus": {
+    "name": "cqadupstack-programmers",
+    "hash": "c652ce07f0040a7ee4edad8d63d13e93170665dd0f412ab65eb607c80e1a583f",
+    "numDocs": 32176
+  },
+  "query_set": {
+    "file": "data\\eval\\cqadupstack-programmers-queries.jsonl",
+    "sha256": "c9ad8705445dace9a5bc81880a413a37275d5cc80098ef1ae6d1c6828794ceea",
+    "evaluated_queries": 876,
+    "parse_failures": []
+  },
+  "qrels": {
+    "file": "data\\eval\\cqadupstack-programmers-qrels.tsv",
+    "sha256": "ed69afa873c64d34298792d694c82c4293e4b7e3c6ea3edc7a73662d4b0cba76",
+    "judged_queries": 876,
+    "rows": 1675
+  },
+  "strategy": {
+    "id": "bm25-k1.2-b0.75",
+    "mode": "B",
+    "params": {
+      "k1": 1.2,
+      "b": 0.75
+    }
+  },
+  "topk": 100,
+  "k_values": [
+    1,
+    5,
+    10,
+    100
+  ],
+  "metrics": {
+    "map": 0.2625893375533568,
+    "precision": {
+      "1": 0.23515981735159816,
+      "5": 0.08105022831050272,
+      "10": 0.05000000000000033,
+      "100": 0.008881278538812678
+    },
+    "recall": {
+      "1": 0.1982242516489092,
+      "5": 0.304315249691962,
+      "10": 0.3629950862287444,
+      "100": 0.58694313016521
+    },
+    "f1": {
+      "1": 0.20797554804404123,
+      "5": 0.12209180752694007,
+      "10": 0.08444513398136994,
+      "100": 0.01720782862627579
+    },
+    "ndcg": {
+      "1": 0.23515981735159816,
+      "5": 0.26833819487078586,
+      "10": 0.28874749808735295,
+      "100": 0.3384903097518087
+    }
+  },
+  "latency_ms": {
+    "count": 876,
+    "avg": 4.779654452054784,
+    "median": 4.175799999999981,
+    "p95": 10.385499999999865,
+    "p99": 14.875300000000152,
+    "min": 0.15380000000004657,
+    "max": 18.043000000000006
+  },
+  "wall_ms": 4190.2937
+}
